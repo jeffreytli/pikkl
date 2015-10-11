@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import ParseFacebookUtilsV4
 
 class NewUserViewController: UIViewController {
+    
+    @IBOutlet weak var fieldUsername: UITextField!
+    @IBOutlet weak var btnSaveUsername: UIButton!
+    // user will be set from sending view controller
+    var user:PFUser?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func btnSaveUsername(sender: AnyObject) {
+        user?.username = fieldUsername!.text!
+        user?.saveInBackground()
     }
     
 

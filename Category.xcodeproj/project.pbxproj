@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43A0F52D1BCB134C00A04350 /* BattlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0F52C1BCB134C00A04350 /* BattlesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087A81BC07363007FD933 /* AppDelegate.swift */; };
 		43F087AB1BC07363007FD933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087AA1BC07363007FD933 /* ViewController.swift */; };
 		43F087AE1BC07363007FD933 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F087AC1BC07363007FD933 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43A0F52C1BCB134C00A04350 /* BattlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewController.swift; sourceTree = "<group>"; };
 		43F087A51BC07363007FD933 /* Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Category.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F087AA1BC07363007FD933 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				43F087B11BC07363007FD933 /* LaunchScreen.storyboard */,
 				43F087B41BC07363007FD933 /* Info.plist */,
 				50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */,
+				43A0F52C1BCB134C00A04350 /* BattlesTableViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			files = (
 				43F087AB1BC07363007FD933 /* ViewController.swift in Sources */,
 				50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */,
+				43A0F52D1BCB134C00A04350 /* BattlesTableViewController.swift in Sources */,
 				43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
