@@ -41,17 +41,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnFBLogin" destination="NG2-93-BwR" id="Bcm-ta-w5n"/>
-                        <segue destination="PjZ-Fh-kPw" kind="show" identifier="newUserSegue" id="BH6-ed-Zi7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642.5" y="278.5"/>
+            <point key="canvasLocation" x="594.5" y="278.5"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="LK5-pY-9jp">
             <objects>
-                <viewController id="PjZ-Fh-kPw" customClass="NewUserViewController" customModule="Category" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewUserViewController" id="PjZ-Fh-kPw" customClass="NewUserViewController" customModule="Category" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vz2-4b-9xv"/>
                         <viewControllerLayoutGuide type="bottom" id="Pgs-SW-KBE"/>
@@ -96,6 +95,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="erK-PK-f3a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnSaveUsername" destination="O0c-0y-mEH" id="BFm-YJ-gBx"/>
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijR-1Q-5ut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174.5" y="278.5"/>
+            <point key="canvasLocation" x="1564.5" y="668.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="13K-UX-eka">
@@ -204,6 +204,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxb-L4-c50" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="279"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Riq-C5-uFR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GYM-Gv-s7r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Grh-nW-Jzt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PjZ-Fh-kPw" kind="relationship" relationship="rootViewController" id="bFR-Ar-HCX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIu-Ml-mKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103.5" y="668.5"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
