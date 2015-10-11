@@ -23,10 +23,39 @@ class ViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    @IBAction func loginFB(sender: AnyObject) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email"],
+            block: { (user:PFUser?, error:NSError?) -> Void in
+            if(error != nil) {
+                // Display an alert message
+                var myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
+                
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+                myAlert.addAction(okAction);
+                self.presentViewController(myAlert, animated: true, completion: nil)
+                
+                return
+            }
+                print(user)
+                print("Current user token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
+                print("Current user ID = \(FBSDKAccessToken.currentAccessToken().userID)")
+          
+                if (FBSDKAccessToken.currentAccessToken() != nil){
+                    let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserViewController") as! NewUserViewController
+                    
+                    let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                    
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    
+                    appDelegate.window?.rootViewController = protectedPage
+                }
+        })
+    }
+
     // Description: Make a Facebook Graph request and get basic user information
     func returnUserData() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters:["fields": "name, email, friends"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil) {
@@ -43,60 +72,59 @@ class ViewController: UIViewController{
         })
     }
     
-    @IBAction func loginFB(sender: AnyObject) {
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email"], block: { (user:PFUser?, error:NSError?) -> Void in
-            if(error != nil) {
-                //TODO display an alert message (from youtube vid)
-                print("ERROR!!")
-            }
-            
-//            print(user)
-//            print("Current user token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
-//            print("Current user ID = \(FBSDKAccessToken.currentAccessToken().userID)")
-            
-            if let user = user {
-                // User successfully logged into Facebook
-                if user.isNew {
-                    print("User signed up and logged in through Facebook!")
-                } else {
-                    print("User logged in through Facebook!")
-                }
-                
-                // Create request for user's Facebook data
-                let request = FBSDKGraphRequest(graphPath:"me", parameters:nil)
-                
-                // Send request to Facebook
-                request.startWithCompletionHandler {
-                    (connection, result, error) in
-                    if error != nil {
-                        // Some error checking here
-                    }
-                    else if let userData = result as? [String:AnyObject] {
-                        // Access user data
-                        let username = userData["name"] as? String
-                        user["fullname"] = username;
-                        user.saveInBackground()
-                        print(username)
-                    }
-                }
-                // User failed to log into Facebook
-            } else {
-                print("Uh oh. The user cancelled the Facebook login.")
-            }
-            
-            print((user?.username)!)
-            
-//            if(FBSDKAccessToken.currentAccessToken() != nil) {
-//                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattleTVC") as! BattleTableViewController
-//                
-//                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-//                
-//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                
-//                appDelegate.window?.rootViewController = protectedPage
-//            }
-        })
+//    PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email"], block: { (user:PFUser?, error:NSError?) -> Void in
+//    if(error != nil) {
+//    //TODO display an alert message (from youtube vid)
+//    print("ERROR!!")
+//    }
+//    
+//    //            print(user)
+//    //            print("Current user token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
+//    //            print("Current user ID = \(FBSDKAccessToken.currentAccessToken().userID)")
+//    
+//    if let user = user {
+//    // User successfully logged into Facebook
+//    if user.isNew {
+//    print("User signed up and logged in through Facebook!")
+//    } else {
+//    print("User logged in through Facebook!")
+//    }
+//    
+//    // Create request for user's Facebook data
+//    let request = FBSDKGraphRequest(graphPath:"me", parameters:["fields": "name, email, friends"])
+//    
+//    // Make request to Facebook
+//    request.startWithCompletionHandler {
+//    (connection, result, error) in
+//    if (error != nil) {
+//    // Some error checking here
+//    
+//    }
+//    else if let userData = result as? [String:AnyObject] {
+//    // Access user data
+//    let username = userData["name"] as? String
+//    user["fullname"] = username;
+//    user.saveInBackground()
+//    print("Fullnamepee: " + username!)
+//    }
+//    }
+//    // User failed to log into Facebook
+//    } else {
+//    print("Uh oh. The user cancelled the Facebook login.")
+//    }
+//    
+//    print("Usernamepoop: " + (user?.username)!)
+//    
+//    if(FBSDKAccessToken.currentAccessToken() != nil) {
+//    let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("newUserSegue") as! NewUserViewController
+//    
+//    let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+//    
+//    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//    
+//    appDelegate.window?.rootViewController = protectedPage
+//    }
+//    })
 
-    }
 }
 
