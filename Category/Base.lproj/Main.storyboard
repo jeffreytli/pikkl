@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="1542.5" y="768.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Battles View Controller-->
         <scene sceneID="13K-UX-eka">
             <objects>
-                <viewController id="NNs-R7-fr2" sceneMemberID="viewController">
+                <viewController id="NNs-R7-fr2" customClass="BattlesViewController" customModule="Category" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y7O-Xu-iRk"/>
                         <viewControllerLayoutGuide type="bottom" id="Gqy-4O-hho"/>
@@ -164,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="1081.5" y="-108.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Battle View Controller-->
         <scene sceneID="i6f-c9-hrj">
             <objects>
-                <viewController id="D6M-PL-nEE" sceneMemberID="viewController">
+                <viewController id="D6M-PL-nEE" customClass="CreateBattleViewController" customModule="Category" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jm-7q-Yn3"/>
                         <viewControllerLayoutGuide type="bottom" id="zK3-eZ-aXm"/>
