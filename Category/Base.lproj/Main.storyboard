@@ -17,17 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pikkl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwD-8d-Sbi">
-                                <rect key="frame" x="20" y="197" width="335" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-93-BwR">
+                                <rect key="frame" x="32" y="451" width="310" height="46"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-93-BwR">
-                                <rect key="frame" x="168" y="319" width="38" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Login">
+                                <state key="normal" image="loginButton.png">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -38,11 +31,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BwD-8d-Sbi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="EJP-It-EDI"/>
-                            <constraint firstItem="BwD-8d-Sbi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="133" id="Nhq-rl-6Bd"/>
-                            <constraint firstItem="NG2-93-BwR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SIf-tl-TNT"/>
-                            <constraint firstItem="NG2-93-BwR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y2n-kc-Q9L"/>
-                            <constraint firstItem="NG2-93-BwR" firstAttribute="centerX" secondItem="BwD-8d-Sbi" secondAttribute="centerX" id="ser-kM-mDK"/>
+                            <constraint firstItem="NG2-93-BwR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LxR-E4-RDq"/>
+                            <constraint firstItem="NG2-93-BwR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="bUs-vD-kf4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NG2-93-BwR" secondAttribute="bottom" constant="170" id="dar-yP-Yq4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WcF-xh-2Ph"/>
@@ -67,22 +58,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select a username!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXX-ki-048">
-                                <rect key="frame" x="114" y="290" width="147" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a username!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXX-ki-048">
+                                <rect key="frame" x="114" y="312" width="147" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pikkl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eT-m3-Fgp">
-                                <rect key="frame" x="169" y="197" width="36" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-hh-KY7">
+                                <rect key="frame" x="55" y="341" width="265" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0c-0y-mEH">
-                                <rect key="frame" x="147" y="390" width="80" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DDC-Bu-Glw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0c-0y-mEH">
+                                <rect key="frame" x="147" y="466" width="80" height="33"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -92,27 +85,10 @@
                                     <action selector="btnSaveUsername:" destination="PjZ-Fh-kPw" eventType="touchUpInside" id="KHE-85-YZl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-hh-KY7">
-                                <rect key="frame" x="55" y="319" width="265" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="nXX-ki-048" firstAttribute="top" secondItem="8eT-m3-Fgp" secondAttribute="bottom" constant="93" id="2md-pu-WzR"/>
-                            <constraint firstItem="O0c-0y-mEH" firstAttribute="top" secondItem="zAx-hh-KY7" secondAttribute="bottom" constant="41" id="3cx-7z-vQ1"/>
-                            <constraint firstItem="8eT-m3-Fgp" firstAttribute="centerX" secondItem="Y1J-MX-QC4" secondAttribute="centerX" id="7F3-c5-Tnu"/>
-                            <constraint firstItem="8eT-m3-Fgp" firstAttribute="centerX" secondItem="zAx-hh-KY7" secondAttribute="centerX" id="8cq-JN-2wL"/>
-                            <constraint firstItem="8eT-m3-Fgp" firstAttribute="centerX" secondItem="O0c-0y-mEH" secondAttribute="centerX" id="Im5-YP-MH4"/>
-                            <constraint firstItem="8eT-m3-Fgp" firstAttribute="top" secondItem="Vz2-4b-9xv" secondAttribute="bottom" constant="133" id="JVr-5v-Zf1"/>
-                            <constraint firstItem="zAx-hh-KY7" firstAttribute="leading" secondItem="Y1J-MX-QC4" secondAttribute="leadingMargin" constant="44" id="Wl3-Po-qyv"/>
-                            <constraint firstItem="zAx-hh-KY7" firstAttribute="top" secondItem="nXX-ki-048" secondAttribute="bottom" constant="8" symbolic="YES" id="gMa-u6-DAk"/>
-                            <constraint firstItem="8eT-m3-Fgp" firstAttribute="centerX" secondItem="nXX-ki-048" secondAttribute="centerX" id="xMo-8V-Ocs"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="erK-PK-f3a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -128,7 +104,7 @@
         <!--Battles View Controller-->
         <scene sceneID="13K-UX-eka">
             <objects>
-                <viewController id="NNs-R7-fr2" customClass="BattlesViewController" customModule="Category" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BattlesViewController" id="NNs-R7-fr2" customClass="BattlesViewController" customModule="Category" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y7O-Xu-iRk"/>
                         <viewControllerLayoutGuide type="bottom" id="Gqy-4O-hho"/>
@@ -143,7 +119,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="329-Lm-slf">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="329-Lm-slf" id="XpR-Wn-Fre">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -158,11 +134,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kln-d8-UsI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anq-DS-gMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081.5" y="-108.5"/>
+            <point key="canvasLocation" x="1542.5" y="-32.5"/>
         </scene>
         <!--Create Battle View Controller-->
         <scene sceneID="i6f-c9-hrj">
@@ -202,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUH-O1-f01" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589.5" y="-109.5"/>
+            <point key="canvasLocation" x="2050.5" y="-33.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mo8-G2-NsQ">
@@ -244,6 +221,29 @@
             </objects>
             <point key="canvasLocation" x="1081.5" y="768.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z36-HX-asr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qOa-9P-v10" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J7I-YJ-YiK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NNs-R7-fr2" kind="relationship" relationship="rootViewController" id="aIf-e7-OFS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGG-P5-CKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081.5" y="-33.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="loginButton.png" width="300" height="46"/>
+    </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

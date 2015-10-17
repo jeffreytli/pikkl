@@ -13,19 +13,41 @@ class NewUserViewController: UIViewController {
     
     @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var btnSaveUsername: UIButton!
-    // user will be set from sending view controller
+    
+    // Initialize a Parse/Facebook user
     var user:PFUser?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        setPFUser()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Desc: Save the username in Parse
+    @IBAction func btnSaveUsername(sender: AnyObject) {
+        self.user = PFUser.currentUser()!
+    
+        if (!textFieldUsername.text!.isEmpty){
+            self.user!.setObject(textFieldUsername.text!, forKey: "username")
+            self.user!.saveInBackground()
+        }
+    }
+    
+    // Desc: Make a Facebook Graph request and pull all of the necessary
+    //       user information. Make the request and set up the PFUser and save
+    //       in the Parse data base.
+    func setPFUser() -> Void {
+        // Facebook request parameters for a user
         var requestParameters = ["fields": "id, email, first_name, last_name"]
         
         let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         
         userDetails.startWithCompletionHandler{ (connection, result, error:NSError!) -> Void in
-        
             if (error != nil){
                 print("\(error.localizedDescription)")
                 return
@@ -54,8 +76,7 @@ class NewUserViewController: UIViewController {
                     self.user!.setObject(userEmail!, forKey: "email")
                 }
                 
-                // We need to dispatch an async task to perform this data fetching/downloading in the background. 
-                // Otherwise, the app will appear to freeze for the user.
+                // We need to dispatch an async task to perform this data fetching/downloading in the background. Otherwise app will appear to freeze for user
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                     // Save and get Facebook profile picture
                     var userProfilePicture = "https://graph.facebook.com/" + userId + "/picture?type=large"
@@ -77,27 +98,4 @@ class NewUserViewController: UIViewController {
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func btnSaveUsername(sender: AnyObject) {
-        self.user = PFUser.currentUser()!
-        if (!textFieldUsername.text!.isEmpty){
-            self.user!.setObject(textFieldUsername.text!, forKey: "username")
-            self.user!.saveInBackground()
-        }
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

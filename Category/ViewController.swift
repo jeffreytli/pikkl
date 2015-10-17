@@ -17,6 +17,23 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var currentUser = PFUser.currentUser()
+        
+        if currentUser != nil { // EXISTING USER
+            print("EXISTING USER")
+            if (currentUser!.username != nil){ // EXISTING USER - HAS USERNAME
+                // Redirect directly to BattlesViewController
+                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesViewController") as! BattlesViewController
+
+                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                appDelegate.window?.rootViewController = protectedPage
+            }
+            // EXISTING USER - NO USERNAME
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,51 +41,34 @@ class ViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
 
+    // Description: Implements the logic to login to Facebook if the user doesn't currently have a 
+    // username or FacebookID registered in the Parse database.
     @IBAction func loginFB(sender: AnyObject) {
         PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email"],
             block: { (user:PFUser?, error:NSError?) -> Void in
-            if(error != nil) {
-                // Display an alert message
-                var myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
-                
-                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-                myAlert.addAction(okAction);
-                self.presentViewController(myAlert, animated: true, completion: nil)
-                
-                return
-            }
+                if(error != nil) {
+                    // Display an alert message
+                    var myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+                    myAlert.addAction(okAction);
+                    self.presentViewController(myAlert, animated: true, completion: nil)
+                    
+                    return
+                }
                 print(user)
                 print("Current user token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
                 print("Current user ID = \(FBSDKAccessToken.currentAccessToken().userID)")
-          
-                if (FBSDKAccessToken.currentAccessToken() != nil){
-                    let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserViewController") as! NewUserViewController
-                    
-                    let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-                    
-                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    
-                    appDelegate.window?.rootViewController = protectedPage
-                }
-        })
-    }
-
-    // Description: Make a Facebook Graph request and get basic user information
-    func returnUserData() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters:["fields": "name, email, friends"])
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil) {
-                // Process error
-                print("Error: \(error)")
-            }
-            else {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                //let userEmail : NSString = result.valueForKey("email") as! NSString
-                //print("User Email is: \(userEmail)")
-            }
+                
+                // After registering the Facebook information, redirect page to allow the user
+                // to select a username
+                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserViewController") as! NewUserViewController
+                
+                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                appDelegate.window?.rootViewController = protectedPage
         })
     }
 }

@@ -34,6 +34,7 @@
 		43F087DF1BC076C8007FD933 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F087DE1BC076C8007FD933 /* libz.tbd */; };
 		43F087E11BC076D3007FD933 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F087E01BC076D3007FD933 /* libsqlite3.tbd */; };
 		43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43F087E21BC07975007FD933 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		5029EA0D1BD2190E00288659 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5029EA0C1BD2190E00288659 /* loginButton.png */; settings = {ASSET_TAGS = (); }; };
 		50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		43F087DE1BC076C8007FD933 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		43F087E01BC076D3007FD933 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		43F087E21BC07975007FD933 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5029EA0C1BD2190E00288659 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 		50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 		43F087A71BC07363007FD933 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5029EA0B1BD218F100288659 /* images */,
 				43F087C01BC0746B007FD933 /* FacebookSDK */,
 				43F087A81BC07363007FD933 /* AppDelegate.swift */,
 				43F087AA1BC07363007FD933 /* ViewController.swift */,
@@ -166,6 +169,14 @@
 				43F087C41BC07611007FD933 /* ParseFacebookUtilsV4.framework */,
 			);
 			name = ParseSDK;
+			sourceTree = "<group>";
+		};
+		5029EA0B1BD218F100288659 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5029EA0C1BD2190E00288659 /* loginButton.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 			files = (
 				43F087B31BC07363007FD933 /* LaunchScreen.storyboard in Resources */,
 				43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */,
+				5029EA0D1BD2190E00288659 /* loginButton.png in Resources */,
 				43F087B01BC07363007FD933 /* Assets.xcassets in Resources */,
 				43F087AE1BC07363007FD933 /* Main.storyboard in Resources */,
 			);
