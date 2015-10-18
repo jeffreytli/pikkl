@@ -36,6 +36,15 @@ class NewUserViewController: UIViewController {
             self.user!.setObject(textFieldUsername.text!, forKey: "username")
             self.user!.saveInBackground()
         }
+        
+        // After saving the username details, redirect to the Battles Page
+        let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesViewController") as! BattlesViewController
+        
+        let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = protectedPage
     }
     
     // Desc: Make a Facebook Graph request and pull all of the necessary

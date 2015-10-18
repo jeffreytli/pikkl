@@ -10,6 +10,15 @@ import UIKit
 
 class BattlesViewController: UIViewController {
 
+    let textCellIdentifier = "TextCell"
+
+    let battleCategories = ["#UgliestFriends", "#DrunkMoments", "#WorstGiftEver", "#MySuperPowers", "#WhyImSingle", "#Embarrsssinggggg", "#LemmeTakeASelfie", "#WorstRoommateAward", "#WorstPictureEver", "#ImStupid", "#BestCaption", "#Blessed", "#IHateLife"]
+    
+//    @IBOutlet weak var battlesTableView: UITableView!
+    
+    @IBOutlet weak var battlesTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +30,32 @@ class BattlesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK:  UITextFieldDelegate Methods
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return battleCategories.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        
+        let row = indexPath.row
+        cell.textLabel?.text = battleCategories[row]
+        
+        return cell
+    }
+    
+    // MARK:  UITableViewDelegate Methods
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        print(battleCategories[row])
+    }
+    
     /*
     // MARK: - Navigation
 
