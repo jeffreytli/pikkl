@@ -24,13 +24,13 @@ class ViewController: UIViewController{
             print("EXISTING USER")
             if (currentUser!.username != nil){ // EXISTING USER - HAS USERNAME
                 // Redirect directly to BattlesViewController
-                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesViewController") as! BattlesViewController
+                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
 
                 let protectedPageNav = UINavigationController(rootViewController: protectedPage)
                 
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
-                appDelegate.window?.rootViewController = protectedPage
+                appDelegate.window?.rootViewController = protectedPageNav
             }
             // EXISTING USER - NO USERNAME
         }

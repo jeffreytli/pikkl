@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		436821B71BCEA76F004DAD89 /* BattlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B61BCEA76F004DAD89 /* BattlesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087A81BC07363007FD933 /* AppDelegate.swift */; };
 		43F087AB1BC07363007FD933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087AA1BC07363007FD933 /* ViewController.swift */; };
@@ -37,10 +37,11 @@
 		5029EA0D1BD2190E00288659 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5029EA0C1BD2190E00288659 /* loginButton.png */; settings = {ASSET_TAGS = (); }; };
 		50AE72811BD35F2000F562B3 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 50AE72801BD35F2000F562B3 /* plus.png */; settings = {ASSET_TAGS = (); }; };
 		50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F822311BD4471A00048035 /* BattlesNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		436821B61BCEA76F004DAD89 /* BattlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesViewController.swift; sourceTree = "<group>"; };
+		436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewController.swift; sourceTree = "<group>"; };
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
 		43F087A51BC07363007FD933 /* Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Category.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		5029EA0C1BD2190E00288659 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 		50AE72801BD35F2000F562B3 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		50F822311BD4471A00048035 /* BattlesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +144,13 @@
 				43F087A81BC07363007FD933 /* AppDelegate.swift */,
 				43F087AA1BC07363007FD933 /* ViewController.swift */,
 				43F087AC1BC07363007FD933 /* Main.storyboard */,
-				436821B61BCEA76F004DAD89 /* BattlesViewController.swift */,
+				436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */,
 				436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */,
 				43F087AF1BC07363007FD933 /* Assets.xcassets */,
 				43F087B11BC07363007FD933 /* LaunchScreen.storyboard */,
 				43F087B41BC07363007FD933 /* Info.plist */,
 				50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */,
+				50F822311BD4471A00048035 /* BattlesNavigationController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -258,7 +261,8 @@
 				436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */,
 				43F087AB1BC07363007FD933 /* ViewController.swift in Sources */,
 				50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */,
-				436821B71BCEA76F004DAD89 /* BattlesViewController.swift in Sources */,
+				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
+				436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */,
 				43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

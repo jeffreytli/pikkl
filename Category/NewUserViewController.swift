@@ -28,23 +28,23 @@ class NewUserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // Desc: Save the username in Parse
+    
     @IBAction func btnSaveUsername(sender: AnyObject) {
         self.user = PFUser.currentUser()!
-    
+        
         if (!textFieldUsername.text!.isEmpty){
             self.user!.setObject(textFieldUsername.text!, forKey: "username")
             self.user!.saveInBackground()
         }
         
         // After saving the username details, redirect to the Battles Page
-        let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesViewController") as! BattlesViewController
+        let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
         
         let protectedPageNav = UINavigationController(rootViewController: protectedPage)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = protectedPage
+        appDelegate.window?.rootViewController = protectedPageNav
     }
     
     // Desc: Make a Facebook Graph request and pull all of the necessary
