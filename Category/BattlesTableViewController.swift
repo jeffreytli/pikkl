@@ -10,7 +10,7 @@ import UIKit
 
 class BattlesTableViewController: UITableViewController {
 
-    let textCellIdentifier = "TextCell"
+    let textCellIdentifier = "BattleCell"
 
     let battleCategories = ["#UgliestFriends", "#DrunkMoments", "#WorstGiftEver", "#MySuperPowers", "#WhyImSingle", "#Embarrsssinggggg", "#LemmeTakeASelfie", "#WorstRoommateAward", "#WorstPictureEver", "#ImStupid", "#BestCaption", "#Blessed", "#IHateLife"]
     
@@ -40,10 +40,13 @@ class BattlesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
+        let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
         let row = indexPath.row
-        cell.textLabel?.text = battleCategories[row]
+        cell.lblBattleName.text = battleCategories[row];
+
+        //cell.textLabel?.text = battleCategories[row];
         
         return cell
     }

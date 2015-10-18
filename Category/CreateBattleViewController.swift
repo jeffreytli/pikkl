@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Parse
+import ParseFacebookUtilsV4
 
 class CreateBattleViewController: UIViewController {
 
+    @IBOutlet weak var btnDone: UIBarButtonItem!
+    @IBOutlet weak var txtFieldTitle: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +27,24 @@ class CreateBattleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnDoneTapped(sender: AnyObject) {
+        //create battle object
+        var battle = PFObject(className:"Battle")
+        battle["name"] = txtFieldTitle.text
+        battle["creator"] = PFUser.currentUser()
+        // people invited to battle
+        // time left in battle
+        battle.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+            }
+        }
+        navigationController?.popViewControllerAnimated(true)
+    
+    }
 
     /*
     // MARK: - Navigation
