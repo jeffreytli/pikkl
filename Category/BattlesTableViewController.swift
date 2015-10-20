@@ -12,12 +12,12 @@ class BattlesTableViewController: UITableViewController {
 
     let textCellIdentifier = "BattleCell"
 
-    let battleCategories = ["#UgliestFriends", "#DrunkMoments", "#WorstGiftEver", "#MySuperPowers", "#WhyImSingle", "#Embarrsssinggggg", "#LemmeTakeASelfie", "#WorstRoommateAward", "#WorstPictureEver", "#ImStupid", "#BestCaption", "#Blessed", "#IHateLife"]
+    let battleCategories = ["Ugliest Friends", "Drunk Moments", "Worst Gift Ever", "My Super Powers", "Why Im Single", "Embarrsssinggggg", "Lemme Take A Selfie", "Worst Roommate Award", "Worst Picture Ever", "Im Stupid", "Best Caption", "Blessed", "I Hate Life"]
+    
     
 //    @IBOutlet weak var battlesTableView: UITableView!
     
     @IBOutlet weak var battlesTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

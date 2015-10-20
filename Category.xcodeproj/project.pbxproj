@@ -48,6 +48,7 @@
 		50806D9E1BD4719100575253 /* temp10.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D941BD4719100575253 /* temp10.png */; settings = {ASSET_TAGS = (); }; };
 		50AE72811BD35F2000F562B3 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 50AE72801BD35F2000F562B3 /* plus.png */; settings = {ASSET_TAGS = (); }; };
 		50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		50E303B21BD60E4A00F810B3 /* DataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F822311BD4471A00048035 /* BattlesNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		50806D941BD4719100575253 /* temp10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp10.png; sourceTree = "<group>"; };
 		50AE72801BD35F2000F562B3 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelProtocol.swift; sourceTree = "<group>"; };
 		50F822311BD4471A00048035 /* BattlesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 				50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */,
 				50F822311BD4471A00048035 /* BattlesNavigationController.swift */,
 				43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */,
+				50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */,
 				436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */,
 				43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */,
+				50E303B21BD60E4A00F810B3 /* DataModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

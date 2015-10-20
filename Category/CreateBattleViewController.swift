@@ -18,22 +18,46 @@ class CreateBattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnDoneTapped(sender: AnyObject) {
-        //create battle object
+        dispatch_async(dispatch_get_main_queue()) {
+            let battleName = self.txtFieldTitle.text
+            
+            let alertController = UIAlertController(title: "Create '" + battleName! + "' Battle", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+                (action:UIAlertAction) in
+                // Save to Parse database and return to previous view
+                self.navigationController?.popViewControllerAnimated(true)
+                
+                self.createBattle()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
+                (action:UIAlertAction) in
+                // Do nothing
+            }
+            
+            alertController.addAction(OKAction)
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion:nil)
+        }
+    }
+    
+    func createBattle() -> Void {
+        // create battle object
         var battle = PFObject(className:"Battle")
+        
         battle["name"] = txtFieldTitle.text
         battle["creator"] = PFUser.currentUser()
         // people invited to battle
         // time left in battle
+        
         battle.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -42,18 +66,5 @@ class CreateBattleViewController: UIViewController {
                 // There was a problem, check error.description
             }
         }
-        navigationController?.popViewControllerAnimated(true)
-    
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
