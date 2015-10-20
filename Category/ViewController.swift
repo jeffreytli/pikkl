@@ -20,9 +20,10 @@ class ViewController: UIViewController{
         
         var currentUser = PFUser.currentUser()
         
-        if currentUser != nil { // EXISTING USER
+        if currentUser != nil {
             print("EXISTING USER")
-            if (currentUser!.username != nil){ // EXISTING USER - HAS USERNAME
+            if (currentUser!.username != nil){
+                print("EXISTING USER - HAS USERNAME")
                 // Redirect directly to BattlesViewController
                 let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
 
@@ -32,13 +33,12 @@ class ViewController: UIViewController{
                 
                 appDelegate.window?.rootViewController = protectedPageNav
             }
-            // EXISTING USER - NO USERNAME
+            print("EXISTING USER - NO USERNAME")
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // Description: Implements the logic to login to Facebook if the user doesn't currently have a 

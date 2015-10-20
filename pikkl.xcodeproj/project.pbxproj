@@ -56,7 +56,7 @@
 		43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewController.swift; sourceTree = "<group>"; };
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
-		43F087A51BC07363007FD933 /* Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Category.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F087A51BC07363007FD933 /* pikkl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pikkl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F087AA1BC07363007FD933 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43F087AD1BC07363007FD933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		43F087A61BC07363007FD933 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43F087A51BC07363007FD933 /* Category.app */,
+				43F087A51BC07363007FD933 /* pikkl.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43F087A41BC07363007FD933 /* Category */ = {
+		43F087A41BC07363007FD933 /* pikkl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43F087B71BC07363007FD933 /* Build configuration list for PBXNativeTarget "Category" */;
+			buildConfigurationList = 43F087B71BC07363007FD933 /* Build configuration list for PBXNativeTarget "pikkl" */;
 			buildPhases = (
 				43F087A11BC07363007FD933 /* Sources */,
 				43F087A21BC07363007FD933 /* Frameworks */,
@@ -236,9 +236,9 @@
 			);
 			dependencies = (
 			);
-			name = Category;
+			name = pikkl;
 			productName = Category;
-			productReference = 43F087A51BC07363007FD933 /* Category.app */;
+			productReference = 43F087A51BC07363007FD933 /* pikkl.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 43F087A01BC07363007FD933 /* Build configuration list for PBXProject "Category" */;
+			buildConfigurationList = 43F087A01BC07363007FD933 /* Build configuration list for PBXProject "pikkl" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -268,7 +268,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43F087A41BC07363007FD933 /* Category */,
+				43F087A41BC07363007FD933 /* pikkl */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +430,7 @@
 				INFOPLIST_FILE = Category/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Category;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pikkl;
 			};
 			name = Debug;
 		};
@@ -446,14 +446,14 @@
 				INFOPLIST_FILE = Category/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Category;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pikkl;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43F087A01BC07363007FD933 /* Build configuration list for PBXProject "Category" */ = {
+		43F087A01BC07363007FD933 /* Build configuration list for PBXProject "pikkl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43F087B51BC07363007FD933 /* Debug */,
@@ -462,7 +462,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43F087B71BC07363007FD933 /* Build configuration list for PBXNativeTarget "Category" */ = {
+		43F087B71BC07363007FD933 /* Build configuration list for PBXNativeTarget "pikkl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43F087B81BC07363007FD933 /* Debug */,
