@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="aj1-2P-LVH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-93-BwR">
                                 <rect key="frame" x="32" y="451" width="310" height="46"/>
                                 <animations/>
@@ -32,8 +36,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eIN-2X-pW9" firstAttribute="top" secondItem="NG2-93-BwR" secondAttribute="bottom" constant="170" id="853-mU-Y0f"/>
+                            <constraint firstItem="aj1-2P-LVH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Zd-gA-UC6"/>
+                            <constraint firstItem="aj1-2P-LVH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HGh-9e-fCj"/>
+                            <constraint firstItem="aj1-2P-LVH" firstAttribute="bottom" secondItem="eIN-2X-pW9" secondAttribute="top" id="LYr-4I-9sQ"/>
                             <constraint firstItem="NG2-93-BwR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WJI-tG-CBY"/>
                             <constraint firstItem="NG2-93-BwR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="b2h-pD-D5o"/>
+                            <constraint firstItem="aj1-2P-LVH" firstAttribute="centerX" secondItem="NG2-93-BwR" secondAttribute="centerX" id="zdA-mD-qxk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WcF-xh-2Ph"/>
@@ -44,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="594.5" y="278.49999999999994"/>
+            <point key="canvasLocation" x="594.5" y="277.5"/>
         </scene>
         <!--Battles-->
         <scene sceneID="Ckk-8J-jyb">
@@ -138,6 +146,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="VRv-0B-pJf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a username!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-4J-XfG">
                                 <rect key="frame" x="114" y="323" width="147" height="21"/>
                                 <animations/>
@@ -165,6 +177,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VRv-0B-pJf" firstAttribute="leading" secondItem="22f-th-f02" secondAttribute="leading" id="Ahc-1N-V7U"/>
+                            <constraint firstItem="VRv-0B-pJf" firstAttribute="centerX" secondItem="xyG-M0-3RW" secondAttribute="centerX" id="Dva-yp-MZn"/>
+                            <constraint firstItem="VRv-0B-pJf" firstAttribute="bottom" secondItem="f82-DY-AX0" secondAttribute="top" id="EC2-Uz-9pF"/>
                             <constraint firstItem="ILS-jg-j3p" firstAttribute="top" secondItem="AbX-4J-XfG" secondAttribute="bottom" constant="8" symbolic="YES" id="U09-Ud-wRO"/>
                             <constraint firstItem="xyG-M0-3RW" firstAttribute="centerX" secondItem="ILS-jg-j3p" secondAttribute="centerX" id="hhI-r0-QWu"/>
                             <constraint firstItem="ILS-jg-j3p" firstAttribute="trailing" secondItem="AbX-4J-XfG" secondAttribute="trailing" id="hkQ-Hw-02t"/>
@@ -172,6 +187,7 @@
                             <constraint firstItem="xyG-M0-3RW" firstAttribute="top" secondItem="ILS-jg-j3p" secondAttribute="bottom" constant="70" id="mgg-Mh-JBA"/>
                             <constraint firstItem="xyG-M0-3RW" firstAttribute="centerX" secondItem="22f-th-f02" secondAttribute="centerX" id="rO6-5j-dMq"/>
                             <constraint firstItem="ILS-jg-j3p" firstAttribute="leading" secondItem="AbX-4J-XfG" secondAttribute="leading" id="tmi-aV-mVU"/>
+                            <constraint firstItem="VRv-0B-pJf" firstAttribute="centerY" secondItem="AbX-4J-XfG" secondAttribute="centerY" id="uH9-Gp-cBH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ufg-3R-1S3"/>
@@ -338,6 +354,7 @@
         <image name="temp2.png" width="778" height="791"/>
         <image name="temp6.png" width="292" height="292"/>
         <image name="temp8.png" width="500" height="500"/>
+        <image name="wallpaper.png" width="640" height="1136"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
