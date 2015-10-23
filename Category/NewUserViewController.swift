@@ -13,12 +13,15 @@ class NewUserViewController: UIViewController {
     
     @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var btnSaveUsername: UIButton!
+    @IBOutlet weak var lblUserTaken: UILabel!
     
     // Initialize a Parse/Facebook user
     var user:PFUser?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBarHidden = true
         
         setPFUser()
     }
@@ -28,7 +31,6 @@ class NewUserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func btnSaveUsername(sender: AnyObject) {
         self.user = PFUser.currentUser()!
         
@@ -37,14 +39,28 @@ class NewUserViewController: UIViewController {
             self.user!.saveInBackground()
         }
         
-        // After saving the username details, redirect to the Battles Page
-        let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
-        
-        let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        appDelegate.window?.rootViewController = protectedPageNav
+        do {
+            var query = PFUser.query()
+            query!.whereKey("username", equalTo: textFieldUsername.text!)
+            var usernameP = try query!.findObjects()
+            
+            if(usernameP.count == 0) {
+                print("Valid username")
+                // After saving the username details, redirect to the Battles Page
+                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+                
+                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                appDelegate.window?.rootViewController = protectedPageNav
+            } else {
+                print("Username already taken")
+                lblUserTaken.text = "Username already taken"
+            }
+        } catch {
+            print("Something went wrong!")
+        }
     }
     
     // Desc: Make a Facebook Graph request and pull all of the necessary

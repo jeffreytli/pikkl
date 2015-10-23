@@ -173,18 +173,29 @@
                                     <action selector="btnSaveUsername:" destination="QHq-kR-ZGb" eventType="touchUpInside" id="zq0-8d-jKE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFX-6Z-SZr">
+                                <rect key="frame" x="114" y="390" width="147" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GFX-6Z-SZr" firstAttribute="leading" secondItem="ILS-jg-j3p" secondAttribute="leading" id="7I4-h9-GRZ"/>
+                            <constraint firstItem="GFX-6Z-SZr" firstAttribute="trailing" secondItem="ILS-jg-j3p" secondAttribute="trailing" id="84U-RF-DVy"/>
                             <constraint firstItem="VRv-0B-pJf" firstAttribute="leading" secondItem="22f-th-f02" secondAttribute="leading" id="Ahc-1N-V7U"/>
                             <constraint firstItem="VRv-0B-pJf" firstAttribute="centerX" secondItem="xyG-M0-3RW" secondAttribute="centerX" id="Dva-yp-MZn"/>
                             <constraint firstItem="VRv-0B-pJf" firstAttribute="bottom" secondItem="f82-DY-AX0" secondAttribute="top" id="EC2-Uz-9pF"/>
+                            <constraint firstItem="GFX-6Z-SZr" firstAttribute="top" secondItem="ILS-jg-j3p" secondAttribute="bottom" constant="8" symbolic="YES" id="OrU-9O-nzR"/>
                             <constraint firstItem="ILS-jg-j3p" firstAttribute="top" secondItem="AbX-4J-XfG" secondAttribute="bottom" constant="8" symbolic="YES" id="U09-Ud-wRO"/>
                             <constraint firstItem="xyG-M0-3RW" firstAttribute="centerX" secondItem="ILS-jg-j3p" secondAttribute="centerX" id="hhI-r0-QWu"/>
                             <constraint firstItem="ILS-jg-j3p" firstAttribute="trailing" secondItem="AbX-4J-XfG" secondAttribute="trailing" id="hkQ-Hw-02t"/>
                             <constraint firstItem="AbX-4J-XfG" firstAttribute="centerY" secondItem="22f-th-f02" secondAttribute="centerY" id="ksC-0y-HOa"/>
                             <constraint firstItem="xyG-M0-3RW" firstAttribute="top" secondItem="ILS-jg-j3p" secondAttribute="bottom" constant="70" id="mgg-Mh-JBA"/>
+                            <constraint firstItem="xyG-M0-3RW" firstAttribute="top" secondItem="GFX-6Z-SZr" secondAttribute="bottom" constant="41" id="mpk-DU-cjq"/>
                             <constraint firstItem="xyG-M0-3RW" firstAttribute="centerX" secondItem="22f-th-f02" secondAttribute="centerX" id="rO6-5j-dMq"/>
                             <constraint firstItem="ILS-jg-j3p" firstAttribute="leading" secondItem="AbX-4J-XfG" secondAttribute="leading" id="tmi-aV-mVU"/>
                             <constraint firstItem="VRv-0B-pJf" firstAttribute="centerY" secondItem="AbX-4J-XfG" secondAttribute="centerY" id="uH9-Gp-cBH"/>
@@ -194,6 +205,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnSaveUsername" destination="xyG-M0-3RW" id="fPD-2a-fFv"/>
+                        <outlet property="lblUserTaken" destination="GFX-6Z-SZr" id="yL8-ZC-IXB"/>
                         <outlet property="textFieldUsername" destination="ILS-jg-j3p" id="Z0N-nk-KtE"/>
                     </connections>
                 </viewController>
