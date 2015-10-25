@@ -46,7 +46,7 @@ class ViewController: UIViewController{
     // Description: Implements the logic to login to Facebook if the user doesn't currently have a 
     // username or FacebookID registered in the Parse database.
     @IBAction func loginFB(sender: AnyObject) {
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email"],
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"],
             block: { (user:PFUser?, error:NSError?) -> Void in
                 if(error != nil) {
                     // Display an alert message

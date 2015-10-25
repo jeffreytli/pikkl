@@ -18,6 +18,8 @@ class CreateBattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getFacebookFriends()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +66,18 @@ class CreateBattleViewController: UIViewController {
                 // The object has been saved.
             } else {
                 // There was a problem, check error.description
+            }
+        }
+    }
+    
+    func getFacebookFriends() -> Void {
+        var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+            
+            if error == nil {
+                print("Friends are : \(result)")
+            } else {
+                print("Error Getting Friends \(error)");
             }
         }
     }
