@@ -21,7 +21,7 @@ class SubmitViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgSubmit.image = UIImage(named: "temp1")
+        imgSubmit.image = UIImage(named: "cameraIcon")
         // Do any additional setup after loading the view.
     }
 

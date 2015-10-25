@@ -53,6 +53,7 @@
 		50E303B21BD60E4A00F810B3 /* DataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */; settings = {ASSET_TAGS = (); }; };
 		50E303B41BD625E400F810B3 /* wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E303B31BD625E400F810B3 /* wallpaper.png */; settings = {ASSET_TAGS = (); }; };
 		50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F822311BD4471A00048035 /* BattlesNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
+		581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelProtocol.swift; sourceTree = "<group>"; };
 		50E303B31BD625E400F810B3 /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
 		50F822311BD4471A00048035 /* BattlesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesNavigationController.swift; sourceTree = "<group>"; };
+		581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				50E303B31BD625E400F810B3 /* wallpaper.png */,
+				581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */,
 				50806D8B1BD4719100575253 /* temp1.png */,
 				50806D8C1BD4719100575253 /* temp2.png */,
 				50806D8D1BD4719100575253 /* temp3.png */,
@@ -296,6 +299,7 @@
 				50806D991BD4719100575253 /* temp5.png in Resources */,
 				5029EA0D1BD2190E00288659 /* loginButton.png in Resources */,
 				50806D9C1BD4719100575253 /* temp8.png in Resources */,
+				581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */,
 				43F087B01BC07363007FD933 /* Assets.xcassets in Resources */,
 				50806D961BD4719100575253 /* temp2.png in Resources */,
 				43F087AE1BC07363007FD933 /* Main.storyboard in Resources */,
