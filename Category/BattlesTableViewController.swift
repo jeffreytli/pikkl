@@ -9,6 +9,8 @@
 import UIKit
 
 class BattlesTableViewController: UITableViewController {
+    
+    
 
     let textCellIdentifier = "BattleCell"
 
@@ -57,6 +59,14 @@ class BattlesTableViewController: UITableViewController {
         
         let row = indexPath.row
         print(battleCategories[row])
+    }
+    
+    @IBAction func createBattleTapped(sender: AnyObject) {
+        var storyboard = UIStoryboard(name: "Create", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("CreateBattleViewController") as! CreateBattleViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     /*

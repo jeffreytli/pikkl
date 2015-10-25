@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("bLgAGrLr32ne67m18vTXwhu5QZbHdkLmMFElQVdX", clientKey: "kZoEAaphBOAdp3tYKWk1deNJWWt7lbkO86OM78UB")
         // Override point for customization after application launch.
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
         return true
     }
     
@@ -56,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
 
 }
 

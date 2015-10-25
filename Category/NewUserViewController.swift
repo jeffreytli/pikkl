@@ -47,7 +47,9 @@ class NewUserViewController: UIViewController {
             if(usernameP.count == 0) {
                 print("Valid username")
                 // After saving the username details, redirect to the Battles Page
-                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+                var storyboard = UIStoryboard(name: "Home", bundle: nil)
+                
+                let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
                 
                 let protectedPageNav = UINavigationController(rootViewController: protectedPage)
                 
