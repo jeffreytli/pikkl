@@ -20,7 +20,6 @@ class NewUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBarHidden = true
     }
 
@@ -43,7 +42,7 @@ class NewUserViewController: UIViewController {
     }
     
     func redirectToBattlesTableView() -> Void {
-        var storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
         let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
         
@@ -51,7 +50,9 @@ class NewUserViewController: UIViewController {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = controllerNav
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
     
     // @desc: Checks Parse and sees if the username is taken or not
@@ -59,9 +60,9 @@ class NewUserViewController: UIViewController {
         var validUserName = false
         
         do {
-            var query = PFUser.query()
+            let query = PFUser.query()
             query!.whereKey("username", equalTo: textFieldUsername.text!)
-            var usernameP = try query!.findObjects()
+            let usernameP = try query!.findObjects()
             
             if(usernameP.count == 0) {
                 print("Valid username")
@@ -82,7 +83,7 @@ class NewUserViewController: UIViewController {
     //        in the Parse data base.
     func setPFUser(username:String) -> Void {
         // Facebook request parameters for a user
-        var requestParameters = ["fields": "id, email, first_name, last_name"]
+        let requestParameters = ["fields": "id, email, first_name, last_name"]
         
         let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         
@@ -122,7 +123,7 @@ class NewUserViewController: UIViewController {
                 // We need to dispatch an async task to perform this data fetching/downloading in the background. Otherwise app will appear to freeze for user
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                     // Save and get Facebook profile picture
-                    var userProfilePicture = "https://graph.facebook.com/" + userId + "/picture?type=large"
+                    let userProfilePicture = "https://graph.facebook.com/" + userId + "/picture?type=large"
                     
                     let profilePictureUrl = NSURL(string: userProfilePicture)
                     let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)

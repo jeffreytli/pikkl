@@ -59,14 +59,14 @@ class BattlesTableViewController: UITableViewController {
     }
     
     func redirectToCreateBattleView() -> Void {
-        var storyboard = UIStoryboard(name: "Create", bundle: nil)
+        let storyboard = UIStoryboard(name: "Create", bundle: nil)
         
-        let protectedPage = storyboard.instantiateViewControllerWithIdentifier("CreateBattleViewController") as! CreateBattleViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("CreateBattleViewController") as! CreateBattleViewController
         
-        let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+        let controllerNav = UINavigationController(rootViewController: controller)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = protectedPageNav
+        appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
     }
 }
