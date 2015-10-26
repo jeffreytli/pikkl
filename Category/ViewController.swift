@@ -58,7 +58,7 @@ class ViewController: UIViewController{
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = protectedPage
+        appDelegate.window?.rootViewController = controller
     }
 
     // @desc: Implements the logic to login to Facebook if the user doesn't currently have a
