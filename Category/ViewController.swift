@@ -24,18 +24,12 @@ class ViewController: UIViewController{
         
         if currentUser != nil {
             print("EXISTING USER")
+            
             if (currentUser!.username != nil){
                 print("EXISTING USER - HAS USERNAME")
-//                // Redirect directly to BattlesViewController
-                var storyboard = UIStoryboard(name: "Home", bundle: nil)
                 
-                let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
-                
-                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
-                appDelegate.window?.rootViewController = protectedPageNav
+                // Redirect directly to BattlesViewController
+                redirectToBattlesTableView()
             }
             print("EXISTING USER - NO USERNAME")
         }
@@ -44,10 +38,33 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func redirectToBattlesTableView() -> Void {
+        var storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        
+        let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = protectedPageNav
+    }
+    
+    func redirectToNewUserView() -> Void {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserViewController") as! NewUserViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = protectedPage
+    }
 
-    // Description: Implements the logic to login to Facebook if the user doesn't currently have a 
-    // username or FacebookID registered in the Parse database.
+    // @desc: Implements the logic to login to Facebook if the user doesn't currently have a
+    //        username or FacebookID registered in the Parse database.
     @IBAction func loginFB(sender: AnyObject) {
+        // Set Facebook permissions
         PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"],
             block: { (user:PFUser?, error:NSError?) -> Void in
                 if(error != nil) {
@@ -60,19 +77,13 @@ class ViewController: UIViewController{
                     
                     return
                 }
-                print(user)
-                print("Current user token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
-                print("Current user ID = \(FBSDKAccessToken.currentAccessToken().userID)")
+//                print(user)
+//                print("Current user token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
+//                print("Current user ID = \(FBSDKAccessToken.currentAccessToken().userID)")
                 
                 // After registering the Facebook information, redirect page to allow the user
                 // to select a username
-                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserViewController") as! NewUserViewController
-                
-                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
-                appDelegate.window?.rootViewController = protectedPage
+                self.redirectToNewUserView()
         })
     }
 }

@@ -15,7 +15,7 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var btnSaveUsername: UIButton!
     @IBOutlet weak var lblUserTaken: UILabel!
     
-    // Initialize a Parse/Facebook user
+    // Create Parse/Facebook user
     var user:PFUser?
 
     override func viewDidLoad() {
@@ -35,21 +35,26 @@ class NewUserViewController: UIViewController {
                 setPFUser(textFieldUsername.text!)
                 
                 // After saving the username details, redirect to the Battles Page
-                var storyboard = UIStoryboard(name: "Home", bundle: nil)
-                
-                let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
-                
-                let controllerNav = UINavigationController(rootViewController: controller)
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
-                appDelegate.window?.rootViewController = controllerNav
+                redirectToBattlesTableView()
             }
         } else {
             lblUserTaken.text = "Please select a username"
         }
     }
     
+    func redirectToBattlesTableView() -> Void {
+        var storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = controllerNav
+    }
+    
+    // @desc: Checks Parse and sees if the username is taken or not
     func validUserName(username: String) -> Bool {
         var validUserName = false
         
@@ -72,9 +77,9 @@ class NewUserViewController: UIViewController {
         return validUserName
     }
     
-    // Desc: Make a Facebook Graph request and pull all of the necessary
-    //       user information. Make the request and set up the PFUser and save
-    //       in the Parse data base.
+    // @desc: Make a Facebook Graph request and pull all of the necessary
+    //        user information. Make the request and set up the PFUser and save
+    //        in the Parse data base.
     func setPFUser(username:String) -> Void {
         // Facebook request parameters for a user
         var requestParameters = ["fields": "id, email, first_name, last_name"]
