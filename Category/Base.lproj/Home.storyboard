@@ -77,7 +77,6 @@
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="createBattleTapped:" destination="Ejt-Ug-vRg" id="Cgm-Go-N2d"/>
-                                <segue destination="D6M-PL-nEE" kind="show" id="O6D-3D-x43"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -86,92 +85,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JN5-bZ-EmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1675.5" y="-186.5"/>
-        </scene>
-        <!--Create Battle-->
-        <scene sceneID="i6f-c9-hrj">
-            <objects>
-                <viewController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="D6M-PL-nEE" customClass="CreateBattleViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A6M-YN-N9P"/>
-                        <viewControllerLayoutGuide type="bottom" id="aVm-y8-cOO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rlF-al-Gvo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-V4-T2l">
-                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TJF-nf-gZ2">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TJF-nf-gZ2" id="DEC-9p-atq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-21-sp9">
-                                <rect key="frame" x="20" y="72" width="335" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Your Friends!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-uk-rWY">
-                                <rect key="frame" x="20" y="110" width="147" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aMM-uk-rWY" firstAttribute="top" secondItem="Gg4-21-sp9" secondAttribute="bottom" constant="8" symbolic="YES" id="7z3-gw-fiL"/>
-                            <constraint firstItem="Gg4-21-sp9" firstAttribute="centerX" secondItem="uh0-V4-T2l" secondAttribute="centerX" id="EHV-CK-bjL"/>
-                            <constraint firstItem="uh0-V4-T2l" firstAttribute="top" secondItem="aMM-uk-rWY" secondAttribute="bottom" constant="8" symbolic="YES" id="I77-sQ-Tg8"/>
-                            <constraint firstItem="Gg4-21-sp9" firstAttribute="top" secondItem="A6M-YN-N9P" secondAttribute="bottom" constant="8" symbolic="YES" id="c5H-aa-P7r"/>
-                            <constraint firstAttribute="trailing" secondItem="uh0-V4-T2l" secondAttribute="trailing" id="gr4-EU-pNH"/>
-                            <constraint firstAttribute="bottom" secondItem="uh0-V4-T2l" secondAttribute="bottom" id="uGJ-8x-1qg"/>
-                            <constraint firstItem="uh0-V4-T2l" firstAttribute="leading" secondItem="rlF-al-Gvo" secondAttribute="leading" id="vbg-yx-gt0"/>
-                            <constraint firstItem="Gg4-21-sp9" firstAttribute="leading" secondItem="rlF-al-Gvo" secondAttribute="leadingMargin" constant="4" id="wbt-Ah-Hj1"/>
-                            <constraint firstItem="aMM-uk-rWY" firstAttribute="leading" secondItem="Gg4-21-sp9" secondAttribute="leading" id="zLt-67-7SB"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Create Battle" id="xFL-sc-wiq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="blk-N5-Q5h">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="btnDoneTapped:" destination="D6M-PL-nEE" id="CaQ-es-zZo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="btnDone" destination="blk-N5-Q5h" id="dU9-1c-q5n"/>
-                        <outlet property="searchDisplayController" destination="KzX-oa-ujM" id="IX3-uf-dvT"/>
-                        <outlet property="txtFieldTitle" destination="Gg4-21-sp9" id="hi8-4H-IFD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HUH-O1-f01" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="KzX-oa-ujM">
-                    <connections>
-                        <outlet property="delegate" destination="D6M-PL-nEE" id="blx-dH-vd2"/>
-                        <outlet property="searchContentsController" destination="D6M-PL-nEE" id="shG-Tc-nl5"/>
-                        <outlet property="searchResultsDataSource" destination="D6M-PL-nEE" id="xCq-VH-qN2"/>
-                        <outlet property="searchResultsDelegate" destination="D6M-PL-nEE" id="qOs-vl-BHP"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="2210.5" y="-186.5"/>
         </scene>
         <!--Submit View Controller-->
         <scene sceneID="rXR-md-9Tt">

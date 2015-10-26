@@ -15,15 +15,13 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var btnSaveUsername: UIButton!
     @IBOutlet weak var lblUserTaken: UILabel!
     
-    // Initialize a Parse/Facebook user
+    // Create Parse/Facebook user
     var user:PFUser?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBarHidden = true
-        
-        setPFUser()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +30,33 @@ class NewUserViewController: UIViewController {
     }
     
     @IBAction func btnSaveUsername(sender: AnyObject) {
-        self.user = PFUser.currentUser()!
-        
         if (!textFieldUsername.text!.isEmpty){
-            self.user!.setObject(textFieldUsername.text!, forKey: "username")
-            self.user!.saveInBackground()
+            if (validUserName(textFieldUsername.text!) == true){
+                setPFUser(textFieldUsername.text!)
+                
+                // After saving the username details, redirect to the Battles Page
+                redirectToBattlesTableView()
+            }
+        } else {
+            lblUserTaken.text = "Please select a username"
         }
+    }
+    
+    func redirectToBattlesTableView() -> Void {
+        var storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = controllerNav
+    }
+    
+    // @desc: Checks Parse and sees if the username is taken or not
+    func validUserName(username: String) -> Bool {
+        var validUserName = false
         
         do {
             var query = PFUser.query()
@@ -46,16 +65,7 @@ class NewUserViewController: UIViewController {
             
             if(usernameP.count == 0) {
                 print("Valid username")
-                // After saving the username details, redirect to the Battles Page
-                var storyboard = UIStoryboard(name: "Home", bundle: nil)
-                
-                let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
-                
-                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
-                appDelegate.window?.rootViewController = protectedPageNav
+                validUserName = true
             } else {
                 print("Username already taken")
                 lblUserTaken.text = "Username already taken"
@@ -63,12 +73,14 @@ class NewUserViewController: UIViewController {
         } catch {
             print("Something went wrong!")
         }
+        
+        return validUserName
     }
     
-    // Desc: Make a Facebook Graph request and pull all of the necessary
-    //       user information. Make the request and set up the PFUser and save
-    //       in the Parse data base.
-    func setPFUser() -> Void {
+    // @desc: Make a Facebook Graph request and pull all of the necessary
+    //        user information. Make the request and set up the PFUser and save
+    //        in the Parse data base.
+    func setPFUser(username:String) -> Void {
         // Facebook request parameters for a user
         var requestParameters = ["fields": "id, email, first_name, last_name"]
         
@@ -102,6 +114,10 @@ class NewUserViewController: UIViewController {
                 if(userEmail != nil){
                     self.user!.setObject(userEmail!, forKey: "email")
                 }
+                
+                // Save username
+                self.user!.setObject(username, forKey: "username")
+            
                 
                 // We need to dispatch an async task to perform this data fetching/downloading in the background. Otherwise app will appear to freeze for user
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
