@@ -159,7 +159,7 @@
 				43F087CC1BC07670007FD933 /* AudioToolbox.framework */,
 				43F087CA1BC0765E007FD933 /* Accounts.framework */,
 				43F087C91BC07623007FD933 /* ParseSDK */,
-				43F087A71BC07363007FD933 /* Category */,
+				43F087A71BC07363007FD933 /* Pikkl */,
 				43F087A61BC07363007FD933 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		43F087A71BC07363007FD933 /* Category */ = {
+		43F087A71BC07363007FD933 /* Pikkl */ = {
 			isa = PBXGroup;
 			children = (
 				50C316071BDD844D009EAD1F /* Home */,
@@ -189,6 +189,7 @@
 				50F822311BD4471A00048035 /* BattlesNavigationController.swift */,
 				50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */,
 			);
+			name = Pikkl;
 			path = Category;
 			sourceTree = "<group>";
 		};

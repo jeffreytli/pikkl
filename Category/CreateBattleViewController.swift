@@ -26,6 +26,10 @@ class CreateBattleViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func btnCancelTapped(sender: AnyObject) {
+        redirectToBattlesTableView()
+    }
+    
     @IBAction func btnDoneTapped(sender: AnyObject) {
         dispatch_async(dispatch_get_main_queue()) {
             let battleName = self.txtFieldTitle.text
@@ -38,6 +42,8 @@ class CreateBattleViewController: UIViewController {
                 self.navigationController?.popViewControllerAnimated(true)
                 
                 self.createBattle()
+                
+                self.redirectToBattlesTableView()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
                 (action:UIAlertAction) in
@@ -53,7 +59,7 @@ class CreateBattleViewController: UIViewController {
     
     func createBattle() -> Void {
         // create battle object
-        var battle = PFObject(className:"Battle")
+        let battle = PFObject(className:"Battle")
         
         battle["name"] = txtFieldTitle.text
         battle["creator"] = PFUser.currentUser()
@@ -71,7 +77,7 @@ class CreateBattleViewController: UIViewController {
     }
     
     func getFacebookFriends() -> Void {
-        var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        let fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             
             if error == nil {
@@ -80,5 +86,21 @@ class CreateBattleViewController: UIViewController {
                 print("Error Getting Friends \(error)");
             }
         }
+    }
+    
+    func redirectToBattlesTableView() -> Void {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+//        appDelegate.window?.rootViewController = protectedPageNav
+        
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
 }

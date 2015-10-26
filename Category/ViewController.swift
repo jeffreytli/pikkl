@@ -20,7 +20,7 @@ class ViewController: UIViewController{
         
         self.navigationController?.navigationBarHidden = true
         
-        var currentUser = PFUser.currentUser()
+        let currentUser = PFUser.currentUser()
         
         if currentUser != nil {
             print("EXISTING USER")
@@ -40,7 +40,7 @@ class ViewController: UIViewController{
     }
     
     func redirectToBattlesTableView() -> Void {
-        var storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
         let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
         
@@ -69,7 +69,7 @@ class ViewController: UIViewController{
             block: { (user:PFUser?, error:NSError?) -> Void in
                 if(error != nil) {
                     // Display an alert message
-                    var myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
+                    let myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
                     
                     let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
                     myAlert.addAction(okAction);
