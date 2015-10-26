@@ -9,8 +9,6 @@
 import UIKit
 
 class BattlesTableViewController: UITableViewController {
-    
-    
 
     let textCellIdentifier = "BattleCell"
 

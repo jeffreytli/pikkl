@@ -27,14 +27,6 @@ class ViewController: UIViewController{
             if (currentUser!.username != nil){
                 print("EXISTING USER - HAS USERNAME")
 //                // Redirect directly to BattlesViewController
-//                let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
-//
-//                let protectedPageNav = UINavigationController(rootViewController: protectedPage)
-//                
-//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                
-//                appDelegate.window?.rootViewController = protectedPageNav
-                
                 var storyboard = UIStoryboard(name: "Home", bundle: nil)
                 
                 let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
