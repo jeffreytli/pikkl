@@ -42,13 +42,15 @@ class ViewController: UIViewController{
     func redirectToBattlesTableView() -> Void {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
-        let protectedPage = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
         
-        let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+        let controllerNav = UINavigationController(rootViewController: controller)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = protectedPageNav
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
     
     func redirectToNewUserView() -> Void {
@@ -58,7 +60,9 @@ class ViewController: UIViewController{
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = controller
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
 
     // @desc: Implements the logic to login to Facebook if the user doesn't currently have a

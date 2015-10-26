@@ -50,7 +50,9 @@ class NewUserViewController: UIViewController {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.window?.rootViewController = controllerNav
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
     
     // @desc: Checks Parse and sees if the username is taken or not

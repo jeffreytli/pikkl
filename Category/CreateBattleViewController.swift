@@ -97,10 +97,7 @@ class CreateBattleViewController: UIViewController {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-//        appDelegate.window?.rootViewController = protectedPageNav
+        appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
         
-        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
-            appDelegate.window?.rootViewController = controllerNav
-            }, completion: nil)
     }
 }
