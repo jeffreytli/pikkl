@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Parse
+import FBSDKCoreKit
+import ParseFacebookUtilsV4
 
-class BattlesTableViewController: UITableViewController {
+class BattlesTableViewController: UITableViewController  {
 
     let textCellIdentifier = "BattleCell"
-
-    let battleCategories = ["Ugliest Friends", "Drunk Moments", "Worst Gift Ever", "My Super Powers", "Why Im Single", "Embarrsssinggggg", "Lemme Take A Selfie", "Worst Roommate Award", "Worst Picture Ever", "Im Stupid", "Best Caption", "Blessed", "I Hate Life"]
+    
+    var battleIDs:[String] = []
     
 //    @IBOutlet weak var battlesTableView: UITableView!
     
     @IBOutlet weak var battlesTableView: UITableView!
     
     override func viewDidLoad() {
+        self.fetchAllObjects()
         super.viewDidLoad()
     }
 
@@ -32,17 +36,39 @@ class BattlesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return battleCategories.count
+        print(String(battleIDs.count))
+        
+        return battleIDs.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
-        let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
+        print(String(battleIDs.count))
         
+        
+        let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
         let row = indexPath.row
-        cell.lblBattleName.text = battleCategories[row];
-        //cell.textLabel?.text = battleCategories[row];
+        var query:PFQuery = PFQuery(className: "Battle")
+        //query = query.whereKey("objectId", equalTo: battleIDs[row])
+        
+       // query.limit = 1
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("WAZZAP")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        cell.lblBattleName?.text = object["name"] as! String;
+                    }
+                }
+            } else {
+                // Log details of the failure
+                 print("Error: \(error!)")
+            }
+        }
         
         return cell
     }
@@ -51,7 +77,7 @@ class BattlesTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        print(battleCategories[row])
+      //  print(battleCategories[row])
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -68,5 +94,30 @@ class BattlesTableViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
+    }
+    
+    func fetchAllObjects() {
+        let query: PFQuery = PFQuery(className: "Battle")
+       // query.whereKey("name", equalTo: PFUser.currentUser()!.username!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+         
+                    for object in objects {
+                        print(object.objectId)
+                        print(object["name"])
+                        self.battleIDs.append(object.objectId! as String)
+                    }
+                }
+            } else {
+                // Log details of the failure
+               // println("Error: \(error!) \(error!.userInfo!)")
+            }   
+        }
     }
 }
