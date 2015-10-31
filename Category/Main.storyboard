@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="1113.5" y="277.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="XlK-Zd-akF">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="F5h-tZ-gOB" customClass="ViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="F5h-tZ-gOB" customClass="LoginViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wsX-kO-VbI"/>
                         <viewControllerLayoutGuide type="bottom" id="mgc-rU-KI7"/>

@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import Parse
 import ParseFacebookUtilsV4
 
-class ViewController: UIViewController{
+class LoginViewController: UIViewController{
 
     @IBOutlet weak var btnFBLogin: UIButton!
     
