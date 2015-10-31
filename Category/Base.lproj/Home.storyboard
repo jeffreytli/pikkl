@@ -89,12 +89,6 @@
         <!--Submit View Controller-->
         <scene sceneID="rXR-md-9Tt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k6H-tH-FXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="qHE-4M-poe">
-                    <connections>
-                        <action selector="imgTapSubmit:" destination="ncs-Bk-K6O" id="uLr-cp-YV6"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController id="ncs-Bk-K6O" customClass="SubmitViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0zt-c6-l31"/>
@@ -158,13 +152,18 @@
                         <outlet property="lblBattleTitle" destination="kdx-6k-jdn" id="bK2-A6-CVg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6H-tH-FXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qHE-4M-poe">
+                    <connections>
+                        <action selector="imgTapSubmit:" destination="ncs-Bk-K6O" id="uLr-cp-YV6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2198.5" y="-186.5"/>
         </scene>
         <!--Details-->
         <scene sceneID="cPl-uP-D8u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qsM-BJ-984" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="jov-U7-6tN" customClass="SubmitDetailsTableViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y24-ac-kFe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -191,6 +190,7 @@
                     <navigationItem key="navigationItem" title="Details" id="4Fy-1y-hYC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsM-BJ-984" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2749.5" y="-186.5"/>
         </scene>

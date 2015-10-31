@@ -10,18 +10,22 @@ import UIKit
 import FBSDKLoginKit
 import Parse
 import ParseFacebookUtilsV4
+import CoreData
 
 class BattlesTableViewController: UITableViewController {
 
     let textCellIdentifier = "BattleCell"
     
-    var battleIds:[String] = []
-    var battleNames:[String] = []
+    var data:BattleDataModel? = nil
+    var battles = [NSManagedObject]()
     
     @IBOutlet weak var battlesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        data = BattleDataModel()
+        battles = (data?.getBattles())!
         
         fetchAllObjects()
     }
@@ -47,7 +51,7 @@ class BattlesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return battleIds.count
+        return (data?.getBattlesCount())!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -56,7 +60,9 @@ class BattlesTableViewController: UITableViewController {
         
         let row = indexPath.row
         
-        cell.lblBattleName.text = battleNames[row];
+        let battle = battles[row]
+        
+        cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         
         return cell
     }
@@ -94,10 +100,15 @@ class BattlesTableViewController: UITableViewController {
                 if let objects = objects {
                     
                     for object in objects {
-                        print(object.objectId)
-                        print(object["name"])
-                        self.battleIds.append(object.objectId! as String)
-                        self.battleNames.append(object["name"] as! String)
+                        print("ObjectId: " + ((object.objectId)! as String))
+                        print("BattleName: " + ((object["name"])! as! String))
+                        
+                        // Save new objects into core data
+                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String)
+                        
+                        // TODO: Fix this, this is super hard-codey
+                        self.battles = (self.data?.getBattles())!
+                        
                         self.tableView.reloadData()
                     }
                 }

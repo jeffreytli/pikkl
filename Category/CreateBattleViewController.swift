@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import Parse
 import ParseFacebookUtilsV4
+import CoreData
 
 class CreateBattleViewController: UIViewController {
 
@@ -89,6 +90,7 @@ class CreateBattleViewController: UIViewController {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
+                sleep(1)
             } else {
                 // There was a problem, check error.description
             }
