@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/NewUserViewController.swift"
-            timestampString = "467525913.75514"
+            timestampString = "467955389.937294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "btnSaveUsername(_:)"
             landmarkType = "5">
          </BreakpointContent>

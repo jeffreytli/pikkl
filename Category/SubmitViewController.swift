@@ -16,19 +16,24 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     let imagePicker = UIImagePickerController()
     
-    @IBAction func imgTapSubmit(sender: AnyObject) {
-        //open camera for image upload
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         imgSubmit.image = UIImage(named: "cameraIcon")
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false;
+        }
+        else {
+            return true;
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +55,14 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func imgTapSubmit(sender: AnyObject) {
+        //open camera for image upload
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
 }
