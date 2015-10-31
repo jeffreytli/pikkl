@@ -26,12 +26,13 @@ class ViewController: UIViewController{
             print("EXISTING USER")
             
             if (currentUser!.username != nil){
-                print("EXISTING USER - HAS USERNAME")
+                print("EXISTING USER - HAS USERNAME (" + currentUser!.username! + ")")
                 
                 // Redirect directly to BattlesViewController
                 redirectToBattlesTableView()
+            } else {
+                print("EXISTING USER - NO USERNAME")
             }
-            print("EXISTING USER - NO USERNAME")
         }
     }
     
@@ -89,5 +90,29 @@ class ViewController: UIViewController{
                 // to select a username
                 self.redirectToNewUserView()
         })
+    }
+    
+    func fetchAllObjects() {
+        let query: PFQuery = PFQuery(className: "Battle")
+        // query.whereKey("name", equalTo: PFUser.currentUser()!.username!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    
+                    for object in objects {
+                        print(object.objectId)
+                        print(object["name"])
+                    }
+                }
+            } else {
+                // Log details of the failure
+                // println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
     }
 }

@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Category/ViewController.swift"
-            timestampString = "467020039.122422"
+            filePath = "Category/NewUserViewController.swift"
+            timestampString = "467525913.75514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "btnSaveUsername(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,59 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Category/NewUserViewController.swift"
-            timestampString = "467525913.75514"
+            filePath = "Category/ViewController.swift"
+            timestampString = "467948415.08468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "btnSaveUsername(_:)"
-            landmarkType = "5">
+            startingLineNumber = "9"
+            endingLineNumber = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pikkl.ViewController.__deallocating_deinit"
+                  moduleName = "pikkl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeffreyli/iOSProjects/pikkl/pikkl/Category/ViewController.swift"
+                  timestampString = "467948415.140716"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pikkl.ViewController.init (pikkl.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; pikkl.ViewController"
+                  moduleName = "pikkl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeffreyli/iOSProjects/pikkl/pikkl/Category/ViewController.swift"
+                  timestampString = "467948415.147506"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pikkl.ViewController.init (pikkl.ViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;pikkl.ViewController&gt;"
+                  moduleName = "pikkl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeffreyli/iOSProjects/pikkl/pikkl/Category/ViewController.swift"
+                  timestampString = "467948415.147708"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

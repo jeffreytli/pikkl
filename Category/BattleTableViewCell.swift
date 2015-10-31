@@ -41,11 +41,11 @@ class BattleTableViewCell: UITableViewCell {
         }
         
         let index1 = String(icon1)
-        print(index1)
+//        print(index1)
         let index2 = String(icon2)
-        print(index2)
+//        print(index2)
         let index3 = String(icon3)
-        print(index3)
+//        print(index3)
         
         imgViewIconOne.image = UIImage(named: "temp" + index1)
         imgViewIconTwo.image = UIImage(named: "temp" + index2)

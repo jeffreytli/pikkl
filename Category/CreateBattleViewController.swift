@@ -19,7 +19,7 @@ class CreateBattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getFacebookFriends()
+        //getFacebookFriends()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,26 +34,34 @@ class CreateBattleViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             let battleName = self.txtFieldTitle.text
             
-            let alertController = UIAlertController(title: "Create '" + battleName! + "' Battle", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
-                (action:UIAlertAction) in
-                // Save to Parse database and return to previous view
-                self.navigationController?.popViewControllerAnimated(true)
+            if (!battleName!.isEmpty){
+                let alertController = UIAlertController(title: "Create '" + battleName! + "' Battle", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
                 
-                self.createBattle()
+                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Save to Parse database and return to previous view
+                    self.navigationController?.popViewControllerAnimated(true)
+                    
+                    self.createBattle()
+                    
+                    self.redirectToBattlesTableView()
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Do nothing
+                }
                 
-                self.redirectToBattlesTableView()
+                alertController.addAction(OKAction)
+                alertController.addAction(cancelAction)
+                
+                self.presentViewController(alertController, animated: true, completion:nil)
+            } else {
+                let alertController = UIAlertController(title: "", message:
+                    "Please enter a battle name", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
-                (action:UIAlertAction) in
-                // Do nothing
-            }
-            
-            alertController.addAction(OKAction)
-            alertController.addAction(cancelAction)
-            
-            self.presentViewController(alertController, animated: true, completion:nil)
         }
     }
     
@@ -100,7 +108,5 @@ class CreateBattleViewController: UIViewController {
         UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
             appDelegate.window?.rootViewController = controllerNav
             }, completion: nil)
-        
-//        appDelegate.window?.rootViewController = controllerNav
     }
 }
