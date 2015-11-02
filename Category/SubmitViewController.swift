@@ -15,7 +15,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imgSubmit: UIImageView!
     
     let imagePicker = UIImagePickerController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -52,6 +52,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     }
     
+    
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -65,4 +66,3 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
 }
-

@@ -19,7 +19,6 @@ class CreateBattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //getFacebookFriends()
     }
     

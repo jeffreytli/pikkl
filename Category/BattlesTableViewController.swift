@@ -23,7 +23,6 @@ class BattlesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         data = BattleDataModel()
         battles = (data?.getBattles())!
         
@@ -64,13 +63,16 @@ class BattlesTableViewController: UITableViewController {
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         
+        //must build hex converter
+        //cell.backgroundColor = UIColor(red: 0x03, green: 0xC9, blue: 0xA9, alpha: 1)
+        
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let row = indexPath.row
+        var row = indexPath.row
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -118,4 +120,5 @@ class BattlesTableViewController: UITableViewController {
             }
         }
     }
+    
 }
