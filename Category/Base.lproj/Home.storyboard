@@ -99,21 +99,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdx-6k-jdn">
-                                <rect key="frame" x="20" y="58" width="335" height="84"/>
+                                <rect key="frame" x="20" y="64" width="335" height="38"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="X2x-Q8-28d"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v3n-Ym-XGT">
-                                <rect key="frame" x="20" y="203" width="335" height="2"/>
+                                <rect key="frame" x="20" y="100" width="335" height="2"/>
                                 <animations/>
                             </progressView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
-                                <rect key="frame" x="20" y="313" width="335" height="286"/>
+                                <rect key="frame" x="20" y="191" width="335" height="286"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -127,15 +124,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="viy-rs-pmQ" firstAttribute="trailing" secondItem="v3n-Ym-XGT" secondAttribute="trailing" id="0Ws-vh-EGF"/>
-                            <constraint firstItem="kdx-6k-jdn" firstAttribute="top" secondItem="ms0-Mf-yzD" secondAttribute="topMargin" constant="58" id="0o6-2j-Nxk"/>
-                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="leading" secondItem="kdx-6k-jdn" secondAttribute="leading" id="1T2-rh-yQe"/>
-                            <constraint firstItem="kdx-6k-jdn" firstAttribute="trailing" secondItem="v3n-Ym-XGT" secondAttribute="trailing" id="8Hq-HZ-pYx"/>
-                            <constraint firstItem="h9v-cp-mlo" firstAttribute="top" secondItem="viy-rs-pmQ" secondAttribute="bottom" constant="24" id="JGb-6d-h55"/>
-                            <constraint firstItem="viy-rs-pmQ" firstAttribute="leading" secondItem="v3n-Ym-XGT" secondAttribute="leading" id="P2U-LD-OgV"/>
-                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="centerX" secondItem="ms0-Mf-yzD" secondAttribute="centerX" id="YKi-Ms-Quj"/>
-                            <constraint firstItem="kdx-6k-jdn" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" constant="4" id="dh2-dW-VkW"/>
-                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="top" secondItem="kdx-6k-jdn" secondAttribute="bottom" constant="61" id="zgT-9Z-xeK"/>
+                            <constraint firstItem="kdx-6k-jdn" firstAttribute="centerX" secondItem="ms0-Mf-yzD" secondAttribute="centerX" id="7cm-cP-VBx"/>
+                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="bottom" secondItem="kdx-6k-jdn" secondAttribute="bottom" id="SeA-kN-j8i"/>
+                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="leading" secondItem="viy-rs-pmQ" secondAttribute="leading" id="T9b-9x-pp9"/>
+                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="leading" secondItem="kdx-6k-jdn" secondAttribute="leading" id="VB9-HY-dtT"/>
+                            <constraint firstItem="kdx-6k-jdn" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" constant="4" id="brH-UG-bOS"/>
+                            <constraint firstItem="kdx-6k-jdn" firstAttribute="trailing" secondItem="v3n-Ym-XGT" secondAttribute="trailing" id="i54-Rl-cd6"/>
+                            <constraint firstItem="kdx-6k-jdn" firstAttribute="top" secondItem="0zt-c6-l31" secondAttribute="bottom" id="iKg-Hb-dmD"/>
+                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="trailing" secondItem="viy-rs-pmQ" secondAttribute="trailing" id="nDA-Jw-bWm"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="centerY" secondItem="ms0-Mf-yzD" secondAttribute="centerY" id="qMx-Ao-1vL"/>
+                            <constraint firstItem="v3n-Ym-XGT" firstAttribute="top" secondItem="0zt-c6-l31" secondAttribute="bottom" constant="36" id="qej-bL-LMC"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -161,7 +159,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2238.5" y="-186.5"/>
+            <point key="canvasLocation" x="2198.5" y="-186.5"/>
         </scene>
         <!--Details-->
         <scene sceneID="cPl-uP-D8u">
@@ -194,7 +192,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsM-BJ-984" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679.5" y="-186.5"/>
+            <point key="canvasLocation" x="2749.5" y="-186.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="66b-c0-JB2">

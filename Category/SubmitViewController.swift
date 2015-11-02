@@ -9,20 +9,13 @@
 import UIKit
 
 class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var lblBattleTitle: UILabel!
     
     @IBOutlet weak var imgSubmit: UIImageView!
     
     let imagePicker = UIImagePickerController()
     
-    @IBAction func imgTapSubmit(sender: AnyObject) {
-        //open camera for image upload
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -30,7 +23,18 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         // Do any additional setup after loading the view.
     }
-
+    
+    override func shouldAutorotate() -> Bool {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,11 +49,20 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         dismissViewControllerAnimated(true, completion: nil)
-    }
 
+    }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
+    @IBAction func imgTapSubmit(sender: AnyObject) {
+        //open camera for image upload
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
 }
+

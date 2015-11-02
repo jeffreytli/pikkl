@@ -13,7 +13,7 @@
 		436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */; };
 		436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */; };
 		43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087A81BC07363007FD933 /* AppDelegate.swift */; };
-		43F087AB1BC07363007FD933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087AA1BC07363007FD933 /* ViewController.swift */; };
+		43F087AB1BC07363007FD933 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087AA1BC07363007FD933 /* LoginViewController.swift */; };
 		43F087AE1BC07363007FD933 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F087AC1BC07363007FD933 /* Home.storyboard */; };
 		43F087B01BC07363007FD933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43F087AF1BC07363007FD933 /* Assets.xcassets */; };
 		43F087B31BC07363007FD933 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F087B11BC07363007FD933 /* LaunchScreen.storyboard */; };
@@ -37,6 +37,8 @@
 		43F087DF1BC076C8007FD933 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F087DE1BC076C8007FD933 /* libz.tbd */; };
 		43F087E11BC076D3007FD933 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F087E01BC076D3007FD933 /* libsqlite3.tbd */; };
 		43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43F087E21BC07975007FD933 /* Default-568h@2x.png */; };
+		5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D41BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld */; };
+		5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */; };
 		5029EA0D1BD2190E00288659 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5029EA0C1BD2190E00288659 /* loginButton.png */; };
 		50806D951BD4719100575253 /* temp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8B1BD4719100575253 /* temp1.png */; };
 		50806D961BD4719100575253 /* temp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8C1BD4719100575253 /* temp2.png */; };
@@ -54,6 +56,7 @@
 		50C316061BDD82B0009EAD1F /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C316051BDD82B0009EAD1F /* Create.storyboard */; };
 		50E303B21BD60E4A00F810B3 /* DataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */; };
 		50E303B41BD625E400F810B3 /* wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E303B31BD625E400F810B3 /* wallpaper.png */; };
+		50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 50F5EEFC1BE4903500C4E3F2 /* README.md */; };
 		50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F822311BD4471A00048035 /* BattlesNavigationController.swift */; };
 		581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */; };
 /* End PBXBuildFile section */
@@ -66,7 +69,7 @@
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
 		43F087A51BC07363007FD933 /* pikkl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pikkl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43F087AA1BC07363007FD933 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43F087AA1BC07363007FD933 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43F087AD1BC07363007FD933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		43F087AF1BC07363007FD933 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43F087B21BC07363007FD933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		43F087DE1BC076C8007FD933 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		43F087E01BC076D3007FD933 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		43F087E21BC07975007FD933 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5021C4D51BE47B1F00C37C9B /* BattleDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BattleDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleDataModel.swift; sourceTree = "<group>"; };
 		5029EA0C1BD2190E00288659 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 		50806D8B1BD4719100575253 /* temp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp1.png; sourceTree = "<group>"; };
 		50806D8C1BD4719100575253 /* temp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp2.png; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 		50C316051BDD82B0009EAD1F /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
 		50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelProtocol.swift; sourceTree = "<group>"; };
 		50E303B31BD625E400F810B3 /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
+		50F5EEFC1BE4903500C4E3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50F822311BD4471A00048035 /* BattlesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesNavigationController.swift; sourceTree = "<group>"; };
 		581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +151,7 @@
 		43F0879C1BC07363007FD933 = {
 			isa = PBXGroup;
 			children = (
+				50F5EEFC1BE4903500C4E3F2 /* README.md */,
 				43F087E21BC07975007FD933 /* Default-568h@2x.png */,
 				43F087E01BC076D3007FD933 /* libsqlite3.tbd */,
 				43F087DE1BC076C8007FD933 /* libz.tbd */,
@@ -180,14 +187,14 @@
 				50C316011BDD77D7009EAD1F /* Login */,
 				5029EA0B1BD218F100288659 /* images */,
 				43F087C01BC0746B007FD933 /* FacebookSDK */,
-				431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */,
-				431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */,
 				43F087A81BC07363007FD933 /* AppDelegate.swift */,
 				43F087AF1BC07363007FD933 /* Assets.xcassets */,
 				43F087B11BC07363007FD933 /* LaunchScreen.storyboard */,
 				43F087B41BC07363007FD933 /* Info.plist */,
 				50F822311BD4471A00048035 /* BattlesNavigationController.swift */,
 				50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */,
+				5021C4D41BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld */,
+				5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */,
 			);
 			name = Pikkl;
 			path = Category;
@@ -235,11 +242,20 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		505ED0EA1BE46B61008F2929 /* Submit */ = {
+			isa = PBXGroup;
+			children = (
+				431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */,
+				431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */,
+			);
+			name = Submit;
+			sourceTree = "<group>";
+		};
 		50C316011BDD77D7009EAD1F /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				50C316021BDD785E009EAD1F /* Main.storyboard */,
-				43F087AA1BC07363007FD933 /* ViewController.swift */,
+				43F087AA1BC07363007FD933 /* LoginViewController.swift */,
 				50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */,
 			);
 			name = Login;
@@ -248,8 +264,8 @@
 		50C316041BDD8224009EAD1F /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */,
 				50C316051BDD82B0009EAD1F /* Create.storyboard */,
+				436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */,
 			);
 			name = Create;
 			sourceTree = "<group>";
@@ -257,6 +273,7 @@
 		50C316071BDD844D009EAD1F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				505ED0EA1BE46B61008F2929 /* Submit */,
 				43F087AC1BC07363007FD933 /* Home.storyboard */,
 				436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */,
 				43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */,
@@ -352,11 +369,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */,
-				43F087AB1BC07363007FD933 /* ViewController.swift in Sources */,
+				43F087AB1BC07363007FD933 /* LoginViewController.swift in Sources */,
 				50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */,
 				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
+				50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */,
+				5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */,
 				431D05D41BDD5C8A00A9C14D /* SubmitViewController.swift in Sources */,
 				43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */,
+				5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */,
 				431D05D61BDD636900A9C14D /* SubmitDetailsTableViewController.swift in Sources */,
 				436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */,
 				43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */,
@@ -521,6 +541,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5021C4D41BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5021C4D51BE47B1F00C37C9B /* BattleDataModel.xcdatamodel */,
+			);
+			currentVersion = 5021C4D51BE47B1F00C37C9B /* BattleDataModel.xcdatamodel */;
+			path = BattleDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 43F0879D1BC07363007FD933 /* Project object */;
 }

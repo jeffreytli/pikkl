@@ -7,19 +7,38 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Parse
+import ParseFacebookUtilsV4
+import CoreData
 
 class BattlesTableViewController: UITableViewController {
 
     let textCellIdentifier = "BattleCell"
-
-    let battleCategories = ["Ugliest Friends", "Drunk Moments", "Worst Gift Ever", "My Super Powers", "Why Im Single", "Embarrsssinggggg", "Lemme Take A Selfie", "Worst Roommate Award", "Worst Picture Ever", "Im Stupid", "Best Caption", "Blessed", "I Hate Life"]
     
-//    @IBOutlet weak var battlesTableView: UITableView!
+    var data:BattleDataModel? = nil
+    var battles = [NSManagedObject]()
     
     @IBOutlet weak var battlesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        data = BattleDataModel()
+        battles = (data?.getBattles())!
+        
+        fetchAllObjects()
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false;
+        }
+        else {
+            return true;
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,17 +51,18 @@ class BattlesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return battleCategories.count
+        return (data?.getBattlesCount())!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
         let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
         
         let row = indexPath.row
-        cell.lblBattleName.text = battleCategories[row];
-        //cell.textLabel?.text = battleCategories[row];
+        
+        let battle = battles[row]
+        
+        cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         
         return cell
     }
@@ -51,7 +71,6 @@ class BattlesTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        print(battleCategories[row])
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -68,5 +87,35 @@ class BattlesTableViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
+    }
+    
+    func fetchAllObjects() {
+        let query: PFQuery = PFQuery(className: "Battle")
+        
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    
+                    for object in objects {
+                        print("ObjectId: " + ((object.objectId)! as String))
+                        print("BattleName: " + ((object["name"])! as! String))
+                        
+                        // Save new objects into core data
+                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String)
+                        
+                        // TODO: Fix this, this is super hard-codey
+                        self.battles = (self.data?.getBattles())!
+                        
+                        self.tableView.reloadData()
+                    }
+                }
+            } else {
+//                 Log details of the failure
+                 print("Error: \(error!)")
+            }
+        }
     }
 }

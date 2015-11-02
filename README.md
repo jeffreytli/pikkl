@@ -1,0 +1,1 @@
+Include in your Xcode project a README ﬁle that explains any difference between what is submitted for this release and what the App Idea Paper deﬁned as being included in this release, and why that difference exists.
