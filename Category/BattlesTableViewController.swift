@@ -13,6 +13,8 @@ import ParseFacebookUtilsV4
 import CoreData
 
 class BattlesTableViewController: UITableViewController {
+    
+    //testing my branch
 
     let textCellIdentifier = "BattleCell"
     
