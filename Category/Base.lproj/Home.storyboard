@@ -63,7 +63,7 @@
                                     <outlet property="imgViewIconTwo" destination="RBA-nR-vxv" id="2Sq-ZF-gec"/>
                                     <outlet property="lblBattleName" destination="Iq6-Zm-eGH" id="AKU-gc-hzm"/>
                                     <outlet property="lblTimeLeft" destination="bMG-WD-8Uo" id="qC0-Rz-xv2"/>
-                                    <segue destination="ncs-Bk-K6O" kind="show" id="4Pi-UX-lFp"/>
+                                    <segue destination="ncs-Bk-K6O" kind="show" identifier="SubmitPhoto" id="nh7-hk-z3d"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

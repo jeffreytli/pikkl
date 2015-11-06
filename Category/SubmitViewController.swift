@@ -11,18 +11,16 @@ import UIKit
 class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var lblBattleTitle: UILabel!
-    
     @IBOutlet weak var imgSubmit: UIImageView!
-    
     let imagePicker = UIImagePickerController()
-    
+    var battleTitle:String = ""
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         imgSubmit.image = UIImage(named: "cameraIcon")
-        
-        // Do any additional setup after loading the view.
+        lblBattleTitle.text = battleTitle
     }
     
     override func shouldAutorotate() -> Bool {

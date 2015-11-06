@@ -71,6 +71,7 @@ class BattlesTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
+        
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -116,6 +117,22 @@ class BattlesTableViewController: UITableViewController {
 //                 Log details of the failure
                  print("Error: \(error!)")
             }
+        }
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Do something for the ShowDetail segue
+        if segue.identifier == "SubmitPhoto" {
+            
+            let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as! BattleTableViewCell!;
+
+            // Get the destination view controller
+            let detailVC:SubmitViewController = segue.destinationViewController as! SubmitViewController
+            
+            // Pass in the title for the row selected
+            detailVC.battleTitle = currentCell.lblBattleName.text!
         }
     }
 }
