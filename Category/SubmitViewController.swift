@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Parse
+import ParseFacebookUtilsV4
+import CoreData
+
 
 class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -14,6 +19,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imgSubmit: UIImageView!
     let imagePicker = UIImagePickerController()
     var battleTitle:String = ""
+    var imgUploaded:Bool = false;
         
     
     override func viewDidLoad() {
@@ -40,16 +46,14 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imgSubmit.contentMode = .ScaleAspectFill
             imgSubmit.image = pickedImage
+            imgUploaded = true;
         }
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -62,5 +66,38 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func btnCreateBattleEntry(sender: AnyObject) {
+        //check is a little hacky, couldn't find more elegant way to check for this.
+        if(imgUploaded) {
+            createEntry()
+        } else {
+            print("can't create entry without image!")
+        }
+    }
+    
+    func createEntry() -> Void {
+        // create battle object
+        let entry = PFObject(className:"BattleEntry")
+        //saving as JPEG becase png was too large
+        let imageData = UIImageJPEGRepresentation(imgSubmit.image!, 1.0)
+        let imageFile = PFFile(name:"image.jpg", data:imageData!)
+        entry["image"] = imageFile
+        entry["owner"] = PFUser.currentUser()
+        entry["score"] = 0
+        
+        entry.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+                sleep(1)
+            } else {
+                // There was a problem, check error.description
+            }
+        }
+    }
+
+    
+    
     
 }
