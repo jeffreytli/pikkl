@@ -121,4 +121,9 @@ class BattlesTableViewController: UITableViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let path = self.tableView.indexPathForSelectedRow!
+        //SubmitViewController.battleName = self.detailForIndexPath(path)
+    }
+    
 }

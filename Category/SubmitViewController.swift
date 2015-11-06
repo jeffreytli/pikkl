@@ -15,11 +15,14 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imgSubmit: UIImageView!
     
     let imagePicker = UIImagePickerController()
+    
+    let battleName:String = "empty"
+    let battle:BattleDataModel = BattleDataModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        imgSubmit.image = UIImage(named: "cameraIcon")
+        imgSubmit.image = UIImage(named: "SubmitCamera")
         
         // Do any additional setup after loading the view.
     }
