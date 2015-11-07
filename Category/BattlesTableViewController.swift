@@ -12,14 +12,20 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
+//will be used to determine which segues need to be triggered
+enum Stage {
+    case SUBMIT
+    case VOTE
+    case FINAL
+}
+
 class BattlesTableViewController: UITableViewController {
     
-    //testing my branch
-
     let textCellIdentifier = "BattleCell"
     
     var data:BattleDataModel? = nil
     var battles = [NSManagedObject]()
+    var currentStage = Stage.SUBMIT
     
     @IBOutlet weak var battlesTableView: UITableView!
     
@@ -73,6 +79,15 @@ class BattlesTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
+        
+        if(currentStage == Stage.SUBMIT) {
+            self.performSegueWithIdentifier("vote", sender: self)
+        } else if(currentStage == Stage.VOTE) {
+            
+        } else if(currentStage == Stage.FINAL) {
+            
+        }
+        
         
     }
     
@@ -135,6 +150,7 @@ class BattlesTableViewController: UITableViewController {
             
             // Pass in the title for the row selected
             detailVC.battleTitle = currentCell.lblBattleName.text!
+            detailVC.battleID = (battles[indexPath!.row].valueForKey("objectId") as? String)!
         }
     }
 }

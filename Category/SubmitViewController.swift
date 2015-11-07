@@ -20,6 +20,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     let imagePicker = UIImagePickerController()
     var battleTitle:String = ""
     var imgUploaded:Bool = false;
+    var battleID = ""
         
     
     override func viewDidLoad() {
@@ -71,6 +72,10 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         //check is a little hacky, couldn't find more elegant way to check for this.
         if(imgUploaded) {
             createEntry()
+            
+            
+            //add entry to parent battle
+            
         } else {
             print("can't create entry without image!")
         }
@@ -85,6 +90,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         entry["image"] = imageFile
         entry["owner"] = PFUser.currentUser()
         entry["score"] = 0
+        entry["battle"] = battleID
         
         entry.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -95,8 +101,38 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
                 // There was a problem, check error.description
             }
         }
+        
+        
+        //might be better to just query all entries for those that match the battle ID rather than keepin track of it in a battle?
+        //objectByID(entry)
     }
-
+    
+    func objectByID(entryToAdd:PFObject) {
+            let query = PFQuery(className:"Battle")
+        query.whereKey("objectId", equalTo:battleID)
+            query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    
+                    for object in objects {
+                        print("ObjectId: " + ((object.objectId)! as String))
+                        print("BattleName: " + ((object["name"])! as! String))
+                        
+                        var entries = object["entries"] as! [PFObject]
+                        entries.append(entryToAdd)
+                        object["entries"] = entries
+                        object.saveInBackground()
+                    }
+                }
+            } else {
+                //                 Log details of the failure
+                print("Error: \(error!)")
+            }
+        }
+    }
     
     
     

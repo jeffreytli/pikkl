@@ -81,8 +81,10 @@ class CreateBattleViewController: UIViewController {
         // create battle object
         let battle = PFObject(className:"Battle")
         
+        let entryArr:[PFObject] = []
         battle["name"] = txtFieldTitle.text
         battle["creator"] = PFUser.currentUser()
+        battle["entries"] = entryArr
         // people invited to battle
         // time left in battle
         
