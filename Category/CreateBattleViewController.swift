@@ -17,10 +17,11 @@ class CreateBattleViewController: UIViewController {
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var txtFieldTitle: UITextField!
     
+    var friendIDs = [String]()
+    var friendNames = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //getFacebookFriends()
     }
     
     override func shouldAutorotate() -> Bool {
@@ -40,6 +41,9 @@ class CreateBattleViewController: UIViewController {
     
     @IBAction func btnCancelTapped(sender: AnyObject) {
         redirectToBattlesTableView()
+    }
+    @IBAction func btnInviteFriends(sender: AnyObject) {
+        getFacebookFriends()
     }
     
     @IBAction func btnDoneTapped(sender: AnyObject) {
@@ -103,6 +107,18 @@ class CreateBattleViewController: UIViewController {
             
             if error == nil {
                 print("Friends are : \(result)")
+                var friendObjects = result["data"] as! [NSDictionary]
+                for friendObject in friendObjects {
+                    var friendID = friendObject["id"] as! NSString
+                    var friendName = friendObject["name"] as! NSString
+                    
+                    self.friendIDs.append(friendID as String)
+                    self.friendNames.append(friendName as String)
+                    
+                    print(friendObject["id"] as! NSString)
+                    print(friendObject["name"] as! NSString)
+                }
+                print("\(friendObjects.count)")
             } else {
                 print("Error Getting Friends \(error)");
             }
@@ -122,4 +138,12 @@ class CreateBattleViewController: UIViewController {
             appDelegate.window?.rootViewController = controllerNav
             }, completion: nil)
     }
+    
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    
 }
