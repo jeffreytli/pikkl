@@ -50,6 +50,8 @@
 		50806D9C1BD4719100575253 /* temp8.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D921BD4719100575253 /* temp8.png */; };
 		50806D9D1BD4719100575253 /* temp9.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D931BD4719100575253 /* temp9.png */; };
 		50806D9E1BD4719100575253 /* temp10.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D941BD4719100575253 /* temp10.png */; };
+		508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B52631BEE96FF00E32D7F /* SwiftyJSON.swift */; };
+		508B52661BEE9BED00E32D7F /* InviteFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B52651BEE9BED00E32D7F /* InviteFriendsTableViewController.swift */; };
 		50AE72811BD35F2000F562B3 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 50AE72801BD35F2000F562B3 /* plus.png */; };
 		50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */; };
 		50C316031BDD785E009EAD1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C316021BDD785E009EAD1F /* Main.storyboard */; };
@@ -107,6 +109,8 @@
 		50806D921BD4719100575253 /* temp8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp8.png; sourceTree = "<group>"; };
 		50806D931BD4719100575253 /* temp9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp9.png; sourceTree = "<group>"; };
 		50806D941BD4719100575253 /* temp10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp10.png; sourceTree = "<group>"; };
+		508B52631BEE96FF00E32D7F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
+		508B52651BEE9BED00E32D7F /* InviteFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsTableViewController.swift; sourceTree = "<group>"; };
 		50AE72801BD35F2000F562B3 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		50BE2CFB1BCB05DD0096618A /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		50C316021BDD785E009EAD1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				43F087A81BC07363007FD933 /* AppDelegate.swift */,
 				43F087AF1BC07363007FD933 /* Assets.xcassets */,
 				43F087B11BC07363007FD933 /* LaunchScreen.storyboard */,
+				508B52631BEE96FF00E32D7F /* SwiftyJSON.swift */,
 				43F087B41BC07363007FD933 /* Info.plist */,
 				50F822311BD4471A00048035 /* BattlesNavigationController.swift */,
 				50E303B11BD60E4A00F810B3 /* DataModelProtocol.swift */,
@@ -266,6 +271,7 @@
 			children = (
 				50C316051BDD82B0009EAD1F /* Create.storyboard */,
 				436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */,
+				508B52651BEE9BED00E32D7F /* InviteFriendsTableViewController.swift */,
 			);
 			name = Create;
 			sourceTree = "<group>";
@@ -371,8 +377,10 @@
 				436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */,
 				43F087AB1BC07363007FD933 /* LoginViewController.swift in Sources */,
 				50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */,
+				508B52661BEE9BED00E32D7F /* InviteFriendsTableViewController.swift in Sources */,
 				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
 				50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */,
+				508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */,
 				5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */,
 				431D05D41BDD5C8A00A9C14D /* SubmitViewController.swift in Sources */,
 				43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */,

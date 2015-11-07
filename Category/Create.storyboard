@@ -49,7 +49,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Invite friends"/>
                                 <connections>
-                                    <segue destination="7tJ-Fc-e88" kind="show" id="bOK-PH-jdT"/>
+                                    <action selector="btnInviteFriends:" destination="6nl-TT-FpP" eventType="touchUpInside" id="PYF-ql-4Bp"/>
+                                    <segue destination="s7j-k9-50e" kind="show" id="ct4-Eh-Frg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,20 +104,20 @@
             </objects>
             <point key="canvasLocation" x="3022.5" y="-186.5"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="GQg-vX-AIk">
+        <!--Invite Friends Table View Controller-->
+        <scene sceneID="aMY-1n-brc">
             <objects>
-                <tableViewController id="7tJ-Fc-e88" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q8p-Zf-31l">
+                <tableViewController id="s7j-k9-50e" customClass="InviteFriendsTableViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="X8V-er-Gfk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WZZ-uQ-1fr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FeD-Ix-QA2">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WZZ-uQ-1fr" id="mw2-eP-I0s">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FeD-Ix-QA2" id="oRg-kd-Rxj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -125,15 +126,15 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="7tJ-Fc-e88" id="9an-Rq-aZJ"/>
-                            <outlet property="delegate" destination="7tJ-Fc-e88" id="nqV-h8-DAb"/>
+                            <outlet property="dataSource" destination="s7j-k9-50e" id="i52-J2-869"/>
+                            <outlet property="delegate" destination="s7j-k9-50e" id="kwB-NL-tvo"/>
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cwn-bN-mnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcZ-ts-bql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3567.5" y="-186.5"/>
+            <point key="canvasLocation" x="3555.5" y="-186.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fv3-4g-bv4">
