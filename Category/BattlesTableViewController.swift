@@ -78,17 +78,18 @@ class BattlesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        
         let row = indexPath.row
         
+        
         if(currentStage == Stage.SUBMIT) {
-            self.performSegueWithIdentifier("vote", sender: self)
+            self.performSegueWithIdentifier("SubmitPhoto", sender: indexPath)
         } else if(currentStage == Stage.VOTE) {
             
         } else if(currentStage == Stage.FINAL) {
             
         }
-        
-        
+
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -142,15 +143,15 @@ class BattlesTableViewController: UITableViewController {
         // Do something for the ShowDetail segue
         if segue.identifier == "SubmitPhoto" {
             
-            let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
-            let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as! BattleTableViewCell!;
+            let indexPath:NSIndexPath = sender as! NSIndexPath
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
 
             // Get the destination view controller
             let detailVC:SubmitViewController = segue.destinationViewController as! SubmitViewController
             
             // Pass in the title for the row selected
             detailVC.battleTitle = currentCell.lblBattleName.text!
-            detailVC.battleID = (battles[indexPath!.row].valueForKey("objectId") as? String)!
+            detailVC.battleID = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
     }
 }

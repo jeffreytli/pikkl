@@ -72,15 +72,12 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         //check is a little hacky, couldn't find more elegant way to check for this.
         if(imgUploaded) {
             createEntry()
-            
-            
-            //add entry to parent battle
-            
         } else {
             print("can't create entry without image!")
         }
     }
     
+    //create PF Entry and call method to add Entry to battle object
     func createEntry() -> Void {
         // create battle object
         let entry = PFObject(className:"BattleEntry")
@@ -101,15 +98,13 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
                 // There was a problem, check error.description
             }
         }
-        
-        
-        //might be better to just query all entries for those that match the battle ID rather than keepin track of it in a battle?
-        //objectByID(entry)
+        addEntry(entry) //assuming we continue to let battle's keep an array of their entries
     }
     
-    func objectByID(entryToAdd:PFObject) {
+    //add battle entry to parent battle object
+    func addEntry(entryToAdd:PFObject) {
             let query = PFQuery(className:"Battle")
-        query.whereKey("objectId", equalTo:battleID)
+            query.whereKey("objectId", equalTo:battleID)
             query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 // The find succeeded.

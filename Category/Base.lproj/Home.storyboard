@@ -63,7 +63,6 @@
                                     <outlet property="imgViewIconTwo" destination="RBA-nR-vxv" id="2Sq-ZF-gec"/>
                                     <outlet property="lblBattleName" destination="Iq6-Zm-eGH" id="AKU-gc-hzm"/>
                                     <outlet property="lblTimeLeft" destination="bMG-WD-8Uo" id="qC0-Rz-xv2"/>
-                                    <segue destination="ncs-Bk-K6O" kind="show" identifier="SubmitPhoto" id="nh7-hk-z3d"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,10 +80,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="ncs-Bk-K6O" kind="show" identifier="SubmitPhoto" id="aeY-0z-MRu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JN5-bZ-EmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675.5" y="-186.5"/>
+            <point key="canvasLocation" x="1691.5" y="-186.5"/>
         </scene>
         <!--Submit View Controller-->
         <scene sceneID="rXR-md-9Tt">
