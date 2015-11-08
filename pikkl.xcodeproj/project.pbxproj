@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		431D05D41BDD5C8A00A9C14D /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */; };
 		431D05D61BDD636900A9C14D /* SubmitDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */; };
+		433EC7011BEECB1D00348288 /* VoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7001BEECB1D00348288 /* VoteTableViewController.swift */; };
+		433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */; };
+		433EC7051BEECB7600348288 /* FinalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7041BEECB7600348288 /* FinalTableViewController.swift */; };
 		43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */; };
 		436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */; };
 		436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */; };
@@ -66,6 +69,9 @@
 /* Begin PBXFileReference section */
 		431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitDetailsTableViewController.swift; sourceTree = "<group>"; };
+		433EC7001BEECB1D00348288 /* VoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteTableViewController.swift; sourceTree = "<group>"; };
+		433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteForEntryViewController.swift; sourceTree = "<group>"; };
+		433EC7041BEECB7600348288 /* FinalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalTableViewController.swift; sourceTree = "<group>"; };
 		43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewController.swift; sourceTree = "<group>"; };
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +158,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		433EC6FE1BEECAD200348288 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				433EC7001BEECB1D00348288 /* VoteTableViewController.swift */,
+				433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */,
+			);
+			name = Vote;
+			sourceTree = "<group>";
+		};
+		433EC6FF1BEECADE00348288 /* Final */ = {
+			isa = PBXGroup;
+			children = (
+				433EC7041BEECB7600348288 /* FinalTableViewController.swift */,
+			);
+			name = Final;
+			sourceTree = "<group>";
+		};
 		43F0879C1BC07363007FD933 = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +302,8 @@
 		50C316071BDD844D009EAD1F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				433EC6FF1BEECADE00348288 /* Final */,
+				433EC6FE1BEECAD200348288 /* Vote */,
 				505ED0EA1BE46B61008F2929 /* Submit */,
 				43F087AC1BC07363007FD933 /* Home.storyboard */,
 				436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */,
@@ -380,6 +405,7 @@
 				508B52661BEE9BED00E32D7F /* InviteFriendsTableViewController.swift in Sources */,
 				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
 				50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */,
+				433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */,
 				508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */,
 				5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */,
 				431D05D41BDD5C8A00A9C14D /* SubmitViewController.swift in Sources */,
@@ -387,7 +413,9 @@
 				5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */,
 				431D05D61BDD636900A9C14D /* SubmitDetailsTableViewController.swift in Sources */,
 				436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */,
+				433EC7011BEECB1D00348288 /* VoteTableViewController.swift in Sources */,
 				43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */,
+				433EC7051BEECB7600348288 /* FinalTableViewController.swift in Sources */,
 				50E303B21BD60E4A00F810B3 /* DataModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

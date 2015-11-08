@@ -25,7 +25,7 @@ class BattlesTableViewController: UITableViewController {
     
     var data:BattleDataModel? = nil
     var battles = [NSManagedObject]()
-    var currentStage = Stage.SUBMIT
+    var currentStage = Stage.FINAL
     
     @IBOutlet weak var battlesTableView: UITableView!
     
@@ -83,11 +83,11 @@ class BattlesTableViewController: UITableViewController {
         
         
         if(currentStage == Stage.SUBMIT) {
-            self.performSegueWithIdentifier("SubmitPhoto", sender: indexPath)
+            self.performSegueWithIdentifier("Submit", sender: indexPath)
         } else if(currentStage == Stage.VOTE) {
-            
+            self.performSegueWithIdentifier("Vote", sender: indexPath)
         } else if(currentStage == Stage.FINAL) {
-            
+            self.performSegueWithIdentifier("Final", sender: indexPath)
         }
 
     }
@@ -141,7 +141,7 @@ class BattlesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do something for the ShowDetail segue
-        if segue.identifier == "SubmitPhoto" {
+        if segue.identifier == "Submit" {
             
             let indexPath:NSIndexPath = sender as! NSIndexPath
             let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
