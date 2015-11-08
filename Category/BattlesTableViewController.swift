@@ -12,7 +12,7 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
-class BattlesTableViewController: UITableViewController {
+class BattlesTableViewController: UITableViewController  {
 
     let textCellIdentifier = "BattleCell"
     
@@ -22,6 +22,7 @@ class BattlesTableViewController: UITableViewController {
     @IBOutlet weak var battlesTableView: UITableView!
     
     override func viewDidLoad() {
+        self.fetchAllObjects()
         super.viewDidLoad()
         data = BattleDataModel()
         battles = (data?.getBattles())!
@@ -55,8 +56,10 @@ class BattlesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
+        //print(String(battleIDs.count))
         
+        
+        let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
         let row = indexPath.row
         
         let battle = battles[row]
@@ -71,8 +74,8 @@ class BattlesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         var row = indexPath.row
+
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -95,6 +98,7 @@ class BattlesTableViewController: UITableViewController {
         let query: PFQuery = PFQuery(className: "Battle")
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+
             if error == nil {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
@@ -125,5 +129,5 @@ class BattlesTableViewController: UITableViewController {
         let path = self.tableView.indexPathForSelectedRow!
         //SubmitViewController.battleName = self.detailForIndexPath(path)
     }
-    
+
 }
