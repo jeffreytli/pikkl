@@ -10,6 +10,7 @@ import UIKit
 
 class BattleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblCurrentPhase: UILabel!
     @IBOutlet weak var lblBattleName: UILabel!
     @IBOutlet weak var lblTimeLeft: UILabel!
     @IBOutlet weak var imgViewIconOne: UIImageView!

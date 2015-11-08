@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-WD-8Uo">
-                                            <rect key="frame" x="107" y="43" width="240" height="29"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-WD-8Uo">
+                                            <rect key="frame" x="107" y="65" width="227" height="29"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,6 +52,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Phase: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-n0-k1R">
+                                            <rect key="frame" x="107" y="48" width="227" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -62,6 +69,7 @@
                                     <outlet property="imgViewIconThree" destination="Rea-kE-j9N" id="5e7-nW-qzz"/>
                                     <outlet property="imgViewIconTwo" destination="RBA-nR-vxv" id="2Sq-ZF-gec"/>
                                     <outlet property="lblBattleName" destination="Iq6-Zm-eGH" id="AKU-gc-hzm"/>
+                                    <outlet property="lblCurrentPhase" destination="xiF-n0-k1R" id="ChW-tX-VZD"/>
                                     <outlet property="lblTimeLeft" destination="bMG-WD-8Uo" id="qC0-Rz-xv2"/>
                                 </connections>
                             </tableViewCell>

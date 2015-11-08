@@ -71,7 +71,8 @@ class BattlesTableViewController: UITableViewController {
         let battle = battles[row]
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
-        cell.lblTimeLeft.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
+        cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
+        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)!
         
         return cell
     }
@@ -126,10 +127,11 @@ class BattlesTableViewController: UITableViewController {
                         let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
                         print(intervalInSeconds/3600)
                         
-                        let phase = self.getCurrentPhase(intervalInSeconds/3600)
+                        let currentPhase = self.getCurrentPhase(intervalInSeconds/3600)
+                        let timeLeft = "0"
                         
                         // Save new objects into core data
-                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: phase)
+                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
                         
                         // TODO: Fix this, this is super hard-codey
                         self.battles = (self.data?.getBattles())!
@@ -147,10 +149,20 @@ class BattlesTableViewController: UITableViewController {
     func getCurrentPhase(timeInterval: Double) -> String {
         if (timeInterval < 1){
             return "Submit"
-        } else if (timeInterval > 1 && timeInterval < 2){
+        } else if (timeInterval >= 1 && timeInterval < 2){
             return "Voting"
         } else {
             return "Final"
+        }
+    }
+    
+    func getTimeLeft(timeInterval: Double) -> Int {
+        if (timeInterval < 1){
+            return 0
+        } else if (timeInterval >= 1 && timeInterval < 2){
+            return 0
+        } else {
+            return 0
         }
     }
     
