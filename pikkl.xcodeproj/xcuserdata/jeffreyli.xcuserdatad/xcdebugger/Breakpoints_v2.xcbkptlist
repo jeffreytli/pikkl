@@ -92,7 +92,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "fetchAllObjects()"
+            landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -108,7 +108,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "fetchAllObjects()"
+            landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
