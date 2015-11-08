@@ -23,6 +23,8 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
+    let PHASE_INTERVAL = 3600.0
+    
     var data:BattleDataModel? = nil
     var battles = [NSManagedObject]()
     var currentStage = Stage.VOTE
@@ -125,10 +127,12 @@ class BattlesTableViewController: UITableViewController {
                         let timeCreated = (object["time"])!
                         
                         let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
-                        print(intervalInSeconds/3600)
+                        print(intervalInSeconds/self.PHASE_INTERVAL)
                         
                         let currentPhase = self.getCurrentPhase(intervalInSeconds/3600)
-                        let timeLeft = "0"
+                        let timeLeft = self.getTimeLeft(intervalInSeconds)
+                        
+                        print("Time left: " + timeLeft)
                         
                         // Save new objects into core data
                         self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
@@ -156,13 +160,21 @@ class BattlesTableViewController: UITableViewController {
         }
     }
     
-    func getTimeLeft(timeInterval: Double) -> Int {
+    func getTimeLeft(timeInterval: Double) -> String {
+        var timeElapsed = 0.0
+        
         if (timeInterval < 1){
-            return 0
+            timeElapsed = timeInterval * self.PHASE_INTERVAL
+            timeElapsed = timeElapsed / 60.0
+            return String(timeElapsed)
         } else if (timeInterval >= 1 && timeInterval < 2){
-            return 0
+            timeElapsed = timeInterval * self.PHASE_INTERVAL
+            timeElapsed = timeElapsed / 60.0
+            return String(timeElapsed)
         } else {
-            return 0
+            timeElapsed = timeInterval * self.PHASE_INTERVAL
+            timeElapsed = timeElapsed / 60.0
+            return String(timeElapsed)
         }
     }
     
