@@ -56,7 +56,7 @@
                                             <rect key="frame" x="107" y="48" width="227" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -297,25 +297,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-Wz-uB3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-Wz-uB3">
                                 <rect key="frame" x="67" y="129" width="240" height="221"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vote Here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-Is-WLL">
-                                <rect key="frame" x="147" y="440" width="81" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote Here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-Is-WLL">
+                                <rect key="frame" x="147" y="388" width="81" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-k6-lO5">
-                                <rect key="frame" x="139" y="488" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-k6-lO5">
+                                <rect key="frame" x="20" y="488" width="335" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-h5-Bns">
-                                <rect key="frame" x="152" y="573" width="71" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-h5-Bns">
+                                <rect key="frame" x="152" y="546" width="71" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Cast Vote!">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -327,6 +327,19 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G1C-Is-WLL" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="38" id="1f3-u2-pz3"/>
+                            <constraint firstItem="JXk-h5-Bns" firstAttribute="top" secondItem="jKT-k6-lO5" secondAttribute="bottom" constant="55" id="5Dc-Tc-2bl"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="top" secondItem="kgI-vy-CV1" secondAttribute="bottom" constant="65" id="674-CE-v7S"/>
+                            <constraint firstItem="G1C-Is-WLL" firstAttribute="centerX" secondItem="OAJ-Wz-uB3" secondAttribute="centerX" id="9rN-YK-JiQ"/>
+                            <constraint firstItem="G1C-Is-WLL" firstAttribute="centerX" secondItem="jKT-k6-lO5" secondAttribute="centerX" id="EFF-Ri-ky4"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="a6I-IS-SY4" secondAttribute="centerX" id="P3Y-Uj-VBx"/>
+                            <constraint firstItem="cHi-wE-66R" firstAttribute="top" secondItem="JXk-h5-Bns" secondAttribute="bottom" constant="64" id="Wal-Sf-6Zq"/>
+                            <constraint firstItem="jKT-k6-lO5" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="4" id="jF3-97-spj"/>
+                            <constraint firstItem="jKT-k6-lO5" firstAttribute="top" secondItem="G1C-Is-WLL" secondAttribute="bottom" constant="79" id="jnX-u0-Rx1"/>
+                            <constraint firstItem="JXk-h5-Bns" firstAttribute="centerX" secondItem="jKT-k6-lO5" secondAttribute="centerX" id="oUf-F5-jqy"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="51" id="tgI-yi-2bH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RFE-Pz-Deh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

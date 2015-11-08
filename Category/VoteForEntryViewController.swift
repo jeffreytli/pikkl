@@ -17,6 +17,7 @@ class VoteForEntryViewController: UIViewController {
     @IBOutlet weak var imgEntry: UIImageView!
     
     @IBOutlet weak var fieldVote: UITextField!
+    
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
@@ -41,7 +42,10 @@ class VoteForEntryViewController: UIViewController {
     }
     
     @IBAction func btnCastVote(sender: AnyObject) {
-        print(currentEntry!["objectId"])
+        var temp = currentEntry!["score"] as! Int
+        temp += Int(fieldVote.text!)!
+        currentEntry!["score"] = temp
+        currentEntry?.saveInBackground()
     }
 
     /*
