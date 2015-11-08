@@ -73,8 +73,8 @@ class BattlesTableViewController: UITableViewController {
         let battle = battles[row]
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
-//        cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
-//        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)!
+        cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
+        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
         
         return cell
     }
@@ -129,13 +129,13 @@ class BattlesTableViewController: UITableViewController {
                         let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
                         print(intervalInSeconds/self.PHASE_INTERVAL)
                         
-                        let currentPhase = self.getCurrentPhase(intervalInSeconds/3600)
-                        let timeLeft = self.getTimeLeft(intervalInSeconds)
+                        let currentPhase = self.getCurrentPhase(intervalInSeconds/self.PHASE_INTERVAL)
+                        let timeLeft = self.getTimeLeft(intervalInSeconds/self.PHASE_INTERVAL)
                         
-                        print("Time left: " + timeLeft)
+                        print("Time left: " + timeLeft + "m")
                         
                         // Save new objects into core data
-                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String)
+                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
                         
                         // TODO: Fix this, this is super hard-codey
                         self.battles = (self.data?.getBattles())!
@@ -161,24 +161,21 @@ class BattlesTableViewController: UITableViewController {
     }
     
     func getTimeLeft(timeInterval: Double) -> String {
-        var timeElapsed = 0.0
+        var timeLeft = 0.0
         
-        if (timeInterval < 1){
-            timeElapsed = timeInterval * self.PHASE_INTERVAL
-            timeElapsed = timeElapsed / 60.0
-            return String(timeElapsed)
-        } else if (timeInterval >= 1 && timeInterval < 2){
-            timeElapsed = timeInterval * self.PHASE_INTERVAL
-            timeElapsed = timeElapsed / 60.0
-            return String(timeElapsed)
+        if (timeInterval < 1.0){
+            timeLeft = timeInterval * PHASE_INTERVAL
+            timeLeft = timeLeft / 60.0
+            return String(Int(timeLeft))
+        } else if (timeInterval >= 1.0 && timeInterval < 2.0){
+            timeLeft = timeInterval - 1.0
+            timeLeft = timeLeft * PHASE_INTERVAL
+            timeLeft = timeLeft / 60.0
+            return String(Int(timeLeft))
         } else {
-            timeElapsed = timeInterval * self.PHASE_INTERVAL
-            timeElapsed = timeElapsed / 60.0
-            return String(timeElapsed)
+            return "0"
         }
     }
-    
-    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -19,7 +19,7 @@ class BattleDataModel {
     }
     
     // Save the candidate inside our core data
-    func saveBattle(objectId: String, name: String){
+    func saveBattle(objectId: String, name: String, currentPhase: String, timeLeft: String){
         if (!containsBattle(objectId)){
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
@@ -31,8 +31,8 @@ class BattleDataModel {
             // Set the attribute values
             battle.setValue(objectId, forKey: "objectId")
             battle.setValue(name, forKey: "name")
-//            battle.setValue(currentPhase, forKey: "currentPhase")
-//            battle.setValue(timeLeft, forKey: "timeLeft")
+            battle.setValue(currentPhase, forKey: "currentPhase")
+            battle.setValue(timeLeft, forKey: "timeLeft")
             
             // Commit the changes
             do {
@@ -47,6 +47,14 @@ class BattleDataModel {
             // Add the new entity to our array of managed objects
             print("Saving battle to core data")
             self.battles.append(battle)
+        } else {
+            for battle in self.battles {
+                let curObjectId = (battle.valueForKey("objectId") as? String)!
+                if (curObjectId == objectId){
+                    battle.setValue(currentPhase, forKey: "currentPhase")
+                    battle.setValue(timeLeft, forKey: "timeLeft")
+                }
+            }
         }
     }
     
