@@ -73,8 +73,8 @@ class BattlesTableViewController: UITableViewController {
         let battle = battles[row]
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
-        cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
-        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)!
+//        cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
+//        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)!
         
         return cell
     }
@@ -135,7 +135,7 @@ class BattlesTableViewController: UITableViewController {
                         print("Time left: " + timeLeft)
                         
                         // Save new objects into core data
-                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
+                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String)
                         
                         // TODO: Fix this, this is super hard-codey
                         self.battles = (self.data?.getBattles())!
