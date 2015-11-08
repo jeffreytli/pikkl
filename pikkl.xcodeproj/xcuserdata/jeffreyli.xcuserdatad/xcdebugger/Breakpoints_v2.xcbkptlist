@@ -87,11 +87,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "468651793.786963"
+            timestampString = "468653453.24931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -103,11 +103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "468651793.786963"
+            timestampString = "468653453.24931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -119,12 +119,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattleDataModel.swift"
-            timestampString = "467961440.292446"
+            timestampString = "468653319.033123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "saveBattle(_:name:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Category/BattlesTableViewController.swift"
+            timestampString = "468654028.622998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "fetchAllObjects()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

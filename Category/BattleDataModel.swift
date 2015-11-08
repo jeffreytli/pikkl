@@ -19,7 +19,7 @@ class BattleDataModel {
     }
     
     // Save the candidate inside our core data
-    func saveBattle(objectId: String, name: String){
+    func saveBattle(objectId: String, name: String, currentPhase: String){
         if (!containsBattle(objectId)){
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
@@ -31,6 +31,7 @@ class BattleDataModel {
             // Set the attribute values
             battle.setValue(objectId, forKey: "objectId")
             battle.setValue(name, forKey: "name")
+            battle.setValue(currentPhase, forKey: "currentPhase")
             
             // Commit the changes
             do {
