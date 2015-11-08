@@ -71,7 +71,6 @@ class BattleDataModel {
         } else {
             print("Could not fetch")
         }
-        
         return self.battles;
     }
     

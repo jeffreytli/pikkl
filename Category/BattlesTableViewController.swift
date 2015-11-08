@@ -78,9 +78,7 @@ class BattlesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        
         let row = indexPath.row
-        
         
         if(currentStage == Stage.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
@@ -115,6 +113,8 @@ class BattlesTableViewController: UITableViewController {
             if error == nil {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
+
+                
                 // Do something with the found objects
                 if let objects = objects {
                     
@@ -137,6 +137,7 @@ class BattlesTableViewController: UITableViewController {
             }
         }
     }
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

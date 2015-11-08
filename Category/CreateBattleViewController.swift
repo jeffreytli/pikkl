@@ -109,10 +109,10 @@ class CreateBattleViewController: UIViewController {
             
             if error == nil {
                 print("Friends are : \(result)")
-                var friendObjects = result["data"] as! [NSDictionary]
+                let friendObjects = result["data"] as! [NSDictionary]
                 for friendObject in friendObjects {
-                    var friendID = friendObject["id"] as! NSString
-                    var friendName = friendObject["name"] as! NSString
+                    let friendID = friendObject["id"] as! NSString
+                    let friendName = friendObject["name"] as! NSString
                     
                     self.friendIDs.append(friendID as String)
                     self.friendNames.append(friendName as String)
