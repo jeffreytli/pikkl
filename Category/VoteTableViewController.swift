@@ -7,11 +7,46 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Parse
+import ParseFacebookUtilsV4
+import CoreData
 
 class VoteTableViewController: UITableViewController {
+    
+    var battleTitle:String = ""
+    var entries:[PFObject] = []
+    var battleId:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let query = PFQuery(className:"BattleEntry")
+        query.whereKey("battle", equalTo:battleId)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    
+                    for object in objects {
+                        print("ObjectId: " + ((object.objectId)! as String))
+            
+                        self.entries.append(object)
+                        self.tableView.reloadData()
+
+                    }
+                    //dispatch_async(dispatch_get_main_queue()) {
+                    //}
+                }
+            } else {
+                //                 Log details of the failure
+                print("Error: \(error!)")
+            }
+
+        }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +64,30 @@ class VoteTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return entries.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("VoteCell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        let row = indexPath.row
+        
+        //if(entries.count > row-1 ) 
+        print(String(row) + "this is row")
+        print(String(entries.count) + "this is entry count")
 
+        //var entry:PFObject = entries[row]
+        //var objId:String = entry["objectId"] as! String
+        //print(objId)
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

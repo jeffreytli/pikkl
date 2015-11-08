@@ -87,7 +87,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         entry["image"] = imageFile
         entry["owner"] = PFUser.currentUser()
         entry["score"] = 0
-        //entry["battle"] = battleID
+        entry["battle"] = battleID
         
         entry.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in

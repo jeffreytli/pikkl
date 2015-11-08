@@ -25,7 +25,7 @@ class BattlesTableViewController: UITableViewController {
     
     var data:BattleDataModel? = nil
     var battles = [NSManagedObject]()
-    var currentStage = Stage.FINAL
+    var currentStage = Stage.VOTE
     
     @IBOutlet weak var battlesTableView: UITableView!
     
@@ -153,5 +153,20 @@ class BattlesTableViewController: UITableViewController {
             detailVC.battleTitle = currentCell.lblBattleName.text!
             detailVC.battleID = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
+        
+        if segue.identifier == "Vote" {
+            
+            let indexPath:NSIndexPath = sender as! NSIndexPath
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
+            
+            // Get the destination view controller
+            let voteVC:VoteTableViewController = segue.destinationViewController as! VoteTableViewController
+            
+            
+            // Pass in the title for the row selected
+            voteVC.battleTitle = currentCell.lblBattleName.text!
+            voteVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
+        }
+
     }
 }
