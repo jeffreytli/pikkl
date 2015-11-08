@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Parse
+import ParseFacebookUtilsV4
+import CoreData
 
 class VoteForEntryViewController: UIViewController {
     
+    @IBOutlet weak var imgEntry: UIImageView!
+    
+    @IBOutlet weak var fieldVote: UITextField!
+    var currentEntry:PFObject? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let userImageFile = currentEntry!["image"] as! PFFile
+        userImageFile.getDataInBackgroundWithBlock {
+            (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                if let imageData = imageData {
+                    let image = UIImage(data:imageData)
+                    self.imgEntry.image = image
+                }
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +40,9 @@ class VoteForEntryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnCastVote(sender: AnyObject) {
+        print(currentEntry!["objectId"])
+    }
 
     /*
     // MARK: - Navigation

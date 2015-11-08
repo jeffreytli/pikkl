@@ -84,6 +84,8 @@ class BattlesTableViewController: UITableViewController {
         
         let row = indexPath.row
         
+        currentStage = Stage.VOTE
+        
         if(currentStage == Stage.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
         } else if(currentStage == Stage.VOTE) {
