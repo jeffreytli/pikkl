@@ -13,6 +13,12 @@ import ParseFacebookUtilsV4
 import CoreData
 
 class CreateBattleViewController: UIViewController {
+    
+    enum Stage: Int {
+        case SUBMIT = 1
+        case VOTE = 2
+        case FINAL = 3
+    }
 
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var txtFieldTitle: UITextField!
@@ -51,7 +57,7 @@ class CreateBattleViewController: UIViewController {
             let battleName = self.txtFieldTitle.text
             
             if (!battleName!.isEmpty){
-                let alertController = UIAlertController(title: "Create '" + battleName! + "' Battle", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: "Create \"" + battleName! + "\"", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
                     (action:UIAlertAction) in
@@ -84,11 +90,15 @@ class CreateBattleViewController: UIViewController {
     func createBattle() -> Void {
         // create battle object
         let battle = PFObject(className:"Battle")
+        let date = NSDate()
         
         let entryArr:[PFObject] = []
         battle["name"] = txtFieldTitle.text
         battle["creator"] = PFUser.currentUser()
         battle["entries"] = entryArr
+        battle["time"] = date
+        battle["currentPhase"] = Stage.SUBMIT.rawValue
+        
         // people invited to battle
         // time left in battle
         

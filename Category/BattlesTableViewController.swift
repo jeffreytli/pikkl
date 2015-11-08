@@ -19,6 +19,40 @@ enum Stage {
     case FINAL
 }
 
+extension NSDate {
+    func yearsFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Year, fromDate: date, toDate: self, options: []).year
+    }
+    func monthsFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Month, fromDate: date, toDate: self, options: []).month
+    }
+    func weeksFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.WeekOfYear, fromDate: date, toDate: self, options: []).weekOfYear
+    }
+    func daysFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Day, fromDate: date, toDate: self, options: []).day
+    }
+    func hoursFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Hour, fromDate: date, toDate: self, options: []).hour
+    }
+    func minutesFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Minute, fromDate: date, toDate: self, options: []).minute
+    }
+    func secondsFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.Second, fromDate: date, toDate: self, options: []).second
+    }
+    func offsetFrom(date:NSDate) -> String {
+        if yearsFrom(date)   > 0 { return "\(yearsFrom(date))y"   }
+        if monthsFrom(date)  > 0 { return "\(monthsFrom(date))M"  }
+        if weeksFrom(date)   > 0 { return "\(weeksFrom(date))w"   }
+        if daysFrom(date)    > 0 { return "\(daysFrom(date))d"    }
+        if hoursFrom(date)   > 0 { return "\(hoursFrom(date))h"   }
+        if minutesFrom(date) > 0 { return "\(minutesFrom(date))m" }
+        if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
+        return ""
+    }
+}
+
 class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
@@ -121,6 +155,10 @@ class BattlesTableViewController: UITableViewController {
                     for object in objects {
                         print("ObjectId: " + ((object.objectId)! as String))
                         print("BattleName: " + ((object["name"])! as! String))
+                        let timeCreated = (object["time"])!
+                        
+                        let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
+                        print(intervalInSeconds)
                         
                         // Save new objects into core data
                         self.data!.saveBattle(object.objectId!, name: object["name"] as! String)
@@ -137,6 +175,7 @@ class BattlesTableViewController: UITableViewController {
             }
         }
     }
+    
     
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
