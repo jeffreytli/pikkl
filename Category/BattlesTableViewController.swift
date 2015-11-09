@@ -95,6 +95,10 @@ class BattlesTableViewController: UITableViewController {
         
         let row = indexPath.row
         
+        let battle = battles[row]
+        
+        currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
+        
         if(currentStage == Stage.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
         } else if(currentStage == Stage.VOTE) {
@@ -103,6 +107,16 @@ class BattlesTableViewController: UITableViewController {
             self.performSegueWithIdentifier("Final", sender: indexPath)
         }
 
+    }
+    
+    func getCurrentPhase(currentPhase: String) -> Stage {
+        if (currentPhase == "1"){
+            return Stage.SUBMIT
+        } else if (currentPhase == "2"){
+            return Stage.VOTE
+        } else {
+            return Stage.FINAL
+        }
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -217,6 +231,21 @@ class BattlesTableViewController: UITableViewController {
             voteVC.battleTitle = currentCell.lblBattleName.text!
             voteVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
+        
+        if segue.identifier == "Final" {
+            
+            let indexPath:NSIndexPath = sender as! NSIndexPath
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
+            
+            // Get the destination view controller
+            let finalVC:FinalTableViewController = segue.destinationViewController as! FinalTableViewController
+            
+            
+            // Pass in the title for the row selected
+            finalVC.battleTitle = currentCell.lblBattleName.text!
+            finalVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
+        }
+
 
     }
 }
