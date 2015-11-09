@@ -89,12 +89,12 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         entry["owner"] = PFUser.currentUser()
         entry["score"] = 0
         entry["battle"] = battleID
-        
         let user = PFUser.currentUser()
         entry["ownerName"] = user!["username"]
         entry["numVoters"] = 0
         entry["battleName"] = battleTitle
-        
+        let userHasVotedDictionary:Dictionary<String, Bool> = [:]
+        entry["userHasVoted"] = userHasVotedDictionary
         entry.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {

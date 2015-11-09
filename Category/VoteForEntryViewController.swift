@@ -42,14 +42,24 @@ class VoteForEntryViewController: UIViewController {
     }
     
     @IBAction func btnCastVote(sender: AnyObject) {
-        var tempVote = currentEntry!["score"] as! Int
-        tempVote += Int(fieldVote.text!)!
-        currentEntry!["score"] = tempVote
-        var tempNumVoters = currentEntry!["numVoters"] as! Int
-        tempNumVoters++
-        currentEntry!["numVoters"] = tempNumVoters
+        var userHasVoted = currentEntry!["userHasVoted"] as! Dictionary<String, Bool>
+        let curUserId:String = PFUser.currentUser()!.objectId!
         
-        currentEntry?.saveInBackground()
+        //if to prevent voting more than once per entry
+        if(userHasVoted[curUserId] == nil) {
+            var tempVote = currentEntry!["score"] as! Int
+            tempVote += Int(fieldVote.text!)!
+            currentEntry!["score"] = tempVote
+            var tempNumVoters = currentEntry!["numVoters"] as! Int
+            tempNumVoters++
+            currentEntry!["numVoters"] = tempNumVoters
+            userHasVoted.updateValue(true, forKey: curUserId)
+            currentEntry!["userHasVoted"] = userHasVoted
+            currentEntry?.saveInBackground()
+        } else {
+            //has already voted, figure out what to do for this case?
+            print("you can't vote twice on the same entry!!")
+        }
     }
     
     /*
