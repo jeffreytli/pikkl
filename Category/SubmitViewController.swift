@@ -17,11 +17,12 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var lblBattleTitle: UILabel!
     @IBOutlet weak var imgSubmit: UIImageView!
+    
     let imagePicker = UIImagePickerController()
-    var battleTitle:String = ""
     var imgUploaded:Bool = false;
+    
+    var battleTitle:String = ""
     var battleID = ""
-        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         entry["owner"] = PFUser.currentUser()
         entry["score"] = 0
         entry["battle"] = battleID
+        
         let user = PFUser.currentUser()
         entry["ownerName"] = user!["username"]
         entry["numVoters"] = 0

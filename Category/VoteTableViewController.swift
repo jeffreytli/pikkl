@@ -16,6 +16,7 @@ class VoteTableViewController: UITableViewController {
     
     var battleTitle:String = ""
     var battleId:String = ""
+    
     var entries:[PFObject] = []
 
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class VoteTableViewController: UITableViewController {
         fetchAllBattleEntries()
     }
     
+    // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
         query.whereKey("battle", equalTo:battleId)
@@ -108,7 +110,6 @@ class VoteTableViewController: UITableViewController {
         return true
     }
     */
-
     
     // MARK: - Navigation
 
@@ -124,6 +125,4 @@ class VoteTableViewController: UITableViewController {
             voteDetail.currentEntry = entries[indexPath!.row]
         }
     }
-
-
 }

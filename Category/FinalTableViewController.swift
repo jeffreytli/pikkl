@@ -13,15 +13,20 @@ import ParseFacebookUtilsV4
 import CoreData
 
 class FinalTableViewController: UITableViewController {
-
     
     var battleTitle:String = ""
-    var entries:[PFObject] = []
     var battleId:String = ""
+    
+    var entries:[PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchAllBattleEntries()
+    }
+    
+    // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
+    func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
         query.whereKey("battle", equalTo:battleId)
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -36,24 +41,13 @@ class FinalTableViewController: UITableViewController {
                         
                         self.entries.append(object)
                         self.tableView.reloadData()
-                        
                     }
-                    //dispatch_async(dispatch_get_main_queue()) {
-                    //}
                 }
             } else {
-                //                 Log details of the failure
+                // Log details of the failure
                 print("Error: \(error!)")
             }
-            
         }
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,18 +55,13 @@ class FinalTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return entries.count
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
@@ -94,7 +83,6 @@ class FinalTableViewController: UITableViewController {
         
         return cell
     }
-    
     
     /*
     // Override to support conditional editing of the table view.
@@ -130,7 +118,6 @@ class FinalTableViewController: UITableViewController {
     return true
     }
     */
-    
 
     /*
     // MARK: - Navigation
