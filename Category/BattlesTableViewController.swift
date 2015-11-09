@@ -34,10 +34,21 @@ class BattlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
         data = BattleDataModel()
         battles = (data?.getBattles())!
         
         fetchAllObjects()
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        // Updating your data here...
+        fetchAllObjects()
+        
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
     override func shouldAutorotate() -> Bool {
