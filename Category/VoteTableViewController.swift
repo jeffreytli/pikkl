@@ -79,12 +79,10 @@ class VoteTableViewController: UITableViewController {
         let row = indexPath.row
         
         //if(entries.count > row-1 ) 
-        print(String(row) + "this is row")
-        print(String(entries.count) + "this is entry count")
+        //print(String(row) + "this is row")
+        //print(String(entries.count) + "this is entry count")
+        cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
 
-        //var entry:PFObject = entries[row]
-        //var objId:String = entry["objectId"] as! String
-        //print(objId)
         return cell
     }
     

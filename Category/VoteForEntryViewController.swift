@@ -42,9 +42,13 @@ class VoteForEntryViewController: UIViewController {
     }
     
     @IBAction func btnCastVote(sender: AnyObject) {
-        var temp = currentEntry!["score"] as! Int
-        temp += Int(fieldVote.text!)!
-        currentEntry!["score"] = temp
+        var tempVote = currentEntry!["score"] as! Int
+        tempVote += Int(fieldVote.text!)!
+        currentEntry!["score"] = tempVote
+        var tempNumVoters = currentEntry!["numVoters"] as! Int
+        tempNumVoters++
+        currentEntry!["numVoters"] = tempNumVoters
+        
         currentEntry?.saveInBackground()
     }
 

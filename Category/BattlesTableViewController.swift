@@ -208,6 +208,21 @@ class BattlesTableViewController: UITableViewController {
             voteVC.battleTitle = currentCell.lblBattleName.text!
             voteVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
+        
+        if segue.identifier == "Final" {
+            
+            let indexPath:NSIndexPath = sender as! NSIndexPath
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
+            
+            // Get the destination view controller
+            let finalVC:FinalTableViewController = segue.destinationViewController as! FinalTableViewController
+            
+            
+            // Pass in the title for the row selected
+            finalVC.battleTitle = currentCell.lblBattleName.text!
+            finalVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
+        }
+
 
     }
 }
