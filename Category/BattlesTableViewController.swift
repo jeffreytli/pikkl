@@ -39,13 +39,13 @@ class BattlesTableViewController: UITableViewController {
         data = BattleDataModel()
         battles = (data?.getBattles())!
         
-        fetchAllObjects()
+        fetchAllBattles()
     }
     
     func refresh(sender:AnyObject)
     {
         // Updating your data here...
-        fetchAllObjects()
+        fetchAllBattles()
         
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
@@ -121,7 +121,7 @@ class BattlesTableViewController: UITableViewController {
         appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
     }
     
-    func fetchAllObjects() {
+    func fetchAllBattles() {
         let query: PFQuery = PFQuery(className: "Battle")
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in

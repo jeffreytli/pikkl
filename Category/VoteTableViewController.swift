@@ -15,12 +15,16 @@ import CoreData
 class VoteTableViewController: UITableViewController {
     
     var battleTitle:String = ""
-    var entries:[PFObject] = []
     var battleId:String = ""
+    var entries:[PFObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+     
+        fetchAllBattleEntries()
+    }
+    
+    func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
         query.whereKey("battle", equalTo:battleId)
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -32,27 +36,16 @@ class VoteTableViewController: UITableViewController {
                     
                     for object in objects {
                         print("ObjectId: " + ((object.objectId)! as String))
-            
+                        
                         self.entries.append(object)
                         self.tableView.reloadData()
-
                     }
-                    //dispatch_async(dispatch_get_main_queue()) {
-                    //}
                 }
             } else {
-                //                 Log details of the failure
+                // Log details of the failure
                 print("Error: \(error!)")
             }
-
         }
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,18 +53,13 @@ class VoteTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return entries.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VoteCell", forIndexPath: indexPath)
@@ -87,7 +75,6 @@ class VoteTableViewController: UITableViewController {
         //print(objId)
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
