@@ -20,7 +20,6 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     let imagePicker = UIImagePickerController()
     var imgUploaded:Bool = false;
-    
     var battleTitle:String = ""
     var battleID = ""
     

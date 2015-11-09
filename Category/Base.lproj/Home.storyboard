@@ -114,18 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
-                                <rect key="frame" x="20" y="191" width="335" height="286"/>
-                                <animations/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="286" id="GB8-xI-dtG"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="qHE-4M-poe" appends="YES" id="NK2-E5-HxQ"/>
-                                </connections>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocR-S8-pjt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocR-S8-pjt">
                                 <rect key="frame" x="161" y="549" width="53" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Submit!">
@@ -136,20 +125,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdx-6k-jdn">
-                                <rect key="frame" x="20" y="98" width="335" height="38"/>
+                                <rect key="frame" x="20" y="122" width="335" height="38"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
+                                <rect key="frame" x="37" y="206" width="301" height="285"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="sH9-Wx-YSY"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qHE-4M-poe" appends="YES" id="NK2-E5-HxQ"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kdx-6k-jdn" firstAttribute="centerX" secondItem="ms0-Mf-yzD" secondAttribute="centerX" id="7cm-cP-VBx"/>
-                            <constraint firstItem="kdx-6k-jdn" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" constant="4" id="brH-UG-bOS"/>
-                            <constraint firstItem="kdx-6k-jdn" firstAttribute="top" secondItem="0zt-c6-l31" secondAttribute="bottom" id="iKg-Hb-dmD"/>
-                            <constraint firstItem="viy-rs-pmQ" firstAttribute="centerY" secondItem="ms0-Mf-yzD" secondAttribute="centerY" id="qMx-Ao-1vL"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="centerX" secondItem="ocR-S8-pjt" secondAttribute="centerX" id="09R-4b-fGP"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" constant="21" id="J5O-mV-HuC"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="centerX" secondItem="kdx-6k-jdn" secondAttribute="centerX" id="RbC-dK-HQ0"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="top" secondItem="kdx-6k-jdn" secondAttribute="bottom" constant="46" id="Trz-aH-lXF"/>
+                            <constraint firstItem="h9v-cp-mlo" firstAttribute="top" secondItem="ocR-S8-pjt" secondAttribute="bottom" constant="44" id="Vnh-qs-bq7"/>
+                            <constraint firstItem="ocR-S8-pjt" firstAttribute="centerX" secondItem="ms0-Mf-yzD" secondAttribute="centerX" id="edr-rp-ize"/>
+                            <constraint firstItem="ocR-S8-pjt" firstAttribute="top" secondItem="viy-rs-pmQ" secondAttribute="bottom" constant="58" id="v94-Zp-Yn1"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

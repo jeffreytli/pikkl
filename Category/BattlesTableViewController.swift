@@ -96,9 +96,9 @@ class BattlesTableViewController: UITableViewController {
         
         let battle = battles[row]
         
-        //currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
+        currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
         
-        currentStage = Phase.VOTE
+        //currentStage = Phase.SUBMIT
         
         if(currentStage == Phase.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
