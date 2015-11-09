@@ -84,7 +84,9 @@ class BattlesTableViewController: UITableViewController {
         
         let row = indexPath.row
         
-        currentStage = Stage.VOTE
+        let battle = battles[row]
+        
+        currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
         
         if(currentStage == Stage.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
@@ -94,6 +96,16 @@ class BattlesTableViewController: UITableViewController {
             self.performSegueWithIdentifier("Final", sender: indexPath)
         }
 
+    }
+    
+    func getCurrentPhase(currentPhase: String) -> Stage {
+        if (currentPhase == "1"){
+            return Stage.SUBMIT
+        } else if (currentPhase == "2"){
+            return Stage.VOTE
+        } else {
+            return Stage.FINAL
+        }
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
