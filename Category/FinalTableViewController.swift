@@ -130,7 +130,7 @@ class FinalTableViewController: UITableViewController {
             let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
             
             // Get the destination view controller
-            let voteDetail:VoteForEntryViewController = segue.destinationViewController as! VoteForEntryViewController
+            let voteDetail:FinalDetailViewController = segue.destinationViewController as! FinalDetailViewController
             
             // Pass in the title for the row selected
             voteDetail.currentEntry = entries[indexPath!.row]
