@@ -13,9 +13,18 @@ import ParseFacebookUtilsV4
 import CoreData
 
 class CreateBattleViewController: UIViewController {
+    
+    enum Stage: Int {
+        case SUBMIT = 1
+        case VOTE = 2
+        case FINAL = 3
+    }
 
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var txtFieldTitle: UITextField!
+    
+    var friendIDs = [String]()
+    var friendNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +49,16 @@ class CreateBattleViewController: UIViewController {
     @IBAction func btnCancelTapped(sender: AnyObject) {
         redirectToBattlesTableView()
     }
+    @IBAction func btnInviteFriends(sender: AnyObject) {
+        getFacebookFriends()
+    }
     
     @IBAction func btnDoneTapped(sender: AnyObject) {
         dispatch_async(dispatch_get_main_queue()) {
             let battleName = self.txtFieldTitle.text
             
             if (!battleName!.isEmpty){
-                let alertController = UIAlertController(title: "Create '" + battleName! + "' Battle", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: "Create \"" + battleName! + "\"", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
                     (action:UIAlertAction) in
@@ -79,9 +91,15 @@ class CreateBattleViewController: UIViewController {
     func createBattle() -> Void {
         // create battle object
         let battle = PFObject(className:"Battle")
+        let date = NSDate()
         
+        let entryArr:[PFObject] = []
         battle["name"] = txtFieldTitle.text
         battle["creator"] = PFUser.currentUser()
+        battle["entries"] = entryArr
+        battle["time"] = date
+        battle["currentPhase"] = Stage.SUBMIT.rawValue
+        
         // people invited to battle
         // time left in battle
         
@@ -102,6 +120,18 @@ class CreateBattleViewController: UIViewController {
             
             if error == nil {
                 print("Friends are : \(result)")
+                let friendObjects = result["data"] as! [NSDictionary]
+                for friendObject in friendObjects {
+                    let friendID = friendObject["id"] as! NSString
+                    let friendName = friendObject["name"] as! NSString
+                    
+                    self.friendIDs.append(friendID as String)
+                    self.friendNames.append(friendName as String)
+                    
+                    print(friendObject["id"] as! NSString)
+                    print(friendObject["name"] as! NSString)
+                }
+                print("\(friendObjects.count)")
             } else {
                 print("Error Getting Friends \(error)");
             }
@@ -121,4 +151,12 @@ class CreateBattleViewController: UIViewController {
             appDelegate.window?.rootViewController = controllerNav
             }, completion: nil)
     }
+    
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    
 }
