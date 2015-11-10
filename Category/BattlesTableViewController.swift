@@ -23,7 +23,7 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
-    let PHASE_INTERVAL = 180.0 // This is currently set to 1 hour; each phase is an hour long
+    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
     
     var data:BattleDataModel? = nil
     var currentStage = Phase.VOTE
@@ -152,16 +152,16 @@ class BattlesTableViewController: UITableViewController {
                 if let objects = objects {
                     
                     for object in objects {
-                        //print("ObjectId: " + ((object.objectId)! as String))
-                        //print("BattleName: " + ((object["name"])! as! String))
+                        print("ObjectId: " + ((object.objectId)! as String))
+                        print("BattleName: " + ((object["name"])! as! String))
                         
                         let timeCreated = (object["time"])!
                         let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
-                        //print(intervalInSeconds/self.PHASE_INTERVAL)
+                        print(intervalInSeconds/self.PHASE_INTERVAL)
                         
                         let currentPhase = self.getCurrentPhase(intervalInSeconds/self.PHASE_INTERVAL)
                         let timeLeft = self.getTimeLeft(intervalInSeconds/self.PHASE_INTERVAL)
-                        //print("Time left: " + timeLeft + "m")
+                        print("Time left: " + timeLeft + "m")
                         
                         // Save new objects into core data
                         self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
