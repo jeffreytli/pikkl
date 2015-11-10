@@ -15,8 +15,9 @@ import CoreData
 
 class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var lblBattleTitle: UILabel!
+   // @IBOutlet weak var lblBattleTitle: UILabel!
     @IBOutlet weak var imgSubmit: UIImageView!
+    @IBOutlet weak var lblBattleTitle: UILabel!
     
     let imagePicker = UIImagePickerController()
     var imgUploaded:Bool = false;

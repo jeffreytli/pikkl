@@ -23,7 +23,7 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
-    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
+    let PHASE_INTERVAL = 180.0 // This is currently set to 1 hour; each phase is an hour long
     
     var data:BattleDataModel? = nil
     var currentStage = Phase.VOTE
@@ -98,6 +98,7 @@ class BattlesTableViewController: UITableViewController {
         
         currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
         
+        //print(String(currentStage) + "hi")
         //currentStage = Phase.SUBMIT
         
         if(currentStage == Phase.SUBMIT) {
@@ -111,9 +112,10 @@ class BattlesTableViewController: UITableViewController {
     
     // @desc: Helper function to get the current phase of the battle
     func getCurrentPhase(currentPhase: String) -> Phase {
-        if (currentPhase == "1"){
+        print(currentPhase + "This one")
+        if (currentPhase == "Submit"){
             return Phase.SUBMIT
-        } else if (currentPhase == "2"){
+        } else if (currentPhase == "Vote"){
             return Phase.VOTE
         } else {
             return Phase.FINAL
@@ -182,7 +184,7 @@ class BattlesTableViewController: UITableViewController {
         if (timeInterval < 1){
             return "Submit"
         } else if (timeInterval >= 1 && timeInterval < 2){
-            return "Voting"
+            return "Vote"
         } else {
             return "Final"
         }
@@ -219,7 +221,7 @@ class BattlesTableViewController: UITableViewController {
             let detailVC:SubmitViewController = segue.destinationViewController as! SubmitViewController
             
             // Pass in the title for the row selected
-            print("BattleTitle: \(detailVC.battleTitle)")
+            print("BattleTitle Seg: \(detailVC.battleTitle)")
             detailVC.battleTitle = currentCell.lblBattleName.text!
             detailVC.battleID = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
