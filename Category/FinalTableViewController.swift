@@ -119,14 +119,22 @@ class FinalTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "FinalDetail" {
+            let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
+            
+            // Get the destination view controller
+            let voteDetail:VoteForEntryViewController = segue.destinationViewController as! VoteForEntryViewController
+            
+            // Pass in the title for the row selected
+            voteDetail.currentEntry = entries[indexPath!.row]
+        }
 
+    }
 }

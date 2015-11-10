@@ -340,11 +340,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinalCell" textLabel="Ku8-Hr-XNC" detailTextLabel="Tug-x3-YI1" style="IBUITableViewCellStyleValue1" id="nT0-ie-td6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FinalCell" textLabel="Ku8-Hr-XNC" detailTextLabel="Tug-x3-YI1" style="IBUITableViewCellStyleValue1" id="nT0-ie-td6">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nT0-ie-td6" id="Xkt-VE-gfC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ku8-Hr-XNC">
@@ -356,7 +356,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tug-x3-YI1">
-                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <rect key="frame" x="298" y="12" width="42" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -367,6 +367,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="yTR-5J-beZ" kind="show" identifier="FinalDetail" id="PMi-Fs-Zld"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -379,7 +382,34 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itr-Qx-O65" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.5" y="660.5"/>
+            <point key="canvasLocation" x="1839.5" y="608.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KdI-cG-ZqU">
+            <objects>
+                <viewController id="yTR-5J-beZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sCY-X9-iCC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SMk-wH-2zv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UcE-OO-hAc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
+                                <rect key="frame" x="67" y="214" width="240" height="229"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zhw-87-U8f"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Alr-W4-HAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371.5" y="592.5"/>
         </scene>
         <!--Vote For Entry View Controller-->
         <scene sceneID="WlW-d6-tEJ">

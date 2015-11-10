@@ -101,9 +101,11 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         entry.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
+                print("woohoo!")
                 // The object has been saved.
-                sleep(1)
+                //sleep(1)
             } else {
+                print(error?.description)
                 // There was a problem, check error.description
             }
         }

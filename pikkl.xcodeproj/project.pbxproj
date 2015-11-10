@@ -15,6 +15,7 @@
 		43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */; };
 		436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */; };
 		436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */; };
+		4379E6FB1BF1BD3E00120B47 /* FinalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */; };
 		43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087A81BC07363007FD933 /* AppDelegate.swift */; };
 		43F087AB1BC07363007FD933 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087AA1BC07363007FD933 /* LoginViewController.swift */; };
 		43F087AE1BC07363007FD933 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F087AC1BC07363007FD933 /* Home.storyboard */; };
@@ -64,7 +65,6 @@
 		50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 50F5EEFC1BE4903500C4E3F2 /* README.md */; };
 		50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F822311BD4471A00048035 /* BattlesNavigationController.swift */; };
 		581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */; };
-		58FF4B271BEC2D13004D2833 /* gestureFun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF4B261BEC2D13004D2833 /* gestureFun.swift */; };
 		58FF4B9D1BEC8BAF004D2833 /* SubmitCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF4B9C1BEC8BAF004D2833 /* SubmitCamera.png */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +77,7 @@
 		43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewController.swift; sourceTree = "<group>"; };
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
+		4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalDetailViewController.swift; sourceTree = "<group>"; };
 		43F087A51BC07363007FD933 /* pikkl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pikkl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F087AA1BC07363007FD933 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				433EC7041BEECB7600348288 /* FinalTableViewController.swift */,
+				4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */,
 			);
 			name = Final;
 			sourceTree = "<group>";
@@ -411,6 +413,7 @@
 				50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */,
 				508B52661BEE9BED00E32D7F /* InviteFriendsTableViewController.swift in Sources */,
 				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
+				4379E6FB1BF1BD3E00120B47 /* FinalDetailViewController.swift in Sources */,
 				50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */,
 				433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */,
 				508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */,
