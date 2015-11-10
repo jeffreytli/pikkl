@@ -20,6 +20,8 @@ class BattleDataModel {
     
     // Save the candidate inside our core data
     func saveBattle(objectId: String, name: String, currentPhase: String, timeLeft: String){
+        print("Current phase: " + currentPhase)
+        
         if (!containsBattle(objectId)){
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
@@ -51,6 +53,7 @@ class BattleDataModel {
             for battle in self.battles {
                 let curObjectId = (battle.valueForKey("objectId") as? String)!
                 if (curObjectId == objectId){
+                    print("IN HERE")
                     battle.setValue(currentPhase, forKey: "currentPhase")
                     battle.setValue(timeLeft, forKey: "timeLeft")
                 }

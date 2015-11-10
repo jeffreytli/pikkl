@@ -98,7 +98,7 @@ class CreateBattleViewController: UIViewController {
         battle["creator"] = PFUser.currentUser()
         battle["entries"] = entryArr
         battle["time"] = date
-        battle["currentPhase"] = Stage.SUBMIT.rawValue
+        //battle["currentPhase"] = Stage.SUBMIT.rawValue
         
         // people invited to battle
         // time left in battle
