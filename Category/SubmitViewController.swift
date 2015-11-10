@@ -18,6 +18,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
    // @IBOutlet weak var lblBattleTitle: UILabel!
     @IBOutlet weak var imgSubmit: UIImageView!
     @IBOutlet weak var lblBattleTitle: UILabel!
+    @IBOutlet weak var btnSubmit: UIButton!
     
     let imagePicker = UIImagePickerController()
     var imgUploaded:Bool = false;
@@ -74,10 +75,33 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func btnCreateBattleEntry(sender: AnyObject) {
         //check is a little hacky, couldn't find more elegant way to check for this.
-        if(imgUploaded) {
-            createEntry()
-        } else {
-            print("can't create entry without image!")
+        dispatch_async(dispatch_get_main_queue()) {
+            if(self.imgUploaded) {
+                let alertController = UIAlertController(title: "Submit photo", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Save to Parse database and return to previous view
+                    //self.navigationController?.popViewControllerAnimated(true)
+                    
+                    self.createEntry()
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Do nothing
+                }
+                
+                alertController.addAction(OKAction)
+                alertController.addAction(cancelAction)
+                
+                self.presentViewController(alertController, animated: true, completion:nil)
+            } else {
+                let alertController = UIAlertController(title: "", message:
+                    "Please upload a photo to submit.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -102,11 +126,28 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 print("woohoo!")
+                let alertController = UIAlertController(title: "", message:
+                    "Photo entry submitted!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Save to Parse database and return to previous view
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+                
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion:nil)
                 // The object has been saved.
                 //sleep(1)
             } else {
                 print(error?.description)
                 // There was a problem, check error.description
+                let alertController = UIAlertController(title: "", message:
+                    "Photo submission failed, please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
         addEntry(entry) //assuming we continue to let battle's keep an array of their entries
@@ -138,5 +179,19 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("Error: \(error!)")
             }
         }
+    }
+    
+    func redirectToBattlesTableView() -> Void {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
 }
