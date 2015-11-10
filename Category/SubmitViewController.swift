@@ -26,8 +26,10 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        imgSubmit.image = UIImage(named: "cameraIcon")
+        imgSubmit.image = UIImage(named: "SubmitCamera")
+        print("battleTitle: \(battleTitle)")
         lblBattleTitle.text = battleTitle
+
     }
     
     override func shouldAutorotate() -> Bool {
@@ -45,7 +47,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - UIImagePickerControllerDelegate Methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -54,6 +56,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
             imgUploaded = true;
         }
         dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

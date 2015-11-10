@@ -64,6 +64,8 @@
 		50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 50F5EEFC1BE4903500C4E3F2 /* README.md */; };
 		50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F822311BD4471A00048035 /* BattlesNavigationController.swift */; };
 		581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */; };
+		58FF4B271BEC2D13004D2833 /* gestureFun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF4B261BEC2D13004D2833 /* gestureFun.swift */; };
+		58FF4B9D1BEC8BAF004D2833 /* SubmitCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF4B9C1BEC8BAF004D2833 /* SubmitCamera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +80,6 @@
 		43F087A51BC07363007FD933 /* pikkl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pikkl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F087AA1BC07363007FD933 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		43F087AD1BC07363007FD933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		43F087AF1BC07363007FD933 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43F087B21BC07363007FD933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43F087B41BC07363007FD933 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +127,9 @@
 		50F5EEFC1BE4903500C4E3F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50F822311BD4471A00048035 /* BattlesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesNavigationController.swift; sourceTree = "<group>"; };
 		581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		58FF4AE71BE741B0004D2833 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Home.storyboard; sourceTree = "<group>"; };
+		58FF4B261BEC2D13004D2833 /* gestureFun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gestureFun.swift; path = ../../../UT/hw/gestureFun.swift; sourceTree = "<group>"; };
+		58FF4B9C1BEC8BAF004D2833 /* SubmitCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitCamera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				50E303B31BD625E400F810B3 /* wallpaper.png */,
+				58FF4B9C1BEC8BAF004D2833 /* SubmitCamera.png */,
 				581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */,
 				50806D8B1BD4719100575253 /* temp1.png */,
 				50806D8C1BD4719100575253 /* temp2.png */,
@@ -307,6 +312,7 @@
 				505ED0EA1BE46B61008F2929 /* Submit */,
 				43F087AC1BC07363007FD933 /* Home.storyboard */,
 				436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */,
+				58FF4B261BEC2D13004D2833 /* gestureFun.swift */,
 				43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */,
 			);
 			name = Home;
@@ -383,6 +389,7 @@
 				581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */,
 				43F087B01BC07363007FD933 /* Assets.xcassets in Resources */,
 				50806D961BD4719100575253 /* temp2.png in Resources */,
+				58FF4B9D1BEC8BAF004D2833 /* SubmitCamera.png in Resources */,
 				43F087AE1BC07363007FD933 /* Home.storyboard in Resources */,
 				50E303B41BD625E400F810B3 /* wallpaper.png in Resources */,
 				50806D9A1BD4719100575253 /* temp6.png in Resources */,
@@ -426,7 +433,7 @@
 		43F087AC1BC07363007FD933 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				43F087AD1BC07363007FD933 /* Base */,
+				58FF4AE71BE741B0004D2833 /* en */,
 			);
 			name = Home.storyboard;
 			sourceTree = "<group>";

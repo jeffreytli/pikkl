@@ -33,9 +33,7 @@ class BattlesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        
         data = BattleDataModel()
         battles = (data?.getBattles())!
         
@@ -78,13 +76,15 @@ class BattlesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: BattleTableViewCell = tableView.dequeueReusableCellWithIdentifier("BattleCell") as! BattleTableViewCell
-        
         let row = indexPath.row
         let battle = battles[row]
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
         cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
+        
+        //must build hex converter
+        //cell.backgroundColor = UIColor(red: 0x03, green: 0xC9, blue: 0xA9, alpha: 1)
         
         return cell
     }
@@ -141,6 +141,7 @@ class BattlesTableViewController: UITableViewController {
         let query: PFQuery = PFQuery(className: "Battle")
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+
             if error == nil {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
@@ -208,6 +209,7 @@ class BattlesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do something for the ShowDetail segue
+        print("SEG IDENTIFIER: \(segue.identifier)")
         if segue.identifier == "Submit" {
             
             let indexPath:NSIndexPath = sender as! NSIndexPath
@@ -217,6 +219,7 @@ class BattlesTableViewController: UITableViewController {
             let detailVC:SubmitViewController = segue.destinationViewController as! SubmitViewController
             
             // Pass in the title for the row selected
+            print("BattleTitle: \(detailVC.battleTitle)")
             detailVC.battleTitle = currentCell.lblBattleName.text!
             detailVC.battleID = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
