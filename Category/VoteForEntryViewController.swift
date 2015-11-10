@@ -35,27 +35,41 @@ class VoteForEntryViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnCastVote(sender: AnyObject) {
-        var temp = currentEntry!["score"] as! Int
-        temp += Int(fieldVote.text!)!
-        currentEntry!["score"] = temp
-        currentEntry?.saveInBackground()
+        var userHasVoted = currentEntry!["userHasVoted"] as! Dictionary<String, Bool>
+        let curUserId:String = PFUser.currentUser()!.objectId!
+        
+        //if to prevent voting more than once per entry
+        if(userHasVoted[curUserId] == nil) {
+            var tempVote = currentEntry!["score"] as! Int
+            tempVote += Int(fieldVote.text!)!
+            currentEntry!["score"] = tempVote
+            var tempNumVoters = currentEntry!["numVoters"] as! Int
+            tempNumVoters++
+            currentEntry!["numVoters"] = tempNumVoters
+            userHasVoted.updateValue(true, forKey: curUserId)
+            currentEntry!["userHasVoted"] = userHasVoted
+            currentEntry?.saveInBackground()
+        } else {
+            //has already voted, figure out what to do for this case?
+            print("you can't vote twice on the same entry!!")
+        }
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

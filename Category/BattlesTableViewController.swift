@@ -12,8 +12,8 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
-//will be used to determine which segues need to be triggered
-enum Stage {
+// @desc: Will be used to determine which segues need to be triggered
+enum Phase {
     case SUBMIT
     case VOTE
     case FINAL
@@ -23,22 +23,32 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
-    let PHASE_INTERVAL = 3600.0
+    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
     
     var data:BattleDataModel? = nil
+    var currentStage = Phase.VOTE
     var battles = [NSManagedObject]()
-    var currentStage = Stage.VOTE
     
     @IBOutlet weak var battlesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         data = BattleDataModel()
         battles = (data?.getBattles())!
         
-        fetchAllObjects()
+        fetchAllBattles()
     }
     
+    // @desc: Defines user swipe refresh functionality
+    func refresh(sender:AnyObject){
+        fetchAllBattles()
+        
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+    
+    // @desc: Prevents landscape mode
     override func shouldAutorotate() -> Bool {
         if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
             UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
@@ -84,16 +94,30 @@ class BattlesTableViewController: UITableViewController {
         
         let row = indexPath.row
         
-        currentStage = Stage.VOTE
+        let battle = battles[row]
         
-        if(currentStage == Stage.SUBMIT) {
+        currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
+        
+        //currentStage = Phase.SUBMIT
+        
+        if(currentStage == Phase.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
-        } else if(currentStage == Stage.VOTE) {
+        } else if(currentStage == Phase.VOTE) {
             self.performSegueWithIdentifier("Vote", sender: indexPath)
-        } else if(currentStage == Stage.FINAL) {
+        } else if(currentStage == Phase.FINAL) {
             self.performSegueWithIdentifier("Final", sender: indexPath)
         }
-
+    }
+    
+    // @desc: Helper function to get the current phase of the battle
+    func getCurrentPhase(currentPhase: String) -> Phase {
+        if (currentPhase == "1"){
+            return Phase.SUBMIT
+        } else if (currentPhase == "2"){
+            return Phase.VOTE
+        } else {
+            return Phase.FINAL
+        }
     }
     
     @IBAction func createBattleTapped(sender: AnyObject) {
@@ -112,7 +136,8 @@ class BattlesTableViewController: UITableViewController {
         appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
     }
     
-    func fetchAllObjects() {
+    // @desc: Makes a query to our Parse database and pulls all Battle objects
+    func fetchAllBattles() {
         let query: PFQuery = PFQuery(className: "Battle")
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -125,34 +150,34 @@ class BattlesTableViewController: UITableViewController {
                 if let objects = objects {
                     
                     for object in objects {
-                        print("ObjectId: " + ((object.objectId)! as String))
-                        print("BattleName: " + ((object["name"])! as! String))
-                        let timeCreated = (object["time"])!
+                        //print("ObjectId: " + ((object.objectId)! as String))
+                        //print("BattleName: " + ((object["name"])! as! String))
                         
+                        let timeCreated = (object["time"])!
                         let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
-                        print(intervalInSeconds/self.PHASE_INTERVAL)
+                        //print(intervalInSeconds/self.PHASE_INTERVAL)
                         
                         let currentPhase = self.getCurrentPhase(intervalInSeconds/self.PHASE_INTERVAL)
                         let timeLeft = self.getTimeLeft(intervalInSeconds/self.PHASE_INTERVAL)
-                        
-                        print("Time left: " + timeLeft + "m")
+                        //print("Time left: " + timeLeft + "m")
                         
                         // Save new objects into core data
                         self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
                         
-                        // TODO: Fix this, this is super hard-codey
                         self.battles = (self.data?.getBattles())!
                         
                         self.tableView.reloadData()
                     }
                 }
             } else {
-//                 Log details of the failure
+                 // Log details of the failure
                  print("Error: \(error!)")
             }
         }
     }
     
+    // @desc: Based off of the elapsed time since the creation of the battle,
+    //        determine which phase the battle is in.
     func getCurrentPhase(timeInterval: Double) -> String {
         if (timeInterval < 1){
             return "Submit"
@@ -163,6 +188,7 @@ class BattlesTableViewController: UITableViewController {
         }
     }
     
+    // @desc: Get the remaining time left in each phase of the battle.
     func getTimeLeft(timeInterval: Double) -> String {
         var timeLeft = 0.0
         
@@ -206,11 +232,22 @@ class BattlesTableViewController: UITableViewController {
             // Get the destination view controller
             let voteVC:VoteTableViewController = segue.destinationViewController as! VoteTableViewController
             
-            
             // Pass in the title for the row selected
             voteVC.battleTitle = currentCell.lblBattleName.text!
             voteVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
-
+        
+        if segue.identifier == "Final" {
+            
+            let indexPath:NSIndexPath = sender as! NSIndexPath
+            let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
+            
+            // Get the destination view controller
+            let finalVC:FinalTableViewController = segue.destinationViewController as! FinalTableViewController
+            
+            // Pass in the title for the row selected
+            finalVC.battleTitle = currentCell.lblBattleName.text!
+            finalVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
+        }
     }
 }

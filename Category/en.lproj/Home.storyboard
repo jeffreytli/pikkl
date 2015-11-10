@@ -122,6 +122,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="kSG-HF-MYX">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </refreshControl>
                     <connections>
                         <segue destination="ncs-Bk-K6O" kind="show" identifier="Submit" id="aeY-0z-MRu"/>
                         <segue destination="1vc-NB-Gww" kind="show" identifier="Vote" id="jZp-c4-nSI"/>
@@ -322,12 +326,30 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nT0-ie-td6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinalCell" textLabel="Ku8-Hr-XNC" detailTextLabel="Tug-x3-YI1" style="IBUITableViewCellStyleValue1" id="nT0-ie-td6">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nT0-ie-td6" id="Xkt-VE-gfC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ku8-Hr-XNC">
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tug-x3-YI1">
+                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>

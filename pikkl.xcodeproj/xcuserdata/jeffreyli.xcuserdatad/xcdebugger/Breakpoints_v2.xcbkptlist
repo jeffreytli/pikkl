@@ -87,11 +87,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "468657128.729351"
+            timestampString = "468737055.091842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -103,11 +103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "468657128.729351"
+            timestampString = "468737055.091842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
