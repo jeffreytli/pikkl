@@ -112,7 +112,6 @@ class BattlesTableViewController: UITableViewController {
     
     // @desc: Helper function to get the current phase of the battle
     func getCurrentPhase(currentPhase: String) -> Phase {
-        print(currentPhase + "This one")
         if (currentPhase == "Submit"){
             return Phase.SUBMIT
         } else if (currentPhase == "Vote"){
@@ -213,7 +212,6 @@ class BattlesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do something for the ShowDetail segue
-        print("SEG IDENTIFIER: \(segue.identifier)")
         if segue.identifier == "Submit" {
             
             let indexPath:NSIndexPath = sender as! NSIndexPath
@@ -223,7 +221,6 @@ class BattlesTableViewController: UITableViewController {
             let detailVC:SubmitViewController = segue.destinationViewController as! SubmitViewController
             
             // Pass in the title for the row selected
-            print("BattleTitle Seg: \(detailVC.battleTitle)")
             detailVC.battleTitle = currentCell.lblBattleName.text!
             detailVC.battleID = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }

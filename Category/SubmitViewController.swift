@@ -29,7 +29,6 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         imagePicker.delegate = self
         imgSubmit.image = UIImage(named: "SubmitCamera")
-        print("battleTitle: \(battleTitle)")
         lblBattleTitle.text = battleTitle
 
     }
@@ -125,7 +124,6 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         entry.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
-                print("woohoo!")
                 let alertController = UIAlertController(title: "", message:
                     "Photo entry submitted!", preferredStyle: UIAlertControllerStyle.Alert)
                 
