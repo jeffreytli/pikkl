@@ -231,7 +231,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1824.5" y="-936.5"/>
+            <point key="canvasLocation" x="1839.5" y="-944.5"/>
         </scene>
         <!--Details-->
         <scene sceneID="cPl-uP-D8u">
@@ -264,7 +264,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsM-BJ-984" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.5" y="-936.5"/>
+            <point key="canvasLocation" x="2381.5" y="-944.5"/>
         </scene>
         <!--Vote-->
         <scene sceneID="8CH-vU-99T">

@@ -23,7 +23,8 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
-    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
+//    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
+    let PHASE_INTERVAL = 180.0
     
     var data:BattleDataModel? = nil
     var currentStage = Phase.VOTE
