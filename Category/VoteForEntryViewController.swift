@@ -17,6 +17,7 @@ class VoteForEntryViewController: UIViewController {
     @IBOutlet weak var imgEntry: UIImageView!
     
     @IBOutlet weak var fieldVote: UITextField!
+    @IBOutlet weak var lblVoteScore: UILabel!
     
     var currentEntry:PFObject? = nil
     
@@ -55,7 +56,7 @@ class VoteForEntryViewController: UIViewController {
                     //self.navigationController?.popViewControllerAnimated(true)
                     
                     var tempVote = self.currentEntry!["score"] as! Int
-                    tempVote += Int(self.fieldVote.text!)!
+                    tempVote += Int(self.lblVoteScore.text!)!
                     self.currentEntry!["score"] = tempVote
                     var tempNumVoters = self.currentEntry!["numVoters"] as! Int
                     tempNumVoters++
@@ -81,7 +82,12 @@ class VoteForEntryViewController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
-
+    }
+    
+    @IBAction func sliderVoteChanged(sender: UISlider) {
+        let currentValue = Int(sender.value)
+        
+        lblVoteScore.text = "\(currentValue)"
     }
     
     /*

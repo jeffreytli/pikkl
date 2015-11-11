@@ -386,18 +386,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="krz-cI-dbd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
-                                <rect key="frame" x="42" y="189" width="290" height="290"/>
+                                <rect key="frame" x="42" y="118" width="290" height="290"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="26" id="Hfw-sj-Mm6"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="UcE-OO-hAc" secondAttribute="centerX" id="V0D-py-PL2"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" constant="125" id="WRn-Ag-ybW"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerY" secondItem="UcE-OO-hAc" secondAttribute="centerY" id="uZE-Ca-ODb"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="krz-cI-dbd" secondAttribute="centerX" id="0BV-fX-fhF"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" constant="54" id="5gc-Fq-HOo"/>
+                            <constraint firstAttribute="trailing" secondItem="krz-cI-dbd" secondAttribute="trailing" id="J2w-8A-WR2"/>
+                            <constraint firstItem="krz-cI-dbd" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" id="ODT-q2-tUl"/>
+                            <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="259" id="ZBY-cy-Zjo"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="26" id="a8B-2L-tig"/>
+                            <constraint firstItem="krz-cI-dbd" firstAttribute="bottom" secondItem="SMk-wH-2zv" secondAttribute="top" id="hkd-kh-Yvi"/>
+                            <constraint firstItem="krz-cI-dbd" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" id="iVu-00-UZV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zhw-87-U8f"/>
@@ -426,13 +434,6 @@
                                 <rect key="frame" x="42" y="108" width="290" height="290"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote Here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-Is-WLL">
-                                <rect key="frame" x="147" y="434" width="81" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-h5-Bns">
                                 <rect key="frame" x="152" y="563" width="71" height="30"/>
                                 <animations/>
@@ -443,34 +444,46 @@
                                     <action selector="btnCastVote:" destination="jQs-bc-0yo" eventType="touchUpInside" id="rct-uq-wV6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-k6-lO5">
-                                <rect key="frame" x="20" y="497" width="335" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="PRq-BS-S0C">
+                                <rect key="frame" x="18" y="508" width="339" height="31"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <connections>
+                                    <action selector="sliderVoteChanged:" destination="jQs-bc-0yo" eventType="valueChanged" id="vXZ-r0-tyu"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-Is-WLL">
+                                <rect key="frame" x="150" y="450" width="74" height="73"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="1PU-6i-LfA"/>
+                                    <constraint firstAttribute="width" constant="74" id="2pF-Sb-617"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JXk-h5-Bns" firstAttribute="top" secondItem="jKT-k6-lO5" secondAttribute="bottom" constant="36" id="2D1-7Y-uBP"/>
-                            <constraint firstItem="jKT-k6-lO5" firstAttribute="top" secondItem="G1C-Is-WLL" secondAttribute="bottom" constant="42" id="5DY-Ns-ZFX"/>
-                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="top" secondItem="kgI-vy-CV1" secondAttribute="bottom" constant="44" id="Kl7-2c-IwX"/>
-                            <constraint firstItem="jKT-k6-lO5" firstAttribute="centerX" secondItem="JXk-h5-Bns" secondAttribute="centerX" id="LFO-ga-8aB"/>
-                            <constraint firstItem="jKT-k6-lO5" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="4" id="P1m-1L-uEN"/>
-                            <constraint firstItem="cHi-wE-66R" firstAttribute="top" secondItem="JXk-h5-Bns" secondAttribute="bottom" constant="74" id="U8R-35-XGu"/>
-                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="G1C-Is-WLL" secondAttribute="centerX" id="Uei-yR-cfN"/>
-                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="26" id="cQy-p9-NWP"/>
-                            <constraint firstItem="G1C-Is-WLL" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="36" id="cpa-fg-VD9"/>
-                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="a6I-IS-SY4" secondAttribute="centerX" id="gLt-eM-ifj"/>
-                            <constraint firstItem="G1C-Is-WLL" firstAttribute="centerX" secondItem="jKT-k6-lO5" secondAttribute="centerX" id="oc1-LW-fYD"/>
+                            <constraint firstItem="PRq-BS-S0C" firstAttribute="centerX" secondItem="JXk-h5-Bns" secondAttribute="centerX" id="4xB-Qy-3Cs"/>
+                            <constraint firstItem="cHi-wE-66R" firstAttribute="top" secondItem="JXk-h5-Bns" secondAttribute="bottom" constant="74" id="5Z4-eX-Ugf"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="a6I-IS-SY4" secondAttribute="centerX" id="6Xi-sz-3MT"/>
+                            <constraint firstItem="G1C-Is-WLL" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="52" id="9Z1-eR-vzQ"/>
+                            <constraint firstItem="G1C-Is-WLL" firstAttribute="centerX" secondItem="PRq-BS-S0C" secondAttribute="centerX" id="MOH-ak-AMm"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="26" id="NFk-Eh-d1J"/>
+                            <constraint firstItem="PRq-BS-S0C" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="4" id="NbQ-4L-eYn"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="G1C-Is-WLL" secondAttribute="centerX" id="T7N-iC-80f"/>
+                            <constraint firstItem="OAJ-Wz-uB3" firstAttribute="top" secondItem="kgI-vy-CV1" secondAttribute="bottom" constant="44" id="gWW-xC-3ce"/>
+                            <constraint firstItem="JXk-h5-Bns" firstAttribute="top" secondItem="PRq-BS-S0C" secondAttribute="bottom" constant="25" id="ghC-LH-1pS"/>
+                            <constraint firstItem="JXk-h5-Bns" firstAttribute="top" secondItem="G1C-Is-WLL" secondAttribute="bottom" constant="40" id="psA-N8-qqh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RFE-Pz-Deh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="fieldVote" destination="jKT-k6-lO5" id="92i-Sl-umE"/>
                         <outlet property="imgEntry" destination="OAJ-Wz-uB3" id="Ju6-EV-evz"/>
+                        <outlet property="lblVoteScore" destination="G1C-Is-WLL" id="EZt-z6-Vry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7k0-So-tNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,6 +523,7 @@
         <image name="temp2.png" width="778" height="791"/>
         <image name="temp6.png" width="292" height="292"/>
         <image name="temp8.png" width="500" height="500"/>
+        <image name="wallpaper.png" width="640" height="1136"/>
     </resources>
     <color key="tintColor" red="0.80392156862745101" green="0.86274509803921573" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
