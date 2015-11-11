@@ -8,16 +8,22 @@ In Beta:
 
 
 Julio
-- did front-end and back-end programming for vote and final view controllers
+- did front-end and back-end programming for 'vote' and 'final' view controllers
 - implemented battle entry object in parse in submit view controller
 - implemented conditional segue for various stages in BattleTableViewController
 - updated battle object to keep track of entries
+- implemented the different phases of the battle along with their associated views within the story board
+- implemented the logic for uploading, submitting and storing photos into Parse
 
 Jeffrey
 - implemented all of the infrastructure and code for time based change of phases
-- implemented core data for loading of initital battle table view
+- implemented core data for saving all of the battles, used in displaying the initial battle table view
 - added alert dialog in battle table view for additional confirmation of battle creation 
 - added segue to return back to battle's list after battle creation
+- implemented core logic for querying Parse for all Facebook friends (this is currently unimplemented in beta due to the time constraints)
+- added refreshing capabilities on the battle table view for possible inconsistent states (multiple external users creating battles at the same time)
+- allowed users to login with Facebook and create a username, which is stored in the Parse database.
 
 Morgan
-- Front end design changes
+- Front end design changes 
+- UI/UX planning
