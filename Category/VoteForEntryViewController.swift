@@ -16,7 +16,9 @@ class VoteForEntryViewController: UIViewController {
     
     @IBOutlet weak var imgEntry: UIImageView!
     
-    @IBOutlet weak var fieldVote: UITextField!
+    //@IBOutlet weak var fieldVote: UITextField!
+    
+    @IBOutlet weak var sliderLabel: UILabel!
     
     var currentEntry:PFObject? = nil
     
@@ -40,6 +42,11 @@ class VoteForEntryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    @IBAction func voteSlider(sender: UISlider) {
+        var sliderValue = lroundf(sender.value)
+        sliderLabel.text = "\(sliderValue)"
+    }
     
     @IBAction func btnCastVote(sender: AnyObject) {
         var userHasVoted = currentEntry!["userHasVoted"] as! Dictionary<String, Bool>
@@ -48,7 +55,7 @@ class VoteForEntryViewController: UIViewController {
         //if to prevent voting more than once per entry
         if(userHasVoted[curUserId] == nil) {
             var tempVote = currentEntry!["score"] as! Int
-            tempVote += Int(fieldVote.text!)!
+            tempVote += Int(sliderLabel.text!)!
             currentEntry!["score"] = tempVote
             var tempNumVoters = currentEntry!["numVoters"] as! Int
             tempNumVoters++
