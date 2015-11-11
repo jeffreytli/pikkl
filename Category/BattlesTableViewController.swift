@@ -23,7 +23,7 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
-    let PHASE_INTERVAL = 180.0 // This is currently set to 1 hour; each phase is an hour long
+    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
     
     var data:BattleDataModel? = nil
     var currentStage = Phase.VOTE
@@ -112,7 +112,6 @@ class BattlesTableViewController: UITableViewController {
     
     // @desc: Helper function to get the current phase of the battle
     func getCurrentPhase(currentPhase: String) -> Phase {
-        print(currentPhase + "This one")
         if (currentPhase == "Submit"){
             return Phase.SUBMIT
         } else if (currentPhase == "Vote"){
@@ -152,16 +151,16 @@ class BattlesTableViewController: UITableViewController {
                 if let objects = objects {
                     
                     for object in objects {
-                        //print("ObjectId: " + ((object.objectId)! as String))
-                        //print("BattleName: " + ((object["name"])! as! String))
+                        print("ObjectId: " + ((object.objectId)! as String))
+                        print("BattleName: " + ((object["name"])! as! String))
                         
                         let timeCreated = (object["time"])!
                         let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
-                        //print(intervalInSeconds/self.PHASE_INTERVAL)
+                        print(intervalInSeconds/self.PHASE_INTERVAL)
                         
                         let currentPhase = self.getCurrentPhase(intervalInSeconds/self.PHASE_INTERVAL)
                         let timeLeft = self.getTimeLeft(intervalInSeconds/self.PHASE_INTERVAL)
-                        //print("Time left: " + timeLeft + "m")
+                        print("Time left: " + timeLeft + "m")
                         
                         // Save new objects into core data
                         self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
@@ -197,11 +196,13 @@ class BattlesTableViewController: UITableViewController {
         if (timeInterval < 1.0){
             timeLeft = timeInterval * PHASE_INTERVAL
             timeLeft = timeLeft / 60.0
+            timeLeft = 60.0 - timeLeft
             return String(Int(timeLeft))
         } else if (timeInterval >= 1.0 && timeInterval < 2.0){
             timeLeft = timeInterval - 1.0
             timeLeft = timeLeft * PHASE_INTERVAL
             timeLeft = timeLeft / 60.0
+            timeLeft = 60.0 - timeLeft
             return String(Int(timeLeft))
         } else {
             return "0"
@@ -211,7 +212,6 @@ class BattlesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do something for the ShowDetail segue
-        print("SEG IDENTIFIER: \(segue.identifier)")
         if segue.identifier == "Submit" {
             
             let indexPath:NSIndexPath = sender as! NSIndexPath
@@ -221,7 +221,6 @@ class BattlesTableViewController: UITableViewController {
             let detailVC:SubmitViewController = segue.destinationViewController as! SubmitViewController
             
             // Pass in the title for the row selected
-            print("BattleTitle Seg: \(detailVC.battleTitle)")
             detailVC.battleTitle = currentCell.lblBattleName.text!
             detailVC.battleID = (battles[indexPath.row].valueForKey("objectId") as? String)!
         }
