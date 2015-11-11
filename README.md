@@ -15,8 +15,9 @@ Pass: bobbyisthebest
 - Wait in the 'Battles' Table View and refresh until the FINAL phase is available (green 'Current Phase:' Final). Tap your battle and see the final average scores. Tap a score to view the photo entry.
 That's Pikkl Beta!
 
-Note: For some simulators the TableViewCell Separators may dissappear in this version. We also tested this on a basic table view cell and it had the same behavior. The Views behaved well on Morgan's 15in Retina but not on Jeffrey's 13in Macbook Air so we think it may be a resolution problem.
-
+Note: 
+- For some simulators the TableViewCell Separators may dissappear in this version. We also tested this on a basic table view cell and it had the same behavior. The Views behaved well on Morgan's 15in Retina but not on Jeffrey's 13in Macbook Air so we think it may be a resolution problem.
+- The circle profile pictures are still default, randomly selected set of profiles. We have not implemented these yet as it's not a core feature.
 
 In Beta: 
 -The biggest difference is providing the user with the ability to Log in with Facebook and create a username. The username then gets stored in the Parse database. 
