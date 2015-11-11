@@ -25,5 +25,7 @@ Jeffrey
 - allowed users to login with Facebook and create a username, which is stored in the Parse database.
 
 Morgan
-- Front end design changes 
-- UI/UX planning
+- front end design changes: constraints, icons, typography, color
+- UI/UX game redesign: 3 phase game system
+- implemented slider for voting
+- upload and image selector camera for submit - front end
