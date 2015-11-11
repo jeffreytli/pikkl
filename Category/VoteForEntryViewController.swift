@@ -45,21 +45,43 @@ class VoteForEntryViewController: UIViewController {
         var userHasVoted = currentEntry!["userHasVoted"] as! Dictionary<String, Bool>
         let curUserId:String = PFUser.currentUser()!.objectId!
         
-        //if to prevent voting more than once per entry
-        if(userHasVoted[curUserId] == nil) {
-            var tempVote = currentEntry!["score"] as! Int
-            tempVote += Int(fieldVote.text!)!
-            currentEntry!["score"] = tempVote
-            var tempNumVoters = currentEntry!["numVoters"] as! Int
-            tempNumVoters++
-            currentEntry!["numVoters"] = tempNumVoters
-            userHasVoted.updateValue(true, forKey: curUserId)
-            currentEntry!["userHasVoted"] = userHasVoted
-            currentEntry?.saveInBackground()
-        } else {
-            //has already voted, figure out what to do for this case?
-            print("you can't vote twice on the same entry!!")
+        dispatch_async(dispatch_get_main_queue()) {
+            if(userHasVoted[curUserId] == nil) {
+                let alertController = UIAlertController(title: "Cast Vote", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Save to Parse database and return to previous view
+                    //self.navigationController?.popViewControllerAnimated(true)
+                    
+                    var tempVote = self.currentEntry!["score"] as! Int
+                    tempVote += Int(self.fieldVote.text!)!
+                    self.currentEntry!["score"] = tempVote
+                    var tempNumVoters = self.currentEntry!["numVoters"] as! Int
+                    tempNumVoters++
+                    self.currentEntry!["numVoters"] = tempNumVoters
+                    userHasVoted.updateValue(true, forKey: curUserId)
+                    self.currentEntry!["userHasVoted"] = userHasVoted
+                    self.currentEntry?.saveInBackground()
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
+                    (action:UIAlertAction) in
+                    // Do nothing
+                }
+                
+                alertController.addAction(OKAction)
+                alertController.addAction(cancelAction)
+                
+                self.presentViewController(alertController, animated: true, completion:nil)
+            } else {
+                let alertController = UIAlertController(title: "", message:
+                    "You can only vote once per entry.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
         }
+
     }
     
     /*
