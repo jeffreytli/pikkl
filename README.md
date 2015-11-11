@@ -4,16 +4,21 @@ In Beta:
 -The biggest difference is providing the user with the ability to Log in with Facebook and create a username. The username then gets stored in the Parse database. 
 -We added the ability for users to create Battles/Competitions of their own, which is then synced up with parse and displayed in the Battle Table View Controller. 
 -Users are able to enter any of these battles and start submitting pictures of their own to the Battle.
+-Battle objects and Battle entry objects have been created and populated with data
+-Users can submit photos (which are stored in parse) to be voted on in battles
+-User can vote on battle entries
+-Users can see a final screen, where all of the average scores per photo are showed
 -The game is now fully playable, the phases of the battle change based on time
 
 
 Julio
-- did front-end and back-end programming for 'vote' and 'final' view controllers
-- implemented battle entry object in parse in submit view controller
+- did front-end (storyboard) and back-end programming for 'vote' and 'final' view controllers
+- designed and created battle entry object in parse for keeping track of entries (created in submit view controller)
 - implemented conditional segue for various stages in BattleTableViewController
-- updated battle object to keep track of entries
+- updated battle object to keep track of it's entries
 - implemented the different phases of the battle along with their associated views within the story board
 - implemented the logic for uploading, submitting and storing photos into Parse
+- created voting system and updating of votes and average scores for final view
 
 Jeffrey
 - implemented all of the infrastructure and code for time based change of phases
