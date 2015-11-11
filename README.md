@@ -28,7 +28,6 @@ In Beta:
 -Users can see a final screen, where all of the average scores per photo are showed
 -The game is now fully playable, the phases of the battle change based on time
 
-
 Julio (33.333333%)
 - did front-end (storyboard) and back-end programming for 'vote' and 'final' view controllers
 - designed and created battle entry object in parse for keeping track of entries (created in submit view controller)
