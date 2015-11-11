@@ -71,7 +71,6 @@ class FinalTableViewController: UITableViewController {
         //if(entries.count > row-1 )
         //print(String(row) + "this is row")
         //print(String(entries.count) + "this is entry count")
-        cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         var score:Int = entries[row]["score"] as! Int
         let numVoters:Int = entries[row]["numVoters"] as! Int
         var finalScore:Double = Double(score) / Double(numVoters)
@@ -79,13 +78,16 @@ class FinalTableViewController: UITableViewController {
         if(finalScore.isNaN) {
             finalScore = 0
         }
-        cell.detailTextLabel!.text = String(finalScore) + "/ 5.0"
-        
         let cellOwnerId:String = (entries[row]["owner"] as! PFUser).valueForKey("objectId")! as! String
         let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
         if(cellOwnerId  == curUserId) {
+            cell.textLabel!.text = "My Submission"
             cell.backgroundColor = UIColor(red: 0.60, green: 0.92, blue: 0.71, alpha: 0.8)
+        } else {
+            cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         }
+        cell.detailTextLabel!.text = String(finalScore) + "/ 5.0"
+
         return cell
     }
     
