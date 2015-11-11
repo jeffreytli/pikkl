@@ -153,4 +153,16 @@ class NewUserViewController: UIViewController {
             }
         }
     }
+    
+    // Makes keyboard go away when you touch Return key on keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textFieldUsername.resignFirstResponder()
+        return true;
+    }
+    
+    // Makes keyboard go away when you touch outside of the keyboard area
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        textFieldUsername.resignFirstResponder()
+        self.view.endEditing(true)
+    }
 }

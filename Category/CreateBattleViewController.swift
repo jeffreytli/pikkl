@@ -152,6 +152,17 @@ class CreateBattleViewController: UIViewController {
             }, completion: nil)
     }
     
+    // Makes keyboard go away when you touch Return key on keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        txtFieldTitle.resignFirstResponder()
+        return true;
+    }
+    
+    // Makes keyboard go away when you touch outside of the keyboard area
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        txtFieldTitle.resignFirstResponder()
+        self.view.endEditing(true)
+    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
