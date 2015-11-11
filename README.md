@@ -29,7 +29,7 @@ In Beta:
 -The game is now fully playable, the phases of the battle change based on time
 
 
-Julio
+Julio (33.333333%)
 - did front-end (storyboard) and back-end programming for 'vote' and 'final' view controllers
 - designed and created battle entry object in parse for keeping track of entries (created in submit view controller)
 - implemented conditional segue for various stages in BattleTableViewController
@@ -38,7 +38,7 @@ Julio
 - implemented the logic for uploading, submitting and storing photos into Parse
 - created voting system and updating of votes and average scores for final view
 
-Jeffrey
+Jeffrey (33.333333%)
 - implemented all of the infrastructure and code for time based change of phases
 - implemented core data for saving all of the battles, used in displaying the initial battle table view
 - added alert dialog in battle table view for additional confirmation of battle creation 
@@ -47,7 +47,7 @@ Jeffrey
 - added refreshing capabilities on the battle table view for possible inconsistent states (multiple external users creating battles at the same time)
 - allowed users to login with Facebook and create a username, which is stored in the Parse database.
 
-Morgan
+Morgan (33.333333%)
 - front end design changes: constraints, icons, typography, color
     - final hi-fidelity design will be implemented for Final Version
 - UI/UX game redesign: 3 phase game system
