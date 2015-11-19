@@ -211,13 +211,13 @@ class BattlesTableViewController: UITableViewController {
         if (timeInterval < 1.0){
             timeLeft = timeInterval * phaseLength
             timeLeft = timeLeft / 60.0
-            timeLeft = ((phaseLength / 60.0) + 1.0) - timeLeft //TODO: THIS IS HARDCODED TO BE TWO MINUTES
+            timeLeft = ((phaseLength / 60.0) + 1.0) - timeLeft
             return String(Int(timeLeft))
         } else if (timeInterval >= 1.0 && timeInterval < 2.0){
             timeLeft = timeInterval - 1.0
             timeLeft = timeLeft * phaseLength
             timeLeft = timeLeft / 60.0
-            timeLeft = ((phaseLength / 60.0) + 1.0) - timeLeft //TODO: THIS IS HARDCODED TO BE TWO MINUTES
+            timeLeft = ((phaseLength / 60.0) + 1.0) - timeLeft
             return String(Int(timeLeft))
         } else {
             return "0"
