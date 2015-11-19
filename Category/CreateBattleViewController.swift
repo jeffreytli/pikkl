@@ -47,9 +47,6 @@ class CreateBattleViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func btnCancelTapped(sender: AnyObject) {
-        redirectToBattlesTableView()
-    }
     @IBAction func btnInviteFriends(sender: AnyObject) {
         getFacebookFriends()
     }
@@ -59,38 +56,43 @@ class CreateBattleViewController: UIViewController {
             let battleName = self.txtFieldTitle.text
             
             if (!battleName!.isEmpty){
-                let alertController = UIAlertController(title: "Create \"" + battleName! + "\"", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
-                    (action:UIAlertAction) in
-                    // Save to Parse database and return to previous view
-                    self.navigationController?.popViewControllerAnimated(true)
-                    
-                    self.createBattle()
-                    
-                    self.redirectToBattlesTableView()
-                }
-                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
-                    (action:UIAlertAction) in
-                    // Do nothing
-                }
-                
-                alertController.addAction(OKAction)
-                alertController.addAction(cancelAction)
-                
-                self.presentViewController(alertController, animated: true, completion:nil)
+                self.displayValidBattlePrompt(battleName!)
             } else {
-                let alertController = UIAlertController(title: "", message:
-                    "Please enter a battle name", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.displayInvalidBattlePrompt()
             }
         }
     }
     
+    func displayValidBattlePrompt(battleName: String) -> Void {
+        let alertController = UIAlertController(title: "Create \"" + battleName + "\"", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+            (action:UIAlertAction) in
+            // Save to Parse database and return to previous view
+            self.navigationController?.popViewControllerAnimated(true)
+            
+            self.createBattle()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
+            (action:UIAlertAction) in
+            // Do nothing
+        }
+        
+        alertController.addAction(OKAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
+    func displayInvalidBattlePrompt() -> Void {
+        let alertController = UIAlertController(title: "", message:
+            "Please enter a battle name", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     func createBattle() -> Void {
-        // create battle object
         let battle = PFObject(className:"Battle")
         let date = NSDate()
         
@@ -100,22 +102,20 @@ class CreateBattleViewController: UIViewController {
         battle["entries"] = entryArr
         battle["time"] = date
         battle["phaseLength"] = Int(datePickerCountDown.countDownDuration)
-        //battle["currentPhase"] = Stage.SUBMIT.rawValue
-        
-        // people invited to battle
-        // time left in battle
         
         battle.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
                 sleep(1)
+                self.redirectToBattlesTableView()
             } else {
-                // There was a problem, check error.description
+                print("Error in saving battle")
             }
         }
     }
     
+    // Currently unused
     func getFacebookFriends() -> Void {
         let fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
@@ -138,6 +138,10 @@ class CreateBattleViewController: UIViewController {
                 print("Error Getting Friends \(error)");
             }
         }
+    }
+    
+    @IBAction func btnCancelTapped(sender: AnyObject) {
+        redirectToBattlesTableView()
     }
     
     func redirectToBattlesTableView() -> Void {
@@ -165,11 +169,4 @@ class CreateBattleViewController: UIViewController {
         txtFieldTitle.resignFirstResponder()
         self.view.endEditing(true)
     }
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    
 }

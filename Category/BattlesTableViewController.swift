@@ -60,7 +60,6 @@ class BattlesTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -112,62 +111,47 @@ class BattlesTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func createBattleTapped(sender: AnyObject) {
-        redirectToCreateBattleView()
-    }
-    
-    func redirectToCreateBattleView() -> Void {
-        let storyboard = UIStoryboard(name: "Create", bundle: nil)
-        
-        let controller = storyboard.instantiateViewControllerWithIdentifier("CreateBattleViewController") as! CreateBattleViewController
-        
-        let controllerNav = UINavigationController(rootViewController: controller)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
-    }
-    
     // @desc: Makes a query to our Parse database and pulls all Battle objects
     func fetchAllBattles() {
         let query: PFQuery = PFQuery(className: "Battle")
-        
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-
             if error == nil {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
 
                 // Do something with the found objects
                 if let objects = objects {
-                    
-                    for object in objects {
-                        print("ObjectId: " + self.getBattleObjectId(object))
-                        print("BattleName: " + self.getBattleName(object))
-                        
-                        let curPhaseLength = self.getBattlePhaseLength(object)
-                        print("Phase Length: " + String(curPhaseLength))
-                        
-                        let timeCreated = self.getBattleTimeCreated(object)
-                        let timeElapsed = self.getTimeElapsed(curPhaseLength, timeCreated: timeCreated)
-                        print("Time Elapsed: " + String(timeElapsed))
-                        
-                        let currentPhase = self.getCurrentPhase(timeElapsed)
-                        let timeLeft = self.getTimeLeft(timeElapsed, phaseLength: curPhaseLength)
-                        print("Time left: " + timeLeft + "m")
-                        
-                        // Save new objects into core data
-                        self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
-                        
-                        self.battles = (self.data?.getBattles())!
-                        
-                        self.tableView.reloadData()
-                    }
+                    self.processBattleObjects(objects)
                 }
             } else {
                  // Log details of the failure
                  print("Error: \(error!)")
             }
+        }
+    }
+    
+    func processBattleObjects(objects: [PFObject]?) -> Void {
+        for object in objects! {
+            print("ObjectId: " + self.getBattleObjectId(object))
+            print("BattleName: " + self.getBattleName(object))
+            
+            let curPhaseLength = self.getBattlePhaseLength(object)
+            print("Phase Length: " + String(curPhaseLength))
+            
+            let timeCreated = self.getBattleTimeCreated(object)
+            let timeElapsed = self.getTimeElapsed(curPhaseLength, timeCreated: timeCreated)
+            print("Time Elapsed: " + String(timeElapsed))
+            
+            let currentPhase = self.getCurrentPhase(timeElapsed)
+            let timeLeft = self.getTimeLeft(timeElapsed, phaseLength: curPhaseLength)
+            print("Time left: " + timeLeft + "m")
+            
+            // Save new objects into core data
+            self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
+            
+            self.battles = (self.data?.getBattles())!
+            
+            self.tableView.reloadData()
         }
     }
     
@@ -222,6 +206,22 @@ class BattlesTableViewController: UITableViewController {
         } else {
             return "0"
         }
+    }
+    
+    @IBAction func createBattleTapped(sender: AnyObject) {
+        redirectToCreateBattleView()
+    }
+    
+    func redirectToCreateBattleView() -> Void {
+        let storyboard = UIStoryboard(name: "Create", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("CreateBattleViewController") as! CreateBattleViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
