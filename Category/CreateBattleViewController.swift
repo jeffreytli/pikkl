@@ -20,6 +20,7 @@ class CreateBattleViewController: UIViewController {
         case FINAL = 3
     }
 
+    @IBOutlet weak var datePickerCountDown: UIDatePicker!
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var txtFieldTitle: UITextField!
     
@@ -98,6 +99,7 @@ class CreateBattleViewController: UIViewController {
         battle["creator"] = PFUser.currentUser()
         battle["entries"] = entryArr
         battle["time"] = date
+        battle["phaseLength"] = Int(datePickerCountDown.countDownDuration)
         //battle["currentPhase"] = Stage.SUBMIT.rawValue
         
         // people invited to battle

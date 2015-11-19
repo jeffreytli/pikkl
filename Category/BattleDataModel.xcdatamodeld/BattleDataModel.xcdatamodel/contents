@@ -4,9 +4,10 @@
         <attribute name="currentPhase" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phaseLength" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeLeft" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Battle" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Battle" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

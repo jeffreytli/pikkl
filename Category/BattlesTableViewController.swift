@@ -23,9 +23,6 @@ class BattlesTableViewController: UITableViewController {
     
     let textCellIdentifier = "BattleCell"
     
-//    let PHASE_INTERVAL = 3600.0 // This is currently set to 1 hour; each phase is an hour long
-    let PHASE_INTERVAL = 120.0
-    
     var data:BattleDataModel? = nil
     var currentStage = Phase.VOTE
     var battles = [NSManagedObject]()
@@ -84,9 +81,6 @@ class BattlesTableViewController: UITableViewController {
         cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
         cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
         
-        //must build hex converter
-        //cell.backgroundColor = UIColor(red: 0x03, green: 0xC9, blue: 0xA9, alpha: 1)
-        
         return cell
     }
     
@@ -94,13 +88,9 @@ class BattlesTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        
         let battle = battles[row]
         
         currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
-        
-        //print(String(currentStage) + "hi")
-        //currentStage = Phase.SUBMIT
         
         if(currentStage == Phase.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
@@ -152,15 +142,18 @@ class BattlesTableViewController: UITableViewController {
                 if let objects = objects {
                     
                     for object in objects {
-                        print("ObjectId: " + ((object.objectId)! as String))
-                        print("BattleName: " + ((object["name"])! as! String))
+                        print("ObjectId: " + self.getBattleObjectId(object))
+                        print("BattleName: " + self.getBattleName(object))
                         
-                        let timeCreated = (object["time"])!
-                        let intervalInSeconds = NSDate().timeIntervalSinceDate(timeCreated as! NSDate)
-                        print(intervalInSeconds/self.PHASE_INTERVAL)
+                        let curPhaseLength = self.getBattlePhaseLength(object)
+                        print("Phase Length: " + String(curPhaseLength))
                         
-                        let currentPhase = self.getCurrentPhase(intervalInSeconds/self.PHASE_INTERVAL)
-                        let timeLeft = self.getTimeLeft(intervalInSeconds/self.PHASE_INTERVAL)
+                        let timeCreated = self.getBattleTimeCreated(object)
+                        let timeElapsed = self.getTimeElapsed(curPhaseLength, timeCreated: timeCreated)
+                        print("Time Elapsed: " + String(timeElapsed))
+                        
+                        let currentPhase = self.getCurrentPhase(timeElapsed)
+                        let timeLeft = self.getTimeLeft(timeElapsed, phaseLength: curPhaseLength)
                         print("Time left: " + timeLeft + "m")
                         
                         // Save new objects into core data
@@ -178,6 +171,27 @@ class BattlesTableViewController: UITableViewController {
         }
     }
     
+    // Get time elapsed in minutes
+    func getTimeElapsed(curPhaseLength: Double, timeCreated: AnyObject) -> NSTimeInterval{
+        return NSDate().timeIntervalSinceDate(timeCreated as! NSDate) / curPhaseLength
+    }
+    
+    func getBattleTimeCreated(object: PFObject) -> AnyObject {
+        return object["time"]
+    }
+    
+    func getBattlePhaseLength(object: PFObject) -> Double {
+        return Double(object["phaseLength"].integerValue)
+    }
+    
+    func getBattleName(object: PFObject) -> String {
+        return object["name"]! as! String
+    }
+    
+    func getBattleObjectId(object: PFObject) -> String {
+        return object.objectId! as String
+    }
+    
     // @desc: Based off of the elapsed time since the creation of the battle,
     //        determine which phase the battle is in.
     func getCurrentPhase(timeInterval: Double) -> String {
@@ -191,19 +205,19 @@ class BattlesTableViewController: UITableViewController {
     }
     
     // @desc: Get the remaining time left in each phase of the battle.
-    func getTimeLeft(timeInterval: Double) -> String {
+    func getTimeLeft(timeInterval: Double, phaseLength: Double) -> String {
         var timeLeft = 0.0
         
         if (timeInterval < 1.0){
-            timeLeft = timeInterval * PHASE_INTERVAL
+            timeLeft = timeInterval * phaseLength
             timeLeft = timeLeft / 60.0
-            timeLeft = 3.0 - timeLeft //TODO: THIS IS HARDCODED TO BE TWO MINUTES
+            timeLeft = ((phaseLength / 60.0) + 1.0) - timeLeft //TODO: THIS IS HARDCODED TO BE TWO MINUTES
             return String(Int(timeLeft))
         } else if (timeInterval >= 1.0 && timeInterval < 2.0){
             timeLeft = timeInterval - 1.0
-            timeLeft = timeLeft * PHASE_INTERVAL
+            timeLeft = timeLeft * phaseLength
             timeLeft = timeLeft / 60.0
-            timeLeft = 3.0 - timeLeft //TODO: THIS IS HARDCODED TO BE TWO MINUTES
+            timeLeft = ((phaseLength / 60.0) + 1.0) - timeLeft //TODO: THIS IS HARDCODED TO BE TWO MINUTES
             return String(Int(timeLeft))
         } else {
             return "0"
