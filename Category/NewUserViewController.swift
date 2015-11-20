@@ -97,7 +97,6 @@ class NewUserViewController: UIViewController {
     func setPFUser(username:String) -> Void {
         // Facebook request parameters for a user
         let requestParameters = ["fields": "id, email, first_name, last_name"]
-        
         let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         
         userDetails.startWithCompletionHandler{ (connection, result, error:NSError!) -> Void in
@@ -114,37 +113,12 @@ class NewUserViewController: UIViewController {
                 
                 self.user = PFUser.currentUser()!
                 
-                // Save first name
-                if(userFirstName != nil){
-                    self.user!.setObject(userFirstName!, forKey: "first_name")
-                }
-                
-                // Save last name
-                if(userLastName != nil){
-                    self.user!.setObject(userLastName!, forKey: "last_name")
-                }
-                
-                // Save email-address
-                if(userEmail != nil){
-                    self.user!.setObject(userEmail!, forKey: "email")
-                }
-                
-                // Save username
-                self.user!.setObject(username, forKey: "username")
+                self.setUserDetails(userFirstName!, userLastName: userLastName!, userEmail: userEmail!, username: username)
             
-                
                 // We need to dispatch an async task to perform this data fetching/downloading in the background. Otherwise app will appear to freeze for user
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                    // Save and get Facebook profile picture
-                    let userProfilePicture = "https://graph.facebook.com/" + userId + "/picture?type=large"
-                    
-                    let profilePictureUrl = NSURL(string: userProfilePicture)
-                    let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
-                    
-                    if(profilePictureData != nil){
-                        let profileFileObject = PFFile(data:profilePictureData!)
-                        self.user!.setObject(profileFileObject, forKey: "profilePicture")
-                    }
+            
+                    self.setFBProfilePicture(userId)
                     
                     self.user!.saveInBackgroundWithBlock({(success:Bool, error:NSError?) -> Void in
                         if(success){
@@ -154,6 +128,52 @@ class NewUserViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func setUserDetails(userFirstName: String, userLastName: String, userEmail: String, username: String) -> Void {
+        // Save first name
+        self.setUserFirstName(userFirstName)
+        // Save last name
+        self.setUserLastName(userLastName)
+        // Save email-address
+        self.setUserEmail(userEmail)
+        // Save username
+        self.setUsername(username)
+    }
+    
+    func setFBProfilePicture(userId: String) -> Void {
+        // Save and get Facebook profile picture
+        let userProfilePicture = "https://graph.facebook.com/" + userId + "/picture?type=large"
+        
+        let profilePictureUrl = NSURL(string: userProfilePicture)
+        let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
+        
+        if(profilePictureData != nil){
+            let profileFileObject = PFFile(data:profilePictureData!)
+            self.user!.setObject(profileFileObject, forKey: "profilePicture")
+        }
+    }
+    
+    func setUserFirstName(userFirstName: String?) -> Void {
+        if(userFirstName != nil){
+            self.user!.setObject(userFirstName!, forKey: "first_name")
+        }
+    }
+    
+    func setUserLastName(userLastName: String?) -> Void {
+        if(userLastName != nil){
+            self.user!.setObject(userLastName!, forKey: "last_name")
+        }
+    }
+    
+    func setUserEmail(userEmail: String?) -> Void{
+        if(userEmail != nil){
+            self.user!.setObject(userEmail!, forKey: "email")
+        }
+    }
+    
+    func setUsername(username: String) -> Void {
+        self.user!.setObject(username, forKey: "username")
     }
     
     // Makes keyboard go away when you touch Return key on keyboard
