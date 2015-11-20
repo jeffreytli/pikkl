@@ -12,7 +12,7 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
-class CreateBattleViewController: UIViewController {
+class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     
     enum Stage: Int {
         case SUBMIT = 1
@@ -30,6 +30,8 @@ class CreateBattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //getFacebookFriends()
+        
+        txtFieldTitle.delegate = self
     }
     
     override func shouldAutorotate() -> Bool {
@@ -145,6 +147,8 @@ class CreateBattleViewController: UIViewController {
     }
     
     func redirectToBattlesTableView() -> Void {
+        textFieldShouldReturn(txtFieldTitle) // hide the keyboard
+        
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
         let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
