@@ -53,6 +53,8 @@ class NewUserViewController: UIViewController {
     }
     
     func redirectToBattlesTableView() -> Void {
+        textFieldShouldReturn(textFieldUsername) // Hide the keyboard
+        
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
         let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
