@@ -53,3 +53,6 @@ Morgan (33.333333%)
 - UI/UX game redesign: 3 phase game system
 - implemented slider for voting
 - upload and image selector camera for submit - front end
+
+
+blah blah blah
