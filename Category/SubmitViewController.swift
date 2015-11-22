@@ -111,6 +111,11 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         //saving as JPEG becase png was too large
         let imageData = UIImageJPEGRepresentation(imgSubmit.image!, 1.0)
         let imageFile = PFFile(name:"image.jpg", data:imageData!)
+        
+        let thumbnailData = UIImageJPEGRepresentation(imgSubmit.image!, 0.1)
+        let thumbnailFile = PFFile(name:"thumbnail.jpg", data:thumbnailData!)
+        
+        entry["thumbnail"] = thumbnailFile
         entry["image"] = imageFile
         entry["owner"] = PFUser.currentUser()
         entry["score"] = 0
