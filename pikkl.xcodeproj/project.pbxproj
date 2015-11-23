@@ -17,6 +17,7 @@
 		436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */; };
 		4379E6FB1BF1BD3E00120B47 /* FinalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */; };
 		438296F51C02A54900734DF4 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438296F41C02A54900734DF4 /* VoteViewController.swift */; };
+		439FF9BC1C02DE0F00DDBE86 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FF9BB1C02DE0F00DDBE86 /* FinalViewController.swift */; };
 		43F087A91BC07363007FD933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087A81BC07363007FD933 /* AppDelegate.swift */; };
 		43F087AB1BC07363007FD933 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F087AA1BC07363007FD933 /* LoginViewController.swift */; };
 		43F087AE1BC07363007FD933 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F087AC1BC07363007FD933 /* Home.storyboard */; };
@@ -80,6 +81,7 @@
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
 		4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalDetailViewController.swift; sourceTree = "<group>"; };
 		438296F41C02A54900734DF4 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
+		439FF9BB1C02DE0F00DDBE86 /* FinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		43F087A51BC07363007FD933 /* pikkl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pikkl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F087A81BC07363007FD933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F087AA1BC07363007FD933 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				433EC7041BEECB7600348288 /* FinalTableViewController.swift */,
+				439FF9BB1C02DE0F00DDBE86 /* FinalViewController.swift */,
 				4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */,
 			);
 			name = Final;
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */,
+				439FF9BC1C02DE0F00DDBE86 /* FinalViewController.swift in Sources */,
 				43F087AB1BC07363007FD933 /* LoginViewController.swift in Sources */,
 				50BE2CFC1BCB05DD0096618A /* NewUserViewController.swift in Sources */,
 				508B52661BEE9BED00E32D7F /* InviteFriendsTableViewController.swift in Sources */,

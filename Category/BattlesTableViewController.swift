@@ -90,7 +90,9 @@ class BattlesTableViewController: UITableViewController {
         let battle = battles[row]
         
         currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
-                
+        
+        currentStage = Phase.VOTE
+        
         if(currentStage == Phase.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
         } else if(currentStage == Phase.VOTE) {
@@ -259,7 +261,7 @@ class BattlesTableViewController: UITableViewController {
             let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
             
             // Get the destination view controller
-            let finalVC:FinalTableViewController = segue.destinationViewController as! FinalTableViewController
+            let finalVC:FinalViewController = segue.destinationViewController as! FinalViewController
             
             // Pass in the title for the row selected
             finalVC.battleTitle = currentCell.lblBattleName.text!
