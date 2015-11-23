@@ -15,14 +15,26 @@ import CoreData
 class VoteForEntryViewController: UIViewController {
     
     @IBOutlet weak var imgEntry: UIImageView!
-    
-    @IBOutlet weak var fieldVote: UITextField!
     @IBOutlet weak var lblVoteScore: UILabel!
+    @IBOutlet weak var sliderVote: UISlider!
+    @IBOutlet weak var btnCastVote: UIButton!
+    @IBOutlet weak var lblYourEntry: UILabel!
+    
     
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cellOwnerId:String = (currentEntry!["owner"] as! PFUser).valueForKey("objectId")! as! String
+        let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
+        if(cellOwnerId  == curUserId) {
+            lblVoteScore.hidden = true
+            sliderVote.hidden = true
+            btnCastVote.hidden = true
+            lblYourEntry.text = "This is your entry, ya can't vote on it!"
+        } else {
+            lblYourEntry.hidden = true
+        }
         let userImageFile = currentEntry!["image"] as! PFFile
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in

@@ -446,6 +446,16 @@
                                 <color key="textColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHT-NP-peS">
+                                <rect key="frame" x="20" y="431" width="335" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pYo-hf-1hb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -454,10 +464,13 @@
                             <constraint firstItem="cHi-wE-66R" firstAttribute="top" secondItem="JXk-h5-Bns" secondAttribute="bottom" constant="74" id="5Z4-eX-Ugf"/>
                             <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="a6I-IS-SY4" secondAttribute="centerX" id="6Xi-sz-3MT"/>
                             <constraint firstItem="G1C-Is-WLL" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="52" id="9Z1-eR-vzQ"/>
+                            <constraint firstItem="aHT-NP-peS" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="33" id="CkS-lw-ECo"/>
                             <constraint firstItem="G1C-Is-WLL" firstAttribute="centerX" secondItem="PRq-BS-S0C" secondAttribute="centerX" id="MOH-ak-AMm"/>
                             <constraint firstItem="OAJ-Wz-uB3" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="26" id="NFk-Eh-d1J"/>
                             <constraint firstItem="PRq-BS-S0C" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="4" id="NbQ-4L-eYn"/>
                             <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="G1C-Is-WLL" secondAttribute="centerX" id="T7N-iC-80f"/>
+                            <constraint firstItem="aHT-NP-peS" firstAttribute="leading" secondItem="PRq-BS-S0C" secondAttribute="leading" id="VRc-LL-dl5"/>
+                            <constraint firstItem="aHT-NP-peS" firstAttribute="trailing" secondItem="PRq-BS-S0C" secondAttribute="trailing" id="XKV-tP-nOP"/>
                             <constraint firstItem="OAJ-Wz-uB3" firstAttribute="top" secondItem="kgI-vy-CV1" secondAttribute="bottom" constant="44" id="gWW-xC-3ce"/>
                             <constraint firstItem="JXk-h5-Bns" firstAttribute="top" secondItem="PRq-BS-S0C" secondAttribute="bottom" constant="25" id="ghC-LH-1pS"/>
                             <constraint firstItem="JXk-h5-Bns" firstAttribute="top" secondItem="G1C-Is-WLL" secondAttribute="bottom" constant="40" id="psA-N8-qqh"/>
@@ -466,8 +479,11 @@
                     <navigationItem key="navigationItem" id="RFE-Pz-Deh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnCastVote" destination="JXk-h5-Bns" id="Ln2-XL-Gd1"/>
                         <outlet property="imgEntry" destination="OAJ-Wz-uB3" id="Ju6-EV-evz"/>
                         <outlet property="lblVoteScore" destination="G1C-Is-WLL" id="EZt-z6-Vry"/>
+                        <outlet property="lblYourEntry" destination="aHT-NP-peS" id="JaR-hZ-TAh"/>
+                        <outlet property="sliderVote" destination="PRq-BS-S0C" id="yUE-cC-fab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7k0-So-tNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
