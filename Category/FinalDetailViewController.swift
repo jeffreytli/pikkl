@@ -18,6 +18,7 @@ class FinalDetailViewController: UIViewController {
     var currentEntry:PFObject? = nil
     @IBOutlet weak var imgEntry: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var barBtnSave: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +37,7 @@ class FinalDetailViewController: UIViewController {
         self.activityIndicator.stopAnimating()
 
         // Do any additional setup after loading the view.
-    }
-        
-        
-        
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,15 +45,19 @@ class FinalDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnSaveTapped(sender: UIBarButtonItem) {
+        UIImageWriteToSavedPhotosAlbum(imgEntry.image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
     }
-    */
-
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
+        if error == nil {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        } else {
+            let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        }
+    }
 }
