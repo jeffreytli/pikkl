@@ -92,7 +92,6 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-    
     func showSubmitConfirmationAlert() -> Void {
         let alertController = UIAlertController(title: "Submit photo", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
         
