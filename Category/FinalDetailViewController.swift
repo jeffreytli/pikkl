@@ -17,12 +17,26 @@ class FinalDetailViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var barBtnSave: UIBarButtonItem!
     
+    @IBOutlet weak var lblFinalScore: UILabel!
+    @IBOutlet weak var lblRawScore: UILabel!
+    @IBOutlet weak var lblNumVoters: UILabel!
+    
+    
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let userImageFile = currentEntry!["image"] as! PFFile
-        
+        let rawScore:Int = currentEntry!["score"] as! Int
+        let numVoters:Int = currentEntry!["numVoters"] as! Int
+        var averageScore = 0
+        if(numVoters != 0) {
+            averageScore = rawScore / numVoters
+        }
+        lblFinalScore.text = String(averageScore)
+        lblRawScore.text = String(rawScore)
+        lblNumVoters.text = String(numVoters)
+
         self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
         self.activityIndicator.startAnimating()
         

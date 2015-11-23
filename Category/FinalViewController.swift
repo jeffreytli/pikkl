@@ -17,17 +17,16 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var battleTitle:String = ""
     var battleId:String = ""
     var battlePhotos:[UIImage] = []
-    
-    @IBOutlet weak var tableView: UITableView!
     var entries:[PFObject] = []
-    
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -96,17 +95,11 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
-        
         let row = indexPath.row
-        
-        //if(entries.count > row-1 )
-        //print(String(row) + "this is row")
-        //print(String(entries.count) + "this is entry count")
-        var score:Int = entries[row]["score"] as! Int
+        let score:Int = entries[row]["score"] as! Int
         let numVoters:Int = entries[row]["numVoters"] as! Int
         var finalScore:Double = Double(score) / Double(numVoters)
-        //to cover the case where 0 people voted, which would result in 0/0 or NaN
-        if(finalScore.isNaN) {
+        if(finalScore.isNaN) { //to cover the case where 0 people voted, which would result in 0/0 or NaN
             finalScore = 0
         }
         let cellOwnerId:String = (entries[row]["owner"] as! PFUser).valueForKey("objectId")! as! String
@@ -124,10 +117,10 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "FinalDetail" {
             let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
+            tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+
             
             // Get the destination view controller
             let voteDetail:FinalDetailViewController = segue.destinationViewController as! FinalDetailViewController

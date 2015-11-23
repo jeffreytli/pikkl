@@ -17,7 +17,6 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     var battleTitle:String = ""
     var battleId:String = ""
-    
     var entries:[PFObject] = []
     
     override func viewDidLoad() {
@@ -26,9 +25,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.reloadData()
-
-        // Do any additional setup after loading the view.
+        //self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,12 +68,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("voteCell", forIndexPath: indexPath)
-        
         let row = indexPath.row
-        
-        //if(entries.count > row-1 )
-        //print(String(row) + "this is row")
-        //print(String(entries.count) + "this is entry count")
         cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         
         return cell
@@ -85,6 +77,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("VoteDetail", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 
@@ -102,6 +95,4 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
             voteDetail.currentEntry = entries[indexPath!.row]
         }
     }
-
-
 }
