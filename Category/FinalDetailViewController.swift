@@ -12,13 +12,12 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
-class FinalDetailViewController: UIViewController {
-
-    
-    var currentEntry:PFObject? = nil
+class FinalDetailViewController: UIViewController {    
     @IBOutlet weak var imgEntry: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var barBtnSave: UIBarButtonItem!
+    
+    var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +25,7 @@ class FinalDetailViewController: UIViewController {
         
         self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
         self.activityIndicator.startAnimating()
+        
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
@@ -34,22 +34,19 @@ class FinalDetailViewController: UIViewController {
                     self.imgEntry.image = image
                 }
             }
-        self.activityIndicator.stopAnimating()
-
-        // Do any additional setup after loading the view.
         }
+        self.activityIndicator.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnSaveTapped(sender: UIBarButtonItem) {
-        UIImageWriteToSavedPhotosAlbum(imgEntry.image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        UIImageWriteToSavedPhotosAlbum(imgEntry.image!, self, "saveImage:didFinishSavingWithError:contextInfo:", nil)
     }
     
-    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
+    func saveImage(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
         if error == nil {
             let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
             ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

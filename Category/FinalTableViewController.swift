@@ -142,6 +142,5 @@ class FinalTableViewController: UITableViewController {
             // Pass in the title for the row selected
             voteDetail.currentEntry = entries[indexPath!.row]
         }
-
     }
 }

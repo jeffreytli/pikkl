@@ -32,7 +32,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
@@ -59,40 +58,31 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    
     @IBAction func barBtnSaveAllTapped(sender: UIBarButtonItem) {
-        saveBattlePhotos()
+        saveAllBattlePhotos()
     }
     
-    func saveBattlePhotos() -> Void {
+    func saveAllBattlePhotos() -> Void {
         for entry in self.entries {
-            
             let userImageFile = entry["image"] as! PFFile
             userImageFile.getDataInBackgroundWithBlock {
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
                     if let imageData = imageData {
                         let image = UIImage(data:imageData)
-                        
-                        UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+                        UIImageWriteToSavedPhotosAlbum(image!, self, "saveImage:didFinishSavingWithError:contextInfo:", nil)
                     }
                 }
             }
-            
-            
         }
     }
     
-    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>){
+    func saveImage(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>){
         if error == nil {
-//            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
-//            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-//            presentViewController(ac, animated: true, completion: nil)
-            print("Saved")
+            print("Image save successful")
         } else {
-//            let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
-//            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-//            presentViewController(ac, animated: true, completion: nil)
-            print("Error")
+            print("Image save failed")
         }
     }
     
@@ -131,8 +121,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
-
-    // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -147,7 +135,5 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // Pass in the title for the row selected
             voteDetail.currentEntry = entries[indexPath!.row]
         }
-        
     }
-
 }
