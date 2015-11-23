@@ -17,10 +17,14 @@ class FinalDetailViewController: UIViewController {
     
     var currentEntry:PFObject? = nil
     @IBOutlet weak var imgEntry: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let userImageFile = currentEntry!["image"] as! PFFile
+        
+        self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
+        self.activityIndicator.startAnimating()
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
@@ -29,6 +33,7 @@ class FinalDetailViewController: UIViewController {
                     self.imgEntry.image = image
                 }
             }
+        self.activityIndicator.stopAnimating()
 
         // Do any additional setup after loading the view.
     }

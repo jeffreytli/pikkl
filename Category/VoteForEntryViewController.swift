@@ -19,6 +19,7 @@ class VoteForEntryViewController: UIViewController {
     @IBOutlet weak var sliderVote: UISlider!
     @IBOutlet weak var btnCastVote: UIButton!
     @IBOutlet weak var lblYourEntry: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     var currentEntry:PFObject? = nil
@@ -36,6 +37,8 @@ class VoteForEntryViewController: UIViewController {
             lblYourEntry.hidden = true
         }
         let userImageFile = currentEntry!["image"] as! PFFile
+        self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
+        self.activityIndicator.startAnimating()
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
@@ -45,6 +48,8 @@ class VoteForEntryViewController: UIViewController {
                 }
             }
         }
+        self.activityIndicator.stopAnimating()
+
         
         // Do any additional setup after loading the view.
     }

@@ -378,6 +378,10 @@
                                 <rect key="frame" x="42" y="118" width="290" height="290"/>
                                 <animations/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-7f-C7R">
+                                <rect key="frame" x="177" y="253" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -390,11 +394,14 @@
                             <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="26" id="a8B-2L-tig"/>
                             <constraint firstItem="krz-cI-dbd" firstAttribute="bottom" secondItem="SMk-wH-2zv" secondAttribute="top" id="hkd-kh-Yvi"/>
                             <constraint firstItem="krz-cI-dbd" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" id="iVu-00-UZV"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerX" secondItem="S8R-6W-lsc" secondAttribute="centerX" id="obF-b0-IGY"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerY" secondItem="S8R-6W-lsc" secondAttribute="centerY" id="vrX-FT-HTC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zhw-87-U8f"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="E4s-7f-C7R" id="Ffu-iR-Kbz"/>
                         <outlet property="imgEntry" destination="S8R-6W-lsc" id="jhm-VD-9aj"/>
                     </connections>
                 </viewController>
@@ -456,6 +463,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-VM-WiQ">
+                                <rect key="frame" x="177" y="243" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -463,8 +474,10 @@
                             <constraint firstItem="PRq-BS-S0C" firstAttribute="centerX" secondItem="JXk-h5-Bns" secondAttribute="centerX" id="4xB-Qy-3Cs"/>
                             <constraint firstItem="cHi-wE-66R" firstAttribute="top" secondItem="JXk-h5-Bns" secondAttribute="bottom" constant="74" id="5Z4-eX-Ugf"/>
                             <constraint firstItem="OAJ-Wz-uB3" firstAttribute="centerX" secondItem="a6I-IS-SY4" secondAttribute="centerX" id="6Xi-sz-3MT"/>
+                            <constraint firstItem="tjU-VM-WiQ" firstAttribute="centerY" secondItem="OAJ-Wz-uB3" secondAttribute="centerY" id="84J-Ah-3gU"/>
                             <constraint firstItem="G1C-Is-WLL" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="52" id="9Z1-eR-vzQ"/>
                             <constraint firstItem="aHT-NP-peS" firstAttribute="top" secondItem="OAJ-Wz-uB3" secondAttribute="bottom" constant="33" id="CkS-lw-ECo"/>
+                            <constraint firstItem="tjU-VM-WiQ" firstAttribute="centerX" secondItem="aHT-NP-peS" secondAttribute="centerX" id="Kvb-Lr-nvd"/>
                             <constraint firstItem="G1C-Is-WLL" firstAttribute="centerX" secondItem="PRq-BS-S0C" secondAttribute="centerX" id="MOH-ak-AMm"/>
                             <constraint firstItem="OAJ-Wz-uB3" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="26" id="NFk-Eh-d1J"/>
                             <constraint firstItem="PRq-BS-S0C" firstAttribute="leading" secondItem="a6I-IS-SY4" secondAttribute="leadingMargin" constant="4" id="NbQ-4L-eYn"/>
@@ -479,6 +492,7 @@
                     <navigationItem key="navigationItem" id="RFE-Pz-Deh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="tjU-VM-WiQ" id="Nuv-Bb-SLv"/>
                         <outlet property="btnCastVote" destination="JXk-h5-Bns" id="Ln2-XL-Gd1"/>
                         <outlet property="imgEntry" destination="OAJ-Wz-uB3" id="Ju6-EV-evz"/>
                         <outlet property="lblVoteScore" destination="G1C-Is-WLL" id="EZt-z6-Vry"/>
