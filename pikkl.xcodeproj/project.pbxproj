@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		431D05D41BDD5C8A00A9C14D /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */; };
 		431D05D61BDD636900A9C14D /* SubmitDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */; };
 		433EC7011BEECB1D00348288 /* VoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7001BEECB1D00348288 /* VoteTableViewController.swift */; };
 		433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */; };
@@ -46,6 +45,7 @@
 		5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D41BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld */; };
 		5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */; };
 		5029EA0D1BD2190E00288659 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5029EA0C1BD2190E00288659 /* loginButton.png */; };
+		504D22301C02EC2600022403 /* tempSubmit.png in Resources */ = {isa = PBXBuildFile; fileRef = 504D222F1C02EC2600022403 /* tempSubmit.png */; };
 		50806D951BD4719100575253 /* temp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8B1BD4719100575253 /* temp1.png */; };
 		50806D961BD4719100575253 /* temp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8C1BD4719100575253 /* temp2.png */; };
 		50806D971BD4719100575253 /* temp3.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8D1BD4719100575253 /* temp3.png */; };
@@ -71,7 +71,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitDetailsTableViewController.swift; sourceTree = "<group>"; };
 		433EC7001BEECB1D00348288 /* VoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteTableViewController.swift; sourceTree = "<group>"; };
 		433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteForEntryViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		5021C4D51BE47B1F00C37C9B /* BattleDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BattleDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleDataModel.swift; sourceTree = "<group>"; };
 		5029EA0C1BD2190E00288659 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
+		504D222F1C02EC2600022403 /* tempSubmit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempSubmit.png; sourceTree = "<group>"; };
 		50806D8B1BD4719100575253 /* temp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp1.png; sourceTree = "<group>"; };
 		50806D8C1BD4719100575253 /* temp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp2.png; sourceTree = "<group>"; };
 		50806D8D1BD4719100575253 /* temp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp3.png; sourceTree = "<group>"; };
@@ -264,6 +264,7 @@
 		5029EA0B1BD218F100288659 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				504D222F1C02EC2600022403 /* tempSubmit.png */,
 				50E303B31BD625E400F810B3 /* wallpaper.png */,
 				58FF4B9C1BEC8BAF004D2833 /* SubmitCamera.png */,
 				581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */,
@@ -287,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */,
-				431D05D31BDD5C8A00A9C14D /* SubmitViewController.swift */,
 			);
 			name = Submit;
 			sourceTree = "<group>";
@@ -396,6 +396,7 @@
 				50806D9C1BD4719100575253 /* temp8.png in Resources */,
 				581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */,
 				43F087B01BC07363007FD933 /* Assets.xcassets in Resources */,
+				504D22301C02EC2600022403 /* tempSubmit.png in Resources */,
 				50806D961BD4719100575253 /* temp2.png in Resources */,
 				58FF4B9D1BEC8BAF004D2833 /* SubmitCamera.png in Resources */,
 				43F087AE1BC07363007FD933 /* Home.storyboard in Resources */,
@@ -425,7 +426,6 @@
 				433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */,
 				508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */,
 				5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */,
-				431D05D41BDD5C8A00A9C14D /* SubmitViewController.swift in Sources */,
 				43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */,
 				438296F51C02A54900734DF4 /* VoteViewController.swift in Sources */,
 				5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */,

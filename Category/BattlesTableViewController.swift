@@ -77,7 +77,7 @@ class BattlesTableViewController: UITableViewController {
         let battle = battles[row]
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
-        cell.lblCurrentPhase.text = "Current Phase: " + (battle.valueForKey("currentPhase") as? String)!
+        cell.lblCurrentPhase.text = (battle.valueForKey("currentPhase") as? String)!
         cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
         
         return cell
