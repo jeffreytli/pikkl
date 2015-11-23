@@ -16,7 +16,6 @@ import CoreData
 class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var lblBattleTitle: UILabel!
-    @IBOutlet weak var btnSubmit: UIButton!
     @IBOutlet weak var btnCamera: UIButton!
     @IBOutlet weak var btnGallery: UIButton!
     @IBOutlet weak var barBtnSubmit: UIBarButtonItem!
@@ -82,19 +81,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func imgTapSubmit(sender: AnyObject) {
-        //open camera for image upload
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
     @IBAction func btnSubmitTapped(sender: UIBarButtonItem) {
-    }
-    
-    
-    @IBAction func btnCreateBattleEntry(sender: AnyObject) {
         //check is a little hacky, couldn't find more elegant way to check for this.
         dispatch_async(dispatch_get_main_queue()) {
             if(self.imgUploaded) {
@@ -104,6 +91,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
         }
     }
+    
     
     func showSubmitConfirmationAlert() -> Void {
         let alertController = UIAlertController(title: "Submit photo", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)

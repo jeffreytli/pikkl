@@ -46,6 +46,7 @@
 		5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */; };
 		5029EA0D1BD2190E00288659 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5029EA0C1BD2190E00288659 /* loginButton.png */; };
 		504D22301C02EC2600022403 /* tempSubmit.png in Resources */ = {isa = PBXBuildFile; fileRef = 504D222F1C02EC2600022403 /* tempSubmit.png */; };
+		504D22321C02FB1A00022403 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D22311C02FB1A00022403 /* SubmitViewController.swift */; };
 		50806D951BD4719100575253 /* temp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8B1BD4719100575253 /* temp1.png */; };
 		50806D961BD4719100575253 /* temp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8C1BD4719100575253 /* temp2.png */; };
 		50806D971BD4719100575253 /* temp3.png in Resources */ = {isa = PBXBuildFile; fileRef = 50806D8D1BD4719100575253 /* temp3.png */; };
@@ -111,6 +112,7 @@
 		5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleDataModel.swift; sourceTree = "<group>"; };
 		5029EA0C1BD2190E00288659 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 		504D222F1C02EC2600022403 /* tempSubmit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempSubmit.png; sourceTree = "<group>"; };
+		504D22311C02FB1A00022403 /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		50806D8B1BD4719100575253 /* temp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp1.png; sourceTree = "<group>"; };
 		50806D8C1BD4719100575253 /* temp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp2.png; sourceTree = "<group>"; };
 		50806D8D1BD4719100575253 /* temp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp3.png; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				431D05D51BDD636900A9C14D /* SubmitDetailsTableViewController.swift */,
+				504D22311C02FB1A00022403 /* SubmitViewController.swift */,
 			);
 			name = Submit;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				508B52661BEE9BED00E32D7F /* InviteFriendsTableViewController.swift in Sources */,
 				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
 				4379E6FB1BF1BD3E00120B47 /* FinalDetailViewController.swift in Sources */,
+				504D22321C02FB1A00022403 /* SubmitViewController.swift in Sources */,
 				50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */,
 				433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */,
 				508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */,

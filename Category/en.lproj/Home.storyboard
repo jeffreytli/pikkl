@@ -203,17 +203,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Submit a Pik for:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-6k-eXf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit a Pik for:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-6k-eXf">
                                 <rect key="frame" x="10" y="72" width="335" height="26"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="ufl-kG-o0E"/>
+                                    <constraint firstAttribute="height" constant="26" id="Uqz-KL-3XW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tempSubmit.png" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempSubmit.png" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
                                 <rect key="frame" x="0.0" y="144" width="375" height="479"/>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -221,30 +221,22 @@
                                     <outletCollection property="gestureRecognizers" destination="qHE-4M-poe" appends="YES" id="NK2-E5-HxQ"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="The Full Battle Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-QY-4dn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-QY-4dn">
                                 <rect key="frame" x="10" y="82" width="339" height="65"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="hid-Cb-A4D"/>
+                                    <constraint firstAttribute="height" constant="65" id="LPR-dE-oh3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXB-yg-BBr">
-                                <rect key="frame" x="150" y="450" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-xW-pka">
+                                <rect key="frame" x="150" y="419" width="75" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Submit!">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnCreateBattleEntry:" destination="ncs-Bk-K6O" eventType="touchUpInside" id="AXk-7k-wjU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-xW-pka">
-                                <rect key="frame" x="150" y="370" width="75" height="30"/>
-                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Hku-iM-67z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Gallery">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -253,9 +245,13 @@
                                     <action selector="btnGalleryTapped:" destination="ncs-Bk-K6O" eventType="touchUpInside" id="P9q-oE-kPZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-Ar-xHW">
-                                <rect key="frame" x="150" y="290" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-Ar-xHW">
+                                <rect key="frame" x="150" y="339" width="75" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Yrc-9h-Ixc"/>
+                                    <constraint firstAttribute="width" constant="75" id="ZWB-0G-tSP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Camera">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,6 +264,23 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4xm-6k-eXf" secondAttribute="trailing" constant="14" id="1vD-fD-aDY"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="top" secondItem="4xm-6k-eXf" secondAttribute="bottom" constant="46" id="2yO-gc-vdG"/>
+                            <constraint firstItem="zg1-Ar-xHW" firstAttribute="trailing" secondItem="CH6-xW-pka" secondAttribute="trailing" id="69n-nu-KP8"/>
+                            <constraint firstItem="4xm-6k-eXf" firstAttribute="top" secondItem="0zt-c6-l31" secondAttribute="bottom" constant="8" symbolic="YES" id="97d-uV-lSB"/>
+                            <constraint firstItem="5Fi-QY-4dn" firstAttribute="top" secondItem="0zt-c6-l31" secondAttribute="bottom" constant="18" id="Hi6-u6-5Yl"/>
+                            <constraint firstItem="CH6-xW-pka" firstAttribute="leading" secondItem="zg1-Ar-xHW" secondAttribute="leading" id="Kt7-tr-3t3"/>
+                            <constraint firstItem="4xm-6k-eXf" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" constant="-6" id="Urp-Xy-j4S"/>
+                            <constraint firstItem="4xm-6k-eXf" firstAttribute="leading" secondItem="5Fi-QY-4dn" secondAttribute="leading" id="XZn-JM-I4M"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="bottom" secondItem="h9v-cp-mlo" secondAttribute="top" id="Xy6-3c-rda"/>
+                            <constraint firstItem="h9v-cp-mlo" firstAttribute="top" secondItem="CH6-xW-pka" secondAttribute="bottom" constant="174" id="ciU-ee-ZBb"/>
+                            <constraint firstItem="CH6-xW-pka" firstAttribute="top" secondItem="zg1-Ar-xHW" secondAttribute="bottom" constant="50" id="eUr-2g-F8o"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="centerX" secondItem="CH6-xW-pka" secondAttribute="centerX" id="hvS-ug-PsR"/>
+                            <constraint firstAttribute="trailing" secondItem="viy-rs-pmQ" secondAttribute="trailing" id="iTM-Tv-ywd"/>
+                            <constraint firstItem="viy-rs-pmQ" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leading" id="tBY-tI-IgI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Fi-QY-4dn" secondAttribute="trailing" constant="10" id="wug-j2-FSl"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Battle Title" id="gMh-4U-K28">
@@ -283,7 +296,6 @@
                         <outlet property="barBtnSubmit" destination="tmd-Ol-mjT" id="So9-k3-vyn"/>
                         <outlet property="btnCamera" destination="zg1-Ar-xHW" id="HBT-rv-UNL"/>
                         <outlet property="btnGallery" destination="CH6-xW-pka" id="6pW-uC-fDP"/>
-                        <outlet property="btnSubmit" destination="hXB-yg-BBr" id="kyS-5n-VP9"/>
                         <outlet property="imgSubmit" destination="viy-rs-pmQ" id="beg-ck-Hpu"/>
                         <outlet property="lblBattleTitle" destination="5Fi-QY-4dn" id="ZyU-cz-dYo"/>
                     </connections>
