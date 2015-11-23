@@ -1,8 +1,8 @@
 //
-//  VoteTableViewController.swift
+//  VoteViewController.swift
 //  pikkl
 //
-//  Created by Julio Correa on 11/7/15.
+//  Created by Julio Correa on 11/22/15.
 //  Copyright © 2015 CS378. All rights reserved.
 //
 
@@ -12,17 +12,28 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
-class VoteTableViewController: UITableViewController {
-    
+class VoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
     var battleTitle:String = ""
     var battleId:String = ""
     
     var entries:[PFObject] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
         fetchAllBattleEntries()
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.reloadData()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
@@ -49,72 +60,34 @@ class VoteTableViewController: UITableViewController {
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entries.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("VoteCell", forIndexPath: indexPath)
-
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("voteCell", forIndexPath: indexPath)
+        
         let row = indexPath.row
         
-        //if(entries.count > row-1 ) 
+        //if(entries.count > row-1 )
         //print(String(row) + "this is row")
         //print(String(entries.count) + "this is entry count")
         cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
-
+        
         return cell
     }
     
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("VoteDetail", sender: self)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "VoteDetail" {
@@ -122,9 +95,11 @@ class VoteTableViewController: UITableViewController {
             
             // Get the destination view controller
             let voteDetail:VoteForEntryViewController = segue.destinationViewController as! VoteForEntryViewController
-
+            
             // Pass in the title for the row selected
             voteDetail.currentEntry = entries[indexPath!.row]
         }
     }
+
+
 }
