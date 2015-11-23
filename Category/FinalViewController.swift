@@ -16,6 +16,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     var battleTitle:String = ""
     var battleId:String = ""
+    var battlePhotos:[UIImage] = []
     
     @IBOutlet weak var tableView: UITableView!
     var entries:[PFObject] = []
@@ -27,6 +28,11 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.reloadData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
@@ -53,10 +59,41 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    @IBAction func barBtnSaveAllTapped(sender: UIBarButtonItem) {
+        saveBattlePhotos()
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func saveBattlePhotos() -> Void {
+        for entry in self.entries {
+            
+            let userImageFile = entry["image"] as! PFFile
+            userImageFile.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    if let imageData = imageData {
+                        let image = UIImage(data:imageData)
+                        
+                        UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+                    }
+                }
+            }
+            
+            
+        }
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>){
+        if error == nil {
+//            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+//            presentViewController(ac, animated: true, completion: nil)
+            print("Saved")
+        } else {
+//            let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+//            presentViewController(ac, animated: true, completion: nil)
+            print("Error")
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

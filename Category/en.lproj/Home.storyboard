@@ -521,7 +521,14 @@
                             <constraint firstItem="kl2-Ys-vH5" firstAttribute="centerX" secondItem="q7J-6O-HXm" secondAttribute="centerX" id="yWl-2I-uR6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Final" id="rAf-SD-xsH"/>
+                    <navigationItem key="navigationItem" title="Final" id="rAf-SD-xsH">
+                        <barButtonItem key="rightBarButtonItem" title="Save All" id="Hz1-I8-1kG">
+                            <color key="tintColor" red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="barBtnSaveAllTapped:" destination="jV5-Fh-7g1" id="wUf-Fu-Vsi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="kl2-Ys-vH5" id="QaK-Hd-ozA"/>
