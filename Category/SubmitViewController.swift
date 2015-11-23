@@ -51,7 +51,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imgSubmit.contentMode = .ScaleAspectFill
-//            imgSubmit.image = pickedImage
+            imgSubmit.image = pickedImage
             imgUploaded = true;
         }
         dismissViewControllerAnimated(true, completion: nil)

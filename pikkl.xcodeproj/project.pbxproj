@@ -544,7 +544,7 @@
 				);
 				INFOPLIST_FILE = Category/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Category;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parse.--PRODUCT-NAME-rfc1034identifier-";
 				PRODUCT_NAME = pikkl;
 			};
 			name = Debug;
@@ -560,7 +560,7 @@
 				);
 				INFOPLIST_FILE = Category/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Category;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parse.--PRODUCT-NAME-rfc1034identifier-";
 				PRODUCT_NAME = pikkl;
 			};
 			name = Release;
