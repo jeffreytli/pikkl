@@ -125,7 +125,7 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU4-I3-8Fe">
-                                <rect key="frame" x="20" y="91" width="339" height="65"/>
+                                <rect key="frame" x="20" y="75" width="339" height="65"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="MME-q5-mXn"/>
@@ -135,19 +135,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-M7-Mb7">
-                                <rect key="frame" x="20" y="205" width="335" height="405"/>
+                                <rect key="frame" x="0.0" y="148" width="375" height="519"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="10" reuseIdentifier="voteCell" textLabel="xoo-bx-cch" style="IBUITableViewCellStyleDefault" id="WUh-85-UlP">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WUh-85-UlP" id="T2Q-NS-dw6">
-                                            <rect key="frame" x="0.0" y="0.0" width="302" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xoo-bx-cch">
-                                                    <rect key="frame" x="25" y="0.0" width="275" height="43"/>
+                                                    <rect key="frame" x="25" y="0.0" width="315" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -169,16 +169,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i70-3P-PDA" firstAttribute="leading" secondItem="lU4-I3-8Fe" secondAttribute="leading" id="2J5-Mg-r06"/>
-                            <constraint firstItem="i70-3P-PDA" firstAttribute="centerX" secondItem="cxw-iv-zrU" secondAttribute="centerX" id="6lJ-gn-pjG"/>
-                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="trailing" secondItem="cxw-iv-zrU" secondAttribute="trailingMargin" id="JNm-VZ-9fi"/>
-                            <constraint firstItem="i70-3P-PDA" firstAttribute="leading" secondItem="cxw-iv-zrU" secondAttribute="leadingMargin" constant="4" id="MKr-9N-5Vg"/>
-                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="top" secondItem="Blg-u3-aIU" secondAttribute="bottom" constant="27" id="Mje-85-3It"/>
-                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="trailing" secondItem="i70-3P-PDA" secondAttribute="trailing" id="RQc-Ip-KX1"/>
-                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="leading" secondItem="Bk0-M7-Mb7" secondAttribute="leading" id="SL7-5y-vEh"/>
-                            <constraint firstItem="FIT-DR-78m" firstAttribute="top" secondItem="Bk0-M7-Mb7" secondAttribute="bottom" constant="57" id="brD-jf-j5i"/>
-                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="top" secondItem="lU4-I3-8Fe" secondAttribute="bottom" constant="49" id="phj-gV-q9U"/>
-                            <constraint firstItem="i70-3P-PDA" firstAttribute="top" secondItem="Blg-u3-aIU" secondAttribute="bottom" constant="11" id="tLF-81-TFR"/>
+                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="trailing" secondItem="cxw-iv-zrU" secondAttribute="trailingMargin" id="915-pf-gux"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="top" secondItem="lU4-I3-8Fe" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehr-k4-bfv"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="centerX" secondItem="i70-3P-PDA" secondAttribute="centerX" id="Mfo-8q-6gD"/>
+                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="top" secondItem="i70-3P-PDA" secondAttribute="top" id="NeC-yy-C6P"/>
+                            <constraint firstItem="i70-3P-PDA" firstAttribute="leading" secondItem="lU4-I3-8Fe" secondAttribute="leading" id="Nqj-Af-97I"/>
+                            <constraint firstAttribute="trailing" secondItem="Bk0-M7-Mb7" secondAttribute="trailing" id="RgA-sg-ibU"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="leading" secondItem="cxw-iv-zrU" secondAttribute="leading" id="Uar-b5-zvu"/>
+                            <constraint firstItem="i70-3P-PDA" firstAttribute="leading" secondItem="cxw-iv-zrU" secondAttribute="leadingMargin" constant="4" id="imW-Z2-qBN"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="bottom" secondItem="FIT-DR-78m" secondAttribute="top" id="nf8-tS-xDr"/>
+                            <constraint firstItem="i70-3P-PDA" firstAttribute="top" secondItem="Blg-u3-aIU" secondAttribute="bottom" constant="11" id="p5N-4e-E8c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Vote" id="OPe-vw-uOn"/>
@@ -191,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="1839.5" y="-198.5"/>
         </scene>
-        <!--Battle Title-->
+        <!--Submit-->
         <scene sceneID="rXR-md-9Tt">
             <objects>
-                <viewController id="ncs-Bk-K6O" customClass="SubmitViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Submit" id="ncs-Bk-K6O" customClass="SubmitViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0zt-c6-l31"/>
                         <viewControllerLayoutGuide type="bottom" id="h9v-cp-mlo"/>
@@ -383,7 +383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJ4-Vi-ALW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3063.5" y="-944.5"/>
+            <point key="canvasLocation" x="3007.5" y="-1036.5"/>
         </scene>
         <!--Final-->
         <scene sceneID="bT3-Yb-K84">
@@ -435,7 +435,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Itr-Qx-O65" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3615.5" y="-935.5"/>
+            <point key="canvasLocation" x="3501.5" y="-1036.5"/>
         </scene>
         <!--Final-->
         <scene sceneID="53P-uB-GxS">
@@ -531,10 +531,10 @@
             </objects>
             <point key="canvasLocation" x="1839.5" y="642.5"/>
         </scene>
-        <!--Final Detail View Controller-->
+        <!--Final Detail-->
         <scene sceneID="KdI-cG-ZqU">
             <objects>
-                <viewController id="yTR-5J-beZ" customClass="FinalDetailViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Final Detail" id="yTR-5J-beZ" customClass="FinalDetailViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sCY-X9-iCC"/>
                         <viewControllerLayoutGuide type="bottom" id="SMk-wH-2zv"/>
@@ -543,10 +543,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="krz-cI-dbd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <animations/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
                                 <rect key="frame" x="42" y="118" width="290" height="290"/>
                                 <animations/>
@@ -559,16 +555,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="krz-cI-dbd" secondAttribute="centerX" id="0BV-fX-fhF"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" constant="54" id="5gc-Fq-HOo"/>
-                            <constraint firstAttribute="trailing" secondItem="krz-cI-dbd" secondAttribute="trailing" id="J2w-8A-WR2"/>
-                            <constraint firstItem="krz-cI-dbd" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" id="ODT-q2-tUl"/>
-                            <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="259" id="ZBY-cy-Zjo"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="26" id="a8B-2L-tig"/>
-                            <constraint firstItem="krz-cI-dbd" firstAttribute="bottom" secondItem="SMk-wH-2zv" secondAttribute="top" id="hkd-kh-Yvi"/>
-                            <constraint firstItem="krz-cI-dbd" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" id="iVu-00-UZV"/>
-                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerX" secondItem="S8R-6W-lsc" secondAttribute="centerX" id="obF-b0-IGY"/>
-                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerY" secondItem="S8R-6W-lsc" secondAttribute="centerY" id="vrX-FT-HTC"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerX" secondItem="UcE-OO-hAc" secondAttribute="centerX" id="0Yl-Ep-G45"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerY" secondItem="S8R-6W-lsc" secondAttribute="centerY" id="FdN-ys-WbV"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" constant="189" id="K9x-fK-5a3"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" constant="54" id="bbY-Uz-yRy"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="centerX" secondItem="S8R-6W-lsc" secondAttribute="centerX" id="lnS-tG-xjO"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="26" id="sJ7-VG-UJS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zhw-87-U8f"/>
@@ -582,10 +574,10 @@
             </objects>
             <point key="canvasLocation" x="2381.5" y="642.5"/>
         </scene>
-        <!--Vote For Entry View Controller-->
+        <!--Vote Detail-->
         <scene sceneID="WlW-d6-tEJ">
             <objects>
-                <viewController id="jQs-bc-0yo" customClass="VoteForEntryViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Vote Detail" id="jQs-bc-0yo" customClass="VoteForEntryViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kgI-vy-CV1"/>
                         <viewControllerLayoutGuide type="bottom" id="cHi-wE-66R"/>
@@ -707,7 +699,6 @@
     </scenes>
     <resources>
         <image name="tempSubmit.png" width="232" height="322"/>
-        <image name="wallpaper.png" width="640" height="1136"/>
     </resources>
     <color key="tintColor" red="0.80392156862745101" green="0.86274509803921573" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
