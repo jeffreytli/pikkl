@@ -18,6 +18,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var battleId:String = ""
     var battlePhotos:[UIImage] = []
     var entries:[PFObject] = []
+    
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -96,24 +97,41 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
         let row = indexPath.row
-        let score:Int = entries[row]["score"] as! Int
-        let numVoters:Int = entries[row]["numVoters"] as! Int
-        var finalScore:Double = Double(score) / Double(numVoters)
+        
+        let finalScore = getFinalScore(row)
+        
+        setCellText(row, cell: cell, finalScore: finalScore)
+        
+        return cell
+    }
+    
+    func getFinalScore(row: Int) -> Double {
+        let score: Int = entries[row]["score"] as! Int
+        let numVoters: Int = entries[row]["numVoters"] as! Int
+        
+        var finalScore: Double = Double(score) / Double(numVoters)
+        
         if(finalScore.isNaN) { //to cover the case where 0 people voted, which would result in 0/0 or NaN
             finalScore = 0
         }
+        
+        return finalScore
+    }
+    
+    func setCellText(row: Int, cell: UITableViewCell, finalScore: Double) -> Void {
         let cellOwnerId:String = (entries[row]["owner"] as! PFUser).valueForKey("objectId")! as! String
         let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
+        
         if(cellOwnerId  == curUserId) {
             cell.textLabel!.text = "My Submission"
             cell.backgroundColor = UIColor(red: 0.60, green: 0.92, blue: 0.71, alpha: 0.8)
         } else {
             cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         }
-        cell.detailTextLabel!.text = String(finalScore) + "/ 5.0"
         
-        return cell
+        cell.detailTextLabel!.text = String(finalScore) + "/ 5.0"
     }
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -121,7 +139,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
             tableView.deselectRowAtIndexPath(indexPath!, animated: true)
 
-            
             // Get the destination view controller
             let voteDetail:FinalDetailViewController = segue.destinationViewController as! FinalDetailViewController
             

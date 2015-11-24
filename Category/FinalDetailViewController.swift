@@ -21,24 +21,41 @@ class FinalDetailViewController: UIViewController {
     @IBOutlet weak var lblRawScore: UILabel!
     @IBOutlet weak var lblNumVoters: UILabel!
     
-    
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userImageFile = currentEntry!["image"] as! PFFile
-        let rawScore:Int = currentEntry!["score"] as! Int
-        let numVoters:Int = currentEntry!["numVoters"] as! Int
-        var averageScore = 0
-        if(numVoters != 0) {
-            averageScore = rawScore / numVoters
-        }
-        lblFinalScore.text = String(averageScore)
-        lblRawScore.text = String(rawScore)
-        lblNumVoters.text = String(numVoters)
+        
+        setSubmissionLabels()
 
         self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
         self.activityIndicator.startAnimating()
+        
+        setSubmissionImage()
+        
+        self.activityIndicator.stopAnimating()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func setSubmissionLabels() -> Void {
+        let rawScore:Int = currentEntry!["score"] as! Int
+        let numVoters:Int = currentEntry!["numVoters"] as! Int
+        var averageScore = 0
+        
+        if(numVoters != 0) {
+            averageScore = rawScore / numVoters
+        }
+        
+        lblFinalScore.text = String(averageScore)
+        lblRawScore.text = String(rawScore)
+        lblNumVoters.text = String(numVoters)
+    }
+    
+    func setSubmissionImage() -> Void {
+        let userImageFile = currentEntry!["image"] as! PFFile
         
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
@@ -49,11 +66,6 @@ class FinalDetailViewController: UIViewController {
                 }
             }
         }
-        self.activityIndicator.stopAnimating()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     @IBAction func btnSaveTapped(sender: UIBarButtonItem) {

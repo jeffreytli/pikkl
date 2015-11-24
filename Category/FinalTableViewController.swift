@@ -6,6 +6,8 @@
 //  Copyright © 2015 CS378. All rights reserved.
 //
 
+// NOTE: THIS CLASS IS CURRENTLY UNUSED!
+
 import UIKit
 import FBSDKLoginKit
 import Parse
@@ -16,13 +18,16 @@ class FinalTableViewController: UITableViewController {
     
     var battleTitle:String = ""
     var battleId:String = ""
-    
     var entries:[PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fetchAllBattleEntries()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
@@ -50,11 +55,6 @@ class FinalTableViewController: UITableViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -68,16 +68,8 @@ class FinalTableViewController: UITableViewController {
         
         let row = indexPath.row
         
-        //if(entries.count > row-1 )
-        //print(String(row) + "this is row")
-        //print(String(entries.count) + "this is entry count")
-        var score:Int = entries[row]["score"] as! Int
-        let numVoters:Int = entries[row]["numVoters"] as! Int
-        var finalScore:Double = Double(score) / Double(numVoters)
-        //to cover the case where 0 people voted, which would result in 0/0 or NaN
-        if(finalScore.isNaN) {
-            finalScore = 0
-        }
+        let finalScore = getFinalScore(row)
+        
         let cellOwnerId:String = (entries[row]["owner"] as! PFUser).valueForKey("objectId")! as! String
         let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
         if(cellOwnerId  == curUserId) {
@@ -91,43 +83,26 @@ class FinalTableViewController: UITableViewController {
         return cell
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
+    func getFinalScore(row: Int) -> Double {
+        //if(entries.count > row-1 )
+        //print(String(row) + "this is row")
+        //print(String(entries.count) + "this is entry count")
+        let score:Int = entries[row]["score"] as! Int
+        let numVoters:Int = entries[row]["numVoters"] as! Int
+        
+        var finalScore:Double = Double(score) / Double(numVoters)
+        
+        //to cover the case where 0 people voted, which would result in 0/0 or NaN
+        if(finalScore.isNaN) {
+            finalScore = 0
+        }
+        
+        return finalScore
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    func setCellText() -> Void {
+        
     }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-
-    
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
