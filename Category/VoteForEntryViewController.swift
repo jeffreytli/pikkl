@@ -21,13 +21,30 @@ class VoteForEntryViewController: UIViewController {
     @IBOutlet weak var lblYourEntry: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setSubmissionLabels()
+        
+        self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
+        self.activityIndicator.startAnimating()
+        
+        setSubmissionImage()
+        
+        self.activityIndicator.stopAnimating()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setSubmissionLabels() -> Void {
         let cellOwnerId:String = (currentEntry!["owner"] as! PFUser).valueForKey("objectId")! as! String
         let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
+        
         if(cellOwnerId  == curUserId) {
             lblVoteScore.hidden = true
             sliderVote.hidden = true
@@ -36,9 +53,11 @@ class VoteForEntryViewController: UIViewController {
         } else {
             lblYourEntry.hidden = true
         }
+    }
+    
+    func setSubmissionImage() -> Void {
         let userImageFile = currentEntry!["image"] as! PFFile
-        self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
-        self.activityIndicator.startAnimating()
+        
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
@@ -48,15 +67,6 @@ class VoteForEntryViewController: UIViewController {
                 }
             }
         }
-        self.activityIndicator.stopAnimating()
-
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnCastVote(sender: AnyObject) {
@@ -65,40 +75,52 @@ class VoteForEntryViewController: UIViewController {
         
         dispatch_async(dispatch_get_main_queue()) {
             if(userHasVoted[curUserId] == nil) {
-                let alertController = UIAlertController(title: "Cast Vote", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
-                    (action:UIAlertAction) in
-                    // Save to Parse database and return to previous view
-                    //self.navigationController?.popViewControllerAnimated(true)
-                    
-                    var tempVote = self.currentEntry!["score"] as! Int
-                    tempVote += Int(self.lblVoteScore.text!)!
-                    self.currentEntry!["score"] = tempVote
-                    var tempNumVoters = self.currentEntry!["numVoters"] as! Int
-                    tempNumVoters++
-                    self.currentEntry!["numVoters"] = tempNumVoters
-                    userHasVoted.updateValue(true, forKey: curUserId)
-                    self.currentEntry!["userHasVoted"] = userHasVoted
-                    self.currentEntry?.saveInBackground()
-                }
-                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
-                    (action:UIAlertAction) in
-                    // Do nothing
-                }
-                
-                alertController.addAction(OKAction)
-                alertController.addAction(cancelAction)
-                
-                self.presentViewController(alertController, animated: true, completion:nil)
+                self.showVoteConfirmationAlert(userHasVoted, curUserId: curUserId)
             } else {
-                let alertController = UIAlertController(title: "", message:
-                    "You can only vote once per entry.", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.showVoteFailureAlert()
             }
         }
+    }
+    
+    func showVoteConfirmationAlert(userHasVoted: Dictionary<String, Bool>, curUserId: String) -> Void {
+        let alertController = UIAlertController(title: "Cast Vote", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+            (action:UIAlertAction) in
+            
+            // Save to Parse database
+            self.saveVoteEntry(userHasVoted, curUserId: curUserId)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
+            (action:UIAlertAction) in
+            // Do nothing
+        }
+        
+        alertController.addAction(OKAction)
+        alertController.addAction(cancelAction)
+        
+        // Return to previous view
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
+    func showVoteFailureAlert() -> Void {
+        let alertController = UIAlertController(title: "", message:
+            "You can only vote once per entry.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func saveVoteEntry(var userHasVoted: Dictionary<String, Bool>, curUserId: String) -> Void {
+        var tempVote = self.currentEntry!["score"] as! Int
+        tempVote += Int(self.lblVoteScore.text!)!
+        self.currentEntry!["score"] = tempVote
+        var tempNumVoters = self.currentEntry!["numVoters"] as! Int
+        tempNumVoters++
+        self.currentEntry!["numVoters"] = tempNumVoters
+        userHasVoted.updateValue(true, forKey: curUserId)
+        self.currentEntry!["userHasVoted"] = userHasVoted
+        self.currentEntry?.saveInBackground()
     }
     
     @IBAction func sliderVoteChanged(sender: UISlider) {
@@ -106,15 +128,4 @@ class VoteForEntryViewController: UIViewController {
         
         lblVoteScore.text = "\(currentValue)"
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

@@ -13,8 +13,9 @@ import ParseFacebookUtilsV4
 import CoreData
 
 class VoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    
     var battleTitle:String = ""
     var battleId:String = ""
     var entries:[PFObject] = []
@@ -23,6 +24,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
+        
         tableView.delegate = self
         tableView.dataSource = self
         //self.tableView.reloadData()
@@ -30,7 +32,6 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
@@ -69,19 +70,16 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("voteCell", forIndexPath: indexPath)
         let row = indexPath.row
+        
         cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         
         return cell
     }
     
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("VoteDetail", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
-
-    // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

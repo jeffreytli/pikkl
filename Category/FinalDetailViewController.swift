@@ -12,7 +12,8 @@ import Parse
 import ParseFacebookUtilsV4
 import CoreData
 
-class FinalDetailViewController: UIViewController {    
+class FinalDetailViewController: UIViewController {
+    
     @IBOutlet weak var imgEntry: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var barBtnSave: UIBarButtonItem!
