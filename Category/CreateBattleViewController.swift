@@ -20,9 +20,22 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         case FINAL = 3
     }
 
-    @IBOutlet weak var datePickerCountDown: UIDatePicker!
-    @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var txtFieldTitle: UITextField!
+
+    @IBOutlet weak var btnOne: UIButton!
+    @IBOutlet weak var btnTwo: UIButton!
+    @IBOutlet weak var btnThree: UIButton!
+    @IBOutlet weak var btnFour: UIButton!
+    @IBOutlet weak var btnFive: UIButton!
+    @IBOutlet weak var btnSix: UIButton!
+    @IBOutlet weak var btnSeven: UIButton!
+    @IBOutlet weak var btnEight: UIButton!
+    @IBOutlet weak var btnNine: UIButton!
+    @IBOutlet weak var btnTen: UIButton!
+    @IBOutlet weak var btnEleven: UIButton!
+    @IBOutlet weak var btnTwelve: UIButton!
+    
+    @IBOutlet weak var btnCreate: UIButton!
     
     var friendIDs = [String]()
     var friendNames = [String]()
@@ -32,6 +45,8 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         //getFacebookFriends()
         
         txtFieldTitle.delegate = self
+        
+        setAllButtonDetails()
     }
     
     override func shouldAutorotate() -> Bool {
@@ -53,7 +68,32 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         getFacebookFriends()
     }
     
-    @IBAction func btnDoneTapped(sender: AnyObject) {
+    func buttonTapped(sender:UIButton!) -> String {
+        txtFieldTitle.text = (sender.titleLabel?.text)!
+        print((sender.titleLabel?.text)!)
+        return ""
+    }
+    
+    func setButtonDetails(button: UIButton!) -> Void {
+        button.addTarget(self, action: "buttonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func setAllButtonDetails() -> Void {
+        setButtonDetails(btnOne!)
+        setButtonDetails(btnTwo!)
+        setButtonDetails(btnThree!)
+        setButtonDetails(btnFour!)
+        setButtonDetails(btnFive!)
+        setButtonDetails(btnSix!)
+        setButtonDetails(btnSeven!)
+        setButtonDetails(btnEight!)
+        setButtonDetails(btnNine!)
+        setButtonDetails(btnTen!)
+        setButtonDetails(btnEleven!)
+        setButtonDetails(btnTwelve!)
+    }
+    
+    @IBAction func btnCreateTapped(sender: UIButton) {
         dispatch_async(dispatch_get_main_queue()) {
             let battleName = self.txtFieldTitle.text
             
@@ -103,7 +143,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         battle["creator"] = PFUser.currentUser()
         battle["entries"] = entryArr
         battle["time"] = date
-        battle["phaseLength"] = Int(datePickerCountDown.countDownDuration)
+        //battle["phaseLength"] = Int(datePickerCountDown.countDownDuration)
         
         battle.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in

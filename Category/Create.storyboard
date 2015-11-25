@@ -103,7 +103,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmd-Wh-dWd">
                                                 <rect key="frame" x="8" y="160" width="160" height="30"/>
                                                 <animations/>
-                                                <state key="normal" title="Fail"/>
+                                                <state key="normal" title="#Selfie"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-Gs-Y9C">
                                                 <rect key="frame" x="8" y="120" width="160" height="30"/>
@@ -189,6 +189,9 @@
                                 <rect key="frame" x="164" y="565" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="btnCreateTapped:" destination="6nl-TT-FpP" eventType="touchUpInside" id="GpP-X1-vdd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a battle length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-fN-YIA">
                                 <rect key="frame" x="98" y="495" width="178" height="21"/>
@@ -230,17 +233,23 @@
                                 <action selector="btnCancelTapped:" destination="6nl-TT-FpP" id="llo-KA-kWW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3Eb-wK-oLL">
-                            <color key="tintColor" red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="btnDoneTapped:" destination="6nl-TT-FpP" id="sLh-Ij-7pX"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="btnDone" destination="3Eb-wK-oLL" id="f6y-Cx-d0b"/>
+                        <outlet property="btnCreate" destination="i0t-w5-WMQ" id="RTn-FO-izX"/>
+                        <outlet property="btnEight" destination="ua3-gs-Uid" id="5mH-Q6-WIP"/>
+                        <outlet property="btnEleven" destination="6L8-r3-xwZ" id="tcW-ey-CUv"/>
+                        <outlet property="btnFive" destination="Vmd-Wh-dWd" id="D5v-eT-5ja"/>
+                        <outlet property="btnFour" destination="c5a-Gs-Y9C" id="XU8-jv-idj"/>
+                        <outlet property="btnNine" destination="onn-ua-G0a" id="zmG-0I-2wj"/>
+                        <outlet property="btnOne" destination="hu1-63-sAx" id="Ea7-EF-40g"/>
+                        <outlet property="btnSeven" destination="oC7-nQ-blb" id="Ekc-cA-oQg"/>
+                        <outlet property="btnSix" destination="SWi-pz-yjM" id="cDI-fa-Kg1"/>
+                        <outlet property="btnTen" destination="3zO-4j-cFf" id="RO0-sr-FNS"/>
+                        <outlet property="btnThree" destination="2Kp-Rb-Na7" id="GRA-Z8-Gd9"/>
+                        <outlet property="btnTwelve" destination="UUb-5L-ecY" id="Qn1-Yf-Aoj"/>
+                        <outlet property="btnTwo" destination="Zbu-Ed-AYR" id="MEa-g8-inB"/>
                         <outlet property="searchDisplayController" destination="0qO-2d-WC0" id="4E7-RT-beV"/>
                         <outlet property="txtFieldTitle" destination="5jw-gL-aUo" id="DQw-WO-HGU"/>
                     </connections>
