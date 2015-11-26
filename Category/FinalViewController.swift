@@ -23,6 +23,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TO-DO this work should only be done once, find a way to make that happen instead of naively populating column of avgScore everytime
         getAverages()
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
@@ -54,14 +55,12 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.entries.append(object)
                         self.tableView.reloadData()
                     }
-                    
-                    
+                    /*
                     //consider using this sorting method if we decide NOT to save average score in the cloud
                     self.entries.sortInPlace {
                         return ($0.valueForKey("avgScore") as! Int) > ($1.valueForKey("avgScore") as! Int)
                     }
-                    
-
+                    */
                 }
             } else {
                 // Log details of the failure
