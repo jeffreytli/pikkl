@@ -41,7 +41,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     
     var friendIDs = [String]()
     var friendNames = [String]()
-    var battlePhaseLength = 120
+    var battlePhaseLength = 30
     
     var battleTitles = ["Cool Socks", "Architecture", "Patterns", "Fail", "#Selfie", "Shadows", "Embarrassing", "Cute Dogs", "Cute Cats", "#Flawless", "2015", "Nature", "Drunk Face", "Duck Face", "Ugliest Person", "Food Porn", "Stupid Animals", "Campus Life", "Best Poops", "FML", "Drunk", "Alcohol", "LOL", "I'm Stupid", "Worst Friends", "Basic", "Sexy", "Hot", "Dumb", "#MomTexts", "#WorstGift", "Weirdo", "#Gross", "#Single", "#GymProbs", "#Fabulous", "Beautiful", "#TrueLove", "Love Sucks", "#BFProbs", "GFProbs", "#Screwed", "Worst Shit", "Best Shit", "Ugly Cat", "Ugly Dog", "#Bored", "Scenic", "Abstract", "Street", "Flower", "Portrait", "Landscape", "Conceptual", "General", "Children", "Urban", "Rural", "Nude", "Fashion", "Travel", "Action", "Night", "Night Life", "Dawn", "Dusk", "Insect", "Cars", "Family", "Pets", "Humor", "Wedding", "Studio", "Mature", "Texture", "Vintage", "Concert", "Music", "Classic", "FratLife", "Cute", "#NewStyle", "Happy", "#swag", "Belieber", "ThrowBack"]
     var chosenTitles = [Int]()

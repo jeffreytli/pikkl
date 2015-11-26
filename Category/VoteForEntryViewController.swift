@@ -15,44 +15,70 @@ import CoreData
 class VoteForEntryViewController: UIViewController {
     
     @IBOutlet weak var imgEntry: UIImageView!
-    @IBOutlet weak var lblVoteScore: UILabel!
-    @IBOutlet weak var sliderVote: UISlider!
-    @IBOutlet weak var btnCastVote: UIButton!
-    @IBOutlet weak var lblYourEntry: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var btnOne: UIButton!
+    @IBOutlet weak var btnTwo: UIButton!
+    @IBOutlet weak var btnThree: UIButton!
+    @IBOutlet weak var btnFour: UIButton!
+    @IBOutlet weak var btnFive: UIButton!
+    
+    @IBOutlet weak var lblBattleName: UILabel!
+    @IBOutlet weak var lblOwnerName: UILabel!
+
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setSubmissionLabels()
+        lblBattleName.text = (currentEntry!["battleName"] as? String)!
+        lblOwnerName.text = (currentEntry!["ownerName"] as? String)!
         
         self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
         self.activityIndicator.startAnimating()
         
         setSubmissionImage()
+        setAllButtonDetails()
         
         self.activityIndicator.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func setSubmissionLabels() -> Void {
-        let cellOwnerId:String = (currentEntry!["owner"] as! PFUser).valueForKey("objectId")! as! String
-        let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
+    func buttonTapped(sender:UIButton!) -> Void {
+        let cellOwnerIdCheck:String = (currentEntry!["owner"] as! PFUser).valueForKey("objectId")! as! String
+        let curUserIdCheck:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
         
-        if(cellOwnerId  == curUserId) {
-            lblVoteScore.hidden = true
-            sliderVote.hidden = true
-            btnCastVote.hidden = true
-            lblYourEntry.text = "This is your entry, ya can't vote on it!"
+        if(cellOwnerIdCheck  == curUserIdCheck) {
+            showOwnEntryAlert()
         } else {
-            lblYourEntry.hidden = true
+            var userHasVoted = currentEntry!["userHasVoted"] as! Dictionary<String, Bool>
+            let curUserId:String = PFUser.currentUser()!.objectId!
+            
+            let voteValue = Int((sender.titleLabel?.text)!)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if(userHasVoted[curUserId] == nil) {
+                    self.showVoteConfirmationAlert(userHasVoted, curUserId: curUserId, voteValue: voteValue!)
+                } else {
+                    self.showVoteFailureAlert()
+                }
+            }
         }
+    }
+    
+    func setButtonDetails(button: UIButton!) -> Void {
+        button.addTarget(self, action: "buttonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func setAllButtonDetails() -> Void {
+        setButtonDetails(btnOne!)
+        setButtonDetails(btnTwo!)
+        setButtonDetails(btnThree!)
+        setButtonDetails(btnFour!)
+        setButtonDetails(btnFive!)
     }
     
     func setSubmissionImage() -> Void {
@@ -69,27 +95,14 @@ class VoteForEntryViewController: UIViewController {
         }
     }
     
-    @IBAction func btnCastVote(sender: AnyObject) {
-        var userHasVoted = currentEntry!["userHasVoted"] as! Dictionary<String, Bool>
-        let curUserId:String = PFUser.currentUser()!.objectId!
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            if(userHasVoted[curUserId] == nil) {
-                self.showVoteConfirmationAlert(userHasVoted, curUserId: curUserId)
-            } else {
-                self.showVoteFailureAlert()
-            }
-        }
-    }
-    
-    func showVoteConfirmationAlert(userHasVoted: Dictionary<String, Bool>, curUserId: String) -> Void {
+    func showVoteConfirmationAlert(userHasVoted: Dictionary<String, Bool>, curUserId: String, voteValue: Int) -> Void {
         let alertController = UIAlertController(title: "Cast Vote", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
         
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
             (action:UIAlertAction) in
             
             // Save to Parse database
-            self.saveVoteEntry(userHasVoted, curUserId: curUserId)
+            self.saveVoteEntry(userHasVoted, curUserId: curUserId, voteValue: voteValue)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
             (action:UIAlertAction) in
@@ -111,9 +124,17 @@ class VoteForEntryViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func saveVoteEntry(var userHasVoted: Dictionary<String, Bool>, curUserId: String) -> Void {
+    func showOwnEntryAlert() -> Void {
+        let alertController = UIAlertController(title: "", message:
+            "You can not vote for your own entry.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func saveVoteEntry(var userHasVoted: Dictionary<String, Bool>, curUserId: String, voteValue: Int) -> Void {
         var tempVote = self.currentEntry!["score"] as! Int
-        tempVote += Int(self.lblVoteScore.text!)!
+        tempVote += voteValue
         self.currentEntry!["score"] = tempVote
         var tempNumVoters = self.currentEntry!["numVoters"] as! Int
         tempNumVoters++
@@ -121,11 +142,5 @@ class VoteForEntryViewController: UIViewController {
         userHasVoted.updateValue(true, forKey: curUserId)
         self.currentEntry!["userHasVoted"] = userHasVoted
         self.currentEntry?.saveInBackground()
-    }
-    
-    @IBAction func sliderVoteChanged(sender: UISlider) {
-        let currentValue = Int(sender.value)
-        
-        lblVoteScore.text = "\(currentValue)"
     }
 }
