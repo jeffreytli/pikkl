@@ -37,8 +37,14 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var btnCreate: UIButton!
     
+    @IBOutlet weak var segControlLength: UISegmentedControl!
+    
     var friendIDs = [String]()
     var friendNames = [String]()
+    var battlePhaseLength = 120
+    
+    var battleTitles = ["Cool Socks", "Architecture", "Patterns", "Fail", "#Selfie", "Shadows", "Embarrassing", "Cute Dogs", "Cute Cats", "#Flawless", "2015", "Nature", "Drunk Face", "Duck Face", "Ugliest Person", "Food Porn", "Stupid Animals", "Campus Life", "Best Poops", "FML", "Drunk", "Alcohol", "LOL", "I'm Stupid", "Worst Friends", "Basic", "Sexy", "Hot", "Dumb", "#MomTexts", "#WorstGift", "Weirdo", "#Gross", "#Single", "#GymProbs", "#Fabulous", "Beautiful", "#TrueLove", "Love Sucks", "#BFProbs", "GFProbs", "#Screwed", "Worst Shit", "Best Shit", "Ugly Cat", "Ugly Dog", "#Bored", "Scenic", "Abstract", "Street", "Flower", "Portrait", "Landscape", "Conceptual", "General", "Children", "Urban", "Rural", "Nude", "Fashion", "Travel", "Action", "Night", "Night Life", "Dawn", "Dusk", "Insect", "Cars", "Family", "Pets", "Humor", "Wedding", "Studio", "Mature", "Texture", "Vintage", "Concert", "Music", "Classic", "FratLife", "Cute", "#NewStyle", "Happy", "#swag", "Belieber", "ThrowBack"]
+    var chosenTitles = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,14 +74,25 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         getFacebookFriends()
     }
     
-    func buttonTapped(sender:UIButton!) -> String {
+    func buttonTapped(sender:UIButton!) -> Void {
         txtFieldTitle.text = (sender.titleLabel?.text)!
-        print((sender.titleLabel?.text)!)
-        return ""
     }
     
     func setButtonDetails(button: UIButton!) -> Void {
         button.addTarget(self, action: "buttonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitle(getRandomButtonTitle(), forState: UIControlState.Normal)
+    }
+    
+    func getRandomButtonTitle() -> String {
+        var index = Int(arc4random_uniform(UInt32(battleTitles.count)))
+        
+        while(chosenTitles.contains(index)){
+            index = Int(arc4random_uniform(UInt32(battleTitles.count)))
+        }
+        
+        chosenTitles.append(index)
+        
+        return battleTitles[index]
     }
     
     func setAllButtonDetails() -> Void {
@@ -91,6 +108,19 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         setButtonDetails(btnTen!)
         setButtonDetails(btnEleven!)
         setButtonDetails(btnTwelve!)
+        
+        chosenTitles.removeAll()
+    }
+    
+    @IBAction func segControlChanged(sender: UISegmentedControl) {
+        switch segControlLength.selectedSegmentIndex {
+            case 0:
+                battlePhaseLength = 120 //default is 2 minutes
+            case 1:
+                battlePhaseLength = 240 //default is 2 minutes
+            default:
+                battlePhaseLength = 120 //default is 2 minutes
+        }
     }
     
     @IBAction func btnCreateTapped(sender: UIButton) {
@@ -135,16 +165,9 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createBattle() -> Void {
-        let battle = PFObject(className:"Battle")
-        let date = NSDate()
+        var battle = PFObject(className:"Battle")
         
-        let entryArr:[PFObject] = []
-        battle["name"] = txtFieldTitle.text
-        battle["creator"] = PFUser.currentUser()
-        battle["entries"] = entryArr
-        battle["time"] = date
-        //battle["phaseLength"] = Int(datePickerCountDown.countDownDuration)
-        battle["phaseLength"] = 120
+        battle = setBattleDetails(battle)
         
         battle.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -156,6 +179,18 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
                 print("Error in saving battle")
             }
         }
+    }
+    
+    func setBattleDetails(battle: PFObject) -> PFObject {
+        let entryArr:[PFObject] = []
+        
+        battle["name"] = txtFieldTitle.text
+        battle["creator"] = PFUser.currentUser()
+        battle["entries"] = entryArr
+        battle["time"] = NSDate()
+        battle["phaseLength"] = battlePhaseLength
+        
+        return battle
     }
     
     // Currently unused
