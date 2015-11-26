@@ -144,6 +144,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         battle["entries"] = entryArr
         battle["time"] = date
         //battle["phaseLength"] = Int(datePickerCountDown.countDownDuration)
+        battle["phaseLength"] = 120
         
         battle.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in

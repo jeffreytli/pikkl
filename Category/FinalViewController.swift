@@ -27,7 +27,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
-        //self.tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +38,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
         query.whereKey("battle", equalTo:battleId)
+        query.orderByDescending("score")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 // The find succeeded.
@@ -51,6 +52,14 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.entries.append(object)
                         self.tableView.reloadData()
                     }
+                    
+                    /* 
+                    //consider using this sorting method if we decide NOT to save average score in the cloud
+                    self.entries.sortInPlace {
+                        return ($0.valueForKey("score") as! Int) > ($1.valueForKey("score") as! Int)
+                    }
+                    */
+
                 }
             } else {
                 // Log details of the failure
@@ -108,11 +117,9 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func getFinalScore(row: Int) -> Double {
         let score: Int = entries[row]["score"] as! Int
         let numVoters: Int = entries[row]["numVoters"] as! Int
-        
-        var finalScore: Double = Double(score) / Double(numVoters)
-        
-        if(finalScore.isNaN) { //to cover the case where 0 people voted, which would result in 0/0 or NaN
-            finalScore = 0
+        var finalScore:Double = 0
+        if(numVoters != 0) { //prevents error from division by 0
+            finalScore = Double(score) / Double(numVoters)
         }
         
         return finalScore
