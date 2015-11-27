@@ -78,9 +78,27 @@ class BattlesTableViewController: UITableViewController {
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         cell.lblCurrentPhase.text = (battle.valueForKey("currentPhase") as? String)!
-        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
+        setPhaseTextColor(cell)
+        
+        cell.lblTimeLeft.text = (battle.valueForKey("timeLeft") as? String)! + "m"
         
         return cell
+    }
+    
+    func setPhaseTextColor(cell: BattleTableViewCell) -> Void {
+        if (cell.lblCurrentPhase.text == "Submit"){ //Purple
+            cell.lblCurrentPhase.textColor = UIColor(red: 158.0/255.0, green: 126.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+            cell.lblTimeLeft.textColor = UIColor(red: 158.0/255.0, green: 126.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+            cell.lblCurrentPhase.text = "join"
+        } else if (cell.lblCurrentPhase.text == "Final") { //Red
+            cell.lblCurrentPhase.textColor = UIColor(red: 252.0/255.0, green: 78.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+            cell.lblTimeLeft.textColor = UIColor(red: 252.0/255.0, green: 78.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+            cell.lblCurrentPhase.text = "scores"
+        } else { //Green
+            cell.lblCurrentPhase.textColor = UIColor(red: 22.0/255.0, green: 219.0/255.0, blue: 106.0/255.0, alpha: 1.0)
+            cell.lblTimeLeft.textColor = UIColor(red: 22.0/255.0, green: 219.0/255.0, blue: 106.0/255.0, alpha: 1.0)
+            cell.lblCurrentPhase.text = "vote"
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

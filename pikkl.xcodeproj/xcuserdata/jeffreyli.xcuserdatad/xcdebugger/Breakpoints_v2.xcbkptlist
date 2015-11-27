@@ -103,11 +103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "469918862.624876"
+            timestampString = "470295749.259468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "fetchAllBattles()"
             landmarkType = "5">
          </BreakpointContent>
@@ -119,11 +119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "469918862.624876"
+            timestampString = "470295749.259468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "fetchAllBattles()"
             landmarkType = "5">
          </BreakpointContent>
@@ -135,11 +135,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Category/BattlesTableViewController.swift"
-            timestampString = "469918862.624876"
+            timestampString = "470295749.259468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "createBattleTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
