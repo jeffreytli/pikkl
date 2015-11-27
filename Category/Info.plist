@@ -29,6 +29,16 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.8.5</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gotham-Light.ttf</string>
+		<string>Gotham-Medium.ttf</string>
+		<string>Gotham-Black.ttf</string>
+		<string>Gotham-BlackItalic.ttf</string>
+		<string>Gotham-Bold.ttf</string>
+		<string>Gotham-BoldItalic.ttf</string>
+		<string>Gotham-Book.ttf</string>
+	</array>
 	<key>FacebookAppID</key>
 	<string>712709778861108</string>
 	<key>FacebookDisplayName</key>

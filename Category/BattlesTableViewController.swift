@@ -36,6 +36,7 @@ class BattlesTableViewController: UITableViewController {
         battles = (data?.getBattles())!
         
         fetchAllBattles()
+        
     }
     
     // @desc: Defines user swipe refresh functionality
@@ -79,6 +80,7 @@ class BattlesTableViewController: UITableViewController {
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         cell.lblCurrentPhase.text = (battle.valueForKey("currentPhase") as? String)!
         cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
+        cell.lblTimeLeft.font = UIFont(name: "GothamBold", size: 12)
         
         return cell
     }
