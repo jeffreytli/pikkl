@@ -15,6 +15,7 @@ import CoreData
 class VoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblBattleName: UILabel!
     
     var battleTitle:String = ""
     var battleId:String = ""
@@ -22,6 +23,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblBattleName.text = battleTitle
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         
@@ -84,6 +86,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "VoteDetail" {
+            
             let indexPath:NSIndexPath? = self.tableView!.indexPathForSelectedRow
             
             // Get the destination view controller

@@ -11,6 +11,7 @@
 		433EC7011BEECB1D00348288 /* VoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7001BEECB1D00348288 /* VoteTableViewController.swift */; };
 		433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */; };
 		433EC7051BEECB7600348288 /* FinalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EC7041BEECB7600348288 /* FinalTableViewController.swift */; };
+		436699FE1C07E8BE005CCE94 /* FinalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436699FD1C07E8BE005CCE94 /* FinalTableViewCell.swift */; };
 		43670BBB1BD454F400051EB1 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */; };
 		436821B71BCEA76F004DAD89 /* BattlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */; };
 		436821B91BCEA783004DAD89 /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */; };
@@ -76,6 +77,7 @@
 		433EC7001BEECB1D00348288 /* VoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteTableViewController.swift; sourceTree = "<group>"; };
 		433EC7021BEECB6400348288 /* VoteForEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteForEntryViewController.swift; sourceTree = "<group>"; };
 		433EC7041BEECB7600348288 /* FinalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalTableViewController.swift; sourceTree = "<group>"; };
+		436699FD1C07E8BE005CCE94 /* FinalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalTableViewCell.swift; sourceTree = "<group>"; };
 		43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewController.swift; sourceTree = "<group>"; };
 		436821B81BCEA783004DAD89 /* CreateBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				433EC7041BEECB7600348288 /* FinalTableViewController.swift */,
 				439FF9BB1C02DE0F00DDBE86 /* FinalViewController.swift */,
 				4379E6FA1BF1BD3E00120B47 /* FinalDetailViewController.swift */,
+				436699FD1C07E8BE005CCE94 /* FinalTableViewCell.swift */,
 			);
 			name = Final;
 			sourceTree = "<group>";
@@ -321,8 +324,8 @@
 				433EC6FF1BEECADE00348288 /* Final */,
 				433EC6FE1BEECAD200348288 /* Vote */,
 				505ED0EA1BE46B61008F2929 /* Submit */,
-				43F087AC1BC07363007FD933 /* Home.storyboard */,
 				436821B61BCEA76F004DAD89 /* BattlesTableViewController.swift */,
+				43F087AC1BC07363007FD933 /* Home.storyboard */,
 				58FF4B261BEC2D13004D2833 /* gestureFun.swift */,
 				43670BBA1BD454F400051EB1 /* BattleTableViewCell.swift */,
 			);
@@ -426,6 +429,7 @@
 				50F822321BD4471A00048035 /* BattlesNavigationController.swift in Sources */,
 				4379E6FB1BF1BD3E00120B47 /* FinalDetailViewController.swift in Sources */,
 				504D22321C02FB1A00022403 /* SubmitViewController.swift in Sources */,
+				436699FE1C07E8BE005CCE94 /* FinalTableViewCell.swift in Sources */,
 				50F5EEFD1BE4903500C4E3F2 /* README.md in Sources */,
 				433EC7031BEECB6400348288 /* VoteForEntryViewController.swift in Sources */,
 				508B52641BEE96FF00E32D7F /* SwiftyJSON.swift in Sources */,

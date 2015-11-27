@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Create Battle-->
+        <!--create-->
         <scene sceneID="Z9G-7t-3jX">
             <objects>
                 <viewController storyboardIdentifier="CreateBattleViewController" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="6nl-TT-FpP" customClass="CreateBattleViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mustaches, Drunk Face, Food..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jw-gL-aUo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Mustaches, Drunk Face, Food..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jw-gL-aUo">
                                 <rect key="frame" x="20" y="155" width="335" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-7o-ri9">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-7o-ri9">
                                 <rect key="frame" x="20" y="193" width="335" height="309"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-Ue-aIv">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-Ue-aIv">
                                         <rect key="frame" x="167" y="0.0" width="168" height="309"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onn-ua-G0a">
@@ -83,7 +83,7 @@
                                             <constraint firstItem="6L8-r3-xwZ" firstAttribute="trailing" secondItem="3zO-4j-cFf" secondAttribute="trailing" id="gvM-QP-PoL"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZk-jE-Fux">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZk-jE-Fux">
                                         <rect key="frame" x="0.0" y="0.0" width="168" height="309"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-63-sAx">
@@ -160,7 +160,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nyU-3d-i94"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -174,7 +174,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d3R-Ei-MEB">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d3R-Ei-MEB">
                                 <rect key="frame" x="128" y="520" width="118" height="29"/>
                                 <animations/>
                                 <constraints>
@@ -188,32 +188,36 @@
                                     <action selector="segControlChanged:" destination="6nl-TT-FpP" eventType="valueChanged" id="BCL-dG-puL"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-w5-WMQ">
-                                <rect key="frame" x="164" y="565" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Create"/>
-                                <connections>
-                                    <action selector="btnCreateTapped:" destination="6nl-TT-FpP" eventType="touchUpInside" id="GpP-X1-vdd"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a battle length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-fN-YIA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose a battle length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-fN-YIA">
                                 <rect key="frame" x="98" y="495" width="178" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-w5-WMQ">
+                                <rect key="frame" x="145" y="564" width="84" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="create">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCreateTapped:" destination="6nl-TT-FpP" eventType="touchUpInside" id="GpP-X1-vdd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="top" secondItem="5jw-gL-aUo" secondAttribute="bottom" constant="8" symbolic="YES" id="44u-n8-C3t"/>
-                            <constraint firstItem="TGS-ot-LPY" firstAttribute="top" secondItem="i0t-w5-WMQ" secondAttribute="bottom" constant="28" id="7GC-tl-KuX"/>
+                            <constraint firstItem="TGS-ot-LPY" firstAttribute="top" secondItem="i0t-w5-WMQ" secondAttribute="bottom" constant="24" id="7GC-tl-KuX"/>
                             <constraint firstItem="d3R-Ei-MEB" firstAttribute="centerX" secondItem="Sij-fN-YIA" secondAttribute="centerX" id="7lj-7c-93m"/>
                             <constraint firstItem="awm-cj-5jM" firstAttribute="top" secondItem="LvT-NR-ird" secondAttribute="bottom" constant="35" id="8cX-Qu-M3G"/>
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="trailing" secondItem="5jw-gL-aUo" secondAttribute="trailing" id="FU1-Fe-VD8"/>
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="leading" secondItem="5jw-gL-aUo" secondAttribute="leading" id="Kue-6n-a9E"/>
-                            <constraint firstItem="i0t-w5-WMQ" firstAttribute="top" secondItem="d3R-Ei-MEB" secondAttribute="bottom" constant="17" id="Lsd-uT-fkH"/>
+                            <constraint firstItem="i0t-w5-WMQ" firstAttribute="top" secondItem="d3R-Ei-MEB" secondAttribute="bottom" constant="16" id="Lsd-uT-fkH"/>
                             <constraint firstItem="awm-cj-5jM" firstAttribute="leading" secondItem="5Ca-G4-SIY" secondAttribute="leadingMargin" constant="4" id="Q3q-JE-CrZ"/>
                             <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="bvf-7o-ri9" secondAttribute="bottom" constant="18" id="YNy-OE-67V"/>
                             <constraint firstItem="CR5-I7-S41" firstAttribute="trailing" secondItem="5jw-gL-aUo" secondAttribute="trailing" id="afq-yA-nmK"/>
@@ -229,7 +233,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Create Battle" id="Vtq-Ce-kxE">
+                    <navigationItem key="navigationItem" title="create" id="Vtq-Ce-kxE">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SU1-4o-bTA">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -312,6 +316,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="0.99607843139999996" green="0.84179445310000001" blue="0.81103587889999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

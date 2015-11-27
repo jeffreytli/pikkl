@@ -19,13 +19,14 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var battlePhotos:[UIImage] = []
     var entries:[PFObject] = []
     
+    @IBOutlet weak var lblBattleName: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblBattleName.text = battleTitle
         // TO-DO this work should only be done once, find a way to make that happen instead of naively populating column of avgScore everytime
         getAverages()
-        fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,7 +48,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
                 // Do something with the found objects
                 if let objects = objects {
-                    
                     for object in objects {
                         print("ObjectId: " + ((object.objectId)! as String))
                         object["avgScore"] = self.getFinalScore(object)
@@ -79,9 +79,12 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
-                        object["avgScore"] = self.getFinalScore(object)
-                        object.saveInBackground()
+                        if(object["avgScore"] == nil) {
+                            object["avgScore"] = self.getFinalScore(object)
+                            object.saveInBackground()
+                        }
                     }
+                    self.fetchAllBattleEntries()
                 }
             } else {
                 // Log details of the failure
