@@ -30,7 +30,7 @@
                                             <rect key="frame" x="21" y="18" width="240" height="32"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                            <color key="textColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-WD-8Uo">
@@ -47,7 +47,7 @@
                                                 <constraint firstAttribute="width" constant="100" id="nbE-0p-8LR"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.61527056000000002" green="0.86274509799999999" blue="0.020601521800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
@@ -83,7 +83,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Battles" id="6xz-jx-ura">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TUT-AC-GNj">
-                            <color key="tintColor" red="0.80392156859999997" green="0.86274509799999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="createBattleTapped:" destination="Ejt-Ug-vRg" id="Cgm-Go-N2d"/>
                             </connections>
@@ -212,10 +212,10 @@
                                     <constraint firstAttribute="height" constant="26" id="Uqz-KL-3XW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.086274509799999996" green="0.85882352939999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempSubmit.png" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pattern.png" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
                                 <rect key="frame" x="0.0" y="144" width="375" height="479"/>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -233,13 +233,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-xW-pka">
-                                <rect key="frame" x="150" y="419" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-xW-pka">
+                                <rect key="frame" x="143" y="419" width="90" height="45"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.85882352939999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Hku-iM-67z"/>
+                                    <constraint firstAttribute="height" constant="45" id="Hku-iM-67z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Gallery">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -247,14 +248,15 @@
                                     <action selector="btnGalleryTapped:" destination="ncs-Bk-K6O" eventType="touchUpInside" id="P9q-oE-kPZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-Ar-xHW">
-                                <rect key="frame" x="150" y="339" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-Ar-xHW">
+                                <rect key="frame" x="143" y="339" width="90" height="45"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.85882352939999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Yrc-9h-Ixc"/>
-                                    <constraint firstAttribute="width" constant="75" id="ZWB-0G-tSP"/>
+                                    <constraint firstAttribute="height" constant="45" id="Yrc-9h-Ixc"/>
+                                    <constraint firstAttribute="width" constant="90" id="ZWB-0G-tSP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Camera">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -276,8 +278,8 @@
                             <constraint firstItem="4xm-6k-eXf" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" constant="-6" id="Urp-Xy-j4S"/>
                             <constraint firstItem="4xm-6k-eXf" firstAttribute="leading" secondItem="5Fi-QY-4dn" secondAttribute="leading" id="XZn-JM-I4M"/>
                             <constraint firstItem="viy-rs-pmQ" firstAttribute="bottom" secondItem="h9v-cp-mlo" secondAttribute="top" id="Xy6-3c-rda"/>
-                            <constraint firstItem="h9v-cp-mlo" firstAttribute="top" secondItem="CH6-xW-pka" secondAttribute="bottom" constant="174" id="ciU-ee-ZBb"/>
-                            <constraint firstItem="CH6-xW-pka" firstAttribute="top" secondItem="zg1-Ar-xHW" secondAttribute="bottom" constant="50" id="eUr-2g-F8o"/>
+                            <constraint firstItem="h9v-cp-mlo" firstAttribute="top" secondItem="CH6-xW-pka" secondAttribute="bottom" constant="159" id="ciU-ee-ZBb"/>
+                            <constraint firstItem="CH6-xW-pka" firstAttribute="top" secondItem="zg1-Ar-xHW" secondAttribute="bottom" constant="35" id="eUr-2g-F8o"/>
                             <constraint firstItem="viy-rs-pmQ" firstAttribute="centerX" secondItem="CH6-xW-pka" secondAttribute="centerX" id="hvS-ug-PsR"/>
                             <constraint firstAttribute="trailing" secondItem="viy-rs-pmQ" secondAttribute="trailing" id="iTM-Tv-ywd"/>
                             <constraint firstItem="viy-rs-pmQ" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leading" id="tBY-tI-IgI"/>
@@ -285,8 +287,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Battle Title" id="gMh-4U-K28">
+                    <navigationItem key="navigationItem" title="Join" id="gMh-4U-K28">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="tmd-Ol-mjT">
+                            <color key="tintColor" red="0.086274509803921567" green="0.85882352941176465" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="btnSubmitTapped:" destination="ncs-Bk-K6O" id="0bU-n3-V28"/>
                             </connections>
@@ -927,13 +930,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="textShadowColor" red="0.55251736110000005" green="0.55251736110000005" blue="0.55251736110000005" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -946,7 +944,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tempSubmit.png" width="232" height="322"/>
+        <image name="pattern.png" width="375" height="387"/>
     </resources>
-    <color key="tintColor" red="0.80392156862745101" green="0.86274509803921573" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>

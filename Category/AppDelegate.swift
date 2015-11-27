@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UINavigationBar.appearance().barTintColor = UIColor(red: 200.0/255.0, green: 222.0/255.0, blue: 73.0/255.0, alpha: 1.0)
         
         //dark green
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 181.0/255.0, blue: 137.0/255.0, alpha: 1.0)
-        
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 181.0/255.0, blue: 137.0/255.0, alpha: 1.0)
+//        
+//        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         return true
     }

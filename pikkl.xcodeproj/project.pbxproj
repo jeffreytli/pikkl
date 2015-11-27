@@ -44,6 +44,7 @@
 		43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43F087E21BC07975007FD933 /* Default-568h@2x.png */; };
 		5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D41BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld */; };
 		5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */; };
+		50239B841C0817C60009E77C /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 50239B831C0817C60009E77C /* pattern.png */; };
 		5029EA0D1BD2190E00288659 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5029EA0C1BD2190E00288659 /* loginButton.png */; };
 		504D22301C02EC2600022403 /* tempSubmit.png in Resources */ = {isa = PBXBuildFile; fileRef = 504D222F1C02EC2600022403 /* tempSubmit.png */; };
 		504D22321C02FB1A00022403 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D22311C02FB1A00022403 /* SubmitViewController.swift */; };
@@ -110,6 +111,7 @@
 		43F087E21BC07975007FD933 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5021C4D51BE47B1F00C37C9B /* BattleDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BattleDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleDataModel.swift; sourceTree = "<group>"; };
+		50239B831C0817C60009E77C /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
 		5029EA0C1BD2190E00288659 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 		504D222F1C02EC2600022403 /* tempSubmit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempSubmit.png; sourceTree = "<group>"; };
 		504D22311C02FB1A00022403 /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				50E303B31BD625E400F810B3 /* wallpaper.png */,
 				58FF4B9C1BEC8BAF004D2833 /* SubmitCamera.png */,
 				581B5C3C1BDD6EB000B79D34 /* cameraIcon.png */,
+				50239B831C0817C60009E77C /* pattern.png */,
 				50806D8B1BD4719100575253 /* temp1.png */,
 				50806D8C1BD4719100575253 /* temp2.png */,
 				50806D8D1BD4719100575253 /* temp3.png */,
@@ -386,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50239B841C0817C60009E77C /* pattern.png in Resources */,
 				50C316061BDD82B0009EAD1F /* Create.storyboard in Resources */,
 				43F087B31BC07363007FD933 /* LaunchScreen.storyboard in Resources */,
 				50C316031BDD785E009EAD1F /* Main.storyboard in Resources */,
