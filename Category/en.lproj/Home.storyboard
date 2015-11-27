@@ -34,17 +34,17 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;0m&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-WD-8Uo">
-                                            <rect key="frame" x="261" y="39" width="100" height="29"/>
+                                            <rect key="frame" x="254" y="39" width="100" height="29"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Phase&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-n0-k1R">
-                                            <rect key="frame" x="261" y="26" width="100" height="21"/>
+                                            <rect key="frame" x="254" y="26" width="100" height="21"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="3GV-9X-9Ki"/>
+                                                <constraint firstAttribute="width" constant="100" id="TyH-fJ-zv9"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,17 +54,17 @@
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="leading" secondItem="xiF-n0-k1R" secondAttribute="leading" id="4Kt-fy-l2Q"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="xiF-n0-k1R" secondAttribute="bottom" constant="39" id="HnZ-WY-ihp"/>
-                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="23" id="Mvk-X0-oJl"/>
-                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="trailing" secondItem="xiF-n0-k1R" secondAttribute="trailing" id="Mwm-tn-y87"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bMG-WD-8Uo" secondAttribute="bottom" constant="18" id="NQw-AR-FB1"/>
-                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="leading" secondItem="lNz-L1-ToF" secondAttribute="leadingMargin" constant="13" id="TYg-LV-vx5"/>
-                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="leading" secondItem="Iq6-Zm-eGH" secondAttribute="trailing" constant="15" id="bxX-bf-cSK"/>
-                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" id="fjS-1X-D0v"/>
-                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="18" id="gCB-dD-RFh"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="xiF-n0-k1R" secondAttribute="trailing" constant="-27" id="ovd-KO-VRF"/>
-                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="31" id="vEG-EW-QUb"/>
+                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="31" id="9vF-U6-zzS"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" id="JFb-xx-z6W"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="leading" secondItem="Iq6-Zm-eGH" secondAttribute="trailing" constant="8" symbolic="YES" id="JZp-8V-6nn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xiF-n0-k1R" secondAttribute="trailing" constant="-20" id="MB6-no-jTY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bMG-WD-8Uo" secondAttribute="bottom" constant="18" id="MNv-s6-v30"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="trailing" secondItem="bMG-WD-8Uo" secondAttribute="trailing" id="Rs1-CG-Xh7"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="18" id="XyM-vZ-2Jn"/>
+                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="leading" secondItem="xiF-n0-k1R" secondAttribute="leading" id="dO2-nW-0Ya"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="leading" secondItem="lNz-L1-ToF" secondAttribute="leadingMargin" constant="13" id="dbd-uJ-b8I"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="23" id="jYY-Jx-TKc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xiF-n0-k1R" secondAttribute="bottom" constant="39" id="tx8-Qm-zEr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
