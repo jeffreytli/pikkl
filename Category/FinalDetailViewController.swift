@@ -42,17 +42,9 @@ class FinalDetailViewController: UIViewController {
     }
     
     func setSubmissionLabels() -> Void {
-        let rawScore:Int = currentEntry!["score"] as! Int
-        let numVoters:Int = currentEntry!["numVoters"] as! Int
-        var averageScore = 0
-        
-        if(numVoters != 0) {
-            averageScore = rawScore / numVoters
-        }
-        
-        lblFinalScore.text = String(averageScore)
-        lblRawScore.text = String(rawScore)
-        lblNumVoters.text = String(numVoters)
+        lblFinalScore.text = String(currentEntry!["avgScore"] as! Int)
+        lblRawScore.text = String(currentEntry!["score"] as! Int)
+        lblNumVoters.text = String(currentEntry!["numVoters"] as! Int)
     }
     
     func setSubmissionImage() -> Void {
