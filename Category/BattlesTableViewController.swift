@@ -31,11 +31,20 @@ class BattlesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         data = BattleDataModel()
         battles = (data?.getBattles())!
         
         fetchAllBattles()
+    }
+    
+    func uicolorFromHex(rgbValue:UInt32)->UIColor{
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        
+        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
     }
     
     // @desc: Defines user swipe refresh functionality
@@ -86,10 +95,10 @@ class BattlesTableViewController: UITableViewController {
     }
     
     func setPhaseTextColor(cell: BattleTableViewCell) -> Void {
-        if (cell.lblCurrentPhase.text == "Submit"){ //Purple
+        if (cell.lblCurrentPhase.text == "Vote"){ //Purple
             cell.lblCurrentPhase.textColor = UIColor(red: 158.0/255.0, green: 126.0/255.0, blue: 241.0/255.0, alpha: 1.0)
             cell.lblTimeLeft.textColor = UIColor(red: 158.0/255.0, green: 126.0/255.0, blue: 241.0/255.0, alpha: 1.0)
-            cell.lblCurrentPhase.text = "join"
+            cell.lblCurrentPhase.text = "vote"
         } else if (cell.lblCurrentPhase.text == "Final") { //Red
             cell.lblCurrentPhase.textColor = UIColor(red: 252.0/255.0, green: 78.0/255.0, blue: 44.0/255.0, alpha: 1.0)
             cell.lblTimeLeft.textColor = UIColor(red: 252.0/255.0, green: 78.0/255.0, blue: 44.0/255.0, alpha: 1.0)
@@ -97,7 +106,7 @@ class BattlesTableViewController: UITableViewController {
         } else { //Green
             cell.lblCurrentPhase.textColor = UIColor(red: 22.0/255.0, green: 219.0/255.0, blue: 106.0/255.0, alpha: 1.0)
             cell.lblTimeLeft.textColor = UIColor(red: 22.0/255.0, green: 219.0/255.0, blue: 106.0/255.0, alpha: 1.0)
-            cell.lblCurrentPhase.text = "vote"
+            cell.lblCurrentPhase.text = "join"
         }
     }
     
