@@ -42,6 +42,13 @@
 		43F087DF1BC076C8007FD933 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F087DE1BC076C8007FD933 /* libz.tbd */; };
 		43F087E11BC076D3007FD933 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F087E01BC076D3007FD933 /* libsqlite3.tbd */; };
 		43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43F087E21BC07975007FD933 /* Default-568h@2x.png */; };
+		500E4D361C09890D00EAC05F /* Gotham-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D2F1C09890D00EAC05F /* Gotham-Black.ttf */; };
+		500E4D371C09890D00EAC05F /* Gotham-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D301C09890D00EAC05F /* Gotham-BlackItalic.ttf */; };
+		500E4D381C09890D00EAC05F /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D311C09890D00EAC05F /* Gotham-Bold.ttf */; };
+		500E4D391C09890D00EAC05F /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D321C09890D00EAC05F /* Gotham-BoldItalic.ttf */; };
+		500E4D3A1C09890D00EAC05F /* Gotham-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D331C09890D00EAC05F /* Gotham-Book.ttf */; };
+		500E4D3B1C09890D00EAC05F /* Gotham-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D341C09890D00EAC05F /* Gotham-Light.ttf */; };
+		500E4D3C1C09890E00EAC05F /* Gotham-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 500E4D351C09890D00EAC05F /* Gotham-Medium.ttf */; };
 		5021C4D61BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D41BE47B1F00C37C9B /* BattleDataModel.xcdatamodeld */; };
 		5021C4D81BE47BB500C37C9B /* BattleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */; };
 		50239B841C0817C60009E77C /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 50239B831C0817C60009E77C /* pattern.png */; };
@@ -109,6 +116,13 @@
 		43F087DE1BC076C8007FD933 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		43F087E01BC076D3007FD933 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		43F087E21BC07975007FD933 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		500E4D2F1C09890D00EAC05F /* Gotham-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.ttf"; sourceTree = "<group>"; };
+		500E4D301C09890D00EAC05F /* Gotham-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BlackItalic.ttf"; sourceTree = "<group>"; };
+		500E4D311C09890D00EAC05F /* Gotham-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.ttf"; sourceTree = "<group>"; };
+		500E4D321C09890D00EAC05F /* Gotham-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.ttf"; sourceTree = "<group>"; };
+		500E4D331C09890D00EAC05F /* Gotham-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.ttf"; sourceTree = "<group>"; };
+		500E4D341C09890D00EAC05F /* Gotham-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.ttf"; sourceTree = "<group>"; };
+		500E4D351C09890D00EAC05F /* Gotham-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.ttf"; sourceTree = "<group>"; };
 		5021C4D51BE47B1F00C37C9B /* BattleDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BattleDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5021C4D71BE47BB500C37C9B /* BattleDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleDataModel.swift; sourceTree = "<group>"; };
 		50239B831C0817C60009E77C /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
@@ -194,6 +208,7 @@
 		43F0879C1BC07363007FD933 = {
 			isa = PBXGroup;
 			children = (
+				500E4D2E1C0988F200EAC05F /* FontResources */,
 				50F5EEFC1BE4903500C4E3F2 /* README.md */,
 				43F087E21BC07975007FD933 /* Default-568h@2x.png */,
 				43F087E01BC076D3007FD933 /* libsqlite3.tbd */,
@@ -263,6 +278,20 @@
 				43F087C41BC07611007FD933 /* ParseFacebookUtilsV4.framework */,
 			);
 			name = ParseSDK;
+			sourceTree = "<group>";
+		};
+		500E4D2E1C0988F200EAC05F /* FontResources */ = {
+			isa = PBXGroup;
+			children = (
+				500E4D2F1C09890D00EAC05F /* Gotham-Black.ttf */,
+				500E4D301C09890D00EAC05F /* Gotham-BlackItalic.ttf */,
+				500E4D311C09890D00EAC05F /* Gotham-Bold.ttf */,
+				500E4D321C09890D00EAC05F /* Gotham-BoldItalic.ttf */,
+				500E4D331C09890D00EAC05F /* Gotham-Book.ttf */,
+				500E4D341C09890D00EAC05F /* Gotham-Light.ttf */,
+				500E4D351C09890D00EAC05F /* Gotham-Medium.ttf */,
+			);
+			name = FontResources;
 			sourceTree = "<group>";
 		};
 		5029EA0B1BD218F100288659 /* images */ = {
@@ -392,9 +421,13 @@
 				50239B841C0817C60009E77C /* pattern.png in Resources */,
 				50C316061BDD82B0009EAD1F /* Create.storyboard in Resources */,
 				43F087B31BC07363007FD933 /* LaunchScreen.storyboard in Resources */,
+				500E4D3A1C09890D00EAC05F /* Gotham-Book.ttf in Resources */,
 				50C316031BDD785E009EAD1F /* Main.storyboard in Resources */,
 				50806D9B1BD4719100575253 /* temp7.png in Resources */,
+				500E4D3B1C09890D00EAC05F /* Gotham-Light.ttf in Resources */,
 				50806D9D1BD4719100575253 /* temp9.png in Resources */,
+				500E4D371C09890D00EAC05F /* Gotham-BlackItalic.ttf in Resources */,
+				500E4D3C1C09890E00EAC05F /* Gotham-Medium.ttf in Resources */,
 				43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */,
 				50806D9E1BD4719100575253 /* temp10.png in Resources */,
 				50806D981BD4719100575253 /* temp4.png in Resources */,
@@ -403,9 +436,12 @@
 				50806D9C1BD4719100575253 /* temp8.png in Resources */,
 				581B5C3D1BDD6EB000B79D34 /* cameraIcon.png in Resources */,
 				43F087B01BC07363007FD933 /* Assets.xcassets in Resources */,
+				500E4D361C09890D00EAC05F /* Gotham-Black.ttf in Resources */,
+				500E4D391C09890D00EAC05F /* Gotham-BoldItalic.ttf in Resources */,
 				504D22301C02EC2600022403 /* tempSubmit.png in Resources */,
 				50806D961BD4719100575253 /* temp2.png in Resources */,
 				58FF4B9D1BEC8BAF004D2833 /* SubmitCamera.png in Resources */,
+				500E4D381C09890D00EAC05F /* Gotham-Bold.ttf in Resources */,
 				43F087AE1BC07363007FD933 /* Home.storyboard in Resources */,
 				50E303B41BD625E400F810B3 /* wallpaper.png in Resources */,
 				50806D9A1BD4719100575253 /* temp6.png in Resources */,
