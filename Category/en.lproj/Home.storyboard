@@ -137,6 +137,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU4-I3-8Fe">
                                 <rect key="frame" x="20" y="77" width="335" height="65"/>
                                 <animations/>
@@ -144,6 +148,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-M7-Mb7">
                                 <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <animations/>
@@ -175,6 +184,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote on a Pik for:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i70-3P-PDA">
                                 <rect key="frame" x="20" y="72" width="335" height="26"/>
                                 <animations/>
@@ -184,11 +197,29 @@
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="16"/>
                                 <color key="textColor" red="0.61960784310000006" green="0.4941176471" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+<<<<<<< HEAD
+=======
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU4-I3-8Fe">
+                                <rect key="frame" x="20" y="83" width="339" height="65"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="4DQ-0a-HdG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <constraint firstItem="i70-3P-PDA" firstAttribute="top" secondItem="Blg-u3-aIU" secondAttribute="bottom" constant="8" symbolic="YES" id="CeJ-rz-8NW"/>
                             <constraint firstItem="lU4-I3-8Fe" firstAttribute="top" secondItem="Blg-u3-aIU" secondAttribute="bottom" constant="13" id="HLN-CN-RTd"/>
                             <constraint firstItem="lU4-I3-8Fe" firstAttribute="trailing" secondItem="i70-3P-PDA" secondAttribute="trailing" id="HsD-z8-9sY"/>
@@ -200,6 +231,18 @@
                             <constraint firstAttribute="trailing" secondItem="Bk0-M7-Mb7" secondAttribute="trailing" id="roG-JQ-IzX"/>
                             <constraint firstItem="i70-3P-PDA" firstAttribute="leading" secondItem="lU4-I3-8Fe" secondAttribute="leading" id="uZL-9x-QDC"/>
                             <constraint firstItem="Bk0-M7-Mb7" firstAttribute="top" secondItem="lU4-I3-8Fe" secondAttribute="bottom" constant="8" symbolic="YES" id="vKK-X5-de9"/>
+<<<<<<< HEAD
+=======
+=======
+                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="trailing" secondItem="cxw-iv-zrU" secondAttribute="trailingMargin" id="DGB-Bb-FNf"/>
+                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="leading" secondItem="cxw-iv-zrU" secondAttribute="leadingMargin" constant="4" id="J9t-FT-8GT"/>
+                            <constraint firstItem="lU4-I3-8Fe" firstAttribute="top" secondItem="Blg-u3-aIU" secondAttribute="bottom" constant="19" id="Ntx-m9-AHW"/>
+                            <constraint firstAttribute="trailing" secondItem="Bk0-M7-Mb7" secondAttribute="trailing" id="TgC-3Z-JZp"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="leading" secondItem="cxw-iv-zrU" secondAttribute="leading" id="WYw-Zn-Xgy"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="bottom" secondItem="FIT-DR-78m" secondAttribute="top" id="YaV-fU-rrP"/>
+                            <constraint firstItem="Bk0-M7-Mb7" firstAttribute="top" secondItem="lU4-I3-8Fe" secondAttribute="bottom" id="oTH-TU-0ZI"/>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Vote" id="OPe-vw-uOn"/>
@@ -224,6 +267,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Submit a Pik for:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-6k-eXf">
                                 <rect key="frame" x="20" y="72" width="335" height="26"/>
                                 <animations/>
@@ -235,6 +282,12 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern.png" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
+<<<<<<< HEAD
+=======
+=======
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tempSubmit.png" translatesAutoresizingMaskIntoConstraints="NO" id="viy-rs-pmQ">
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                                 <rect key="frame" x="0.0" y="144" width="375" height="479"/>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -242,6 +295,10 @@
                                     <outletCollection property="gestureRecognizers" destination="qHE-4M-poe" appends="YES" id="NK2-E5-HxQ"/>
                                 </connections>
                             </imageView>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The Full Battle Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-QY-4dn">
                                 <rect key="frame" x="20" y="77" width="335" height="65"/>
                                 <animations/>
@@ -252,6 +309,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-xW-pka">
                                 <rect key="frame" x="143" y="419" width="90" height="45"/>
                                 <animations/>
@@ -288,6 +350,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <constraint firstAttribute="trailingMargin" secondItem="4xm-6k-eXf" secondAttribute="trailing" id="1vD-fD-aDY"/>
                             <constraint firstItem="viy-rs-pmQ" firstAttribute="top" secondItem="4xm-6k-eXf" secondAttribute="bottom" constant="46" id="2yO-gc-vdG"/>
                             <constraint firstItem="zg1-Ar-xHW" firstAttribute="trailing" secondItem="CH6-xW-pka" secondAttribute="trailing" id="69n-nu-KP8"/>
@@ -296,6 +362,14 @@
                             <constraint firstItem="CH6-xW-pka" firstAttribute="leading" secondItem="zg1-Ar-xHW" secondAttribute="leading" id="Kt7-tr-3t3"/>
                             <constraint firstItem="4xm-6k-eXf" firstAttribute="leading" secondItem="ms0-Mf-yzD" secondAttribute="leadingMargin" id="Urp-Xy-j4S"/>
                             <constraint firstItem="4xm-6k-eXf" firstAttribute="leading" secondItem="5Fi-QY-4dn" secondAttribute="leading" id="XZn-JM-I4M"/>
+<<<<<<< HEAD
+=======
+=======
+                            <constraint firstItem="zg1-Ar-xHW" firstAttribute="trailing" secondItem="CH6-xW-pka" secondAttribute="trailing" id="69n-nu-KP8"/>
+                            <constraint firstItem="5Fi-QY-4dn" firstAttribute="top" secondItem="0zt-c6-l31" secondAttribute="bottom" constant="18" id="Hi6-u6-5Yl"/>
+                            <constraint firstItem="CH6-xW-pka" firstAttribute="leading" secondItem="zg1-Ar-xHW" secondAttribute="leading" id="Kt7-tr-3t3"/>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                             <constraint firstItem="viy-rs-pmQ" firstAttribute="bottom" secondItem="h9v-cp-mlo" secondAttribute="top" id="Xy6-3c-rda"/>
                             <constraint firstItem="h9v-cp-mlo" firstAttribute="top" secondItem="CH6-xW-pka" secondAttribute="bottom" constant="159" id="ciU-ee-ZBb"/>
                             <constraint firstItem="CH6-xW-pka" firstAttribute="top" secondItem="zg1-Ar-xHW" secondAttribute="bottom" constant="35" id="eUr-2g-F8o"/>
@@ -306,7 +380,15 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+<<<<<<< HEAD
                     <navigationItem key="navigationItem" title="Join" id="gMh-4U-K28">
+=======
+<<<<<<< HEAD
+                    <navigationItem key="navigationItem" title="Join" id="gMh-4U-K28">
+=======
+                    <navigationItem key="navigationItem" title="join" id="gMh-4U-K28">
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="tmd-Ol-mjT">
                             <color key="tintColor" red="0.086274509803921567" green="0.85882352941176465" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -686,7 +768,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uB-yX-sG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="1839.5" y="738.5"/>
+=======
+<<<<<<< HEAD
+            <point key="canvasLocation" x="1839.5" y="738.5"/>
+=======
+            <point key="canvasLocation" x="1909.5" y="642.5"/>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
         </scene>
         <!--Final Detail-->
         <scene sceneID="KdI-cG-ZqU">
@@ -829,15 +919,33 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The Full Battle Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-8k-wf2">
                                 <rect key="frame" x="20" y="64" width="335" height="65"/>
                                 <animations/>
+<<<<<<< HEAD
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="27"/>
+=======
+<<<<<<< HEAD
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="27"/>
+=======
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Owner Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5m-jG-F8G">
                                 <rect key="frame" x="20" y="108" width="335" height="21"/>
                                 <animations/>
+<<<<<<< HEAD
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="0.61960784313725492" green="0.49411764705882355" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+=======
+<<<<<<< HEAD
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
+                                <color key="textColor" red="0.61960784313725492" green="0.49411764705882355" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+=======
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9j-hm-biT">
@@ -949,8 +1057,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+<<<<<<< HEAD
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+=======
+<<<<<<< HEAD
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+=======
+                        <color key="backgroundColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.01176470588" green="0.78823529410000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.55251736110000005" green="0.55251736110000005" blue="0.55251736110000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

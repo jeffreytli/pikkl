@@ -87,9 +87,20 @@ class BattlesTableViewController: UITableViewController {
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         cell.lblCurrentPhase.text = (battle.valueForKey("currentPhase") as? String)!
+<<<<<<< HEAD
         setPhaseTextColor(cell)
         
         cell.lblTimeLeft.text = (battle.valueForKey("timeLeft") as? String)! + "m"
+=======
+<<<<<<< HEAD
+        setPhaseTextColor(cell)
+        
+        cell.lblTimeLeft.text = (battle.valueForKey("timeLeft") as? String)! + "m"
+=======
+        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
+        cell.lblTimeLeft.font = UIFont(name: "GothamBold", size: 12)
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
         
         return cell
     }

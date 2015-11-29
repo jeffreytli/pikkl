@@ -208,7 +208,15 @@
 		43F0879C1BC07363007FD933 = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				500E4D2E1C0988F200EAC05F /* FontResources */,
+=======
+<<<<<<< HEAD
+				500E4D2E1C0988F200EAC05F /* FontResources */,
+=======
+				58F10C9C1C08B52C009A5408 /* FontResources */,
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
 				50F5EEFC1BE4903500C4E3F2 /* README.md */,
 				43F087E21BC07975007FD933 /* Default-568h@2x.png */,
 				43F087E01BC076D3007FD933 /* libsqlite3.tbd */,
@@ -422,13 +430,31 @@
 				50239B841C0817C60009E77C /* pattern.png in Resources */,
 				50C316061BDD82B0009EAD1F /* Create.storyboard in Resources */,
 				43F087B31BC07363007FD933 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
 				500E4D3A1C09890D00EAC05F /* Gotham-Book.ttf in Resources */,
+=======
+<<<<<<< HEAD
+				500E4D3A1C09890D00EAC05F /* Gotham-Book.ttf in Resources */,
+=======
+				58F10C961C08B516009A5408 /* Gotham-BlackItalic.ttf in Resources */,
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
 				50C316031BDD785E009EAD1F /* Main.storyboard in Resources */,
 				50806D9B1BD4719100575253 /* temp7.png in Resources */,
 				500E4D3B1C09890D00EAC05F /* Gotham-Light.ttf in Resources */,
 				50806D9D1BD4719100575253 /* temp9.png in Resources */,
+<<<<<<< HEAD
 				500E4D371C09890D00EAC05F /* Gotham-BlackItalic.ttf in Resources */,
 				500E4D3C1C09890E00EAC05F /* Gotham-Medium.ttf in Resources */,
+=======
+<<<<<<< HEAD
+				500E4D371C09890D00EAC05F /* Gotham-BlackItalic.ttf in Resources */,
+				500E4D3C1C09890E00EAC05F /* Gotham-Medium.ttf in Resources */,
+=======
+				58F10C951C08B516009A5408 /* Gotham-Black.ttf in Resources */,
+				58F10C981C08B516009A5408 /* Gotham-BoldItalic.ttf in Resources */,
+>>>>>>> master
+>>>>>>> 199da119e3c0e3bf821d8d6718d627ccdadf5c8b
 				43F087E31BC07975007FD933 /* Default-568h@2x.png in Resources */,
 				50806D9E1BD4719100575253 /* temp10.png in Resources */,
 				50806D981BD4719100575253 /* temp4.png in Resources */,
