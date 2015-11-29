@@ -655,93 +655,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
-                                <rect key="frame" x="0.0" y="122" width="375" height="446"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
+                                <rect key="frame" x="0.0" y="137" width="375" height="443"/>
+                                <animations/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-7f-C7R">
+                                <rect key="frame" x="177" y="335" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwg-mL-1U9">
+                                <rect key="frame" x="20" y="64" width="335" height="65"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="446" id="bWW-Cd-n8Y"/>
+                                    <constraint firstAttribute="height" constant="65" id="431-hj-ykO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-pi-tUb">
+                                <rect key="frame" x="20" y="602" width="177" height="45"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1E5-Bz-gzV">
+                                <rect key="frame" x="213" y="586" width="3" height="77"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.039765733839812967" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.039765733839999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="3" id="yGc-Rd-Vbe"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;avg&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-DM-BrE">
-                                <rect key="frame" x="234" y="588" width="123" height="30"/>
+                                <rect key="frame" x="226" y="594" width="129" height="30"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="K1k-GA-507"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;raw&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-vz-fM1">
-                                <rect key="frame" x="234" y="607" width="123" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;raw&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-vz-fM1">
+                                <rect key="frame" x="226" y="610" width="129" height="30"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="Me5-Xd-cvU"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;voted&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-kL-Cli">
-                                <rect key="frame" x="234" y="626" width="123" height="21"/>
+                                <rect key="frame" x="226" y="626" width="129" height="30"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Xqe-zh-qIM"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-7f-C7R">
-                                <rect key="frame" x="177" y="335" width="20" height="20"/>
-                                <animations/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-pi-tUb">
-                                <rect key="frame" x="20" y="603" width="221" height="29"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-aw-4Lr">
-                                <rect key="frame" x="209" y="572" width="3" height="92"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwg-mL-1U9">
-                                <rect key="frame" x="18" y="64" width="339" height="50"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="1iG-pC-6pf"/>
-                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="leading" secondItem="yd4-aw-4Lr" secondAttribute="trailing" constant="22" id="69P-Ht-8tR"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" id="8zT-kh-8VP"/>
-                            <constraint firstItem="yd4-aw-4Lr" firstAttribute="centerY" secondItem="ZO2-pi-tUb" secondAttribute="centerY" id="B2S-fY-N7w"/>
-                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="top" secondItem="gcu-DM-BrE" secondAttribute="bottom" constant="8" symbolic="YES" id="IFw-vc-XeD"/>
-                            <constraint firstItem="bwg-mL-1U9" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" id="IGu-K7-zQN"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="bwg-mL-1U9" secondAttribute="bottom" constant="8" symbolic="YES" id="K25-93-PON"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="yd4-aw-4Lr" secondAttribute="bottom" constant="3" id="KZ2-dX-2hb"/>
-                            <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="LGg-ro-6Nt"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="OGk-bm-eWo"/>
-                            <constraint firstItem="bwg-mL-1U9" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="PmH-f1-SWh"/>
-                            <constraint firstItem="bwg-mL-1U9" firstAttribute="trailing" secondItem="gcu-DM-BrE" secondAttribute="trailing" id="Rxw-LP-a75"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="39" id="Umg-9i-qxW"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerY" secondItem="E4s-7f-C7R" secondAttribute="centerY" id="WBV-AA-ihw"/>
-                            <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="e1o-vz-fM1" secondAttribute="bottom" constant="36" id="bZj-Wz-t2l"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="firstBaseline" secondItem="ZO2-pi-tUb" secondAttribute="firstBaseline" id="d0o-K5-oej"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gcu-DM-BrE" secondAttribute="trailing" constant="2" id="eva-k9-m77"/>
-                            <constraint firstAttribute="trailing" secondItem="S8R-6W-lsc" secondAttribute="trailing" id="hsm-fl-wOo"/>
-                            <constraint firstAttribute="trailing" secondItem="yd4-aw-4Lr" secondAttribute="trailing" constant="163" id="ijq-0Z-gjA"/>
-                            <constraint firstItem="yd4-aw-4Lr" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" constant="209" id="mbI-U6-FBo"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="baseline" secondItem="ZO2-pi-tUb" secondAttribute="baseline" id="shM-O2-hcM"/>
-                            <constraint firstAttribute="bottom" secondItem="Gcu-kL-Cli" secondAttribute="bottom" constant="20" symbolic="YES" id="ssh-Qt-jEJ"/>
-                            <constraint firstItem="gcu-DM-BrE" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="20" id="wDn-rt-XIS"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="baseline" secondItem="e1o-vz-fM1" secondAttribute="firstBaseline" id="0eC-EO-ckH"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="14" id="10A-4J-qtp"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" id="1K5-OY-J0N"/>
+                            <constraint firstItem="E4s-7f-C7R" firstAttribute="trailing" secondItem="ZO2-pi-tUb" secondAttribute="trailing" id="1t4-e6-p1S"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="4" id="7Yj-ko-8NJ"/>
+                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="leading" secondItem="e1o-vz-fM1" secondAttribute="leading" id="FK8-rZ-ihH"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="baseline" secondItem="ZO2-pi-tUb" secondAttribute="firstBaseline" id="G3Y-Uy-CAz"/>
+                            <constraint firstItem="1E5-Bz-gzV" firstAttribute="leading" secondItem="ZO2-pi-tUb" secondAttribute="trailing" constant="16" id="Gfn-1S-dOh"/>
+                            <constraint firstAttribute="bottom" secondItem="E4s-7f-C7R" secondAttribute="bottom" constant="312" id="HQN-jf-IgB"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="bwg-mL-1U9" secondAttribute="trailing" id="Irx-bN-Ru8"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="centerY" secondItem="1E5-Bz-gzV" secondAttribute="centerY" id="JTO-S4-Sw3"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="leading" secondItem="ZO2-pi-tUb" secondAttribute="leading" id="Jgw-Tp-K4R"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="bwg-mL-1U9" secondAttribute="bottom" constant="8" symbolic="YES" id="Mc6-AL-hGT"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="leading" secondItem="e1o-vz-fM1" secondAttribute="leading" id="RW3-7n-BOg"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="S9d-um-Jm8"/>
+                            <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="Gcu-kL-Cli" secondAttribute="bottom" constant="11" id="WHU-Ia-0to"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="Whx-NA-56x"/>
+                            <constraint firstAttribute="trailing" secondItem="S8R-6W-lsc" secondAttribute="trailing" id="azS-7x-efU"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="1E5-Bz-gzV" secondAttribute="bottom" constant="4" id="bbx-e1-MJC"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" id="dFu-8x-bXT"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="baseline" secondItem="Gcu-kL-Cli" secondAttribute="firstBaseline" id="fDU-qH-tFM"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="leading" secondItem="1E5-Bz-gzV" secondAttribute="trailing" constant="10" id="hoN-LM-YCr"/>
+                            <constraint firstAttribute="bottom" secondItem="ZO2-pi-tUb" secondAttribute="bottom" constant="20" symbolic="YES" id="jPK-Gn-UbK"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="onP-BY-4AP"/>
+                            <constraint firstItem="1E5-Bz-gzV" firstAttribute="centerY" secondItem="ZO2-pi-tUb" secondAttribute="centerY" id="pVk-87-8H0"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="trailing" secondItem="Gcu-kL-Cli" secondAttribute="trailing" id="qBP-w5-qdq"/>
+                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="top" secondItem="gcu-DM-BrE" secondAttribute="bottom" constant="2" id="qCr-yg-1p4"/>
+                            <constraint firstItem="ZO2-pi-tUb" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="22" id="vPI-wN-nvz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scores" id="zhw-87-U8f">

@@ -54,6 +54,7 @@ class FinalDetailViewController: UIViewController {
             if error == nil {
                 if let imageData = imageData {
                     let image = UIImage(data:imageData)
+                    self.imgEntry.contentMode = .ScaleToFill
                     self.imgEntry.image = image
                     self.activityIndicator.stopAnimating()
                 }
