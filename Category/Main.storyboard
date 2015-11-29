@@ -4,6 +4,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Gotham-Black.ttf">
+            <string>GothamBlack</string>
+        </mutableArray>
+        <mutableArray key="Gotham-Bold.ttf">
+            <string>GothamBold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--New User View Controller-->
         <scene sceneID="gU0-5V-xH4">
@@ -17,23 +25,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="L5g-Pr-m3S">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="pik a username!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-pb-K5v">
+                                <rect key="frame" x="122" y="296" width="137" height="21"/>
                                 <animations/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a username!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-pb-K5v">
-                                <rect key="frame" x="114" y="323" width="147" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2k-Ou-59U">
-                                <rect key="frame" x="114" y="352" width="147" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-9F-a2r">
                                 <rect key="frame" x="169" y="452" width="37" height="30"/>
                                 <animations/>
@@ -44,32 +42,46 @@
                                     <action selector="btnSaveUsername:" destination="rgw-Tf-Hdo" eventType="touchUpInside" id="EeB-Q8-fb3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-kD-RMj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-kD-RMj">
                                 <rect key="frame" x="114" y="390" width="147" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="great" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCc-Pl-Trp">
+                                <rect key="frame" x="124" y="237" width="126" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="PEL-2X-RbF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamBlack" family="Gotham Black" pointSize="46"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2k-Ou-59U">
+                                <rect key="frame" x="86" y="352" width="203" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.85882352941176465" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="F2k-Ou-59U" firstAttribute="leading" secondItem="fCA-pb-K5v" secondAttribute="leading" id="5L6-3y-EVz"/>
-                            <constraint firstItem="L5g-Pr-m3S" firstAttribute="bottom" secondItem="lgp-Us-WIs" secondAttribute="top" id="5tN-6e-PET"/>
+                            <constraint firstItem="F2k-Ou-59U" firstAttribute="leading" secondItem="fCA-pb-K5v" secondAttribute="leading" constant="-36" id="5L6-3y-EVz"/>
                             <constraint firstItem="1uS-kD-RMj" firstAttribute="top" secondItem="F2k-Ou-59U" secondAttribute="bottom" constant="8" symbolic="YES" id="Ab3-Ad-Avg"/>
-                            <constraint firstItem="1uS-kD-RMj" firstAttribute="trailing" secondItem="F2k-Ou-59U" secondAttribute="trailing" id="DSN-M3-ZST"/>
+                            <constraint firstItem="1uS-kD-RMj" firstAttribute="trailing" secondItem="F2k-Ou-59U" secondAttribute="trailing" constant="-28" id="DSN-M3-ZST"/>
+                            <constraint firstItem="lCc-Pl-Trp" firstAttribute="centerX" secondItem="fCA-pb-K5v" secondAttribute="centerX" id="G3a-Fm-m17"/>
                             <constraint firstItem="XO0-9F-a2r" firstAttribute="top" secondItem="F2k-Ou-59U" secondAttribute="bottom" constant="70" id="G7K-kW-viW"/>
-                            <constraint firstItem="F2k-Ou-59U" firstAttribute="top" secondItem="fCA-pb-K5v" secondAttribute="bottom" constant="8" symbolic="YES" id="Ofj-B1-v14"/>
-                            <constraint firstItem="fCA-pb-K5v" firstAttribute="centerY" secondItem="tdc-lO-1OP" secondAttribute="centerY" id="b75-Tt-Nup"/>
+                            <constraint firstItem="F2k-Ou-59U" firstAttribute="top" secondItem="fCA-pb-K5v" secondAttribute="bottom" constant="35" id="Ofj-B1-v14"/>
+                            <constraint firstItem="fCA-pb-K5v" firstAttribute="top" secondItem="lCc-Pl-Trp" secondAttribute="bottom" constant="18" id="ayZ-6i-yNj"/>
+                            <constraint firstItem="fCA-pb-K5v" firstAttribute="centerY" secondItem="tdc-lO-1OP" secondAttribute="centerY" constant="-27" id="b75-Tt-Nup"/>
                             <constraint firstItem="XO0-9F-a2r" firstAttribute="centerX" secondItem="F2k-Ou-59U" secondAttribute="centerX" id="bXn-mx-qOT"/>
                             <constraint firstItem="XO0-9F-a2r" firstAttribute="centerX" secondItem="tdc-lO-1OP" secondAttribute="centerX" id="eyF-SK-Hhv"/>
-                            <constraint firstItem="L5g-Pr-m3S" firstAttribute="leading" secondItem="tdc-lO-1OP" secondAttribute="leading" id="fIm-D4-iMf"/>
                             <constraint firstItem="XO0-9F-a2r" firstAttribute="top" secondItem="1uS-kD-RMj" secondAttribute="bottom" constant="41" id="gff-6O-Hrg"/>
-                            <constraint firstItem="L5g-Pr-m3S" firstAttribute="centerX" secondItem="XO0-9F-a2r" secondAttribute="centerX" id="nnn-ez-uqp"/>
-                            <constraint firstItem="L5g-Pr-m3S" firstAttribute="centerY" secondItem="fCA-pb-K5v" secondAttribute="centerY" id="qtC-S0-vbO"/>
-                            <constraint firstItem="F2k-Ou-59U" firstAttribute="trailing" secondItem="fCA-pb-K5v" secondAttribute="trailing" id="tBR-bj-fOd"/>
-                            <constraint firstItem="1uS-kD-RMj" firstAttribute="leading" secondItem="F2k-Ou-59U" secondAttribute="leading" id="toy-yL-sQo"/>
+                            <constraint firstItem="lCc-Pl-Trp" firstAttribute="top" secondItem="gk1-DY-ySj" secondAttribute="bottom" constant="173" id="raa-4W-YeM"/>
+                            <constraint firstItem="F2k-Ou-59U" firstAttribute="trailing" secondItem="fCA-pb-K5v" secondAttribute="trailing" constant="36" id="tBR-bj-fOd"/>
+                            <constraint firstItem="1uS-kD-RMj" firstAttribute="leading" secondItem="F2k-Ou-59U" secondAttribute="leading" constant="28" id="toy-yL-sQo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G96-RL-d5r"/>
@@ -116,16 +128,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-SE-8Z2">
-                                <rect key="frame" x="77" y="381" width="221" height="51"/>
-                                <animations/>
-                                <state key="normal" image="facebookButton">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginFB:" destination="F5h-tZ-gOB" eventType="touchUpInside" id="a8q-6f-ujL"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-T0-AcT">
                                 <rect key="frame" x="127" y="256" width="120" height="51"/>
                                 <constraints>
@@ -133,16 +135,35 @@
                                     <constraint firstAttribute="width" constant="120" id="Qbp-tA-R8N"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-SE-8Z2">
+                                <rect key="frame" x="77" y="437" width="221" height="51"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="Lpa-qe-bQv"/>
+                                    <constraint firstAttribute="height" constant="51" id="fSG-gC-fiE"/>
+                                </constraints>
+                                <state key="normal" image="facebookButton">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginFB:" destination="F5h-tZ-gOB" eventType="touchUpInside" id="a8q-6f-ujL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.85882352939999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="RkG-SE-8Z2" firstAttribute="centerX" secondItem="H0I-gh-g0u" secondAttribute="centerX" id="Ief-7K-jSO"/>
                             <constraint firstItem="RkG-SE-8Z2" firstAttribute="leading" secondItem="H0I-gh-g0u" secondAttribute="leadingMargin" constant="57" id="LO8-L7-75s"/>
-                            <constraint firstItem="mgc-rU-KI7" firstAttribute="top" secondItem="RkG-SE-8Z2" secondAttribute="bottom" constant="235" id="Sgd-ZY-QSk"/>
+                            <constraint firstItem="mgc-rU-KI7" firstAttribute="top" secondItem="RkG-SE-8Z2" secondAttribute="bottom" constant="179" id="Sgd-ZY-QSk"/>
                             <constraint firstItem="fNT-T0-AcT" firstAttribute="top" secondItem="wsX-kO-VbI" secondAttribute="bottom" constant="192" id="awn-gU-m9X"/>
                             <constraint firstItem="fNT-T0-AcT" firstAttribute="centerX" secondItem="RkG-SE-8Z2" secondAttribute="centerX" id="ayK-k6-Lw3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LO8-L7-75s"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="FEU-if-oM5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -178,6 +199,5 @@
     <resources>
         <image name="facebookButton" width="221" height="51"/>
         <image name="logoWhite" width="116" height="46"/>
-        <image name="wallpaper.png" width="640" height="1136"/>
     </resources>
 </document>
