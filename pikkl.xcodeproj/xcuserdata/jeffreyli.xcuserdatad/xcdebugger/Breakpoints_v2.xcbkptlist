@@ -108,8 +108,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "fetchAllBattles()"
-            landmarkType = "5">
+            landmarkName = "BattlesTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -140,7 +140,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
             endingLineNumber = "245"
-            landmarkName = "createBattleTapped(_:)"
+            landmarkName = "redirectToCreateBattleView()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

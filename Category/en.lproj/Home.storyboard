@@ -23,8 +23,12 @@
             <string>GothamBold</string>
             <string>GothamBold</string>
             <string>GothamBold</string>
+            <string>GothamBold</string>
         </mutableArray>
         <mutableArray key="Gotham-Medium.ttf">
+            <string>GothamMedium</string>
+            <string>GothamMedium</string>
+            <string>GothamMedium</string>
             <string>GothamMedium</string>
             <string>GothamMedium</string>
         </mutableArray>
@@ -476,19 +480,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-tF-sQR">
-                                <rect key="frame" x="20" y="64" width="339" height="65"/>
+                                <rect key="frame" x="20" y="64" width="339" height="50"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ypk-kV-E2S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kl2-Ys-vH5">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="530" id="elM-DT-Wmf"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FinalWinnerCell" rowHeight="139" id="EnE-hr-46h" customClass="FinalTableViewCell" customModule="pikkl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="139"/>
@@ -497,47 +501,66 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdv-Mc-cgw">
-                                                    <rect key="frame" x="165" y="19" width="160" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdv-Mc-cgw">
+                                                    <rect key="frame" x="165" y="15" width="169" height="27"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="21"/>
                                                     <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Voted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkB-Xt-36X">
-                                                    <rect key="frame" x="165" y="90" width="162" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkB-Xt-36X">
+                                                    <rect key="frame" x="165" y="85" width="169" height="25"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="raw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLl-OX-CMk">
-                                                    <rect key="frame" x="165" y="69" width="160" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="raw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLl-OX-CMk">
+                                                    <rect key="frame" x="165" y="65" width="169" height="25"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="e02-E1-kNa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-Wn-kuI">
+                                                    <rect key="frame" x="165" y="45" width="169" height="25"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="lwg-Lt-bfy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSL-ac-R05">
-                                                    <rect key="frame" x="32" y="19" width="116" height="107"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mSL-ac-R05">
+                                                    <rect key="frame" x="32" y="15" width="116" height="107"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="116" id="W8w-UL-Wft"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-Wn-kuI">
-                                                    <rect key="frame" x="165" y="49" width="160" height="20"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="vLd-Wn-kuI" firstAttribute="top" secondItem="Tdv-Mc-cgw" secondAttribute="bottom" constant="5" id="46u-mW-0Rn"/>
-                                                <constraint firstItem="vLd-Wn-kuI" firstAttribute="centerY" secondItem="X5y-f4-rdL" secondAttribute="centerY" id="6PE-Lg-2s6"/>
-                                                <constraint firstItem="MkB-Xt-36X" firstAttribute="top" secondItem="vLd-Wn-kuI" secondAttribute="bottom" id="Icw-ST-3vM"/>
-                                                <constraint firstItem="Tdv-Mc-cgw" firstAttribute="leading" secondItem="vLd-Wn-kuI" secondAttribute="leading" id="KAZ-u9-4qV"/>
-                                                <constraint firstItem="Tdv-Mc-cgw" firstAttribute="leading" secondItem="X5y-f4-rdL" secondAttribute="leadingMargin" constant="38" id="acV-FE-VrT"/>
-                                                <constraint firstItem="vLd-Wn-kuI" firstAttribute="leading" secondItem="MkB-Xt-36X" secondAttribute="leading" id="sym-gq-F1p"/>
+                                                <constraint firstItem="vLd-Wn-kuI" firstAttribute="top" secondItem="Tdv-Mc-cgw" secondAttribute="bottom" constant="3" id="0BX-DA-WXq"/>
+                                                <constraint firstItem="Tdv-Mc-cgw" firstAttribute="top" secondItem="mSL-ac-R05" secondAttribute="top" id="1KZ-ik-Ejw"/>
+                                                <constraint firstItem="MkB-Xt-36X" firstAttribute="trailing" secondItem="X5y-f4-rdL" secondAttribute="trailingMargin" id="2Nm-Oe-5th"/>
+                                                <constraint firstItem="vLd-Wn-kuI" firstAttribute="trailing" secondItem="xLl-OX-CMk" secondAttribute="trailing" id="6YH-al-M5V"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MkB-Xt-36X" secondAttribute="bottom" constant="20" id="9md-8I-ZtE"/>
+                                                <constraint firstItem="Tdv-Mc-cgw" firstAttribute="leading" secondItem="mSL-ac-R05" secondAttribute="trailing" constant="17" id="CKL-Y9-T8Q"/>
+                                                <constraint firstItem="xLl-OX-CMk" firstAttribute="top" secondItem="Tdv-Mc-cgw" secondAttribute="bottom" constant="23" id="WNX-gy-KZJ"/>
+                                                <constraint firstItem="mSL-ac-R05" firstAttribute="leading" secondItem="X5y-f4-rdL" secondAttribute="leadingMargin" constant="24" id="Y5c-fL-GJX"/>
+                                                <constraint firstItem="xLl-OX-CMk" firstAttribute="leading" secondItem="MkB-Xt-36X" secondAttribute="leading" id="Zzk-JC-xCw"/>
+                                                <constraint firstItem="mSL-ac-R05" firstAttribute="centerY" secondItem="X5y-f4-rdL" secondAttribute="centerY" id="aWy-Wp-nof"/>
+                                                <constraint firstItem="vLd-Wn-kuI" firstAttribute="trailing" secondItem="Tdv-Mc-cgw" secondAttribute="trailing" id="gCH-h3-s9V"/>
+                                                <constraint firstItem="MkB-Xt-36X" firstAttribute="top" secondItem="vLd-Wn-kuI" secondAttribute="bottom" constant="15" id="i7a-5t-HgC"/>
+                                                <constraint firstItem="xLl-OX-CMk" firstAttribute="leading" secondItem="vLd-Wn-kuI" secondAttribute="leading" id="j0a-F2-b71"/>
+                                                <constraint firstItem="xLl-OX-CMk" firstAttribute="trailing" secondItem="MkB-Xt-36X" secondAttribute="trailing" id="kKL-oH-T15"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xLl-OX-CMk" secondAttribute="bottom" constant="40" id="l5Z-Ma-e74"/>
+                                                <constraint firstItem="mSL-ac-R05" firstAttribute="top" secondItem="X5y-f4-rdL" secondAttribute="topMargin" constant="7" id="lH8-j3-hEu"/>
+                                                <constraint firstItem="Tdv-Mc-cgw" firstAttribute="leading" secondItem="vLd-Wn-kuI" secondAttribute="leading" id="pw0-sc-3Mv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -558,10 +581,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xs7-Zb-isR">
-                                                    <rect key="frame" x="15" y="18" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="22" width="36" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -587,13 +610,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kl2-Ys-vH5" secondAttribute="trailing" id="8rR-ew-K0h"/>
-                            <constraint firstItem="kl2-Ys-vH5" firstAttribute="bottom" secondItem="ydt-vN-xlG" secondAttribute="top" id="FwF-hL-HKX"/>
-                            <constraint firstItem="dhO-tF-sQR" firstAttribute="trailing" secondItem="Uof-AW-Wri" secondAttribute="trailingMargin" id="JMt-wi-l4h"/>
-                            <constraint firstItem="dhO-tF-sQR" firstAttribute="top" secondItem="KFq-e2-A30" secondAttribute="bottom" id="OYx-HT-CuZ"/>
-                            <constraint firstItem="kl2-Ys-vH5" firstAttribute="top" secondItem="dhO-tF-sQR" secondAttribute="bottom" constant="8" symbolic="YES" id="Snu-jW-0Vt"/>
-                            <constraint firstItem="kl2-Ys-vH5" firstAttribute="leading" secondItem="Uof-AW-Wri" secondAttribute="leading" id="bYy-AE-Jc8"/>
-                            <constraint firstItem="dhO-tF-sQR" firstAttribute="leading" secondItem="Uof-AW-Wri" secondAttribute="leadingMargin" constant="4" id="e7J-v1-D8D"/>
+                            <constraint firstItem="dhO-tF-sQR" firstAttribute="top" secondItem="KFq-e2-A30" secondAttribute="bottom" id="2ZO-p9-SrV"/>
+                            <constraint firstItem="kl2-Ys-vH5" firstAttribute="top" secondItem="dhO-tF-sQR" secondAttribute="bottom" constant="8" symbolic="YES" id="9Tt-qZ-eXz"/>
+                            <constraint firstItem="kl2-Ys-vH5" firstAttribute="bottom" secondItem="ydt-vN-xlG" secondAttribute="top" id="IyW-3Y-zA1"/>
+                            <constraint firstItem="dhO-tF-sQR" firstAttribute="leading" secondItem="Uof-AW-Wri" secondAttribute="leadingMargin" constant="4" id="Nlh-2T-K4z"/>
+                            <constraint firstItem="dhO-tF-sQR" firstAttribute="trailing" secondItem="Uof-AW-Wri" secondAttribute="trailingMargin" id="nDL-dk-gQC"/>
+                            <constraint firstItem="kl2-Ys-vH5" firstAttribute="leading" secondItem="Uof-AW-Wri" secondAttribute="leading" id="nre-Sd-Vu5"/>
+                            <constraint firstAttribute="trailing" secondItem="kl2-Ys-vH5" secondAttribute="trailing" id="rNZ-L7-Bpn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="scores" id="rAf-SD-xsH">
