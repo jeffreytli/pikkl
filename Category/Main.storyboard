@@ -25,32 +25,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pik a username!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-pb-K5v">
-                                <rect key="frame" x="122" y="296" width="137" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-9F-a2r">
+                                <rect key="frame" x="140.5" y="444" width="96" height="45"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-9F-a2r">
-                                <rect key="frame" x="169" y="452" width="37" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Done">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="TJ9-JR-idu"/>
+                                </constraints>
+                                <state key="normal" image="doneButton">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="btnSaveUsername:" destination="rgw-Tf-Hdo" eventType="touchUpInside" id="EeB-Q8-fb3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-kD-RMj">
-                                <rect key="frame" x="114" y="390" width="147" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-kD-RMj">
+                                <rect key="frame" x="122" y="390" width="131" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="great" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCc-Pl-Trp">
-                                <rect key="frame" x="124" y="237" width="126" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="great" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCc-Pl-Trp">
+                                <rect key="frame" x="122" y="237" width="129" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="PEL-2X-RbF"/>
                                 </constraints>
@@ -58,29 +54,36 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2k-Ou-59U">
-                                <rect key="frame" x="86" y="352" width="203" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2k-Ou-59U">
+                                <rect key="frame" x="94" y="352" width="187" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="pik a username!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-pb-K5v">
+                                <rect key="frame" x="118" y="296" width="140" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.086274509803921567" green="0.85882352941176465" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="F2k-Ou-59U" firstAttribute="leading" secondItem="fCA-pb-K5v" secondAttribute="leading" constant="-36" id="5L6-3y-EVz"/>
+                            <constraint firstItem="F2k-Ou-59U" firstAttribute="leading" secondItem="fCA-pb-K5v" secondAttribute="leading" constant="-24" id="5L6-3y-EVz"/>
                             <constraint firstItem="1uS-kD-RMj" firstAttribute="top" secondItem="F2k-Ou-59U" secondAttribute="bottom" constant="8" symbolic="YES" id="Ab3-Ad-Avg"/>
                             <constraint firstItem="1uS-kD-RMj" firstAttribute="trailing" secondItem="F2k-Ou-59U" secondAttribute="trailing" constant="-28" id="DSN-M3-ZST"/>
-                            <constraint firstItem="lCc-Pl-Trp" firstAttribute="centerX" secondItem="fCA-pb-K5v" secondAttribute="centerX" constant="-3.5" id="G3a-Fm-m17"/>
-                            <constraint firstItem="XO0-9F-a2r" firstAttribute="top" secondItem="F2k-Ou-59U" secondAttribute="bottom" constant="70" id="G7K-kW-viW"/>
+                            <constraint firstItem="lCc-Pl-Trp" firstAttribute="centerX" secondItem="fCA-pb-K5v" secondAttribute="centerX" constant="-1.5" id="G3a-Fm-m17"/>
+                            <constraint firstItem="XO0-9F-a2r" firstAttribute="top" secondItem="F2k-Ou-59U" secondAttribute="bottom" constant="62" id="G7K-kW-viW"/>
                             <constraint firstItem="F2k-Ou-59U" firstAttribute="top" secondItem="fCA-pb-K5v" secondAttribute="bottom" constant="27" id="Ofj-B1-v14"/>
                             <constraint firstItem="fCA-pb-K5v" firstAttribute="top" secondItem="lCc-Pl-Trp" secondAttribute="bottom" constant="18" id="ayZ-6i-yNj"/>
                             <constraint firstItem="fCA-pb-K5v" firstAttribute="centerY" secondItem="tdc-lO-1OP" secondAttribute="centerY" constant="-23" id="b75-Tt-Nup"/>
-                            <constraint firstItem="XO0-9F-a2r" firstAttribute="centerX" secondItem="F2k-Ou-59U" secondAttribute="centerX" id="bXn-mx-qOT"/>
-                            <constraint firstItem="XO0-9F-a2r" firstAttribute="centerX" secondItem="tdc-lO-1OP" secondAttribute="centerX" id="eyF-SK-Hhv"/>
-                            <constraint firstItem="XO0-9F-a2r" firstAttribute="top" secondItem="1uS-kD-RMj" secondAttribute="bottom" constant="41" id="gff-6O-Hrg"/>
+                            <constraint firstItem="XO0-9F-a2r" firstAttribute="centerX" secondItem="F2k-Ou-59U" secondAttribute="centerX" constant="1" id="bXn-mx-qOT"/>
+                            <constraint firstItem="XO0-9F-a2r" firstAttribute="centerX" secondItem="tdc-lO-1OP" secondAttribute="centerX" constant="1" id="eyF-SK-Hhv"/>
+                            <constraint firstItem="XO0-9F-a2r" firstAttribute="top" secondItem="1uS-kD-RMj" secondAttribute="bottom" constant="33" id="gff-6O-Hrg"/>
                             <constraint firstItem="lCc-Pl-Trp" firstAttribute="top" secondItem="gk1-DY-ySj" secondAttribute="bottom" constant="173" id="raa-4W-YeM"/>
-                            <constraint firstItem="F2k-Ou-59U" firstAttribute="trailing" secondItem="fCA-pb-K5v" secondAttribute="trailing" constant="30" id="tBR-bj-fOd"/>
+                            <constraint firstItem="F2k-Ou-59U" firstAttribute="trailing" secondItem="fCA-pb-K5v" secondAttribute="trailing" constant="23" id="tBR-bj-fOd"/>
                             <constraint firstItem="1uS-kD-RMj" firstAttribute="leading" secondItem="F2k-Ou-59U" secondAttribute="leading" constant="28" id="toy-yL-sQo"/>
                         </constraints>
                     </view>
@@ -197,6 +200,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doneButton" width="96" height="45"/>
         <image name="facebookButton" width="221" height="51"/>
         <image name="logoWhite" width="116" height="46"/>
     </resources>
