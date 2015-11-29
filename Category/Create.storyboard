@@ -85,7 +85,7 @@
                                             </button>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90588235294117647" green="0.9882352941176471" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="6L8-r3-xwZ" firstAttribute="leading" secondItem="3zO-4j-cFf" secondAttribute="leading" id="2CC-r1-2tz"/>
                                             <constraint firstItem="ua3-gs-Uid" firstAttribute="top" secondItem="oC7-nQ-blb" secondAttribute="bottom" constant="10" id="3f5-mM-jGj"/>
@@ -155,7 +155,7 @@
                                             </button>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90588235294117647" green="0.9882352941176471" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="c5a-Gs-Y9C" firstAttribute="trailing" secondItem="2Kp-Rb-Na7" secondAttribute="trailing" id="0ex-pB-NLW"/>
                                             <constraint firstItem="c5a-Gs-Y9C" firstAttribute="leading" secondItem="Vmd-Wh-dWd" secondAttribute="leading" id="IJT-3t-tDR"/>
@@ -179,7 +179,7 @@
                                     </view>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.98823529409999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="lZk-jE-Fux" firstAttribute="leading" secondItem="bvf-7o-ri9" secondAttribute="leading" id="8qV-WZ-Olr"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="top" secondItem="lZk-jE-Fux" secondAttribute="top" id="9aU-ID-qh6"/>
@@ -250,7 +250,7 @@
                             </segmentedControl>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.9882352941176471" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="top" secondItem="5jw-gL-aUo" secondAttribute="bottom" constant="8" symbolic="YES" id="44u-n8-C3t"/>
                             <constraint firstItem="TGS-ot-LPY" firstAttribute="top" secondItem="i0t-w5-WMQ" secondAttribute="bottom" constant="18" id="7GC-tl-KuX"/>
@@ -276,7 +276,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Create Battle" id="Vtq-Ce-kxE">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SU1-4o-bTA">
-                            <color key="tintColor" red="0.054901960780000002" green="0.87450980389999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="btnCancelTapped:" destination="6nl-TT-FpP" id="llo-KA-kWW"/>
                             </connections>

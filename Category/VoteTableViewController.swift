@@ -20,6 +20,8 @@ class VoteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        tableView.separatorColor = UIColor.redColor()
+        
         fetchAllBattleEntries()
     }
     
@@ -52,6 +54,10 @@ class VoteTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.redColor()
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
