@@ -129,19 +129,54 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //because first index is being displayed at top
-        return (entries.count-1)
+        return entries.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if(indexPath.row == 0) {
+            return 139
+        } else {
+            return 57
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
-        //because first index is being displayed at top
-        let row = indexPath.row + 1
-        
-        let finalScore = entries[row]["avgScore"] as! Double
-        
-        setCellText(row, cell: cell, finalScore: finalScore)
-        
-        return cell
+        let row = indexPath.row
+        if(row == 0) {
+            let cell = tableView.dequeueReusableCellWithIdentifier("FinalWinnerCell", forIndexPath: indexPath) as! FinalTableViewCell
+            cell.lblUser.text = (entries[row]["ownerName"] as? String)!
+            cell.lblScore.text = "Avg: " + String((entries[row]["avgScore"] as! Double))
+            cell.lblRaw.text = "Raw: " + String((entries[row]["score"] as! Int))
+            cell.lblVoted.text = "Voted " + String((entries[row]["numVoters"] as! Int))
+            
+            
+            
+            let userImageFile = entries[row]["thumbnail"] as! PFFile
+            
+            userImageFile.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    if let imageData = imageData {
+                        let image = UIImage(data:imageData)
+                        cell.imgPreview.image = image
+                    }
+                }
+            }
+
+            
+            
+            //cell.imgPreview.image =
+
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
+            //because first index is being displayed at top
+            let finalScore = entries[row]["avgScore"] as! Double
+            
+            setCellText(row, cell: cell, finalScore: finalScore)
+            
+            return cell
+        } 
     }
     
     func getFinalScore(entry: PFObject) -> Double {
@@ -152,8 +187,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             finalScore = Double(score) / Double(numVoters)
             finalScore = Double(round(100*finalScore)/100)
         }
-        
-        
         return finalScore
     }
     
@@ -182,7 +215,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let voteDetail:FinalDetailViewController = segue.destinationViewController as! FinalDetailViewController
             
             // Pass in the title for the row selected
-            voteDetail.currentEntry = entries[indexPath!.row + 1]
+            voteDetail.currentEntry = entries[indexPath!.row]
         }
     }
 }
