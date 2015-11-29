@@ -173,7 +173,7 @@ class BattlesTableViewController: UITableViewController {
             print("Time left: " + timeLeft + "m")
             
             // Save new objects into core data
-            self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft)
+            self.data!.saveBattle(object.objectId!, name: object["name"] as! String, currentPhase: currentPhase, timeLeft: timeLeft, timeElapsed: String(timeElapsed))
             
             self.battles = (self.data?.getBattles())!
             

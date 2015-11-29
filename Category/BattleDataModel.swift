@@ -19,7 +19,7 @@ class BattleDataModel {
     }
     
     // Save the candidate inside our core data
-    func saveBattle(objectId: String, name: String, currentPhase: String, timeLeft: String){
+    func saveBattle(objectId: String, name: String, currentPhase: String, timeLeft: String, timeElapsed: String){
         print("Current phase: " + currentPhase)
         
         if (!containsBattle(objectId)){
@@ -35,6 +35,7 @@ class BattleDataModel {
             battle.setValue(name, forKey: "name")
             battle.setValue(currentPhase, forKey: "currentPhase")
             battle.setValue(timeLeft, forKey: "timeLeft")
+            battle.setValue(timeElapsed, forKey: "timeElapsed")
             
             // Commit the changes
             do {
@@ -53,7 +54,7 @@ class BattleDataModel {
             for battle in self.battles {
                 let curObjectId = (battle.valueForKey("objectId") as? String)!
                 if (curObjectId == objectId){
-                    print("IN HERE")
+                    battle.setValue(timeElapsed, forKey: "timeElapsed")
                     battle.setValue(currentPhase, forKey: "currentPhase")
                     battle.setValue(timeLeft, forKey: "timeLeft")
                 }

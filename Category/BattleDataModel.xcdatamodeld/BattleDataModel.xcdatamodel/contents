@@ -6,9 +6,10 @@
         <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phaseLength" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="timeElapsed" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeLeft" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Battle" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Battle" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>
