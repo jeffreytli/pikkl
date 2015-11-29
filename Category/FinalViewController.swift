@@ -19,10 +19,14 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var battlePhotos:[UIImage] = []
     var entries:[PFObject] = []
     
+    @IBOutlet weak var lblBattleTitle: UILabel!
+    @IBOutlet weak var lblWinnerRaw: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var lblWinnerAvg: UILabel!
+    @IBOutlet weak var lblWinnerVoted: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblBattleTitle.text = battleTitle
         // TO-DO this work should only be done once, find a way to make that happen instead of naively populating column of avgScore everytime
         getAverages()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
@@ -124,12 +128,14 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entries.count
+        //because first index is being displayed at top
+        return (entries.count-1)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
-        let row = indexPath.row
+        //because first index is being displayed at top
+        let row = indexPath.row + 1
         
         let finalScore = entries[row]["avgScore"] as! Double
         
@@ -174,7 +180,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let voteDetail:FinalDetailViewController = segue.destinationViewController as! FinalDetailViewController
             
             // Pass in the title for the row selected
-            voteDetail.currentEntry = entries[indexPath!.row]
+            voteDetail.currentEntry = entries[indexPath!.row + 1]
         }
     }
 }

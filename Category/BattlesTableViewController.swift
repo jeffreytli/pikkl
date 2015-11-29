@@ -35,7 +35,6 @@ class BattlesTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         data = BattleDataModel()
         battles = (data?.getBattles())!
-        
         fetchAllBattles()
     }
     
