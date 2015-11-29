@@ -67,7 +67,7 @@ Julio
 
 Jeffrey
 * Added functionality to allow users to download all of the submissions within a battle
-* Implemented the UI based off of design mock-ups
+* Implemented the UI based off of design mock-ups/wireframes for all views
 * Implemented sorting functionality for core data. Most recent battles are now displayed at the top of a user's list
 * Implemented a random battles title generator. The Create page now displays a randomly selected set of titles/recommendations.
 * Added logic for saving lower resolution photos (thumbnails) for faster querying/processing
