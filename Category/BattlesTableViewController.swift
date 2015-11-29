@@ -250,6 +250,41 @@ class BattlesTableViewController: UITableViewController {
         appDelegate.window?.rootViewController?.presentViewController(controllerNav, animated: true, completion: nil)
     }
     
+    func getAverages(battleId:String) {
+        let query = PFQuery(className:"BattleEntry")
+        query.whereKey("battle", equalTo:battleId)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        if(object["avgScore"] == nil) {
+                            object["avgScore"] = self.getFinalScore(object)
+                            object.saveInBackground()
+                        }
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!)")
+            }
+        }
+    }
+    
+    func getFinalScore(entry: PFObject) -> Double {
+        let score: Int = entry["score"] as! Int
+        let numVoters: Int = entry["numVoters"] as! Int
+        var finalScore:Double = 0
+        if(numVoters != 0) { //prevents error from division by 0
+            finalScore = Double(score) / Double(numVoters)
+            finalScore = Double(round(100*finalScore)/100)
+        }
+        return finalScore
+    }
+
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do something for the ShowDetail segue
@@ -280,8 +315,9 @@ class BattlesTableViewController: UITableViewController {
         }
         
         if segue.identifier == "Final" {
-            
             let indexPath:NSIndexPath = sender as! NSIndexPath
+            let battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
+            getAverages(battleId)
             let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BattleTableViewCell!;
             
             // Get the destination view controller
@@ -289,7 +325,7 @@ class BattlesTableViewController: UITableViewController {
             
             // Pass in the title for the row selected
             finalVC.battleTitle = currentCell.lblBattleName.text!
-            finalVC.battleId = (battles[indexPath.row].valueForKey("objectId") as? String)!
+            finalVC.battleId = battleId
         }
     }
 }

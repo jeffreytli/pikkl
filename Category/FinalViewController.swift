@@ -20,15 +20,13 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var entries:[PFObject] = []
     
     @IBOutlet weak var lblBattleTitle: UILabel!
-    @IBOutlet weak var lblWinnerRaw: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblWinnerAvg: UILabel!
-    @IBOutlet weak var lblWinnerVoted: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         lblBattleTitle.text = battleTitle
         // TO-DO this work should only be done once, find a way to make that happen instead of naively populating column of avgScore everytime
-        getAverages()
+        //getAverages()
+        fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -82,7 +80,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
-    
+    /*
     func getAverages() {
         let query = PFQuery(className:"BattleEntry")
         query.whereKey("battle", equalTo:battleId)
@@ -106,6 +104,18 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    
+    func getFinalScore(entry: PFObject) -> Double {
+        let score: Int = entry["score"] as! Int
+        let numVoters: Int = entry["numVoters"] as! Int
+        var finalScore:Double = 0
+        if(numVoters != 0) { //prevents error from division by 0
+            finalScore = Double(score) / Double(numVoters)
+            finalScore = Double(round(100*finalScore)/100)
+        }
+        return finalScore
+    }
+    */
     
     @IBAction func barBtnSaveAllTapped(sender: UIBarButtonItem) {
         saveAllBattlePhotos()
@@ -156,7 +166,9 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalWinnerCell", forIndexPath: indexPath) as! FinalTableViewCell
             cell.lblUser.text = (entries[row]["ownerName"] as? String)!
-            cell.lblScore.text = "Avg: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
+            if(entries[row]["avgScore"] != nil) {
+                cell.lblScore.text = "Avg: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
+            }
             cell.lblRaw.text = "Raw: " + String((entries[row]["score"] as! Int))
             cell.lblVoted.text = "Voted " + String((entries[row]["numVoters"] as! Int))
             
@@ -182,17 +194,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             return cell
         } 
-    }
-    
-    func getFinalScore(entry: PFObject) -> Double {
-        let score: Int = entry["score"] as! Int
-        let numVoters: Int = entry["numVoters"] as! Int
-        var finalScore:Double = 0
-        if(numVoters != 0) { //prevents error from division by 0
-            finalScore = Double(score) / Double(numVoters)
-            finalScore = Double(round(100*finalScore)/100)
-        }
-        return finalScore
     }
     
     func setCellText(row: Int, cell: UITableViewCell, finalScore: Double) -> Void {
