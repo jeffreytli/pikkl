@@ -1,3 +1,5 @@
+This README is for a series of educational projects for CS378: iOS Mobile Computing at the University of Texas at Austin with Bob Seitsinger in Fall 2015. Our goal was to create an iOS application, a spin-off of the popular SnapChat application.
+
 Differences between Alpha and Beta: In Alpha: the main functionality that we provided was integration with Facebook and Parse and providing the wireframes for all of our views.
 
 How To Test Pikkl: iPhone 6s
@@ -19,7 +21,7 @@ Note:
 - For some simulators the TableViewCell Separators may dissappear in this version. We also tested this on a basic table view cell and it had the same behavior. The Views behaved well on Morgan's 15in Retina but not on Jeffrey's 13in Macbook Air so we think it may be a resolution problem.
 - The circle profile pictures are still default, randomly selected set of profiles. We have not implemented these yet as it's not a core feature.
 
-In Beta: 
+Beta: 
 -The biggest difference is providing the user with the ability to Log in with Facebook and create a username. The username then gets stored in the Parse database. 
 -We added the ability for users to create Battles/Competitions of their own, which is then synced up with parse and displayed in the Battle Table View Controller. 
 -Users are able to enter any of these battles and start submitting pictures of their own to the Battle.
@@ -28,6 +30,14 @@ In Beta:
 -User can vote on battle entries
 -Users can see a final screen, where all of the average scores per photo are showed
 -The game is now fully playable, the phases of the battle change based on time
+
+Final:
+-
+-
+-
+-
+-
+
 
 Julio (33.333333%)
 - did front-end (storyboard) and back-end programming for 'vote' and 'final' view controllers
@@ -53,6 +63,3 @@ Morgan (33.333333%)
 - UI/UX game redesign: 3 phase game system
 - implemented slider for voting
 - upload and image selector camera for submit - front end
-
-
-blah blah blah
