@@ -1,44 +1,37 @@
-This README is for a series of educational projects for CS378: iOS Mobile Computing at the University of Texas at Austin with Bob Seitsinger in Fall 2015. Our goal was to create an iOS application, a spin-off of the popular SnapChat application.
+> **Disclaimer:** This README is for a series of educational projects for CS378: iOS Mobile Computing at the University of Texas at Austin with Bob Seitsinger in semester Fall 2015. Our goal was to create an iOS application, a spin-off variation of the popular SnapChat application. 
 
-Differences between Alpha and Beta: In Alpha: the main functionality that we provided was integration with Facebook and Parse and providing the wireframes for all of our views.
-
-How To Test Pikkl: iPhone 6s
-- First log out of your Facebook account on your computer
-- Open Pikkl and login with these Facebook credentials: 
+# Getting Started
+* Log out of your Facebook account on your computer or mobile device.
+* Open Pikkl and login with the following Facebook credentials [This account is part of our FB Developer List]:
+```
 User: bobbysightsinger@gmail.com
 Pass: bobbyisthebest
-[This account is now are in our FB Developer list]
-- Click the '+' button in the top right corner to Create A Battle
-- Give the battle a title! Something you want the picture competition to be about like: "Worst Gift Ever". Tap Create battle.
-- Your new battle should appear in the Battles Table View (Home)
-* The game is a photo taking game played in 3 phases: Submit your photo, Vote on your friend's photos, and the Final phase after the votes are in and scores are announced. The length of these phases will usually last a few hours but for the purpose of this test, each phase will last 2 MINUTES.
-- Your battle is in the first phase, Submit. Click your battle to go the Submit screen. Tap the camera to add a photo from your library. Click the Submit button and the photo will be added to parse.
-- Wait in the 'Battles' Table View and refresh until the VOTE phase is available (green 'Current Phase:' Vote). Tap your battle and tap on an entry to vote for it. Tap the entry to view and rate it with the slider (1-5 scale). Then tap 'Cast Vote'!
-- Wait in the 'Battles' Table View and refresh until the FINAL phase is available (green 'Current Phase:' Final). Tap your battle and see the final average scores. Tap a score to view the photo entry.
-That's Pikkl Beta!
+```
+* Click the '+' button in the top right corner to "Create" a Battle.
+* Give the battle a title or select from a pre-select set of randomly generated battle titles, then tap "Create". Your new battle should appear in the Battles Table View on the Home screen.
 
-Note: 
-- For some simulators the TableViewCell Separators may dissappear in this version. We also tested this on a basic table view cell and it had the same behavior. The Views behaved well on Morgan's 15in Retina but not on Jeffrey's 13in Macbook Air so we think it may be a resolution problem.
-- The circle profile pictures are still default, randomly selected set of profiles. We have not implemented these yet as it's not a core feature.
+# The Game
+The game is a photo taking competition played in 3 phases: Submit, Vote (Join), Final (Scores). The length of each of these phases fall under to possible categories, short and long, each with a pre-determined length.
+*Submit: Your battle is in the first phase, Submit. Click your battle to go the Submit screen. Tap the camera to add a photo from your library. Click the Submit button and the photo will be added to parse.
+*Vote: Wait in the 'Battles' Table View and refresh until the VOTE phase is available (green 'Current Phase:' Vote). Tap your battle and tap on an entry to vote for it. Tap the entry to view and rate it with the slider (1-5 scale). Then tap 'Cast Vote'!
+*Final: Wait in the 'Battles' Table View and refresh until the FINAL phase is available (green 'Current Phase:' Final). Tap your battle and see the final average scores. Tap a score to view the photo entry.
 
-Beta: 
--The biggest difference is providing the user with the ability to Log in with Facebook and create a username. The username then gets stored in the Parse database. 
--We added the ability for users to create Battles/Competitions of their own, which is then synced up with parse and displayed in the Battle Table View Controller. 
--Users are able to enter any of these battles and start submitting pictures of their own to the Battle.
--Battle objects and Battle entry objects have been created and populated with data
--Users can submit photos (which are stored in parse) to be voted on in battles
--User can vote on battle entries
--Users can see a final screen, where all of the average scores per photo are showed
--The game is now fully playable, the phases of the battle change based on time
+#Beta
+*The biggest difference is providing the user with the ability to Log in with Facebook and create a username. The username then gets stored in the Parse database. 
+*We added the ability for users to create Battles/Competitions of their own, which is then synced up with parse and displayed in the Battle Table View Controller. 
+*Users are able to enter any of these battles and start submitting pictures of their own to the Battle.
+*Battle objects and Battle entry objects have been created and populated with data
+*Users can submit photos (which are stored in parse) to be voted on in battles
+*User can vote on battle entries
+*Users can see a final screen, where all of the average scores per photo are showed
+*The game is now fully playable, the phases of the battle change based on time
 
-Final:
--
--
--
--
--
+#Final:
+*
+*
 
 
+#Contributions
 Julio (33.333333%)
 - did front-end (storyboard) and back-end programming for 'vote' and 'final' view controllers
 - designed and created battle entry object in parse for keeping track of entries (created in submit view controller)
