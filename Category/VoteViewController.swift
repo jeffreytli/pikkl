@@ -15,13 +15,15 @@ import CoreData
 class VoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var lblBattleTitle: UILabel!
+
     var battleTitle:String = ""
     var battleId:String = ""
     var entries:[PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblBattleTitle.text = battleTitle
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         

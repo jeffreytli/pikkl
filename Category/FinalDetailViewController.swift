@@ -21,20 +21,16 @@ class FinalDetailViewController: UIViewController {
     @IBOutlet weak var lblFinalScore: UILabel!
     @IBOutlet weak var lblRawScore: UILabel!
     @IBOutlet weak var lblNumVoters: UILabel!
+    @IBOutlet weak var lblUser: UILabel!
+    @IBOutlet weak var lblBattleTitle: UILabel!
     
     var currentEntry:PFObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setSubmissionLabels()
-
         self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
-        self.activityIndicator.startAnimating()
-        
+        setSubmissionLabels()
         setSubmissionImage()
-        
-        self.activityIndicator.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,12 +38,15 @@ class FinalDetailViewController: UIViewController {
     }
     
     func setSubmissionLabels() -> Void {
-        lblFinalScore.text = String(currentEntry!["avgScore"] as! Double)
-        lblRawScore.text = String(currentEntry!["score"] as! Int)
-        lblNumVoters.text = String(currentEntry!["numVoters"] as! Int)
+        lblBattleTitle.text = currentEntry!["battleName"] as? String
+        lblUser.text = currentEntry!["ownerName"] as? String
+        lblFinalScore.text = "Avg: " + String(currentEntry!["avgScore"] as! Double) + "/5.0"
+        lblRawScore.text = "Raw: " + String(currentEntry!["score"] as! Int)
+        lblNumVoters.text = "Voted: " + String(currentEntry!["numVoters"] as! Int)
     }
     
     func setSubmissionImage() -> Void {
+        self.activityIndicator.startAnimating()
         let userImageFile = currentEntry!["image"] as! PFFile
         
         userImageFile.getDataInBackgroundWithBlock {
@@ -56,6 +55,7 @@ class FinalDetailViewController: UIViewController {
                 if let imageData = imageData {
                     let image = UIImage(data:imageData)
                     self.imgEntry.image = image
+                    self.activityIndicator.stopAnimating()
                 }
             }
         }

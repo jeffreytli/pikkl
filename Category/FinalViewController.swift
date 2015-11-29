@@ -145,7 +145,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalWinnerCell", forIndexPath: indexPath) as! FinalTableViewCell
             cell.lblUser.text = (entries[row]["ownerName"] as? String)!
-            cell.lblScore.text = "Avg: " + String((entries[row]["avgScore"] as! Double))
+            cell.lblScore.text = "Avg: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
             cell.lblRaw.text = "Raw: " + String((entries[row]["score"] as! Int))
             cell.lblVoted.text = "Voted " + String((entries[row]["numVoters"] as! Int))
             
@@ -201,7 +201,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         }
         
-        cell.detailTextLabel!.text = String(finalScore) + "/ 5.0"
+        cell.detailTextLabel!.text = String(finalScore) + "/5.0"
     }
     
     

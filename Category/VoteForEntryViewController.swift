@@ -30,17 +30,11 @@ class VoteForEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lblBattleName.text = (currentEntry!["battleName"] as? String)!
         lblOwnerName.text = (currentEntry!["ownerName"] as? String)!
-        
         self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
-        self.activityIndicator.startAnimating()
-        
         setSubmissionImage()
         setAllButtonDetails()
-        
-        self.activityIndicator.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,6 +77,7 @@ class VoteForEntryViewController: UIViewController {
     
     func setSubmissionImage() -> Void {
         let userImageFile = currentEntry!["image"] as! PFFile
+        self.activityIndicator.startAnimating()
         
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
@@ -91,6 +86,7 @@ class VoteForEntryViewController: UIViewController {
                     let image = UIImage(data:imageData)
                     self.imgEntry.contentMode = .ScaleToFill
                     self.imgEntry.image = image
+                    self.activityIndicator.stopAnimating()
                 }
             }
         }

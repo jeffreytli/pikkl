@@ -24,6 +24,11 @@
             <string>GothamBold</string>
             <string>GothamBold</string>
             <string>GothamBold</string>
+            <string>GothamBold</string>
+            <string>GothamBold</string>
+            <string>GothamBold</string>
+            <string>GothamBold</string>
+            <string>GothamBold</string>
         </mutableArray>
         <mutableArray key="Gotham-Medium.ttf">
             <string>GothamMedium</string>
@@ -211,6 +216,7 @@
                     <navigationItem key="navigationItem" title="Vote" id="OPe-vw-uOn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="lblBattleTitle" destination="lU4-I3-8Fe" id="5I9-wH-fa6"/>
                         <outlet property="tableView" destination="Bk0-M7-Mb7" id="uAU-25-BC0"/>
                     </connections>
                 </viewController>
@@ -467,7 +473,7 @@
             </objects>
             <point key="canvasLocation" x="3501.5" y="-1036.5"/>
         </scene>
-        <!--scores-->
+        <!--Scores-->
         <scene sceneID="53P-uB-GxS">
             <objects>
                 <viewController id="jV5-Fh-7g1" customClass="FinalViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
@@ -619,7 +625,7 @@
                             <constraint firstAttribute="trailing" secondItem="kl2-Ys-vH5" secondAttribute="trailing" id="rNZ-L7-Bpn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="scores" id="rAf-SD-xsH">
+                    <navigationItem key="navigationItem" title="Scores" id="rAf-SD-xsH">
                         <barButtonItem key="rightBarButtonItem" title="Save All" id="Hz1-I8-1kG">
                             <color key="tintColor" red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -649,56 +655,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
-                                <rect key="frame" x="42" y="118" width="290" height="290"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S8R-6W-lsc">
+                                <rect key="frame" x="0.0" y="122" width="375" height="446"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="446" id="bWW-Cd-n8Y"/>
+                                </constraints>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-7f-C7R">
-                                <rect key="frame" x="177" y="253" width="20" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;avg&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-DM-BrE">
+                                <rect key="frame" x="234" y="588" width="123" height="30"/>
                                 <animations/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;final&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-DM-BrE">
-                                <rect key="frame" x="198" y="525" width="157" height="31"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="K1k-GA-507"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;raw&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-vz-fM1">
-                                <rect key="frame" x="198" y="570" width="157" height="23"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;numVoters&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-kL-Cli">
-                                <rect key="frame" x="198" y="608" width="157" height="23"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Raw Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOy-ez-iis">
-                                <rect key="frame" x="102" y="572" width="86" height="21"/>
+                                <rect key="frame" x="234" y="607" width="123" height="24"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="BsD-5E-5qf"/>
+                                    <constraint firstAttribute="height" constant="24" id="Me5-Xd-cvU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number of Voters:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6am-x4-1R1">
-                                <rect key="frame" x="50" y="610" width="140" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;voted&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-kL-Cli">
+                                <rect key="frame" x="234" y="626" width="123" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Xqe-zh-qIM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG2-Qd-Gnt">
-                                <rect key="frame" x="101" y="525" width="89" height="26"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-7f-C7R">
+                                <rect key="frame" x="177" y="335" width="20" height="20"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-pi-tUb">
+                                <rect key="frame" x="20" y="603" width="221" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-aw-4Lr">
+                                <rect key="frame" x="209" y="572" width="3" height="92"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.16213286020000001" blue="0.1490996483" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Full Battle Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwg-mL-1U9">
+                                <rect key="frame" x="18" y="64" width="339" height="50"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -706,34 +719,32 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gcu-DM-BrE" firstAttribute="leading" secondItem="e1o-vz-fM1" secondAttribute="leading" id="14n-1c-rpc"/>
-                            <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="6am-x4-1R1" secondAttribute="bottom" constant="36" id="2uY-VF-eRF"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="top" secondItem="gcu-DM-BrE" secondAttribute="bottom" constant="14" id="4ry-JX-3Ut"/>
-                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="leading" secondItem="6am-x4-1R1" secondAttribute="trailing" constant="8" symbolic="YES" id="5d6-bc-afw"/>
-                            <constraint firstItem="gcu-DM-BrE" firstAttribute="leading" secondItem="uG2-Qd-Gnt" secondAttribute="trailing" constant="8" symbolic="YES" id="70d-hk-DrQ"/>
-                            <constraint firstItem="gcu-DM-BrE" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="117" id="8Yk-uq-Tft"/>
-                            <constraint firstItem="uG2-Qd-Gnt" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="117" id="98o-VQ-jNv"/>
-                            <constraint firstItem="6am-x4-1R1" firstAttribute="baseline" secondItem="Gcu-kL-Cli" secondAttribute="baseline" id="Cj7-cI-0XP"/>
-                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="top" secondItem="e1o-vz-fM1" secondAttribute="bottom" constant="15" id="DNf-QX-x4y"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="GXZ-sf-oA5"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerY" secondItem="E4s-7f-C7R" secondAttribute="centerY" id="LFb-Tf-Thx"/>
-                            <constraint firstItem="uG2-Qd-Gnt" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="81" id="MVF-An-9HT"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="leading" secondItem="fOy-ez-iis" secondAttribute="trailing" constant="10" id="Nk4-Zw-2Ij"/>
-                            <constraint firstItem="uG2-Qd-Gnt" firstAttribute="centerY" secondItem="gcu-DM-BrE" secondAttribute="centerY" constant="-2.5" id="OLB-Bk-cwV"/>
-                            <constraint firstItem="fOy-ez-iis" firstAttribute="top" secondItem="uG2-Qd-Gnt" secondAttribute="bottom" constant="21" id="VE2-yF-WdW"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="22" id="XLN-s4-jtj"/>
-                            <constraint firstItem="6am-x4-1R1" firstAttribute="top" secondItem="fOy-ez-iis" secondAttribute="bottom" constant="17" id="ZYv-RF-vIe"/>
-                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="leading" secondItem="e1o-vz-fM1" secondAttribute="leading" id="bSa-XI-iKb"/>
-                            <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="hbE-W8-Zfs"/>
-                            <constraint firstItem="uG2-Qd-Gnt" firstAttribute="centerX" secondItem="fOy-ez-iis" secondAttribute="centerX" id="lyU-eP-2X3"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" constant="54" id="qB0-dg-aVb"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="baseline" secondItem="fOy-ez-iis" secondAttribute="baseline" id="sLT-9M-al9"/>
-                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="UcE-OO-hAc" secondAttribute="centerX" id="tms-Gb-WFW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gcu-DM-BrE" secondAttribute="trailing" id="wrB-dc-jV1"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="trailing" secondItem="Gcu-kL-Cli" secondAttribute="trailing" id="zoK-iv-n4F"/>
+                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="1iG-pC-6pf"/>
+                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="leading" secondItem="yd4-aw-4Lr" secondAttribute="trailing" constant="22" id="69P-Ht-8tR"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" id="8zT-kh-8VP"/>
+                            <constraint firstItem="yd4-aw-4Lr" firstAttribute="centerY" secondItem="ZO2-pi-tUb" secondAttribute="centerY" id="B2S-fY-N7w"/>
+                            <constraint firstItem="Gcu-kL-Cli" firstAttribute="top" secondItem="gcu-DM-BrE" secondAttribute="bottom" constant="8" symbolic="YES" id="IFw-vc-XeD"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" id="IGu-K7-zQN"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="bwg-mL-1U9" secondAttribute="bottom" constant="8" symbolic="YES" id="K25-93-PON"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yd4-aw-4Lr" secondAttribute="bottom" constant="3" id="KZ2-dX-2hb"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="LGg-ro-6Nt"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="OGk-bm-eWo"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="PmH-f1-SWh"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="trailing" secondItem="gcu-DM-BrE" secondAttribute="trailing" id="Rxw-LP-a75"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="39" id="Umg-9i-qxW"/>
+                            <constraint firstItem="S8R-6W-lsc" firstAttribute="centerY" secondItem="E4s-7f-C7R" secondAttribute="centerY" id="WBV-AA-ihw"/>
+                            <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="e1o-vz-fM1" secondAttribute="bottom" constant="36" id="bZj-Wz-t2l"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="firstBaseline" secondItem="ZO2-pi-tUb" secondAttribute="firstBaseline" id="d0o-K5-oej"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gcu-DM-BrE" secondAttribute="trailing" constant="2" id="eva-k9-m77"/>
+                            <constraint firstAttribute="trailing" secondItem="S8R-6W-lsc" secondAttribute="trailing" id="hsm-fl-wOo"/>
+                            <constraint firstAttribute="trailing" secondItem="yd4-aw-4Lr" secondAttribute="trailing" constant="163" id="ijq-0Z-gjA"/>
+                            <constraint firstItem="yd4-aw-4Lr" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leading" constant="209" id="mbI-U6-FBo"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="baseline" secondItem="ZO2-pi-tUb" secondAttribute="baseline" id="shM-O2-hcM"/>
+                            <constraint firstAttribute="bottom" secondItem="Gcu-kL-Cli" secondAttribute="bottom" constant="20" symbolic="YES" id="ssh-Qt-jEJ"/>
+                            <constraint firstItem="gcu-DM-BrE" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="20" id="wDn-rt-XIS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zhw-87-U8f">
+                    <navigationItem key="navigationItem" title="Scores" id="zhw-87-U8f">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="V0p-Wj-6Gj">
                             <color key="tintColor" red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -746,9 +757,11 @@
                         <outlet property="activityIndicator" destination="E4s-7f-C7R" id="Ffu-iR-Kbz"/>
                         <outlet property="barBtnSave" destination="V0p-Wj-6Gj" id="ybM-EJ-m78"/>
                         <outlet property="imgEntry" destination="S8R-6W-lsc" id="jhm-VD-9aj"/>
+                        <outlet property="lblBattleTitle" destination="bwg-mL-1U9" id="Y4P-Ud-vPp"/>
                         <outlet property="lblFinalScore" destination="gcu-DM-BrE" id="jtx-ue-hra"/>
                         <outlet property="lblNumVoters" destination="Gcu-kL-Cli" id="LcM-z5-6gd"/>
                         <outlet property="lblRawScore" destination="e1o-vz-fM1" id="e85-v8-0nc"/>
+                        <outlet property="lblUser" destination="ZO2-pi-tUb" id="qe1-ej-VyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alr-W4-HAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -870,7 +883,7 @@
                             <constraint firstItem="Pc0-Xz-YyD" firstAttribute="top" secondItem="I4P-Um-OpV" secondAttribute="top" id="xtx-1t-LZO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RFE-Pz-Deh"/>
+                    <navigationItem key="navigationItem" title="Vote" id="RFE-Pz-Deh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="activityIndicator" destination="tjU-VM-WiQ" id="Nuv-Bb-SLv"/>
