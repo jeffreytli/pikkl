@@ -19,11 +19,14 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var battlePhotos:[UIImage] = []
     var entries:[PFObject] = []
     
+    @IBOutlet weak var lblBattleName: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchAllBattleEntries()
+        lblBattleName.text = battleTitle
+        // TO-DO this work should only be done once, find a way to make that happen instead of naively populating column of avgScore everytime
+        getAverages()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,28 +41,26 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
         query.whereKey("battle", equalTo:battleId)
-        query.orderByDescending("score")
+        query.orderByDescending("avgScore")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
                 // Do something with the found objects
                 if let objects = objects {
-                    
                     for object in objects {
                         print("ObjectId: " + ((object.objectId)! as String))
-                        
+                        object["avgScore"] = self.getFinalScore(object)
+                        object.saveInBackground()
                         self.entries.append(object)
                         self.tableView.reloadData()
                     }
-                    
-                    /* 
+                    /*
                     //consider using this sorting method if we decide NOT to save average score in the cloud
                     self.entries.sortInPlace {
-                        return ($0.valueForKey("score") as! Int) > ($1.valueForKey("score") as! Int)
+                        return ($0.valueForKey("avgScore") as! Int) > ($1.valueForKey("avgScore") as! Int)
                     }
                     */
-
                 }
             } else {
                 // Log details of the failure
@@ -67,6 +68,31 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    
+    func getAverages() {
+        let query = PFQuery(className:"BattleEntry")
+        query.whereKey("battle", equalTo:battleId)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        if(object["avgScore"] == nil) {
+                            object["avgScore"] = self.getFinalScore(object)
+                            object.saveInBackground()
+                        }
+                    }
+                    self.fetchAllBattleEntries()
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!)")
+            }
+        }
+    }
+    
     
     @IBAction func barBtnSaveAllTapped(sender: UIBarButtonItem) {
         saveAllBattlePhotos()
@@ -107,16 +133,16 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
         let row = indexPath.row
         
-        let finalScore = getFinalScore(row)
+        let finalScore = entries[row]["avgScore"] as! Double
         
         setCellText(row, cell: cell, finalScore: finalScore)
         
         return cell
     }
     
-    func getFinalScore(row: Int) -> Double {
-        let score: Int = entries[row]["score"] as! Int
-        let numVoters: Int = entries[row]["numVoters"] as! Int
+    func getFinalScore(entry: PFObject) -> Double {
+        let score: Int = entry["score"] as! Int
+        let numVoters: Int = entry["numVoters"] as! Int
         var finalScore:Double = 0
         if(numVoters != 0) { //prevents error from division by 0
             finalScore = Double(score) / Double(numVoters)

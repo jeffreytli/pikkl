@@ -30,7 +30,6 @@ class VoteForEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lblBattleName.text = (currentEntry!["battleName"] as? String)!
         lblOwnerName.text = (currentEntry!["ownerName"] as? String)!
         

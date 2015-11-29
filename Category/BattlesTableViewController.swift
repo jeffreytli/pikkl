@@ -37,6 +37,7 @@ class BattlesTableViewController: UITableViewController {
         battles = (data?.getBattles())!
         
         fetchAllBattles()
+        
     }
     
     func uicolorFromHex(rgbValue:UInt32)->UIColor{
@@ -87,9 +88,14 @@ class BattlesTableViewController: UITableViewController {
         
         cell.lblBattleName.text = (battle.valueForKey("name") as? String)!
         cell.lblCurrentPhase.text = (battle.valueForKey("currentPhase") as? String)!
+<<<<<<< HEAD
         setPhaseTextColor(cell)
         
         cell.lblTimeLeft.text = (battle.valueForKey("timeLeft") as? String)! + "m"
+=======
+        cell.lblTimeLeft.text = "Time Left: " + (battle.valueForKey("timeLeft") as? String)! + "m"
+        cell.lblTimeLeft.font = UIFont(name: "GothamBold", size: 12)
+>>>>>>> master
         
         return cell
     }
@@ -117,7 +123,9 @@ class BattlesTableViewController: UITableViewController {
         let battle = battles[row]
         
         currentStage = getCurrentPhase((battle.valueForKey("currentPhase") as? String)!)
-                        
+        
+        //currentStage = Phase.VOTE
+        
         if(currentStage == Phase.SUBMIT) {
             self.performSegueWithIdentifier("Submit", sender: indexPath)
         } else if(currentStage == Phase.VOTE) {
