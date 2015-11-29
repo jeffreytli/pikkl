@@ -150,7 +150,9 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var finalScore:Double = 0
         if(numVoters != 0) { //prevents error from division by 0
             finalScore = Double(score) / Double(numVoters)
+            finalScore = Double(round(100*finalScore)/100)
         }
+        
         
         return finalScore
     }
