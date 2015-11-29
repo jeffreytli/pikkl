@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S3e-Ls-vGv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S3e-Ls-vGv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -116,31 +116,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="YTO-vC-r23">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-SE-8Z2">
+                                <rect key="frame" x="77" y="381" width="221" height="51"/>
                                 <animations/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-SE-8Z2">
-                                <rect key="frame" x="32" y="451" width="310" height="46"/>
-                                <animations/>
-                                <state key="normal" image="loginButton.png">
+                                <state key="normal" image="facebookButton">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginFB:" destination="F5h-tZ-gOB" eventType="touchUpInside" id="a8q-6f-ujL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-T0-AcT">
+                                <rect key="frame" x="127" y="256" width="120" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="MXH-Y9-rkd"/>
+                                    <constraint firstAttribute="width" constant="120" id="Qbp-tA-R8N"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.85882352939999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YTO-vC-r23" firstAttribute="bottom" secondItem="mgc-rU-KI7" secondAttribute="top" id="4vI-EQ-NXZ"/>
                             <constraint firstItem="RkG-SE-8Z2" firstAttribute="centerX" secondItem="H0I-gh-g0u" secondAttribute="centerX" id="Ief-7K-jSO"/>
-                            <constraint firstItem="YTO-vC-r23" firstAttribute="centerX" secondItem="RkG-SE-8Z2" secondAttribute="centerX" id="LDy-zy-acB"/>
-                            <constraint firstItem="RkG-SE-8Z2" firstAttribute="leading" secondItem="H0I-gh-g0u" secondAttribute="leadingMargin" constant="16" id="LO8-L7-75s"/>
-                            <constraint firstItem="YTO-vC-r23" firstAttribute="leading" secondItem="H0I-gh-g0u" secondAttribute="leading" id="QTV-Gd-NvR"/>
-                            <constraint firstItem="mgc-rU-KI7" firstAttribute="top" secondItem="RkG-SE-8Z2" secondAttribute="bottom" constant="170" id="Sgd-ZY-QSk"/>
-                            <constraint firstItem="YTO-vC-r23" firstAttribute="top" secondItem="H0I-gh-g0u" secondAttribute="top" id="wpR-lP-h9w"/>
+                            <constraint firstItem="RkG-SE-8Z2" firstAttribute="leading" secondItem="H0I-gh-g0u" secondAttribute="leadingMargin" constant="57" id="LO8-L7-75s"/>
+                            <constraint firstItem="mgc-rU-KI7" firstAttribute="top" secondItem="RkG-SE-8Z2" secondAttribute="bottom" constant="235" id="Sgd-ZY-QSk"/>
+                            <constraint firstItem="fNT-T0-AcT" firstAttribute="top" secondItem="wsX-kO-VbI" secondAttribute="bottom" constant="192" id="awn-gU-m9X"/>
+                            <constraint firstItem="fNT-T0-AcT" firstAttribute="centerX" secondItem="RkG-SE-8Z2" secondAttribute="centerX" id="ayK-k6-Lw3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FEU-if-oM5"/>
@@ -175,7 +176,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loginButton.png" width="300" height="46"/>
+        <image name="facebookButton" width="221" height="51"/>
+        <image name="logoWhite" width="116" height="46"/>
         <image name="wallpaper.png" width="640" height="1136"/>
     </resources>
 </document>
