@@ -30,7 +30,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,10 +63,11 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     for object in objects {
                         print("ObjectId: " + ((object.objectId)! as String))
                         self.entries.append(object)
-                        self.tableView.reloadData()
                     }
+                    self.tableView.reloadData()
+
                     
-                    /* 
+                    /*
                     //consider using this sorting method if we decide NOT to save average score in the cloud
                     self.entries.sortInPlace {
                         return ($0.valueForKey("score") as! Int) > ($1.valueForKey("score") as! Int)
@@ -187,8 +188,13 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
+            
+            var finalScore:Double = -1.0
+
             //because first index is being displayed at top
-            let finalScore = entries[row]["avgScore"] as! Double
+            if(entries[row]["avgScore"] != nil) {
+                finalScore = entries[row]["avgScore"] as! Double
+            }
             
             setCellText(row, cell: cell, finalScore: finalScore)
             

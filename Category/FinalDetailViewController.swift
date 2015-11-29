@@ -51,7 +51,9 @@ class FinalDetailViewController: UIViewController {
     func setSubmissionLabels() -> Void {
         lblBattleTitle.text = currentEntry!["battleName"] as? String
         lblUser.text = currentEntry!["ownerName"] as? String
-        lblFinalScore.text = "Avg: " + String(currentEntry!["avgScore"] as! Double) + "/5.0"
+        if(currentEntry!["avgScore"] != nil) {
+            lblFinalScore.text = "Avg: " + String(currentEntry!["avgScore"] as! Double) + "/5.0"
+        }
         lblRawScore.text = "Raw: " + String(currentEntry!["score"] as! Int)
         lblNumVoters.text = "Voted: " + String(currentEntry!["numVoters"] as! Int)
     }
