@@ -37,6 +37,17 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
+    override func shouldAutorotate() -> Bool {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")

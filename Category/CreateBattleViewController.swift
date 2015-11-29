@@ -48,8 +48,6 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getFacebookFriends()
-        
         txtFieldTitle.delegate = self
         
         setAllButtonDetails()

@@ -39,6 +39,17 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
     }
     
+    override func shouldAutorotate() -> Bool {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
@@ -149,8 +160,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.lblRaw.text = "Raw: " + String((entries[row]["score"] as! Int))
             cell.lblVoted.text = "Voted " + String((entries[row]["numVoters"] as! Int))
             
-            
-            
             let userImageFile = entries[row]["thumbnail"] as! PFFile
             
             userImageFile.getDataInBackgroundWithBlock {
@@ -162,10 +171,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                 }
             }
-
-            
-            
-            //cell.imgPreview.image =
 
             return cell
         } else {
@@ -203,7 +208,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.detailTextLabel!.text = String(finalScore) + "/5.0"
     }
-    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
