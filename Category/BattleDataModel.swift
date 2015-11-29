@@ -70,6 +70,13 @@ class BattleDataModel {
         
         var fetchedResults:[NSManagedObject]? = nil
         
+        // property of the Core Data object
+        let sortDescriptor = NSSortDescriptor(key: "timeLeft", ascending: false)
+        
+        // Set the list of sort descriptors in the fetch request,
+        // so it includes the sort descriptor
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
         do {
             try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
         } catch {
