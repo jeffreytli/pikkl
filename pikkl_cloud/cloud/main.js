@@ -7,51 +7,53 @@ Parse.Cloud.define("hello", function(request, response) {
 });
 */
 
-Parse.Cloud.job("deleteOldEntries", function(request, status) {
+Parse.Cloud.job("deleteOldEntries", function (request, status) {
+    var BattleEntry = Parse.Object.extend("BattleEntry");
+    query = new Parse.Query(BattleEntry);
 
-var Battle = Parse.Object.extend("Battle");
-var query = new Parse.Query(Battle);
+    day = new Date();
+    day.setDate(day.getDate()-3);
 
-var day = new Date();
-day.setDate(day.getDate()-3);
-
-query.lessThan("createdAt", day);
+    query.lessThan("createdAt", day);
 
     query.find({
-            success:function(results) {
-              for (var i = 0, len = results.length; i < len; i++) {
-                  var result = results[i];
-                  result.destroy({});
-                  console.log("Destroy: "+result);
-              }   
-            status.success("Delete successfully.");             
-            },
-            error: function(error) {
-              status.error("Uh oh, something went wrong.");
-              console.log("Failed!");         
-            }
+        success:function(results) {
+          for (var i = 0, len = results.length; i < len; i++) {
+              var result = results[i];
+              result.destroy({});
+              console.log("Destroy: "+result);
+          }   
+        status.success("Delete successfully.");             
+        },
+        error: function(error) {
+          status.error("Uh oh, something went wrong.");
+          console.log("Failed!");         
+        }
     })
+    
+});
 
-var BattleEntry = Parse.Object.extend("BattleEntry");
-query = new Parse.Query(BattleEntry);
+Parse.Cloud.job("deleteOldBattles", function (request, status) {
+    var Battle = Parse.Object.extend("Battle");
+    var query = new Parse.Query(Battle);
 
-day = new Date();
-day.setDate(day.getDate()-3);
+    var day = new Date();
+    day.setDate(day.getDate()-3);
 
-query.lessThan("createdAt", day);
+    query.lessThan("createdAt", day);
 
     query.find({
-            success:function(results) {
-              for (var i = 0, len = results.length; i < len; i++) {
-                  var result = results[i];
-                  result.destroy({});
-                  console.log("Destroy: "+result);
-              }   
-            status.success("Delete successfully.");             
-            },
-            error: function(error) {
-              status.error("Uh oh, something went wrong.");
-              console.log("Failed!");         
-            }
+        success:function (results) {
+          for (var i = 0, len = results.length; i < len; i++) {
+              var result = results[i];
+              result.destroy({});
+              console.log("Destroy: "+result);
+          }   
+        status.success("Delete successfully.");             
+        },
+        error: function(error) {
+          status.error("Uh oh, something went wrong.");
+          console.log("Failed!");         
+        }
     })
 });
