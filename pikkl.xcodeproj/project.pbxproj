@@ -602,6 +602,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Category/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parse.--PRODUCT-NAME-rfc1034identifier-";
 				PRODUCT_NAME = pikkl;
@@ -621,6 +622,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Category/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parse.--PRODUCT-NAME-rfc1034identifier-";
 				PRODUCT_NAME = pikkl;

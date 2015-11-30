@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "pikkl"
+    },
+    "pikkl": {
+      "applicationId": "bLgAGrLr32ne67m18vTXwhu5QZbHdkLmMFElQVdX"
+    }
+  }
+}

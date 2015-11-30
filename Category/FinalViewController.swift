@@ -24,8 +24,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         lblBattleTitle.text = battleTitle
-        // TO-DO this work should only be done once, find a way to make that happen instead of naively populating column of avgScore everytime
-        //getAverages()
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
@@ -65,15 +63,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.entries.append(object)
                     }
                     self.tableView.reloadData()
-
-                    
-                    /*
-                    //consider using this sorting method if we decide NOT to save average score in the cloud
-                    self.entries.sortInPlace {
-                        return ($0.valueForKey("score") as! Int) > ($1.valueForKey("score") as! Int)
-                    }
-                    */
-
                 }
             } else {
                 // Log details of the failure
@@ -81,42 +70,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
-    /*
-    func getAverages() {
-        let query = PFQuery(className:"BattleEntry")
-        query.whereKey("battle", equalTo:battleId)
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count)  jobs from database.")
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        if(object["avgScore"] == nil) {
-                            object["avgScore"] = self.getFinalScore(object)
-                            object.saveInBackground()
-                        }
-                    }
-                    self.fetchAllBattleEntries()
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!)")
-            }
-        }
-    }
-    
-    func getFinalScore(entry: PFObject) -> Double {
-        let score: Int = entry["score"] as! Int
-        let numVoters: Int = entry["numVoters"] as! Int
-        var finalScore:Double = 0
-        if(numVoters != 0) { //prevents error from division by 0
-            finalScore = Double(score) / Double(numVoters)
-            finalScore = Double(round(100*finalScore)/100)
-        }
-        return finalScore
-    }
-    */
     
     @IBAction func barBtnSaveAllTapped(sender: UIBarButtonItem) {
         saveAllBattlePhotos()
@@ -184,7 +137,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                 }
             }
-
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)

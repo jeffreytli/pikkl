@@ -149,6 +149,17 @@ class VoteForEntryViewController: UIViewController {
         self.currentEntry!["numVoters"] = tempNumVoters
         userHasVoted.updateValue(true, forKey: curUserId)
         self.currentEntry!["userHasVoted"] = userHasVoted
+        self.currentEntry!["avgScore"] = getFinalScore(tempVote, numVoters: tempNumVoters)
         self.currentEntry?.saveInBackground()
     }
+    
+    func getFinalScore(score: Int, numVoters: Int) -> Double {
+        var finalScore:Double = 0
+        if(numVoters != 0) { //prevents error from division by 0
+            finalScore = Double(score) / Double(numVoters)
+            finalScore = Double(round(100*finalScore)/100)
+        }
+        return finalScore
+    }
+
 }
