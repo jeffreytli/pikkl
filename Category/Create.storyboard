@@ -30,7 +30,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Create Battle-->
+        <!--Create-->
         <scene sceneID="Z9G-7t-3jX">
             <objects>
                 <viewController storyboardIdentifier="CreateBattleViewController" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="6nl-TT-FpP" customClass="CreateBattleViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-7o-ri9">
-                                <rect key="frame" x="20" y="193" width="335" height="309"/>
+                                <rect key="frame" x="20" y="209" width="335" height="249"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-Ue-aIv">
                                         <rect key="frame" x="167" y="0.0" width="168" height="309"/>
@@ -210,7 +210,7 @@
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="top" secondItem="lZk-jE-Fux" secondAttribute="top" id="9aU-ID-qh6"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="width" secondItem="lZk-jE-Fux" secondAttribute="width" id="DMT-vm-pqn"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="leading" secondItem="bvf-7o-ri9" secondAttribute="leading" constant="167" id="JFP-M9-MLH"/>
-                                    <constraint firstAttribute="bottom" secondItem="lZk-jE-Fux" secondAttribute="bottom" id="pql-DB-9cb"/>
+                                    <constraint firstAttribute="bottom" secondItem="lZk-jE-Fux" secondAttribute="bottom" constant="-60" id="pql-DB-9cb"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="height" secondItem="lZk-jE-Fux" secondAttribute="height" id="sls-pT-wkI"/>
                                     <constraint firstAttribute="trailing" secondItem="m2o-Ue-aIv" secondAttribute="trailing" id="udL-ET-wRp"/>
                                     <constraint firstItem="lZk-jE-Fux" firstAttribute="top" secondItem="bvf-7o-ri9" secondAttribute="top" id="wHm-VP-t9B"/>
@@ -251,13 +251,6 @@
                                     <action selector="btnCreateTapped:" destination="6nl-TT-FpP" eventType="touchUpInside" id="GpP-X1-vdd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose a battle length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-fN-YIA">
-                                <rect key="frame" x="77" y="495" width="221" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
-                                <color key="textColor" red="0.054901960780000002" green="0.87450980389999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d3R-Ei-MEB">
                                 <rect key="frame" x="77" y="520" width="221" height="29"/>
                                 <animations/>
@@ -273,11 +266,18 @@
                                     <action selector="segControlChanged:" destination="6nl-TT-FpP" eventType="valueChanged" id="BCL-dG-puL"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose a battle length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-fN-YIA">
+                                <rect key="frame" x="56" y="491" width="263" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.87450980389999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.9882352941176471" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bvf-7o-ri9" firstAttribute="top" secondItem="5jw-gL-aUo" secondAttribute="bottom" constant="8" symbolic="YES" id="44u-n8-C3t"/>
+                            <constraint firstItem="bvf-7o-ri9" firstAttribute="top" secondItem="5jw-gL-aUo" secondAttribute="bottom" constant="24" id="44u-n8-C3t"/>
                             <constraint firstItem="TGS-ot-LPY" firstAttribute="top" secondItem="i0t-w5-WMQ" secondAttribute="bottom" constant="18" id="7GC-tl-KuX"/>
                             <constraint firstItem="d3R-Ei-MEB" firstAttribute="centerX" secondItem="Sij-fN-YIA" secondAttribute="centerX" id="7lj-7c-93m"/>
                             <constraint firstItem="awm-cj-5jM" firstAttribute="top" secondItem="LvT-NR-ird" secondAttribute="bottom" constant="27" id="8cX-Qu-M3G"/>
@@ -285,13 +285,13 @@
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="leading" secondItem="5jw-gL-aUo" secondAttribute="leading" id="Kue-6n-a9E"/>
                             <constraint firstItem="i0t-w5-WMQ" firstAttribute="top" secondItem="d3R-Ei-MEB" secondAttribute="bottom" constant="14" id="Lsd-uT-fkH"/>
                             <constraint firstItem="awm-cj-5jM" firstAttribute="leading" secondItem="5Ca-G4-SIY" secondAttribute="leadingMargin" id="Q3q-JE-CrZ"/>
-                            <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="bvf-7o-ri9" secondAttribute="bottom" constant="18" id="YNy-OE-67V"/>
+                            <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="bvf-7o-ri9" secondAttribute="bottom" constant="62" id="YNy-OE-67V"/>
                             <constraint firstItem="CR5-I7-S41" firstAttribute="trailing" secondItem="5jw-gL-aUo" secondAttribute="trailing" id="afq-yA-nmK"/>
                             <constraint firstItem="CR5-I7-S41" firstAttribute="trailing" secondItem="awm-cj-5jM" secondAttribute="trailing" id="cQt-P1-DZ5"/>
                             <constraint firstItem="Sij-fN-YIA" firstAttribute="centerX" secondItem="bvf-7o-ri9" secondAttribute="centerX" id="dZw-o9-fWf"/>
                             <constraint firstItem="awm-cj-5jM" firstAttribute="leading" secondItem="CR5-I7-S41" secondAttribute="leading" id="fwH-co-I3i"/>
                             <constraint firstItem="CR5-I7-S41" firstAttribute="leading" secondItem="5jw-gL-aUo" secondAttribute="leading" id="mqA-jR-l5x"/>
-                            <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="Sij-fN-YIA" secondAttribute="bottom" constant="4" id="pGW-4J-8tA"/>
+                            <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="Sij-fN-YIA" secondAttribute="bottom" constant="8" id="pGW-4J-8tA"/>
                             <constraint firstItem="5jw-gL-aUo" firstAttribute="top" secondItem="CR5-I7-S41" secondAttribute="bottom" constant="22" id="pVf-VA-Rml"/>
                             <constraint firstItem="Sij-fN-YIA" firstAttribute="centerX" secondItem="5Ca-G4-SIY" secondAttribute="centerX" id="vvh-4q-Ef4"/>
                             <constraint firstItem="CR5-I7-S41" firstAttribute="top" secondItem="awm-cj-5jM" secondAttribute="bottom" id="wgS-Yv-S3e"/>
@@ -299,9 +299,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Create Battle" id="Vtq-Ce-kxE">
+                    <navigationItem key="navigationItem" title="Create" id="Vtq-Ce-kxE">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SU1-4o-bTA">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.098039215686274508" green="0.64313725490196083" blue="0.70588235294117652" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="btnCancelTapped:" destination="6nl-TT-FpP" id="llo-KA-kWW"/>
                             </connections>
