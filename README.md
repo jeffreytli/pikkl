@@ -58,12 +58,19 @@ Morgan (33.333333%)
 * Post game votes will reveal the winner of the competition along with the individual statistics for each submission including: the average number of votes, total number of votes, total number of voters, etc.
 * Phase sorting was implemented. Now, the most recent battles will show up at the top of a user's list rather than being displayed randomly.
 * Improved UI/UX
+* As mentioned within the initial design documentation, we implemented a functionality in the Parse cloud database to selectively coose to remove competitions after 3 days. This script runs once per day at at 12am using the Parse Cloud Jobs tool.
 
 # Final - Differences
-As mentioned within the initial design documentation, we had initially planned on implementing a functionality in the Parse cloud database to selectively coose to remove competitions after X amount of time, essentially we were hoping to remove the stale battles. However, this turned out to be an impossible task due to the inherent limitations of the Parse cloud capabiltiies. Parse does in fact have the functionality to remove data from a database using a function called a "Background Job" that are simply long running tasks. However, these only run for a limit of up to 15 minutes. 
+Due to the dynamic nature of the game, using notification manager to notify users when they’ve been invited to a competition wasn't necessary because we decided it was best to just feature global games rather than friend-specific games. Users are not notified when a battle is about to end because we decided against running the app in background while it is closed.
  
 # Final - Contributions
 Julio
+* Added logic for calculating and saving average scores for ordered parse query
+* Implemented ordered (by final score) final table view controller with 2 different prototype cells
+* Helped Jeffrey style UI based off design mock-ups
+* Added Parse Cloud Code to delete 3 day old battles entries and battles from parse as per final version goal
+* Added code to prevent users from voting on own entries and added activity indicators for loading images
+* Re-did vote and final view controllers to contain table views, rather than be table view controllers
 
 Jeffrey
 * Added functionality to allow users to download all of the submissions within a battle
