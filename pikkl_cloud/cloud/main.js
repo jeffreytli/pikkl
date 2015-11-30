@@ -57,3 +57,29 @@ Parse.Cloud.job("deleteOldBattles", function (request, status) {
         }
     })
 });
+
+Parse.Cloud.job("deleteTest", function (request, status) {
+    var Battle = Parse.Object.extend("Battle");
+    var query = new Parse.Query(Battle);
+    
+    /*
+    var day = new Date();
+    day.setDate(day.getDate()-3);
+    query.lessThan("createdAt", day);
+    */
+    
+    query.find({
+        success:function (results) {
+          for (var i = 0, len = results.length; i < len; i++) {
+              var result = results[i];
+              result.destroy({});
+              console.log("Destroy: "+result);
+          }   
+        status.success("Delete successfully.");             
+        },
+        error: function(error) {
+          status.error("Uh oh, something went wrong.");
+          console.log("Failed!");         
+        }
+    })
+});
