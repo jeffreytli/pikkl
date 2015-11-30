@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lOQ-Qe-bcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lOQ-Qe-bcC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -244,7 +245,7 @@
                                     <constraint firstAttribute="height" constant="43" id="Iyx-JR-ooW"/>
                                     <constraint firstAttribute="width" constant="110" id="o2b-sV-917"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="18"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
@@ -354,7 +355,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FeD-Ix-QA2" id="oRg-kd-Rxj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -391,42 +392,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soZ-1x-ibP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2461.5" y="-186.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="jlk-La-tnm">
-            <objects>
-                <viewController id="pNz-yD-d70" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cyk-Ko-l9H"/>
-                        <viewControllerLayoutGuide type="bottom" id="sM7-py-8yY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TCZ-Zh-u14">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F2p-zK-jKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="EmY-pO-hFc">
-            <objects>
-                <viewController id="ze8-5c-Jhu" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CEn-OC-OVB"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rjz-JP-tKI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ryL-lS-aFa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hdb-Wa-Ucs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>

@@ -52,10 +52,10 @@ class FinalDetailViewController: UIViewController {
         lblBattleTitle.text = currentEntry!["battleName"] as? String
         lblUser.text = currentEntry!["ownerName"] as? String
         if(currentEntry!["avgScore"] != nil) {
-            lblFinalScore.text = "Avg: " + String(currentEntry!["avgScore"] as! Double) + "/5.0"
+            lblFinalScore.text = "score: " + String(currentEntry!["avgScore"] as! Double) + "/5.0"
         }
-        lblRawScore.text = "Raw: " + String(currentEntry!["score"] as! Int)
-        lblNumVoters.text = "Voted: " + String(currentEntry!["numVoters"] as! Int)
+        lblRawScore.text = "raw: " + String(currentEntry!["score"] as! Int)
+        lblNumVoters.text = "voted: " + String(currentEntry!["numVoters"] as! Int)
     }
     
     func setSubmissionImage() -> Void {

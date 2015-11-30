@@ -121,10 +121,10 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalWinnerCell", forIndexPath: indexPath) as! FinalTableViewCell
             cell.lblUser.text = (entries[row]["ownerName"] as? String)!
             if(entries[row]["avgScore"] != nil) {
-                cell.lblScore.text = "Avg: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
+                cell.lblScore.text = "score: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
             }
-            cell.lblRaw.text = "Raw: " + String((entries[row]["score"] as! Int))
-            cell.lblVoted.text = "Voted " + String((entries[row]["numVoters"] as! Int))
+            cell.lblRaw.text = "raw: " + String((entries[row]["score"] as! Int))
+            cell.lblVoted.text = "voted " + String((entries[row]["numVoters"] as! Int))
             
             let userImageFile = entries[row]["thumbnail"] as! PFFile
             
