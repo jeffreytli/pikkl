@@ -586,15 +586,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-pi-tUb">
-                                <rect key="frame" x="20" y="602" width="177" height="45"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1E5-Bz-gzV">
-                                <rect key="frame" x="213" y="586" width="3" height="77"/>
+                                <rect key="frame" x="205" y="585" width="3" height="77"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.30588235289999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.98823529409999999" green="0.30588235289999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -603,24 +596,31 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-DM-BrE">
-                                <rect key="frame" x="226" y="594" width="129" height="30"/>
+                                <rect key="frame" x="218" y="594" width="137" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.30588235289999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="raw: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-vz-fM1">
-                                <rect key="frame" x="226" y="610" width="129" height="30"/>
+                                <rect key="frame" x="218" y="610" width="137" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.30588235289999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vote: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcu-kL-Cli">
-                                <rect key="frame" x="226" y="626" width="129" height="30"/>
+                                <rect key="frame" x="218" y="626" width="137" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.30588235289999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-pi-tUb">
+                                <rect key="frame" x="11" y="602" width="186" height="45"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -634,24 +634,24 @@
                             <constraint firstItem="bwg-mL-1U9" firstAttribute="leading" secondItem="UcE-OO-hAc" secondAttribute="leadingMargin" constant="4" id="7Yj-ko-8NJ"/>
                             <constraint firstItem="Gcu-kL-Cli" firstAttribute="leading" secondItem="e1o-vz-fM1" secondAttribute="leading" id="FK8-rZ-ihH"/>
                             <constraint firstItem="gcu-DM-BrE" firstAttribute="baseline" secondItem="ZO2-pi-tUb" secondAttribute="firstBaseline" id="G3Y-Uy-CAz"/>
-                            <constraint firstItem="1E5-Bz-gzV" firstAttribute="leading" secondItem="ZO2-pi-tUb" secondAttribute="trailing" constant="16" id="Gfn-1S-dOh"/>
+                            <constraint firstItem="1E5-Bz-gzV" firstAttribute="leading" secondItem="ZO2-pi-tUb" secondAttribute="trailing" constant="8" id="Gfn-1S-dOh"/>
                             <constraint firstAttribute="bottom" secondItem="E4s-7f-C7R" secondAttribute="bottom" constant="312" id="HQN-jf-IgB"/>
                             <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="bwg-mL-1U9" secondAttribute="trailing" id="Irx-bN-Ru8"/>
-                            <constraint firstItem="e1o-vz-fM1" firstAttribute="centerY" secondItem="1E5-Bz-gzV" secondAttribute="centerY" id="JTO-S4-Sw3"/>
-                            <constraint firstItem="bwg-mL-1U9" firstAttribute="leading" secondItem="ZO2-pi-tUb" secondAttribute="leading" id="Jgw-Tp-K4R"/>
+                            <constraint firstItem="e1o-vz-fM1" firstAttribute="centerY" secondItem="1E5-Bz-gzV" secondAttribute="centerY" constant="1.5" id="JTO-S4-Sw3"/>
+                            <constraint firstItem="bwg-mL-1U9" firstAttribute="leading" secondItem="ZO2-pi-tUb" secondAttribute="leading" constant="9" id="Jgw-Tp-K4R"/>
                             <constraint firstItem="S8R-6W-lsc" firstAttribute="top" secondItem="bwg-mL-1U9" secondAttribute="bottom" constant="8" symbolic="YES" id="Mc6-AL-hGT"/>
                             <constraint firstItem="gcu-DM-BrE" firstAttribute="leading" secondItem="e1o-vz-fM1" secondAttribute="leading" id="RW3-7n-BOg"/>
                             <constraint firstItem="bwg-mL-1U9" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="S9d-um-Jm8"/>
                             <constraint firstItem="SMk-wH-2zv" firstAttribute="top" secondItem="Gcu-kL-Cli" secondAttribute="bottom" constant="11" id="WHU-Ia-0to"/>
                             <constraint firstItem="gcu-DM-BrE" firstAttribute="trailing" secondItem="e1o-vz-fM1" secondAttribute="trailing" id="Whx-NA-56x"/>
                             <constraint firstAttribute="trailing" secondItem="S8R-6W-lsc" secondAttribute="trailing" id="azS-7x-efU"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="1E5-Bz-gzV" secondAttribute="bottom" constant="4" id="bbx-e1-MJC"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="1E5-Bz-gzV" secondAttribute="bottom" constant="5" id="bbx-e1-MJC"/>
                             <constraint firstItem="bwg-mL-1U9" firstAttribute="top" secondItem="sCY-X9-iCC" secondAttribute="bottom" id="dFu-8x-bXT"/>
                             <constraint firstItem="e1o-vz-fM1" firstAttribute="baseline" secondItem="Gcu-kL-Cli" secondAttribute="firstBaseline" id="fDU-qH-tFM"/>
                             <constraint firstItem="gcu-DM-BrE" firstAttribute="leading" secondItem="1E5-Bz-gzV" secondAttribute="trailing" constant="10" id="hoN-LM-YCr"/>
                             <constraint firstAttribute="bottom" secondItem="ZO2-pi-tUb" secondAttribute="bottom" constant="20" symbolic="YES" id="jPK-Gn-UbK"/>
                             <constraint firstItem="S8R-6W-lsc" firstAttribute="centerX" secondItem="E4s-7f-C7R" secondAttribute="centerX" id="onP-BY-4AP"/>
-                            <constraint firstItem="1E5-Bz-gzV" firstAttribute="centerY" secondItem="ZO2-pi-tUb" secondAttribute="centerY" id="pVk-87-8H0"/>
+                            <constraint firstItem="1E5-Bz-gzV" firstAttribute="centerY" secondItem="ZO2-pi-tUb" secondAttribute="centerY" constant="-1" id="pVk-87-8H0"/>
                             <constraint firstItem="e1o-vz-fM1" firstAttribute="trailing" secondItem="Gcu-kL-Cli" secondAttribute="trailing" id="qBP-w5-qdq"/>
                             <constraint firstItem="Gcu-kL-Cli" firstAttribute="top" secondItem="gcu-DM-BrE" secondAttribute="bottom" constant="2" id="qCr-yg-1p4"/>
                             <constraint firstItem="ZO2-pi-tUb" firstAttribute="top" secondItem="S8R-6W-lsc" secondAttribute="bottom" constant="22" id="vPI-wN-nvz"/>
