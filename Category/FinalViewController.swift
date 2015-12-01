@@ -108,7 +108,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //because first index is being displayed at top
+        //if entries count is 0 stop animating??
         return entries.count
     }
     
@@ -189,6 +189,9 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 // The find succeeded.
                 print("Successfully retrieved \(objects!.count)  jobs from database.")
                 // Do something with the found objects
+                if(objects!.count == 0) {
+                    self.activityIndicator.stopAnimating()
+                }
                 if let objects = objects {
                     var i:Int = 0
                     for object in objects {
@@ -220,7 +223,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var finalScore:Double = 0
         if(numVoters != 0) { //prevents error from division by 0
             finalScore = Double(score) / Double(numVoters)
-            finalScore = Double(round(100*finalScore)/100)
+            finalScore = Double(round(10*finalScore)/10)
         }
         return finalScore
     }
