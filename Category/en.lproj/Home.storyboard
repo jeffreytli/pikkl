@@ -39,7 +39,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Battles-->
+        <!--pikkl-->
         <scene sceneID="Ckk-8J-jyb">
             <objects>
                 <tableViewController storyboardIdentifier="BattlesTableViewController" id="Ejt-Ug-vRg" customClass="BattlesTableViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,7 +113,7 @@
                             <outlet property="delegate" destination="Ejt-Ug-vRg" id="b2w-hy-5fi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Battles" id="6xz-jx-ura">
+                    <navigationItem key="navigationItem" title="pikkl" id="6xz-jx-ura">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TUT-AC-GNj">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -920,6 +920,10 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="GothamBlack-Italic" family="Gotham Black" pointSize="0.0"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
