@@ -143,10 +143,14 @@ class VoteForEntryViewController: UIViewController {
     func saveVoteEntry(var userHasVoted: Dictionary<String, Bool>, curUserId: String, voteValue: Int) -> Void {
         var tempVote = self.currentEntry!["score"] as! Int
         tempVote += voteValue
-        self.currentEntry!["score"] = tempVote
+        //self.currentEntry!["score"] = tempVote
+        self.currentEntry!.incrementKey("score", byAmount: voteValue)
         var tempNumVoters = self.currentEntry!["numVoters"] as! Int
+        
         tempNumVoters++
-        self.currentEntry!["numVoters"] = tempNumVoters
+        //self.currentEntry!["numVoters"] = tempNumVoters
+        self.currentEntry!.incrementKey("numVoters", byAmount: 1)
+
         userHasVoted.updateValue(true, forKey: curUserId)
         self.currentEntry!["userHasVoted"] = userHasVoted
         self.currentEntry!["avgScore"] = getFinalScore(tempVote, numVoters: tempNumVoters)

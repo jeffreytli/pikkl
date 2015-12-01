@@ -159,7 +159,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         }
-        
+        1
         cell.detailTextLabel!.text = String(finalScore) + "/5.0"
     }
     
