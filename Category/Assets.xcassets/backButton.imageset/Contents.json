@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "backCreate-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "backCreate.png",
+      "filename" : "<.png",
       "scale" : "2x"
     },
     {

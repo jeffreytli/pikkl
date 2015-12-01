@@ -31,21 +31,11 @@ class BattlesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavView()
         
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         data = BattleDataModel()
         battles = (data?.getBattles())!
-        
-        if let navBarFont = UIFont(name: "GothamBlack", size: 20.0) {
-            print("has font")
-            let navBarAttributesDictionary: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.blackColor(),
-                NSFontAttributeName: navBarFont
-            ]
-            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
-        }
-
-        
         fetchAllBattles()
     }
     
@@ -55,6 +45,17 @@ class BattlesTableViewController: UITableViewController {
         let blue = CGFloat(rgbValue & 0xFF)/256.0
         
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
+    
+    func configureNavView() {
+        // Change the font and size of nav bar text
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
     }
     
     // @desc: Defines user swipe refresh functionality
