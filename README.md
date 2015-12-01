@@ -58,13 +58,13 @@ Morgan (33.333333%)
 * Post game votes will reveal the winner of the competition along with the individual statistics for each submission including: the average number of votes, total number of votes, total number of voters, etc.
 * Phase sorting was implemented. Now, the most recent battles will show up at the top of a user's list rather than being displayed randomly.
 * Improved UI/UX
-* As mentioned within the initial design documentation, we implemented a functionality in the Parse cloud database to selectively coose to remove competitions after 3 days. This script runs once per day at at 12am using the Parse Cloud Jobs tool.
+* As mentioned within the initial design documentation, we implemented a functionality in the Parse cloud database to selectively choose to remove competitions after 3 days. This script runs once per day at at 12am using the Parse Cloud Jobs tool.
 
 # Final - Differences
-As discussed with Prof Seitsinger, we've decided to remove the functionality of inviting other players to specific battles. Initially, we were going to use notification managers to notify users when they had been invited to battles, but by redesigning the app in a way that all of the battles are global, we've removed the essential need for notification managers. **Note:** We had initially implemented the notification manager, but as a group, we've decided to remove it because each of us was being flooded with notifications, which is against common-design patterns and pretty annoying to users.
+* **Notification Manager Implementation:** As discussed with Prof Seitsinger, we've decided to remove the functionality of inviting other players to specific battles. Initially, we were going to use notification managers to notify users when they had been invited to battles, but by redesigning the app in a way that all of the battles are global, we've removed the essential need for notification managers. **Note:** We had initially implemented the notification manager along with push notifications for ending phases. However, as a group, we've decided to remove it simply because we were all being flooded with notifications, which doesn't seem to be a good design/implementation and it was pretty annoying as users.
  
 # Final - Contributions
-Julio
+Julio (33.333333%)
 * Added logic for calculating and saving average scores for ordered parse query
 * Implemented ordered (by final score) final table view controller with 2 different prototype cells
 * Helped Jeffrey style UI based off design mock-ups
@@ -72,7 +72,7 @@ Julio
 * Added code to prevent users from voting on own entries and added activity indicators for loading images
 * Re-did vote and final view controllers to contain table views, rather than be table view controllers
 
-Jeffrey
+Jeffrey (33.333333%)
 * Added functionality to allow users to download all of the submissions within a battle
 * Implemented the UI based off of design mock-ups/wireframes for all views
 * Implemented sorting functionality for core data. Most recent battles are now displayed at the top of a user's list
@@ -80,4 +80,4 @@ Jeffrey
 * Added logic for saving lower resolution photos (thumbnails) for faster querying/processing
 * Fixed the time/phase interval logic
 
-Morgan
+Morgan (33.333333%)
