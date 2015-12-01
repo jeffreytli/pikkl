@@ -23,6 +23,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavView()
         lblBattleTitle.text = battleTitle
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
@@ -161,6 +162,19 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         1
         cell.detailTextLabel!.text = String(finalScore) + "/5.0"
+    }
+    
+    func configureNavView() {
+        // change nav
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
+        let votePurple = UIColor(red:252/255, green:78/255, blue:44/255, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = votePurple
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

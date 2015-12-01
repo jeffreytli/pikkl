@@ -74,7 +74,7 @@ class VoteTableViewController: UITableViewController {
         //if(entries.count > row-1 ) 
         //print(String(row) + "this is row")
         //print(String(entries.count) + "this is entry count")
-        cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
+        cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Pik"
 
         return cell
     }

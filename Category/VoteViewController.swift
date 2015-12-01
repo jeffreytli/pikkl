@@ -23,7 +23,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureNavView()
         lblBattleTitle.text = battleTitle
         fetchAllBattleEntries()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
@@ -46,6 +46,20 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             return true;
         }
+    }
+    
+    
+    func configureNavView() {
+        // change nav
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
+        let votePurple = UIColor(red:158/255, green:126/255, blue:241/255, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = votePurple
     }
     
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects

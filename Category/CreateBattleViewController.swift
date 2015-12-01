@@ -69,22 +69,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    func configureNavView() {
-        
-        // Change the font and size of nav bar text
-        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
-            let navBarAttributesDictionary: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.whiteColor(),
-                NSFontAttributeName: navBarFont
-            ]
-            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
-        }
-        let createBlue = UIColor(red:0/255, green:102/255, blue:255/255, alpha:1.0)
-        navigationController?.navigationBar.barTintColor = createBlue as UIColor
-    }
 
-    
     @IBAction func btnInviteFriends(sender: AnyObject) {
         getFacebookFriends()
     }
@@ -263,5 +248,18 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         txtFieldTitle.resignFirstResponder()
         self.view.endEditing(true)
+    }
+    
+    func configureNavView() {
+        // Change the font and size of nav bar text
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
+        let createBlue = UIColor(red:0/255, green:102/255, blue:255/255, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = createBlue as UIColor
     }
 }

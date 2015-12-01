@@ -28,7 +28,7 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureNavView()
         imagePicker.delegate = self
         lblBattleTitle.text = battleTitle
     }
@@ -55,6 +55,19 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func configureNavView() {
+        // change nav
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
+        let submitGreen = UIColor(red:22/255, green:219/255, blue:106/255, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = submitGreen
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
