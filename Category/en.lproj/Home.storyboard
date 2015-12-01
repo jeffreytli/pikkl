@@ -428,7 +428,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voted: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkB-Xt-36X">
                                                     <rect key="frame" x="165" y="85" width="169" height="25"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -438,7 +438,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="e02-E1-kNa"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-Wn-kuI">
@@ -447,7 +447,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="lwg-Lt-bfy"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -516,7 +516,6 @@
                                                 </label>
                                             </subviews>
                                             <animations/>
-                                            <color key="backgroundColor" red="1" green="0.91764705879999997" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="0.91764705879999997" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>

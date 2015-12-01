@@ -124,7 +124,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.lblScore.text = "score: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
             }
             cell.lblRaw.text = "raw: " + String((entries[row]["score"] as! Int))
-            cell.lblVoted.text = "voted " + String((entries[row]["numVoters"] as! Int))
+            cell.lblVoted.text = "voted: " + String((entries[row]["numVoters"] as! Int))
             
             let userImageFile = entries[row]["thumbnail"] as! PFFile
             
@@ -140,16 +140,11 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalCell", forIndexPath: indexPath)
-            
-            var finalScore:Double = -1.0
-
-            //because first index is being displayed at top
+            var finalScore:Double = 0
             if(entries[row]["avgScore"] != nil) {
                 finalScore = entries[row]["avgScore"] as! Double
             }
-            
             setCellText(row, cell: cell, finalScore: finalScore)
-            
             return cell
         } 
     }
@@ -160,7 +155,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if(cellOwnerId  == curUserId) {
             cell.textLabel!.text = "My Submission"
-            cell.backgroundColor = UIColor(red: 0.60, green: 0.92, blue: 0.71, alpha: 0.8)
+            cell.backgroundColor = UIColor(red:0.99, green:0.51, blue:0.41, alpha:0.5)
         } else {
             cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
         }
