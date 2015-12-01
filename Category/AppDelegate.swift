@@ -27,8 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //dark green
 //        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 181.0/255.0, blue: 137.0/255.0, alpha: 1.0)
-//        
+     
 //        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        //configure home nav
+        let buttonFont = UIFont(name: "GothamBold", size: 14.0)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont!], forState: UIControlState.Normal)
         
         return true
     }

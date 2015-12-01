@@ -8,6 +8,9 @@
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Bold.ttf">
             <string>GothamBold</string>
+            <string>GothamBold</string>
+            <string>GothamBold</string>
+            <string>GothamBold</string>
         </mutableArray>
         <mutableArray key="Gotham-Book.ttf">
             <string>GothamBook</string>
@@ -24,9 +27,6 @@
             <string>GothamBook</string>
         </mutableArray>
         <mutableArray key="Gotham-Medium.ttf">
-            <string>GothamMedium</string>
-            <string>GothamMedium</string>
-            <string>GothamMedium</string>
             <string>GothamMedium</string>
         </mutableArray>
     </customFonts>
@@ -129,7 +129,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZk-jE-Fux">
-                                        <rect key="frame" x="-6" y="-5" width="173" height="259"/>
+                                        <rect key="frame" x="0.0" y="-5" width="173" height="259"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu1-63-sAx">
                                                 <rect key="frame" x="8" y="0.0" width="160" height="30"/>
@@ -163,19 +163,19 @@
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-Gs-Y9C">
-                                                <rect key="frame" x="8" y="120" width="160" height="30"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="15"/>
-                                                <state key="normal" title="Fail">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWi-pz-yjM">
                                                 <rect key="frame" x="8" y="198" width="160" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="15"/>
                                                 <state key="normal" title="Shadows">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-Gs-Y9C">
+                                                <rect key="frame" x="8" y="122" width="160" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="15"/>
+                                                <state key="normal" title="Fail">
                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
@@ -205,7 +205,7 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="lZk-jE-Fux" firstAttribute="leading" secondItem="bvf-7o-ri9" secondAttribute="leading" constant="-6" id="8qV-WZ-Olr"/>
+                                    <constraint firstItem="lZk-jE-Fux" firstAttribute="leading" secondItem="bvf-7o-ri9" secondAttribute="leading" id="8qV-WZ-Olr"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="top" secondItem="lZk-jE-Fux" secondAttribute="top" id="9aU-ID-qh6"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="width" secondItem="lZk-jE-Fux" secondAttribute="width" constant="-5" id="DMT-vm-pqn"/>
                                     <constraint firstItem="m2o-Ue-aIv" firstAttribute="leading" secondItem="bvf-7o-ri9" secondAttribute="leading" constant="167" id="JFP-M9-MLH"/>
@@ -215,24 +215,24 @@
                                     <constraint firstItem="lZk-jE-Fux" firstAttribute="top" secondItem="bvf-7o-ri9" secondAttribute="top" constant="-5" id="wHm-VP-t9B"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create a new Photo Battle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awm-cj-5jM">
-                                <rect key="frame" x="20" y="91" width="335" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create a new photo battle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awm-cj-5jM">
+                                <rect key="frame" x="0.0" y="91" width="375" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nyU-3d-i94"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a battle to take the best photo of:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CR5-I7-S41">
-                                <rect key="frame" x="20" y="112" width="335" height="21"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6dJ-hx-xIP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-w5-WMQ">
@@ -240,11 +240,10 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="0ee-Di-rA6"/>
                                     <constraint firstAttribute="height" constant="43" id="Iyx-JR-ooW"/>
                                     <constraint firstAttribute="width" constant="110" id="o2b-sV-917"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="create"/>
                                 <connections>
@@ -267,10 +266,10 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose a battle length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-fN-YIA">
-                                <rect key="frame" x="56" y="481" width="263" height="21"/>
+                                <rect key="frame" x="56" y="482" width="263" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -284,17 +283,17 @@
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="trailing" secondItem="5jw-gL-aUo" secondAttribute="trailing" id="FU1-Fe-VD8"/>
                             <constraint firstItem="bvf-7o-ri9" firstAttribute="leading" secondItem="5jw-gL-aUo" secondAttribute="leading" id="Kue-6n-a9E"/>
                             <constraint firstItem="i0t-w5-WMQ" firstAttribute="top" secondItem="d3R-Ei-MEB" secondAttribute="bottom" constant="14" id="Lsd-uT-fkH"/>
-                            <constraint firstItem="awm-cj-5jM" firstAttribute="leading" secondItem="5Ca-G4-SIY" secondAttribute="leadingMargin" id="Q3q-JE-CrZ"/>
+                            <constraint firstItem="awm-cj-5jM" firstAttribute="leading" secondItem="5Ca-G4-SIY" secondAttribute="leadingMargin" constant="-20" id="Q3q-JE-CrZ"/>
                             <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="bvf-7o-ri9" secondAttribute="bottom" constant="52" id="YNy-OE-67V"/>
-                            <constraint firstItem="CR5-I7-S41" firstAttribute="trailing" secondItem="5jw-gL-aUo" secondAttribute="trailing" id="afq-yA-nmK"/>
+                            <constraint firstItem="CR5-I7-S41" firstAttribute="trailing" secondItem="5jw-gL-aUo" secondAttribute="trailing" constant="20" id="afq-yA-nmK"/>
                             <constraint firstItem="CR5-I7-S41" firstAttribute="trailing" secondItem="awm-cj-5jM" secondAttribute="trailing" id="cQt-P1-DZ5"/>
                             <constraint firstItem="Sij-fN-YIA" firstAttribute="centerX" secondItem="bvf-7o-ri9" secondAttribute="centerX" id="dZw-o9-fWf"/>
                             <constraint firstItem="awm-cj-5jM" firstAttribute="leading" secondItem="CR5-I7-S41" secondAttribute="leading" id="fwH-co-I3i"/>
-                            <constraint firstItem="CR5-I7-S41" firstAttribute="leading" secondItem="5jw-gL-aUo" secondAttribute="leading" id="mqA-jR-l5x"/>
-                            <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="Sij-fN-YIA" secondAttribute="bottom" constant="8" id="pGW-4J-8tA"/>
-                            <constraint firstItem="5jw-gL-aUo" firstAttribute="top" secondItem="CR5-I7-S41" secondAttribute="bottom" constant="22" id="pVf-VA-Rml"/>
+                            <constraint firstItem="CR5-I7-S41" firstAttribute="leading" secondItem="5jw-gL-aUo" secondAttribute="leading" constant="-20" id="mqA-jR-l5x"/>
+                            <constraint firstItem="d3R-Ei-MEB" firstAttribute="top" secondItem="Sij-fN-YIA" secondAttribute="bottom" constant="7" id="pGW-4J-8tA"/>
+                            <constraint firstItem="5jw-gL-aUo" firstAttribute="top" secondItem="CR5-I7-S41" secondAttribute="bottom" constant="20" id="pVf-VA-Rml"/>
                             <constraint firstItem="Sij-fN-YIA" firstAttribute="centerX" secondItem="5Ca-G4-SIY" secondAttribute="centerX" id="vvh-4q-Ef4"/>
-                            <constraint firstItem="CR5-I7-S41" firstAttribute="top" secondItem="awm-cj-5jM" secondAttribute="bottom" id="wgS-Yv-S3e"/>
+                            <constraint firstItem="CR5-I7-S41" firstAttribute="top" secondItem="awm-cj-5jM" secondAttribute="bottom" constant="2" id="wgS-Yv-S3e"/>
                             <constraint firstItem="i0t-w5-WMQ" firstAttribute="centerX" secondItem="d3R-Ei-MEB" secondAttribute="centerX" id="xdY-Zv-rPz"/>
                         </constraints>
                     </view>
@@ -303,8 +302,8 @@
                         <barButtonItem key="backBarButtonItem" title="Item" id="YHi-9P-2Ne">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="SU1-4o-bTA">
-                            <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="backButton" style="plain" id="SU1-4o-bTA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="btnCancelTapped:" destination="6nl-TT-FpP" id="llo-KA-kWW"/>
                             </connections>
@@ -400,4 +399,7 @@
             <point key="canvasLocation" x="2461.5" y="-186.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backButton" width="17" height="18"/>
+    </resources>
 </document>

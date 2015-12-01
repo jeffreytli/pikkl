@@ -30,9 +30,10 @@
             <string>GothamBold</string>
             <string>GothamBold</string>
         </mutableArray>
+        <mutableArray key="Gotham-Book.ttf">
+            <string>GothamBook</string>
+        </mutableArray>
         <mutableArray key="Gotham-Medium.ttf">
-            <string>GothamMedium</string>
-            <string>GothamMedium</string>
             <string>GothamMedium</string>
             <string>GothamMedium</string>
             <string>GothamMedium</string>
@@ -44,64 +45,76 @@
         <scene sceneID="Ckk-8J-jyb">
             <objects>
                 <tableViewController storyboardIdentifier="BattlesTableViewController" id="Ejt-Ug-vRg" customClass="BattlesTableViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="4F0-d1-ZLF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="4F0-d1-ZLF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.58775374179999995" green="1" blue="0.85499585870000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TextCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BattleCell" id="ekj-t5-n5V" customClass="BattleTableViewCell" customModule="pikkl" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="95"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TextCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="BattleCell" rowHeight="82" id="ekj-t5-n5V" customClass="BattleTableViewCell" customModule="pikkl" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="ekj-t5-n5V" id="lNz-L1-ToF">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="94.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="81.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battle Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-Zm-eGH">
-                                            <rect key="frame" x="21" y="31" width="225" height="32"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battle Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-Zm-eGH">
+                                            <rect key="frame" x="21" y="23" width="225" height="35"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="23"/>
+                                            <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;0m&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-WD-8Uo">
-                                            <rect key="frame" x="254" y="39" width="100" height="29"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;0m&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-WD-8Uo">
+                                            <rect key="frame" x="254" y="33" width="100" height="29"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="14"/>
+                                            <color key="textColor" red="0.55251736110000005" green="0.55251736110000005" blue="0.55251736110000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Phase&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-n0-k1R">
-                                            <rect key="frame" x="254" y="26" width="100" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Phase&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-n0-k1R">
+                                            <rect key="frame" x="254" y="20" width="100" height="21"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="TyH-fJ-zv9"/>
+                                                <constraint firstAttribute="width" constant="100" id="PhQ-hx-fyV"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="14"/>
+                                            <color key="textColor" red="0.55251736110000005" green="0.55251736110000005" blue="0.55251736110000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="31" id="9vF-U6-zzS"/>
-                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" id="JFb-xx-z6W"/>
-                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="leading" secondItem="Iq6-Zm-eGH" secondAttribute="trailing" constant="8" symbolic="YES" id="JZp-8V-6nn"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="xiF-n0-k1R" secondAttribute="trailing" constant="-20" id="MB6-no-jTY"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bMG-WD-8Uo" secondAttribute="bottom" constant="18" id="MNv-s6-v30"/>
-                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="trailing" secondItem="bMG-WD-8Uo" secondAttribute="trailing" id="Rs1-CG-Xh7"/>
-                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="18" id="XyM-vZ-2Jn"/>
-                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="leading" secondItem="xiF-n0-k1R" secondAttribute="leading" id="dO2-nW-0Ya"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="trailing" secondItem="bMG-WD-8Uo" secondAttribute="trailing" id="6bY-lX-4xH"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" id="CXn-MA-Cin"/>
+                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" id="EXR-rD-mBE"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="12" id="IJH-1W-iBG"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" constant="-0.5" id="JFb-xx-z6W"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="firstBaseline" secondItem="Iq6-Zm-eGH" secondAttribute="firstBaseline" id="Uxt-Ah-sfU"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="centerY" secondItem="lNz-L1-ToF" secondAttribute="centerY" id="VpG-7r-vys"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="leading" secondItem="bMG-WD-8Uo" secondAttribute="leading" id="XBb-O0-lzM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bMG-WD-8Uo" secondAttribute="bottom" constant="5.5" id="YFl-gN-pyX"/>
                                         <constraint firstItem="Iq6-Zm-eGH" firstAttribute="leading" secondItem="lNz-L1-ToF" secondAttribute="leadingMargin" constant="13" id="dbd-uJ-b8I"/>
-                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="23" id="jYY-Jx-TKc"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="xiF-n0-k1R" secondAttribute="bottom" constant="39" id="tx8-Qm-zEr"/>
+                                        <constraint firstItem="xiF-n0-k1R" firstAttribute="leading" secondItem="Iq6-Zm-eGH" secondAttribute="trailing" constant="8" symbolic="YES" id="iN6-de-9bq"/>
+                                        <constraint firstItem="Iq6-Zm-eGH" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="15" id="jYY-Jx-TKc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xiF-n0-k1R" secondAttribute="bottom" constant="26.5" id="qlN-nu-cWL"/>
+                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="31" id="r0E-pC-Uum"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xiF-n0-k1R" secondAttribute="trailing" constant="-20" id="s34-aE-UlH"/>
+                                        <constraint firstItem="bMG-WD-8Uo" firstAttribute="top" secondItem="lNz-L1-ToF" secondAttribute="topMargin" constant="25" id="ug8-ZI-YZ3"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Uxt-Ah-sfU"/>
+                                            <exclude reference="EXR-rD-mBE"/>
+                                            <exclude reference="r0E-pC-Uum"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
                                     <outlet property="lblBattleName" destination="Iq6-Zm-eGH" id="AKU-gc-hzm"/>
                                     <outlet property="lblCurrentPhase" destination="xiF-n0-k1R" id="ChW-tX-VZD"/>
@@ -115,8 +128,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="pikkl" id="6xz-jx-ura">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TUT-AC-GNj">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title="+ create" style="plain" id="TUT-AC-GNj">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="createBattleTapped:" destination="Ejt-Ug-vRg" id="Cgm-Go-N2d"/>
                             </connections>
@@ -153,7 +166,7 @@
                                 <rect key="frame" x="20" y="77" width="335" height="65"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="26"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-M7-Mb7">
@@ -825,6 +838,7 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="GothamBlack-Italic" family="Gotham Black" pointSize="0.0"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

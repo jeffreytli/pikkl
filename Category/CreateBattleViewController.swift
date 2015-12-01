@@ -73,7 +73,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     func configureNavView() {
         
         // Change the font and size of nav bar text
-        if let navBarFont = UIFont(name: "GothamBlack", size: 20.0) {
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
             let navBarAttributesDictionary: [String: AnyObject]? = [
                 NSForegroundColorAttributeName: UIColor.whiteColor(),
                 NSFontAttributeName: navBarFont
