@@ -82,7 +82,6 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
         }
         let createBlue = UIColor(red:0/255, green:102/255, blue:255/255, alpha:1.0)
         navigationController?.navigationBar.barTintColor = createBlue as UIColor
-        print(createBlue)
     }
 
     
