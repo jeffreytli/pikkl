@@ -35,6 +35,17 @@ class BattlesTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         data = BattleDataModel()
         battles = (data?.getBattles())!
+        
+        if let navBarFont = UIFont(name: "GothamBlack", size: 20.0) {
+            print("has font")
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
+
+        
         fetchAllBattles()
     }
     
