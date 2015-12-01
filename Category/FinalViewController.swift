@@ -19,13 +19,16 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var battlePhotos:[UIImage] = []
     var entries:[PFObject] = []
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var lblBattleTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavView()
         lblBattleTitle.text = battleTitle
-        fetchAllBattleEntries()
+        self.activityIndicator.transform = CGAffineTransformMakeScale(2, 2)
+        activityIndicator.startAnimating()
+        getAverages()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "voteCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,6 +67,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.entries.append(object)
                     }
                     self.tableView.reloadData()
+                    self.activityIndicator.stopAnimating()
                 }
             } else {
                 // Log details of the failure
@@ -176,6 +180,51 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let votePurple = UIColor(red:252/255, green:78/255, blue:44/255, alpha:1.0)
         navigationController?.navigationBar.barTintColor = votePurple
     }
+    
+    func getAverages() {
+        let query = PFQuery(className:"BattleEntry")
+        query.whereKey("battle", equalTo:battleId)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count)  jobs from database.")
+                // Do something with the found objects
+                if let objects = objects {
+                    var i:Int = 0
+                    for object in objects {
+                        object["avgScore"] = self.getFinalScore(object)
+                        object.saveInBackgroundWithBlock({
+                            (succeeded: Bool, error: NSError?) -> Void in
+                            if(succeeded) {
+                                i++
+                                if(i == objects.count) {
+                                    self.fetchAllBattleEntries()
+                                }
+                            }
+                            else {
+                                print("getAveragesFailed")
+                            }
+                        })
+                    }
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!)")
+            }
+        }
+    }
+    
+    func getFinalScore(entry: PFObject) -> Double {
+        let score: Int = entry["score"] as! Int
+        let numVoters: Int = entry["numVoters"] as! Int
+        var finalScore:Double = 0
+        if(numVoters != 0) { //prevents error from division by 0
+            finalScore = Double(score) / Double(numVoters)
+            finalScore = Double(round(100*finalScore)/100)
+        }
+        return finalScore
+    }
+
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
