@@ -61,7 +61,7 @@ Morgan (33.333333%)
 * As mentioned within the initial design documentation, we implemented a functionality in the Parse cloud database to selectively coose to remove competitions after 3 days. This script runs once per day at at 12am using the Parse Cloud Jobs tool.
 
 # Final - Differences
-Due to the dynamic nature of the game, using notification manager to notify users when they’ve been invited to a competition wasn't necessary because we decided it was best to just feature global games rather than friend-specific games. Users are not notified when a battle is about to end because we decided against running the app in background while it is closed.
+As discussed with Prof Seitsinger, we've decided to remove the functionality of inviting other players to specific battles. Initially, we were going to use notification managers to notify users when they had been invited to battles, but by redesigning the app in a way that all of the battles are global, we've removed the essential need for notification managers. **Note:** We had initially implemented the notification manager, but as a group, we've decided to remove it because each of us was being flooded with notifications, which is against common-design patterns and pretty annoying to users.
  
 # Final - Contributions
 Julio
