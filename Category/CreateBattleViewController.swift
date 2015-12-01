@@ -41,7 +41,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     
     var friendIDs = [String]()
     var friendNames = [String]()
-    var battlePhaseLength = 30
+    var battlePhaseLength = 60
     
     let createBlue = UIColor(red: 14, green: 223, blue: 124, alpha: 1)
     
@@ -133,11 +133,11 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
     @IBAction func segControlChanged(sender: UISegmentedControl) {
         switch segControlLength.selectedSegmentIndex {
             case 0:
-                battlePhaseLength = 120 //default is 2 minutes
+                battlePhaseLength = 60 //default is 2 minutes
             case 1:
                 battlePhaseLength = 240 //default is 2 minutes
             default:
-                battlePhaseLength = 120 //default is 2 minutes
+                battlePhaseLength = 60 //default is 2 minutes
         }
     }
     
