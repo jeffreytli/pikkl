@@ -117,7 +117,7 @@ class CreateBattleViewController: UIViewController, UITextFieldDelegate {
             case 0:
                 battlePhaseLength = 60 //default is 2 minutes
             case 1:
-                battlePhaseLength = 240 //default is 2 minutes
+                battlePhaseLength = 600 //default is 2 minutes
             default:
                 battlePhaseLength = 60 //default is 2 minutes
         }

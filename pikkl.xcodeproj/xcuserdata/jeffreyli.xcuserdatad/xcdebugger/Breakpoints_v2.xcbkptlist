@@ -108,8 +108,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "BattlesTableViewController"
-            landmarkType = "3">
+            landmarkName = "fetchAllBattles()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -140,7 +140,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
             endingLineNumber = "245"
-            landmarkName = "redirectToCreateBattleView()"
+            landmarkName = "getTimeLeft(_:phaseLength:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -348,7 +348,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "configureNavView()"
+            landmarkName = "getRandomButtonTitle()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
