@@ -111,6 +111,8 @@ class VoteForEntryViewController: UIViewController {
             
             // Save to Parse database
             self.saveVoteEntry(userHasVoted, curUserId: curUserId, voteValue: voteValue)
+            
+            self.redirectToBattlesTableView()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
             (action:UIAlertAction) in
@@ -154,6 +156,20 @@ class VoteForEntryViewController: UIViewController {
         userHasVoted.updateValue(true, forKey: curUserId)
         self.currentEntry!["userHasVoted"] = userHasVoted
         self.currentEntry?.saveInBackground()
+    }
+    
+    func redirectToBattlesTableView() -> Void {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
+        
+        let controllerNav = UINavigationController(rootViewController: controller)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+            appDelegate.window?.rootViewController = controllerNav
+            }, completion: nil)
     }
     
 }
