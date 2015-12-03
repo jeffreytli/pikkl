@@ -112,7 +112,7 @@ class VoteForEntryViewController: UIViewController {
             // Save to Parse database
             self.saveVoteEntry(userHasVoted, curUserId: curUserId, voteValue: voteValue)
             
-            self.redirectToBattlesTableView()
+            self.showVoteSuccessfulAlert()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){
             (action:UIAlertAction) in
@@ -132,6 +132,14 @@ class VoteForEntryViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func showVoteSuccessfulAlert() -> Void {
+        let alertController = UIAlertController(title: "", message:
+            "Vote submitted.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.redirectToBattlesTableView()
     }
     
     func showOwnEntryAlert() -> Void {
