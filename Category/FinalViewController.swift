@@ -124,6 +124,7 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let row = indexPath.row
         if(row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("FinalWinnerCell", forIndexPath: indexPath) as! FinalTableViewCell
+            
             cell.lblUser.text = (entries[row]["ownerName"] as? String)!
             if(entries[row]["avgScore"] != nil) {
                 cell.lblScore.text = "score: " + String((entries[row]["avgScore"] as! Double)) + "/5.0"
@@ -227,7 +228,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         return finalScore
     }
-
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

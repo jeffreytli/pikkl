@@ -48,7 +48,6 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
     func configureNavView() {
         // change nav
         if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
