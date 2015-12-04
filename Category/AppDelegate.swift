@@ -21,18 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("bLgAGrLr32ne67m18vTXwhu5QZbHdkLmMFElQVdX", clientKey: "kZoEAaphBOAdp3tYKWk1deNJWWt7lbkO86OM78UB")
         // Override point for customization after application launch.
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-        
-        //light green
-        //UINavigationBar.appearance().barTintColor = UIColor(red: 200.0/255.0, green: 222.0/255.0, blue: 73.0/255.0, alpha: 1.0)
-        
-        //dark green
-//        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 181.0/255.0, blue: 137.0/255.0, alpha: 1.0)
      
-//        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-        
-        //configure home nav
+        //initialize nav
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        //nav font
         let buttonFont = UIFont(name: "GothamBold", size: 14.0)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: buttonFont!], forState: UIControlState.Normal)
+        //custom back button
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backButton");
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton");
         
         return true
     }

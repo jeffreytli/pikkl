@@ -50,6 +50,18 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    func configureNavView() {
+        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
+            let navBarAttributesDictionary: [String: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+        }
+        let scoresRed = UIColor(red:252/255, green:78/255, blue:44/255, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = scoresRed
+    }
+    
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
@@ -167,19 +179,6 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         1
         cell.detailTextLabel!.text = String(finalScore) + "/5.0"
-    }
-    
-    func configureNavView() {
-        // change nav
-        if let navBarFont = UIFont(name: "GothamBlack", size: 26.0) {
-            let navBarAttributesDictionary: [String: AnyObject]? = [
-                NSForegroundColorAttributeName: UIColor.whiteColor(),
-                NSFontAttributeName: navBarFont
-            ]
-            navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
-        }
-        let votePurple = UIColor(red:252/255, green:78/255, blue:44/255, alpha:1.0)
-        navigationController?.navigationBar.barTintColor = votePurple
     }
     
     func getAverages() {
