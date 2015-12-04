@@ -81,9 +81,9 @@ Jeffrey (33.333333%)
 * Fixed the time/phase interval logic
 
 Morgan (33.333333%)
-* Implemented view functionality for and Submit
-* Implemented UI design
-* UX Research and Design
+* Implemented view functionality for and Submit and Login flow
+* Implemented UI
+* UX Research and Design, testing 3 different versions of the app with over 10 different users.
 * Game concept and design 
-* UI/Visual design and flow
-* Iterated on designs from user feedback throughout process
+* UI/Visual design and flow including creating and implementing custom assets.
+* Iterated on designs from user feedback throughout process (100+ mocks)
