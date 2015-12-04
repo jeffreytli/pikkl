@@ -139,7 +139,7 @@ class VoteForEntryViewController: UIViewController {
             "Vote submitted.", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         
-        self.redirectToVotesViewController()
+        self.redirectToBattlesTableView()
     }
     
     func showOwnEntryAlert() -> Void {
@@ -166,10 +166,10 @@ class VoteForEntryViewController: UIViewController {
         self.currentEntry?.saveInBackground()
     }
     
-    func redirectToVotesViewController() -> Void {
+    func redirectToBattlesTableView() -> Void {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
-        let controller = storyboard.instantiateViewControllerWithIdentifier("VoteViewController") as! VoteViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("BattlesTableViewController") as! BattlesTableViewController
         
         let controllerNav = UINavigationController(rootViewController: controller)
         
