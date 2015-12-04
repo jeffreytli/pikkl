@@ -159,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="1223.5" y="-198.5"/>
         </scene>
-        <!--vote-->
+        <!--VoteViewController-->
         <scene sceneID="kr4-n1-M11">
             <objects>
-                <viewController id="c6R-Mq-3Aw" customClass="VoteViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="VoteViewController" id="c6R-Mq-3Aw" customClass="VoteViewController" customModule="pikkl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Blg-u3-aIU"/>
                         <viewControllerLayoutGuide type="bottom" id="FIT-DR-78m"/>
