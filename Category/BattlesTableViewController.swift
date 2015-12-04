@@ -56,6 +56,13 @@ class BattlesTableViewController: UITableViewController {
             ]
             navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
         }
+        
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Remove the text for the back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil);
     }
     
     // @desc: Defines user swipe refresh functionality

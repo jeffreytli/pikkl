@@ -84,10 +84,10 @@ class FinalTableViewController: UITableViewController {
         let cellOwnerId:String = (entries[row]["owner"] as! PFUser).valueForKey("objectId")! as! String
         let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
         if(cellOwnerId  == curUserId) {
-            cell.textLabel!.text = "My Submission"
+            cell.textLabel!.text = "My Pik"
             cell.backgroundColor = UIColor(red: 0.60, green: 0.92, blue: 0.71, alpha: 0.8)
         } else {
-            cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
+            cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Pik"
         }
         cell.detailTextLabel!.text = String(finalScore) + "/ 5.0"
 

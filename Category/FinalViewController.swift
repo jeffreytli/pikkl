@@ -62,6 +62,12 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         navigationController?.navigationBar.barTintColor = scoresRed
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Remove the text for the back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil);
+    }
+    
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
@@ -172,10 +178,10 @@ class FinalViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let curUserId:String = PFUser.currentUser()!.valueForKey("objectId")! as! String
         
         if(cellOwnerId  == curUserId) {
-            cell.textLabel!.text = "My Submission"
+            cell.textLabel!.text = "My Pik"
             cell.backgroundColor = UIColor(red:0.99, green:0.51, blue:0.41, alpha:0.5)
         } else {
-            cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
+            cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Pik"
         }
         1
         cell.detailTextLabel!.text = String(finalScore) + "/5.0"

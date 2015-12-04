@@ -61,6 +61,12 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationController?.navigationBar.barTintColor = votePurple
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Remove the text for the back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil);
+    }
+    
     // @desc: Makes a query to our Parse database and pulls all Battle Entry objects
     func fetchAllBattleEntries() -> Void {
         let query = PFQuery(className:"BattleEntry")
@@ -98,7 +104,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("voteCell", forIndexPath: indexPath)
         let row = indexPath.row
         
-        cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Submission"
+        cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Pik"
         
         return cell
     }

@@ -56,6 +56,7 @@ class VoteTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.redColor()
+        cell.textLabel!.font = UIFont (name: "GothamBold", size: 15)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -71,7 +72,7 @@ class VoteTableViewController: UITableViewController {
 
         let row = indexPath.row
         
-        //if(entries.count > row-1 ) 
+        //if(entries.count > row-1 )
         //print(String(row) + "this is row")
         //print(String(entries.count) + "this is entry count")
         cell.textLabel!.text = (entries[row]["ownerName"] as? String)! + "'s Pik"

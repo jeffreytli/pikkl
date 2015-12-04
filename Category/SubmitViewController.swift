@@ -69,6 +69,12 @@ class SubmitViewController: UIViewController, UIImagePickerControllerDelegate, U
         let submitGreen = UIColor(red:22/255, green:219/255, blue:106/255, alpha:1.0)
         navigationController?.navigationBar.barTintColor = submitGreen
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Remove the text for the back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil);
+    }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
